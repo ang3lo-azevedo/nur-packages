@@ -128,3 +128,11 @@ fetch.url = "https://github.com/ZzEdovec/onlinefix-linux/releases/download/v$ver
 src.github = "Yamato-Security/hayabusa"
 fetch.url = "https://github.com/Yamato-Security/hayabusa/releases/download/v$ver/hayabusa-$ver-lin-x64-gnu.zip"
 src.prefix = "v"
+
+[ctfbridge]
+src.git = "https://github.com/bjornmorten/ctfbridge.git"
+fetch.git = "https://github.com/bjornmorten/ctfbridge.git"
+
+[ctf-dl]
+src.git = "https://github.com/bjornmorten/ctf-dl.git"
+fetch.git = "https://github.com/bjornmorten/ctf-dl.git"

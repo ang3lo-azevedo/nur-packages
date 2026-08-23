@@ -17,14 +17,6 @@
       sha256 = "sha256-piCH88uQaRt3U1g+hfkBL1wVrN5C9v1sXVaAV6YQioo=";
     };
   };
-  angr-management = {
-    pname = "angr-management";
-    version = "v9.3.3";
-    src = fetchurl {
-      url = "https://github.com/angr/angr-management/releases/download/v9.3.3/angr-management-v9.3.3-x86_64.AppImage";
-      sha256 = "sha256-831I6hqwMMQqvil8savtRJrgzVv3oKXlfHur1jzMAs8=";
-    };
-  };
   apk-mitm = {
     pname = "apk-mitm";
     version = "v1.3.0";
@@ -43,6 +35,34 @@
       url = "https://github.com/archimatetool/archi.io/releases/download/5.9.0/Archi-Linux64-5.9.0.tgz";
       sha256 = "sha256-0/3/EZw5upB0dvyhS0sfKqp7C4tc6vGDW+O9WU5iTc8=";
     };
+  };
+  ctf-dl = {
+    pname = "ctf-dl";
+    version = "db23c9dfe19429f3dfd75cf788cd54a8185f82e9";
+    src = fetchgit {
+      url = "https://github.com/bjornmorten/ctf-dl.git";
+      rev = "db23c9dfe19429f3dfd75cf788cd54a8185f82e9";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-0n6CQAkpQLFJZsM767TxPcLIzzIfFyIMsf40pW5gNzc=";
+    };
+    date = "2025-10-12";
+  };
+  ctfbridge = {
+    pname = "ctfbridge";
+    version = "11f126d621e05dfe1e0b5b9cc5bd4c2f94220029";
+    src = fetchgit {
+      url = "https://github.com/bjornmorten/ctfbridge.git";
+      rev = "11f126d621e05dfe1e0b5b9cc5bd4c2f94220029";
+      fetchSubmodules = false;
+      deepClone = false;
+      leaveDotGit = false;
+      sparseCheckout = [ ];
+      sha256 = "sha256-gNuIVrRVn0zrTkoZnDNEjUY9QissWbGgkbNaLOBfd+8=";
+    };
+    date = "2026-03-06";
   };
   ctfd-parser = {
     pname = "ctfd-parser";

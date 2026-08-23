@@ -11,6 +11,10 @@
   betterbird = pkgs.callPackage ./pkgs/betterbird {};
   chainsaw-rules = pkgs.callPackage ./pkgs/chainsaw-rules {};
   ciphey = pkgs.callPackage ./pkgs/ciphey {};
+  ctf-dl = pkgs.callPackage ./pkgs/ctf-dl {
+    ctfbridge = pkgs.callPackage ./pkgs/ctfbridge {};
+  };
+  ctfbridge = pkgs.callPackage ./pkgs/ctfbridge {};
   ctfd-parser = pkgs.callPackage ./pkgs/ctfd-parser {};
   cursor-id-modifier = pkgs.callPackage ./pkgs/cursor-id-modifier {};
   dnspy = pkgs.callPackage ./pkgs/dnspy {};
