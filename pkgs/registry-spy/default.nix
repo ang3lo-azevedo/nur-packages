@@ -1,7 +1,6 @@
 {
   lib,
   python3Packages,
-  customPython3Packages,
   callPackage,
   copyDesktopItems,
   makeDesktopItem,
@@ -19,7 +18,10 @@ in
 
     propagatedBuildInputs = [
       python3Packages.pyside6
-      customPython3Packages.python-registry
+      (python3Packages.python-registry.overridePythonAttrs (_: {
+        version = "1.3.1";
+        name = "python-registry-1.3.1";
+      }))
     ];
 
     desktopItems = [
