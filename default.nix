@@ -23,6 +23,7 @@
   ffmpeg-encoder-plugin-resolve = pkgs.callPackage ./pkgs/ffmpeg-encoder-plugin-resolve {};
   harbor = pkgs.callPackage ./pkgs/harbor {};
   hayabusa = pkgs.callPackage ./pkgs/hayabusa {};
+  hyprfm = pkgs.callPackage ./pkgs/hyprfm {};
   jackify = pkgs.callPackage ./pkgs/jackify {};
   libesedb = pkgs.callPackage ./pkgs/libesedb {};
   libfsntfs = pkgs.callPackage ./pkgs/libfsntfs {};
