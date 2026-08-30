@@ -46,4 +46,5 @@
   tplmap = pkgs.callPackage ./pkgs/tplmap {};
   trakt-scrobbler = pkgs.callPackage ./pkgs/trakt-scrobbler {};
   volatility-toolkit = pkgs.callPackage ./pkgs/volatility-toolkit {};
+  vorion = pkgs.callPackage ./pkgs/vorion {};
 }
