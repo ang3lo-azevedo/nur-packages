@@ -136,3 +136,7 @@ fetch.git = "https://github.com/bjornmorten/ctfbridge.git"
 [ctf-dl]
 src.git = "https://github.com/bjornmorten/ctf-dl.git"
 fetch.git = "https://github.com/bjornmorten/ctf-dl.git"
+
+[vorion]
+src.git = "https://github.com/Zexolver/Vorion.git"
+fetch.git = "https://github.com/Zexolver/Vorion.git"
