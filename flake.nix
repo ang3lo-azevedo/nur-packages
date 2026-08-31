@@ -1,7 +1,14 @@
 {
   description = "My personal NUR repository";
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
-  outputs = { self, nixpkgs }:
+  inputs = {
+    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    pre-commit-hooks = {
+      url = "github:cachix/pre-commit-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
+
+  outputs = { self, nixpkgs, pre-commit-hooks, ... }:
     let
       forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
     in
@@ -14,5 +21,31 @@
       # homeModules = import ./home-modules;
       # darwinModules = import ./darwin-modules;
       # flakeModules = import ./flake-modules;
+
+      checks = forAllSystems (system: {
+        pre-commit-check = pre-commit-hooks.lib.${system}.run {
+          src = ./.;
+          hooks = {
+            alejandra = {
+              enable = true;
+              excludes = [ ".*generated\\.nix$" ];
+            };
+            deadnix = {
+              enable = true;
+              excludes = [ ".*generated\\.nix$" ];
+            };
+            statix.enable = true;
+          };
+        };
+      });
+
+      devShells = forAllSystems (system: {
+        default = nixpkgs.legacyPackages.${system}.mkShell {
+          inherit (self.checks.${system}.pre-commit-check) shellHook;
+          buildInputs = self.checks.${system}.pre-commit-check.enabledPackages;
+        };
+      });
+
+      formatter = forAllSystems (system: nixpkgs.legacyPackages.${system}.alejandra);
     };
 }
