@@ -105,6 +105,9 @@ rustPlatform.buildRustPackage (finalAttrs: {
     # remove updater
     rm -rf updater || true
 
+    # disable auto-updater from UI by removing the Shelter plugin
+    sed -i '/Dorion Updater/d' src-tauri/injection/preinject.ts || true
+
     # disable pre-build script and disable auto-updater
     yq -iPo=json '
       .bundle.resources = (.bundle.resources | map(select(. != "updater*")))
@@ -140,6 +143,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
     rm -rf "$out/lib/Vorion/injection"
     cp -r src-tauri/injection "$out/lib/Vorion" 2>/dev/null || true
     cp -r src "$out/lib/Vorion" 2>/dev/null || true
+    
+    # Install the CSP killer extension so plugins can bypass CSP
+    mkdir -p "$out/lib/extension_webkit"
+    cp src-tauri/extension_webkit/*.so "$out/lib/extension_webkit/" 2>/dev/null || true
 
     # Rename binary to match the desktop file
     if [ -f "$out/bin/Dorion" ]; then
@@ -162,6 +169,7 @@ rustPlatform.buildRustPackage (finalAttrs: {
     gappsWrapperArgs+=(
       --set WEBKIT_DISABLE_COMPOSITING_MODE 1
       --set WEBKIT_DISABLE_SANDBOX_THIS_IS_DANGEROUS 1
+      --set WEBKIT_DISABLE_DMABUF_RENDERER 1
     )
   '';
 
