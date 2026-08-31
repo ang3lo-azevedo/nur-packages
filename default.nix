@@ -50,4 +50,9 @@
   };
   vol-rs = pkgs.callPackage ./pkgs/vol-rs {};
   vorion = pkgs.callPackage ./pkgs/vorion {};
+angr-management = pkgs.callPackage ./pkgs/angr-management {};
+  autodesk-fusion = pkgs.callPackage ./pkgs/autodesk-fusion {
+    wine = pkgs.wineWow64Packages.full;
+  };
+  ist-fenix-auto-enroller = pkgs.callPackage ./pkgs/ist-fenix-auto-enroller {};
 }

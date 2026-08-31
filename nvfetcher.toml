@@ -144,3 +144,19 @@ fetch.git = "https://github.com/Zexolver/Vorion.git"
 [vol-rs]
 src.github = "daffainfo/vol-rs"
 fetch.github = "daffainfo/vol-rs"
+
+[angr-management]
+src.github = "angr/angr-management"
+fetch.url = "https://github.com/angr/angr-management/releases/download/$ver/angr-management-$ver-x86_64.AppImage"
+
+[angr-management-src]
+src.github = "angr/angr-management"
+fetch.github = "angr/angr-management"
+
+[autodesk-fusion]
+src.git = "https://codeberg.org/cryinkfly/Autodesk-Fusion-360-on-Linux.git"
+fetch.git = "https://codeberg.org/cryinkfly/Autodesk-Fusion-360-on-Linux.git"
+
+[ist-fenix-auto-enroller]
+src.github = "ang3lo-azevedo/ist-fenix-auto-enroller"
+fetch.github = "ang3lo-azevedo/ist-fenix-auto-enroller"
