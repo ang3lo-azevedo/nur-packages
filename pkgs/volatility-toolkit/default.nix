@@ -6,7 +6,7 @@
   coreutils,
   findutils,
   gnugrep,
-  volatility3,
+  vol-rs,
   callPackage,
 }: let
   sources = callPackage ../_sources/generated.nix {};
@@ -40,8 +40,9 @@ in
         coreutils
         findutils
         gnugrep
-        volatility3
-      ]}
+        vol-rs
+      ]} \
+        --set VOL3_CMD vol-rs
 
       runHook postInstall
     '';

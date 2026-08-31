@@ -2,6 +2,7 @@
   lib,
   stdenv,
   fetchFromGitHub,
+  fetchurl,
   rustPlatform,
   cmake,
   ninja,
@@ -21,11 +22,16 @@
   cargo-tauri,
   desktop-file-utils,
   pipewire,
+  libnice,
 }:
 
 let
   webkitgtk_4_1' = webkitgtk_4_1.override {
     enableExperimental = true;
+  };
+  shelterJs = fetchurl {
+    url = "https://raw.githubusercontent.com/uwu/shelter-builds/main/shelter.js";
+    sha256 = "0zk89ww41qd5binrbpdx9203aw10x6i36v9i6yd9rd0k28m59bl6";
   };
 in
 rustPlatform.buildRustPackage (finalAttrs: {
@@ -83,6 +89,9 @@ rustPlatform.buildRustPackage (finalAttrs: {
     gst_all_1.gst-plugins-bad
     gst_all_1.gst-plugins-good
     gst_all_1.gst-plugins-rs
+    gst_all_1.gst-plugins-ugly
+    gst_all_1.gst-libav
+    libnice
     glib-networking
     libsysprof-capture
     libayatana-appindicator
@@ -90,6 +99,9 @@ rustPlatform.buildRustPackage (finalAttrs: {
   ];
 
   postPatch = ''
+    # copy shelter.js
+    cp ${shelterJs} src-tauri/injection/shelter.js
+
     # remove updater
     rm -rf updater || true
 
@@ -112,6 +124,10 @@ rustPlatform.buildRustPackage (finalAttrs: {
     runHook postConfigure
   '';
 
+  tauriBuildFlags = [
+    "--ignore-version-mismatches"
+  ];
+
   buildPhase = ''
     ninjaBuildPhase
     cd ../..
@@ -125,6 +141,11 @@ rustPlatform.buildRustPackage (finalAttrs: {
     cp -r src-tauri/injection "$out/lib/Vorion" 2>/dev/null || true
     cp -r src "$out/lib/Vorion" 2>/dev/null || true
 
+    # Rename binary to match the desktop file
+    if [ -f "$out/bin/Dorion" ]; then
+      mv "$out/bin/Dorion" "$out/bin/Vorion"
+    fi
+
     desktop-file-edit \
       --set-comment "Tiny alternative Discord client (with WebRTC support)" \
       --set-key="Exec" --set-value="Vorion %U" \
@@ -135,6 +156,13 @@ rustPlatform.buildRustPackage (finalAttrs: {
       --set-key="Terminal" --set-value="false" \
       --set-key="MimeType" --set-value="x-scheme-handler/discord" \
       "$out/share/applications/Vorion.desktop" || true
+  '';
+
+  preFixup = ''
+    gappsWrapperArgs+=(
+      --set WEBKIT_DISABLE_COMPOSITING_MODE 1
+      --set WEBKIT_DISABLE_SANDBOX_THIS_IS_DANGEROUS 1
+    )
   '';
 
   doCheck = false;

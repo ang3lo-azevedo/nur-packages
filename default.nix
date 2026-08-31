@@ -45,6 +45,9 @@
   sysmontools = pkgs.callPackage ./pkgs/sysmontools {};
   tplmap = pkgs.callPackage ./pkgs/tplmap {};
   trakt-scrobbler = pkgs.callPackage ./pkgs/trakt-scrobbler {};
-  volatility-toolkit = pkgs.callPackage ./pkgs/volatility-toolkit {};
+  volatility-toolkit = pkgs.callPackage ./pkgs/volatility-toolkit {
+    vol-rs = pkgs.callPackage ./pkgs/vol-rs {};
+  };
+  vol-rs = pkgs.callPackage ./pkgs/vol-rs {};
   vorion = pkgs.callPackage ./pkgs/vorion {};
 }
