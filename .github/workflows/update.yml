@@ -1,0 +1,36 @@
+name: "Update Packages"
+on:
+  schedule:
+    - cron: '0 4 * * *'
+  workflow_dispatch:
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Install nix
+        uses: cachix/install-nix-action@v31
+        with:
+          nix_path: "nixpkgs=https://github.com/NixOS/nixpkgs/archive/refs/heads/nixpkgs-unstable.tar.gz"
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+            
+      - name: Run nvfetcher
+        run: |
+          nix run nixpkgs#nvfetcher -- -c nvfetcher.toml -o _sources
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and push updates
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add _sources/generated.nix _sources/generated.json
+          git diff --staged --quiet || git commit -m "chore: auto-update packages via nvfetcher"
+          git push
