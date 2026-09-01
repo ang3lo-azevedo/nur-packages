@@ -3,7 +3,7 @@
   appimageTools,
   callPackage,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
   pname = "nuvio";
   version = sources.nuvio.version;
   src = sources.nuvio.src;

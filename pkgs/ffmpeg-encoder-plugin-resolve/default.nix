@@ -3,7 +3,7 @@
   unzip,
   callPackage,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
 in
   stdenvNoCC.mkDerivation {
     pname = "ffmpeg-encoder-plugin-resolve";

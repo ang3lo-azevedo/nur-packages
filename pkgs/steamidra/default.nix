@@ -6,7 +6,7 @@
   callPackage,
   p7zip,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
   pythonEnv = python3.withPackages (ps:
     with ps; [
       pyqt6

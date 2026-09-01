@@ -7,7 +7,7 @@
   wineWow64Packages,
   callPackage,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
 in
   stdenv.mkDerivation rec {
     pname = "dnspy";

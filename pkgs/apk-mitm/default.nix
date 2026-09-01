@@ -13,7 +13,7 @@
   unzip,
   jre,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
 in
   stdenv.mkDerivation rec {
     pname = "apk-mitm";

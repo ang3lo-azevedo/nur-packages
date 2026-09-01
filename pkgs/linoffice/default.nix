@@ -3,7 +3,7 @@
   pkgs,
   callPackage,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
 in
   pkgs.stdenv.mkDerivation {
     inherit (sources.linoffice) pname version src;

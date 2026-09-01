@@ -3,7 +3,7 @@
   python3Packages,
   callPackage,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
 in
   python3Packages.buildPythonApplication {
     pname = "ctfd-parser";

@@ -17,7 +17,7 @@
   wireguard-tools,
   callPackage,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
   inherit (sources.nordvpn) version src;
 
   nordVPNBase = stdenv.mkDerivation {

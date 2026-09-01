@@ -8,7 +8,7 @@
   webkitgtk_4_1,
   tinysparql,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
   pname = "harbor";
   inherit (sources.harbor) version src;
 in

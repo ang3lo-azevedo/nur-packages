@@ -7,7 +7,7 @@
   python312,
   pkgs,
 }: let
-  sources = pkgs.callPackage ../_sources/generated.nix {};
+  sources = pkgs.callPackage ../../_sources/generated.nix {};
   pythonEnv = python312.withPackages (ps:
     with ps; [
       selenium

@@ -3,7 +3,7 @@
   fetchurl,
   callPackage,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
   pname = "stremio-enhanced";
   version = sources.stremio-enhanced.version;
 

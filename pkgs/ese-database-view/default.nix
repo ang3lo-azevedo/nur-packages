@@ -7,7 +7,7 @@
   imagemagick,
   unzip,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
 in
   stdenv.mkDerivation {
     pname = "esedatabaseview";
