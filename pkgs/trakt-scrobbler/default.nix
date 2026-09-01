@@ -3,7 +3,7 @@
   python3Packages,
   callPackage,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
   src = sources.trakt-scrobbler.src;
 
   confuse_2_1_0 = python3Packages.buildPythonPackage rec {

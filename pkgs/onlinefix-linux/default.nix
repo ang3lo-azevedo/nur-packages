@@ -9,7 +9,7 @@
   copyDesktopItems,
   makeDesktopItem,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
 
   openjdk = jdk17.override {
     enableJavaFX = true;

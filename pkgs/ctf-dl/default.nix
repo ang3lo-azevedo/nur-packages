@@ -4,7 +4,7 @@
   callPackage,
   ctfbridge,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
 in
   python3.pkgs.buildPythonApplication {
     pname = "ctf-dl";

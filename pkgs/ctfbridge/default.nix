@@ -3,7 +3,7 @@
   python3,
   callPackage,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
 in
   python3.pkgs.buildPythonPackage {
     pname = "ctfbridge";

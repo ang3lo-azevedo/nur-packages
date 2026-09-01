@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  sources = pkgs.callPackage ../_sources/generated.nix {};
+  sources = pkgs.callPackage ../../_sources/generated.nix {};
   version = sources.jackify.version;
   appimage = sources.jackify.src;
 in

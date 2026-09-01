@@ -3,7 +3,7 @@
   rustPlatform,
   callPackage,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
 in
   rustPlatform.buildRustPackage {
     pname = "sidr";

@@ -16,7 +16,7 @@
   coreutils,
   pkgs,
 }: let
-  sources = pkgs.callPackage ../_sources/generated.nix {};
+  sources = pkgs.callPackage ../../_sources/generated.nix {};
   deps = [
     wine
     winetricks

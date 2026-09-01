@@ -9,7 +9,7 @@
   gobject-introspection,
   callPackage,
 }: let
-  sources = callPackage ../_sources/generated.nix {};
+  sources = callPackage ../../_sources/generated.nix {};
   pythonEnv = python3.withPackages (_: [python3Packages.pygobject3]);
 in
   stdenv.mkDerivation rec {
