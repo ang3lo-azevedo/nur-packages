@@ -29,11 +29,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-831I6hqwMMQqvil8savtRJrgzVv3oKXlfHur1jzMAs8=",
+            "sha256": "sha256-aD61eWVwejJfqd3ZFxuZFTI350zFMswZzjow0iwwCws=",
             "type": "url",
-            "url": "https://github.com/angr/angr-management/releases/download/v9.3.3/angr-management-v9.3.3-x86_64.AppImage"
+            "url": "https://github.com/angr/angr-management/releases/download/v9.3.4/angr-management-v9.3.4-x86_64.AppImage"
         },
-        "version": "v9.3.3"
+        "version": "v9.3.4"
     },
     "angr-management-src": {
         "cargoLock": null,
@@ -49,12 +49,12 @@
             "name": null,
             "owner": "angr",
             "repo": "angr-management",
-            "rev": "v9.3.3",
-            "sha256": "sha256-k9N+Ok6me7gNHZ+kICnvwG366E/+v2lAGmHkUo38h5o=",
+            "rev": "v9.3.4",
+            "sha256": "sha256-vsfdIRVZownOGHHffBOQhn7Nxn4XK2ii0/DMzBAK5qI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v9.3.3"
+        "version": "v9.3.4"
     },
     "apk-mitm": {
         "cargoLock": null,
@@ -76,6 +76,21 @@
             "type": "github"
         },
         "version": "v1.3.0"
+    },
+    "archi": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "archi",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-0/3/EZw5upB0dvyhS0sfKqp7C4tc6vGDW+O9WU5iTc8=",
+            "type": "url",
+            "url": "https://github.com/archimatetool/archi.io/releases/download/5.9.0/Archi-Linux64-5.9.0.tgz"
+        },
+        "version": "5.9.0"
     },
     "autodesk-fusion": {
         "cargoLock": null,
@@ -497,7 +512,7 @@
     },
     "scrollmpris": {
         "cargoLock": null,
-        "date": "2026-08-30",
+        "date": "2026-09-03",
         "extract": null,
         "name": "scrollmpris",
         "passthru": null,
@@ -509,12 +524,12 @@
             "name": null,
             "owner": "BEST8OY",
             "repo": "ScrollMPRIS",
-            "rev": "d2837a9d5c6b219b60d949fca89f4aab0446bb8a",
-            "sha256": "sha256-mqgw4kmDqIq+gr9V8Xk4ew9dl1dzPIbrVOCUFzWcCG8=",
+            "rev": "5e21263758676e1743b387a34f5ed4ebbbd0d620",
+            "sha256": "sha256-jMAgX6hLw7EPcKTt68ScZMaZtOFxN3pOW52IrviUbpo=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "d2837a9d5c6b219b60d949fca89f4aab0446bb8a"
+        "version": "5e21263758676e1743b387a34f5ed4ebbbd0d620"
     },
     "sidr": {
         "cargoLock": null,

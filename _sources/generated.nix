@@ -19,21 +19,21 @@
   };
   angr-management = {
     pname = "angr-management";
-    version = "v9.3.3";
+    version = "v9.3.4";
     src = fetchurl {
-      url = "https://github.com/angr/angr-management/releases/download/v9.3.3/angr-management-v9.3.3-x86_64.AppImage";
-      sha256 = "sha256-831I6hqwMMQqvil8savtRJrgzVv3oKXlfHur1jzMAs8=";
+      url = "https://github.com/angr/angr-management/releases/download/v9.3.4/angr-management-v9.3.4-x86_64.AppImage";
+      sha256 = "sha256-aD61eWVwejJfqd3ZFxuZFTI350zFMswZzjow0iwwCws=";
     };
   };
   angr-management-src = {
     pname = "angr-management-src";
-    version = "v9.3.3";
+    version = "v9.3.4";
     src = fetchFromGitHub {
       owner = "angr";
       repo = "angr-management";
-      rev = "v9.3.3";
+      rev = "v9.3.4";
       fetchSubmodules = false;
-      sha256 = "sha256-k9N+Ok6me7gNHZ+kICnvwG366E/+v2lAGmHkUo38h5o=";
+      sha256 = "sha256-vsfdIRVZownOGHHffBOQhn7Nxn4XK2ii0/DMzBAK5qI=";
     };
   };
   apk-mitm = {
@@ -45,6 +45,14 @@
       rev = "v1.3.0";
       fetchSubmodules = false;
       sha256 = "sha256-wcLShZ7O20i0hzz957dNmfjvxCn5lmWObTdTRF7p+I8=";
+    };
+  };
+  archi = {
+    pname = "archi";
+    version = "5.9.0";
+    src = fetchurl {
+      url = "https://github.com/archimatetool/archi.io/releases/download/5.9.0/Archi-Linux64-5.9.0.tgz";
+      sha256 = "sha256-0/3/EZw5upB0dvyhS0sfKqp7C4tc6vGDW+O9WU5iTc8=";
     };
   };
   autodesk-fusion = {
@@ -289,15 +297,15 @@
   };
   scrollmpris = {
     pname = "scrollmpris";
-    version = "d2837a9d5c6b219b60d949fca89f4aab0446bb8a";
+    version = "5e21263758676e1743b387a34f5ed4ebbbd0d620";
     src = fetchFromGitHub {
       owner = "BEST8OY";
       repo = "ScrollMPRIS";
-      rev = "d2837a9d5c6b219b60d949fca89f4aab0446bb8a";
+      rev = "5e21263758676e1743b387a34f5ed4ebbbd0d620";
       fetchSubmodules = false;
-      sha256 = "sha256-mqgw4kmDqIq+gr9V8Xk4ew9dl1dzPIbrVOCUFzWcCG8=";
+      sha256 = "sha256-jMAgX6hLw7EPcKTt68ScZMaZtOFxN3pOW52IrviUbpo=";
     };
-    date = "2026-08-30";
+    date = "2026-09-03";
   };
   sidr = {
     pname = "sidr";
