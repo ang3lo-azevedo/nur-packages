@@ -49,10 +49,10 @@
   };
   archi = {
     pname = "archi";
-    version = "5.9.0";
+    version = "5.10.0";
     src = fetchurl {
-      url = "https://github.com/archimatetool/archi.io/releases/download/5.9.0/Archi-Linux64-5.9.0.tgz";
-      sha256 = "sha256-0/3/EZw5upB0dvyhS0sfKqp7C4tc6vGDW+O9WU5iTc8=";
+      url = "https://github.com/archimatetool/archi.io/releases/latest/download/Archi-Linux64-5.10.0.tgz";
+      sha256 = "sha256-+UIkVaAKIvU0DcKGks6v4K1yDIzeg56q+w+rHOpXKH8=";
     };
   };
   autodesk-fusion = {
@@ -297,15 +297,15 @@
   };
   scrollmpris = {
     pname = "scrollmpris";
-    version = "5e21263758676e1743b387a34f5ed4ebbbd0d620";
+    version = "0b538210f8031f2e4727fc515ca014845a44928e";
     src = fetchFromGitHub {
       owner = "BEST8OY";
       repo = "ScrollMPRIS";
-      rev = "5e21263758676e1743b387a34f5ed4ebbbd0d620";
+      rev = "0b538210f8031f2e4727fc515ca014845a44928e";
       fetchSubmodules = false;
-      sha256 = "sha256-jMAgX6hLw7EPcKTt68ScZMaZtOFxN3pOW52IrviUbpo=";
+      sha256 = "sha256-WHNpSgbJ4WEhLe+VMT1PH+v4Xs+14Z+kCQGPBYT99tE=";
     };
-    date = "2026-09-03";
+    date = "2026-09-04";
   };
   sidr = {
     pname = "sidr";
