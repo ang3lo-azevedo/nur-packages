@@ -23,7 +23,7 @@ jobs:
             
       - name: Run nvfetcher
         run: |
-          nix run nixpkgs#nvfetcher -- -c nvfetcher.toml -o _sources
+          nix run nixpkgs#nvfetcher -- -c nvfetcher.toml -o _sources --keep-going
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 

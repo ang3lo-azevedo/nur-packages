@@ -4,8 +4,9 @@ src.prefix = "v"
 fetch.url = "https://github.com/EdvinNilsson/ffmpeg_encoder_plugin/releases/download/v$ver/ffmpeg_encoder_plugin.dvcp.bundle.zip"
 
 [archi]
-src.github = "archimatetool/archi.io"
-fetch.url = "https://github.com/archimatetool/archi.io/releases/download/$ver/Archi-Linux64-$ver.tgz"
+src.webpage = "https://api.github.com/repos/archimatetool/archi.io/releases/latest"
+src.regex = "Archi-Linux64-([0-9.]+)\\.tgz"
+fetch.url = "https://github.com/archimatetool/archi.io/releases/latest/download/Archi-Linux64-$ver.tgz"
 
 [reverser_ai]
 src.git = "https://github.com/mrphrazer/reverser_ai.git"
