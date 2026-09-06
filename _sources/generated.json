@@ -401,12 +401,12 @@
             "name": null,
             "owner": "SaruM4N3",
             "repo": "MonkeyLauncher",
-            "rev": "v0.3.0",
-            "sha256": "sha256-j+ZRvreZRFJKy6cQCpmGQjOSJfSoeuaWxFRE9fOjgx0=",
+            "rev": "v0.4.0",
+            "sha256": "sha256-qf6CSJx0NK2XEQqWhWxqITsC0x4lv9Wb/It286t/9gU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.3.0"
+        "version": "v0.4.0"
     },
     "nordvpn": {
         "cargoLock": null,
@@ -512,7 +512,7 @@
     },
     "scrollmpris": {
         "cargoLock": null,
-        "date": "2026-09-04",
+        "date": "2026-09-06",
         "extract": null,
         "name": "scrollmpris",
         "passthru": null,
@@ -524,12 +524,12 @@
             "name": null,
             "owner": "BEST8OY",
             "repo": "ScrollMPRIS",
-            "rev": "0b538210f8031f2e4727fc515ca014845a44928e",
-            "sha256": "sha256-WHNpSgbJ4WEhLe+VMT1PH+v4Xs+14Z+kCQGPBYT99tE=",
+            "rev": "0036558dc8b81be6b1be0a1227a605b5b7d4d74f",
+            "sha256": "sha256-N7RyTQUGRW4qhFCfxWNtpTDzp3tGLrn78AQw+wOIX1A=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "0b538210f8031f2e4727fc515ca014845a44928e"
+        "version": "0036558dc8b81be6b1be0a1227a605b5b7d4d74f"
     },
     "sidr": {
         "cargoLock": null,
