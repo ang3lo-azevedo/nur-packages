@@ -231,13 +231,13 @@
   };
   monkeylauncher = {
     pname = "monkeylauncher";
-    version = "v0.3.0";
+    version = "v0.4.0";
     src = fetchFromGitHub {
       owner = "SaruM4N3";
       repo = "MonkeyLauncher";
-      rev = "v0.3.0";
+      rev = "v0.4.0";
       fetchSubmodules = false;
-      sha256 = "sha256-j+ZRvreZRFJKy6cQCpmGQjOSJfSoeuaWxFRE9fOjgx0=";
+      sha256 = "sha256-qf6CSJx0NK2XEQqWhWxqITsC0x4lv9Wb/It286t/9gU=";
     };
   };
   nordvpn = {
@@ -297,15 +297,15 @@
   };
   scrollmpris = {
     pname = "scrollmpris";
-    version = "0b538210f8031f2e4727fc515ca014845a44928e";
+    version = "0036558dc8b81be6b1be0a1227a605b5b7d4d74f";
     src = fetchFromGitHub {
       owner = "BEST8OY";
       repo = "ScrollMPRIS";
-      rev = "0b538210f8031f2e4727fc515ca014845a44928e";
+      rev = "0036558dc8b81be6b1be0a1227a605b5b7d4d74f";
       fetchSubmodules = false;
-      sha256 = "sha256-WHNpSgbJ4WEhLe+VMT1PH+v4Xs+14Z+kCQGPBYT99tE=";
+      sha256 = "sha256-N7RyTQUGRW4qhFCfxWNtpTDzp3tGLrn78AQw+wOIX1A=";
     };
-    date = "2026-09-04";
+    date = "2026-09-06";
   };
   sidr = {
     pname = "sidr";
