@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> { }, tpm-keyring-unlock ? null }:
+{ pkgs ? import <nixpkgs> { }, tpm-keyring-unlock }:
 
 {
   lib = import ./lib { inherit pkgs; };
