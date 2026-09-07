@@ -242,10 +242,10 @@
   };
   nordvpn = {
     pname = "nordvpn";
-    version = "5.3.0";
+    version = "5.4.0";
     src = fetchurl {
-      url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_5.3.0_amd64.deb";
-      sha256 = "sha256-NM3qcqdclwDChblQ7S7Jasru1NYHATo6vRg2ZzH4wzQ=";
+      url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_5.4.0_amd64.deb";
+      sha256 = "sha256-V2adQHIV80zYC1bQuVPc0KuNzTQT7RjGRvZm4FguATo=";
     };
   };
   nuvio = {
