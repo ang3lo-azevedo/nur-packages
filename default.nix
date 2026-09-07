@@ -1,4 +1,4 @@
-{ pkgs ? import <nixpkgs> { } }:
+{ pkgs ? import <nixpkgs> { }, tpm-keyring-unlock ? null }:
 
 {
   lib = import ./lib { inherit pkgs; };
@@ -55,4 +55,7 @@ angr-management = pkgs.callPackage ./pkgs/angr-management {};
     wine = pkgs.wineWow64Packages.full;
   };
   ist-fenix-auto-enroller = pkgs.callPackage ./pkgs/ist-fenix-auto-enroller {};
+  tpm-keyring-unlock = pkgs.callPackage ./pkgs/tpm-keyring-unlock {
+    src = tpm-keyring-unlock;
+  };
 }

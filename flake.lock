@@ -56,7 +56,24 @@
     "root": {
       "inputs": {
         "nixpkgs": "nixpkgs",
-        "pre-commit-hooks": "pre-commit-hooks"
+        "pre-commit-hooks": "pre-commit-hooks",
+        "tpm-keyring-unlock": "tpm-keyring-unlock"
+      }
+    },
+    "tpm-keyring-unlock": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1787050439,
+        "narHash": "sha256-US2zRK340a2NE3hvkfPTdIHXzdcMDytGmv+KFgGKeOM=",
+        "owner": "dmitriitimoshenko",
+        "repo": "tpm-keyring-unlock",
+        "rev": "485c9f57c705f4d4714f8a085a09514051389204",
+        "type": "github"
+      },
+      "original": {
+        "owner": "dmitriitimoshenko",
+        "repo": "tpm-keyring-unlock",
+        "type": "github"
       }
     }
   },
