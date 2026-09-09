@@ -297,15 +297,15 @@
   };
   scrollmpris = {
     pname = "scrollmpris";
-    version = "0036558dc8b81be6b1be0a1227a605b5b7d4d74f";
+    version = "a31f20830a9743b5b53f73f4e1052ac29aaf2d0a";
     src = fetchFromGitHub {
       owner = "BEST8OY";
       repo = "ScrollMPRIS";
-      rev = "0036558dc8b81be6b1be0a1227a605b5b7d4d74f";
+      rev = "a31f20830a9743b5b53f73f4e1052ac29aaf2d0a";
       fetchSubmodules = false;
-      sha256 = "sha256-N7RyTQUGRW4qhFCfxWNtpTDzp3tGLrn78AQw+wOIX1A=";
+      sha256 = "sha256-o13tw8PzktGMaxj9dlcBZ8PfhcwxXutFaetxH6vT4JA=";
     };
-    date = "2026-09-06";
+    date = "2026-09-09";
   };
   sidr = {
     pname = "sidr";
