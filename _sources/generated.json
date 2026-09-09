@@ -512,7 +512,7 @@
     },
     "scrollmpris": {
         "cargoLock": null,
-        "date": "2026-09-06",
+        "date": "2026-09-09",
         "extract": null,
         "name": "scrollmpris",
         "passthru": null,
@@ -524,12 +524,12 @@
             "name": null,
             "owner": "BEST8OY",
             "repo": "ScrollMPRIS",
-            "rev": "0036558dc8b81be6b1be0a1227a605b5b7d4d74f",
-            "sha256": "sha256-N7RyTQUGRW4qhFCfxWNtpTDzp3tGLrn78AQw+wOIX1A=",
+            "rev": "a31f20830a9743b5b53f73f4e1052ac29aaf2d0a",
+            "sha256": "sha256-o13tw8PzktGMaxj9dlcBZ8PfhcwxXutFaetxH6vT4JA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "0036558dc8b81be6b1be0a1227a605b5b7d4d74f"
+        "version": "a31f20830a9743b5b53f73f4e1052ac29aaf2d0a"
     },
     "sidr": {
         "cargoLock": null,
