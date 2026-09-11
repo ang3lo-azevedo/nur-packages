@@ -184,10 +184,10 @@
   };
   jackify = {
     pname = "jackify";
-    version = "0.8.0";
+    version = "0.8.1";
     src = fetchurl {
-      url = "https://github.com/Omni-guides/Jackify/releases/download/v0.8.0/Jackify.AppImage";
-      sha256 = "sha256-NZWeoijFAl4xVoF7Gl7TRx3DTxcb6fTk4KFjFdRCt5o=";
+      url = "https://github.com/Omni-guides/Jackify/releases/download/v0.8.1/Jackify.AppImage";
+      sha256 = "sha256-IvWu/LztmAHpCdmp312CsYRzdJINGkOD9LtnMUOv6ls=";
     };
   };
   libesedb = {
