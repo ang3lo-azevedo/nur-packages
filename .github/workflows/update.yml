@@ -23,7 +23,13 @@ jobs:
             
       - name: Run nvfetcher
         run: |
-          nix run nixpkgs#nvfetcher -- -c nvfetcher.toml -o _sources --keep-going
+          # Transient fetch failures (e.g. codeberg 504s) kill the whole
+          # run, so retry a few times before giving up.
+          for i in 1 2 3; do
+            nix run nixpkgs#nvfetcher -- -c nvfetcher.toml -o _sources --keep-going && break
+            echo "nvfetcher attempt $i failed"
+            [ "$i" -lt 3 ] && sleep 300
+          done
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
