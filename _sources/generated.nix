@@ -184,10 +184,10 @@
   };
   jackify = {
     pname = "jackify";
-    version = "0.8.1";
+    version = "0.8.1.1";
     src = fetchurl {
-      url = "https://github.com/Omni-guides/Jackify/releases/download/v0.8.1/Jackify.AppImage";
-      sha256 = "sha256-IvWu/LztmAHpCdmp312CsYRzdJINGkOD9LtnMUOv6ls=";
+      url = "https://github.com/Omni-guides/Jackify/releases/download/v0.8.1.1/Jackify.AppImage";
+      sha256 = "sha256-ORIuDpleQBxjcOvl1t34Zuo39QIJ6UAmEyunY7hr03c=";
     };
   };
   libesedb = {
@@ -362,13 +362,13 @@
   };
   vol-rs = {
     pname = "vol-rs";
-    version = "v1.0.0";
+    version = "v1.0.1";
     src = fetchFromGitHub {
       owner = "daffainfo";
       repo = "vol-rs";
-      rev = "v1.0.0";
+      rev = "v1.0.1";
       fetchSubmodules = false;
-      sha256 = "sha256-dbvt3vVnW9enfttNEj81C35Vbg1vj2MzFsC7GAWwxbE=";
+      sha256 = "sha256-olM3JlSwPZQ/p3+n7Hmxd58FUm7/vWDiVSgZdqvCu1Y=";
     };
   };
   volatility-toolkit = {
