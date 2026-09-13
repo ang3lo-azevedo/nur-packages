@@ -153,10 +153,10 @@
   };
   hayabusa = {
     pname = "hayabusa";
-    version = "4.0.0";
+    version = "4.1.0";
     src = fetchurl {
-      url = "https://github.com/Yamato-Security/hayabusa/releases/download/v4.0.0/hayabusa-4.0.0-lin-x64-gnu.zip";
-      sha256 = "sha256-ETfifHleg/iDfJYvITbPFjSmemVde6jvqLLTijO6CbQ=";
+      url = "https://github.com/Yamato-Security/hayabusa/releases/download/v4.1.0/hayabusa-4.1.0-lin-x64-gnu.zip";
+      sha256 = "sha256-7SxFlflbjnZdN/OSISWHMEzontfPtmgrQlqW0SbtZ+s=";
     };
   };
   ida-chat-plugin = {
@@ -297,15 +297,15 @@
   };
   scrollmpris = {
     pname = "scrollmpris";
-    version = "a31f20830a9743b5b53f73f4e1052ac29aaf2d0a";
+    version = "8a5bef068cfeaa1ea1a7eb209dba2720007a345b";
     src = fetchFromGitHub {
       owner = "BEST8OY";
       repo = "ScrollMPRIS";
-      rev = "a31f20830a9743b5b53f73f4e1052ac29aaf2d0a";
+      rev = "8a5bef068cfeaa1ea1a7eb209dba2720007a345b";
       fetchSubmodules = false;
-      sha256 = "sha256-o13tw8PzktGMaxj9dlcBZ8PfhcwxXutFaetxH6vT4JA=";
+      sha256 = "sha256-OuWETGqa8Ks6f577BN3viPMWHaxpeyN4x0roZU1M794=";
     };
-    date = "2026-09-09";
+    date = "2026-09-13";
   };
   sidr = {
     pname = "sidr";
