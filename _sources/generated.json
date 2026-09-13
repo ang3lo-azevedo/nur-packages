@@ -263,11 +263,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-ETfifHleg/iDfJYvITbPFjSmemVde6jvqLLTijO6CbQ=",
+            "sha256": "sha256-7SxFlflbjnZdN/OSISWHMEzontfPtmgrQlqW0SbtZ+s=",
             "type": "url",
-            "url": "https://github.com/Yamato-Security/hayabusa/releases/download/v4.0.0/hayabusa-4.0.0-lin-x64-gnu.zip"
+            "url": "https://github.com/Yamato-Security/hayabusa/releases/download/v4.1.0/hayabusa-4.1.0-lin-x64-gnu.zip"
         },
-        "version": "4.0.0"
+        "version": "4.1.0"
     },
     "ida-chat-plugin": {
         "cargoLock": null,
@@ -512,7 +512,7 @@
     },
     "scrollmpris": {
         "cargoLock": null,
-        "date": "2026-09-09",
+        "date": "2026-09-13",
         "extract": null,
         "name": "scrollmpris",
         "passthru": null,
@@ -524,12 +524,12 @@
             "name": null,
             "owner": "BEST8OY",
             "repo": "ScrollMPRIS",
-            "rev": "a31f20830a9743b5b53f73f4e1052ac29aaf2d0a",
-            "sha256": "sha256-o13tw8PzktGMaxj9dlcBZ8PfhcwxXutFaetxH6vT4JA=",
+            "rev": "8a5bef068cfeaa1ea1a7eb209dba2720007a345b",
+            "sha256": "sha256-OuWETGqa8Ks6f577BN3viPMWHaxpeyN4x0roZU1M794=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "a31f20830a9743b5b53f73f4e1052ac29aaf2d0a"
+        "version": "8a5bef068cfeaa1ea1a7eb209dba2720007a345b"
     },
     "sidr": {
         "cargoLock": null,
