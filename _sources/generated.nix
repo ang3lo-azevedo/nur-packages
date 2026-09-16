@@ -206,17 +206,17 @@
   };
   libfsntfs = {
     pname = "libfsntfs";
-    version = "0d2d9d7282e4910eba6b9ff4933fe421a3f39c9a";
+    version = "30af247699e09af029dd82e1e0343bba734f450e";
     src = fetchgit {
       url = "https://github.com/libyal/libfsntfs.git";
-      rev = "0d2d9d7282e4910eba6b9ff4933fe421a3f39c9a";
+      rev = "30af247699e09af029dd82e1e0343bba734f450e";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-9MvoDgwP/9iVSZvo1ik2eYLoWOMYKoGWrvKEesvFbDQ=";
+      sha256 = "sha256-P4cGH2wUTJ+RIiaAH6jzcIy00bdQt02l9ty9jXOlcTg=";
     };
-    date = "2026-08-27";
+    date = "2026-09-16";
   };
   linoffice = {
     pname = "linoffice";
