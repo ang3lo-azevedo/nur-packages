@@ -19,21 +19,21 @@
   };
   angr-management = {
     pname = "angr-management";
-    version = "v9.3.4";
+    version = "v10.0.0";
     src = fetchurl {
-      url = "https://github.com/angr/angr-management/releases/download/v9.3.4/angr-management-v9.3.4-x86_64.AppImage";
-      sha256 = "sha256-aD61eWVwejJfqd3ZFxuZFTI350zFMswZzjow0iwwCws=";
+      url = "https://github.com/angr/angr-management/releases/download/v10.0.0/angr-management-v10.0.0-x86_64.AppImage";
+      sha256 = "sha256-4Z72qR/dSXqaqokjWrnu3xnEivNEuU6/vuSmP0U/Dwg=";
     };
   };
   angr-management-src = {
     pname = "angr-management-src";
-    version = "v9.3.4";
+    version = "v10.0.0";
     src = fetchFromGitHub {
       owner = "angr";
       repo = "angr-management";
-      rev = "v9.3.4";
+      rev = "v10.0.0";
       fetchSubmodules = false;
-      sha256 = "sha256-vsfdIRVZownOGHHffBOQhn7Nxn4XK2ii0/DMzBAK5qI=";
+      sha256 = "sha256-byenMrlOf+2r4AqZwWVeAb+licplvBI1ifYfo+qojkc=";
     };
   };
   apk-mitm = {
