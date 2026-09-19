@@ -206,17 +206,17 @@
   };
   libfsntfs = {
     pname = "libfsntfs";
-    version = "30af247699e09af029dd82e1e0343bba734f450e";
+    version = "a4bab2d89906c32ed30812758e2f7ea2dfee8717";
     src = fetchgit {
       url = "https://github.com/libyal/libfsntfs.git";
-      rev = "30af247699e09af029dd82e1e0343bba734f450e";
+      rev = "a4bab2d89906c32ed30812758e2f7ea2dfee8717";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-P4cGH2wUTJ+RIiaAH6jzcIy00bdQt02l9ty9jXOlcTg=";
+      sha256 = "sha256-Z0+VaPaZ0xKup1ii2yVY0Sdy2A7eZTs3L8mnKcspyI8=";
     };
-    date = "2026-09-16";
+    date = "2026-09-18";
   };
   linoffice = {
     pname = "linoffice";
@@ -297,15 +297,15 @@
   };
   scrollmpris = {
     pname = "scrollmpris";
-    version = "8a5bef068cfeaa1ea1a7eb209dba2720007a345b";
+    version = "21df3617577758ef5f8a92255faece8ecceec22a";
     src = fetchFromGitHub {
       owner = "BEST8OY";
       repo = "ScrollMPRIS";
-      rev = "8a5bef068cfeaa1ea1a7eb209dba2720007a345b";
+      rev = "21df3617577758ef5f8a92255faece8ecceec22a";
       fetchSubmodules = false;
-      sha256 = "sha256-OuWETGqa8Ks6f577BN3viPMWHaxpeyN4x0roZU1M794=";
+      sha256 = "sha256-9NlInhEBS7VjYE8K0UyJRhzkPgbWVGdrq2Vu52pN5EU=";
     };
-    date = "2026-09-13";
+    date = "2026-09-18";
   };
   sidr = {
     pname = "sidr";

@@ -348,7 +348,7 @@
     },
     "libfsntfs": {
         "cargoLock": null,
-        "date": "2026-09-16",
+        "date": "2026-09-18",
         "extract": null,
         "name": "libfsntfs",
         "passthru": null,
@@ -358,13 +358,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "30af247699e09af029dd82e1e0343bba734f450e",
-            "sha256": "sha256-P4cGH2wUTJ+RIiaAH6jzcIy00bdQt02l9ty9jXOlcTg=",
+            "rev": "a4bab2d89906c32ed30812758e2f7ea2dfee8717",
+            "sha256": "sha256-Z0+VaPaZ0xKup1ii2yVY0Sdy2A7eZTs3L8mnKcspyI8=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/libyal/libfsntfs.git"
         },
-        "version": "30af247699e09af029dd82e1e0343bba734f450e"
+        "version": "a4bab2d89906c32ed30812758e2f7ea2dfee8717"
     },
     "linoffice": {
         "cargoLock": null,
@@ -512,7 +512,7 @@
     },
     "scrollmpris": {
         "cargoLock": null,
-        "date": "2026-09-13",
+        "date": "2026-09-18",
         "extract": null,
         "name": "scrollmpris",
         "passthru": null,
@@ -524,12 +524,12 @@
             "name": null,
             "owner": "BEST8OY",
             "repo": "ScrollMPRIS",
-            "rev": "8a5bef068cfeaa1ea1a7eb209dba2720007a345b",
-            "sha256": "sha256-OuWETGqa8Ks6f577BN3viPMWHaxpeyN4x0roZU1M794=",
+            "rev": "21df3617577758ef5f8a92255faece8ecceec22a",
+            "sha256": "sha256-9NlInhEBS7VjYE8K0UyJRhzkPgbWVGdrq2Vu52pN5EU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "8a5bef068cfeaa1ea1a7eb209dba2720007a345b"
+        "version": "21df3617577758ef5f8a92255faece8ecceec22a"
     },
     "sidr": {
         "cargoLock": null,
