@@ -27,6 +27,7 @@
   jackify = pkgs.callPackage ./pkgs/jackify {};
   libesedb = pkgs.callPackage ./pkgs/libesedb {};
   libfsntfs = pkgs.callPackage ./pkgs/libfsntfs {};
+  libscca = pkgs.callPackage ./pkgs/libscca {};
   linoffice = pkgs.callPackage ./pkgs/linoffice {};
   monkeylauncher = pkgs.callPackage ./pkgs/monkeylauncher {};
   nordvpn = pkgs.callPackage ./pkgs/nordvpn {};
