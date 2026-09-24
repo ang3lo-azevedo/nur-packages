@@ -7,7 +7,13 @@
   fixup-yarn-lock,
   yarn,
   nodejs,
-  typescript,
+  # `typescript` is now TypeScript 7 (the native/Go-based rewrite), a huge jump
+  # from whatever this package was written against. It rejects upstream's
+  # tsconfig.json (error TS5011: outDir without an explicit rootDir) and then,
+  # past that, fails to resolve several dependencies' bundled types entirely.
+  # typescript_5 is the same major version line this package has always built
+  # against here.
+  typescript_5,
   apktool,
   zip,
   unzip,
@@ -29,7 +35,7 @@ in
     nativeBuildInputs = [
       makeWrapper
       nodejs
-      typescript
+      typescript_5
       fixup-yarn-lock
       yarn
     ];
