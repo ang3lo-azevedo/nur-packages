@@ -192,31 +192,31 @@
   };
   libesedb = {
     pname = "libesedb";
-    version = "08bf68f80ebcb08becff05f1ff3713aa4a97d886";
+    version = "4e3b876d94887e53fb626e91a7427f29c7699365";
     src = fetchgit {
       url = "https://github.com/libyal/libesedb.git";
-      rev = "08bf68f80ebcb08becff05f1ff3713aa4a97d886";
+      rev = "4e3b876d94887e53fb626e91a7427f29c7699365";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-yKn79uCWYI43ueGjvtZo3PkISys4/PBEEyIViEfJ7oc=";
+      sha256 = "sha256-W9iVu75C1/nf+SkDJvs2Gjd3pLfPAnYFoe+sv4MmeZo=";
     };
-    date = "2026-09-18";
+    date = "2026-09-23";
   };
   libfsntfs = {
     pname = "libfsntfs";
-    version = "a4bab2d89906c32ed30812758e2f7ea2dfee8717";
+    version = "84e98ff25092e2c422d392194783e22c9d280af9";
     src = fetchgit {
       url = "https://github.com/libyal/libfsntfs.git";
-      rev = "a4bab2d89906c32ed30812758e2f7ea2dfee8717";
+      rev = "84e98ff25092e2c422d392194783e22c9d280af9";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-Z0+VaPaZ0xKup1ii2yVY0Sdy2A7eZTs3L8mnKcspyI8=";
+      sha256 = "sha256-HdU9+XzrcNdbBVvxVNzutyR0x+qgqUV2Ek9Teaet2FI=";
     };
-    date = "2026-09-18";
+    date = "2026-09-23";
   };
   linoffice = {
     pname = "linoffice";
