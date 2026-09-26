@@ -220,24 +220,24 @@
   };
   linoffice = {
     pname = "linoffice";
-    version = "v2.2.11";
+    version = "v2.3.0";
     src = fetchFromGitHub {
       owner = "eylenburg";
       repo = "linoffice";
-      rev = "v2.2.11";
+      rev = "v2.3.0";
       fetchSubmodules = false;
-      sha256 = "sha256-l14UU2CFZ9d/fq7aYKaPcA2xcnr1gKwgGnt5PGJEtO4=";
+      sha256 = "sha256-b6SKMgWgD3ZUpcu+/lMvDUxyHAe9yOh2NX80S4cHQGU=";
     };
   };
   monkeylauncher = {
     pname = "monkeylauncher";
-    version = "v0.4.0";
+    version = "v0.5.3";
     src = fetchFromGitHub {
       owner = "SaruM4N3";
       repo = "MonkeyLauncher";
-      rev = "v0.4.0";
+      rev = "v0.5.3";
       fetchSubmodules = false;
-      sha256 = "sha256-qf6CSJx0NK2XEQqWhWxqITsC0x4lv9Wb/It286t/9gU=";
+      sha256 = "sha256-rtIhPz8ZWuSAMt42xuK5GQcgXwx+eNSNSPxgR0r0/UQ=";
     };
   };
   nordvpn = {
