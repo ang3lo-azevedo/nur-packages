@@ -3,32 +3,29 @@
   stdenv,
   makeWrapper,
   wrapGAppsHook3,
-  python3,
-  python3Packages,
-  gtk3,
-  gobject-introspection,
+  pkg-config,
+  gtkmm3,
+  curl,
+  nlohmann_json,
   callPackage,
 }: let
   sources = callPackage ../../_sources/generated.nix {};
-  pythonEnv = python3.withPackages (_: [python3Packages.pygobject3]);
 in
   stdenv.mkDerivation rec {
     pname = "monkeylauncher";
     version = sources.monkeylauncher.version;
     src = sources.monkeylauncher.src;
 
-    nativeBuildInputs = [makeWrapper wrapGAppsHook3 pythonEnv];
-    buildInputs = [gtk3 gobject-introspection];
+    nativeBuildInputs = [makeWrapper wrapGAppsHook3 pkg-config];
+    buildInputs = [gtkmm3 curl nlohmann_json];
 
     installPhase = ''
         runHook preInstall
 
         mkdir -p $out/{bin,share/{monkeylauncher,applications,icons/hicolor/256x256/apps}}
 
-        # GUI, install directly in bin so wrapGAppsHook3 picks it up
-        cp src/MonkeyLauncherGUI.py $out/bin/monkeylauncher
-        chmod +x $out/bin/monkeylauncher
-        patchShebangs $out/bin/monkeylauncher
+        # GUI, compiled from cpp/ by the Makefile's default target
+        install -Dm755 build/monkeylauncher $out/bin/monkeylauncher
 
         # CLI
         cp src/MonkeyLauncherCLI.sh $out/share/monkeylauncher/
