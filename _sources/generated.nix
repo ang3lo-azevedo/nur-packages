@@ -220,13 +220,13 @@
   };
   linoffice = {
     pname = "linoffice";
-    version = "v2.3.0";
+    version = "v2.3.1";
     src = fetchFromGitHub {
       owner = "eylenburg";
       repo = "linoffice";
-      rev = "v2.3.0";
+      rev = "v2.3.1";
       fetchSubmodules = false;
-      sha256 = "sha256-b6SKMgWgD3ZUpcu+/lMvDUxyHAe9yOh2NX80S4cHQGU=";
+      sha256 = "sha256-dbYQcG/92zSHFLUzVr5YykfGT4W9Tshwlih0nX2bAps=";
     };
   };
   monkeylauncher = {
