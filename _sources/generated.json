@@ -380,12 +380,12 @@
             "name": null,
             "owner": "eylenburg",
             "repo": "linoffice",
-            "rev": "v2.3.0",
-            "sha256": "sha256-b6SKMgWgD3ZUpcu+/lMvDUxyHAe9yOh2NX80S4cHQGU=",
+            "rev": "v2.3.1",
+            "sha256": "sha256-dbYQcG/92zSHFLUzVr5YykfGT4W9Tshwlih0nX2bAps=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.3.0"
+        "version": "v2.3.1"
     },
     "monkeylauncher": {
         "cargoLock": null,
