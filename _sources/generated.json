@@ -672,6 +672,27 @@
         },
         "version": "v2.1.1"
     },
+    "volatility3-bitlocker": {
+        "cargoLock": null,
+        "date": "2025-09-08",
+        "extract": null,
+        "name": "volatility3-bitlocker",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "lorelyai",
+            "repo": "volatility3-bitlocker",
+            "rev": "d2afab51fea4878db8a79cef835176360d19b901",
+            "sha256": "sha256-e5sKjJLaeJNXcwJ96jXtLkxK5uretxTADOvkaR+aSbQ=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "d2afab51fea4878db8a79cef835176360d19b901"
+    },
     "vorion": {
         "cargoLock": null,
         "date": "2025-06-15",

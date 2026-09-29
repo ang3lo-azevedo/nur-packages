@@ -146,6 +146,10 @@ fetch.git = "https://github.com/Zexolver/Vorion.git"
 src.github = "daffainfo/vol-rs"
 fetch.github = "daffainfo/vol-rs"
 
+[volatility3-bitlocker]
+src.git = "https://github.com/lorelyai/volatility3-bitlocker.git"
+fetch.github = "lorelyai/volatility3-bitlocker"
+
 [angr-management]
 src.github = "angr/angr-management"
 fetch.url = "https://github.com/angr/angr-management/releases/download/$ver/angr-management-$ver-x86_64.AppImage"

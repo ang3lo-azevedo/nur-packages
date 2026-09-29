@@ -382,6 +382,18 @@
       sha256 = "sha256-2HdfpF1DCn95HsArcvAeuWh5FNwjj9LxwJ/nlosHBmk=";
     };
   };
+  volatility3-bitlocker = {
+    pname = "volatility3-bitlocker";
+    version = "d2afab51fea4878db8a79cef835176360d19b901";
+    src = fetchFromGitHub {
+      owner = "lorelyai";
+      repo = "volatility3-bitlocker";
+      rev = "d2afab51fea4878db8a79cef835176360d19b901";
+      fetchSubmodules = false;
+      sha256 = "sha256-e5sKjJLaeJNXcwJ96jXtLkxK5uretxTADOvkaR+aSbQ=";
+    };
+    date = "2025-09-08";
+  };
   vorion = {
     pname = "vorion";
     version = "13bf254a806f9e062e5a09e00181917288bdf7b3";
