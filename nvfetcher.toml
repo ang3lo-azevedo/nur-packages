@@ -150,6 +150,26 @@ fetch.github = "daffainfo/vol-rs"
 src.git = "https://github.com/lorelyai/volatility3-bitlocker.git"
 fetch.github = "lorelyai/volatility3-bitlocker"
 
+[volatility3-pypykatz]
+src.git = "https://github.com/skelsec/pypykatz-volatility3.git"
+fetch.github = "skelsec/pypykatz-volatility3"
+
+[volatility3-fblock]
+src.git = "https://github.com/f-block/volatility-plugins.git"
+fetch.github = "f-block/volatility-plugins"
+
+[volatility3-forensicxlab]
+src.git = "https://github.com/forensicxlab/volatility3_plugins.git"
+fetch.github = "forensicxlab/volatility3_plugins"
+
+[volatility3-kevthehermit]
+src.git = "https://github.com/kevthehermit/volatility_plugins.git"
+fetch.github = "kevthehermit/volatility_plugins"
+
+[volatility3-openssh-sessionkeys]
+src.git = "https://github.com/fox-it/OpenSSH-Session-Key-Recovery.git"
+fetch.github = "fox-it/OpenSSH-Session-Key-Recovery"
+
 [angr-management]
 src.github = "angr/angr-management"
 fetch.url = "https://github.com/angr/angr-management/releases/download/$ver/angr-management-$ver-x86_64.AppImage"

@@ -1,0 +1,13 @@
+diff --git a/volatility3/openssh_sessionkeys.py b/volatility3/openssh_sessionkeys.py
+index 25b6a2c..9abf483 100644
+--- a/volatility3/openssh_sessionkeys.py
++++ b/volatility3/openssh_sessionkeys.py
+@@ -195,7 +195,7 @@ class SSHKeys(interfaces.plugins.PluginInterface):
+                 description="Linux kernel",
+                 architectures=["Intel32", "Intel64"],
+             ),
+-            requirements.PluginRequirement(name = 'pslist', plugin = pslist.PsList, version = (2, 2, 0)),
++            requirements.VersionRequirement(name = 'pslist', component = pslist.PsList, version = (4, 0, 0)),
+             requirements.ListRequirement(name = 'pid',
+                                          element_type = int,
+                                          description = "Process IDs to include (all other processes are excluded)",

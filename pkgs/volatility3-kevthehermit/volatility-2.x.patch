@@ -1,0 +1,82 @@
+diff --git a/vol3/cobaltstrike/cobaltstrike.py b/vol3/cobaltstrike/cobaltstrike.py
+index 685ceb6..f2ad263 100644
+--- a/vol3/cobaltstrike/cobaltstrike.py
++++ b/vol3/cobaltstrike/cobaltstrike.py
+@@ -118,8 +118,8 @@ class CobaltStrike(interfaces.plugins.PluginInterface):
+         return [
+             requirements.ModuleRequirement(name = 'kernel', description = 'Windows kernel',
+                                                      architectures = ["Intel32", "Intel64"]),
+-            requirements.PluginRequirement(name = 'pslist', plugin = pslist.PsList, version = (2, 0, 0)),
+-            requirements.PluginRequirement(name = 'vadyarascan', plugin = vadyarascan.VadYaraScan, version = (1, 0, 0)),
++            requirements.VersionRequirement(name = 'pslist', component = pslist.PsList, version = (3, 0, 0)),
++            requirements.VersionRequirement(name = 'vadyarascan', component = vadyarascan.VadYaraScan, version = (1, 0, 0)),
+             requirements.ListRequirement(name = 'pid',
+                                          element_type = int,
+                                          description = "Process IDs to include (all other processes are excluded)",
+@@ -248,6 +248,5 @@ class CobaltStrike(interfaces.plugins.PluginInterface):
+             ],
+             self._generator(
+                 pslist.PsList.list_processes(context = self.context,
+-                                             layer_name = kernel.layer_name,
+-                                             symbol_table = kernel.symbol_table_name,
++                                             kernel_module_name = self.config['kernel'],
+                                              filter_func = filter_func)))
+diff --git a/vol3/passwordmanagers/passwordmanagers.py b/vol3/passwordmanagers/passwordmanagers.py
+index 9b5e231..4f1cb78 100644
+--- a/vol3/passwordmanagers/passwordmanagers.py
++++ b/vol3/passwordmanagers/passwordmanagers.py
+@@ -38,8 +38,8 @@ class PasswordManager(interfaces.plugins.PluginInterface):
+         return [
+             requirements.ModuleRequirement(name = 'kernel', description = 'Windows kernel',
+                                                      architectures = ["Intel32", "Intel64"]),
+-            requirements.PluginRequirement(name = 'pslist', plugin = pslist.PsList, version = (2, 0, 0)),
+-            requirements.PluginRequirement(name = 'vadyarascan', plugin = vadyarascan.VadYaraScan, version = (1, 0, 0)),
++            requirements.VersionRequirement(name = 'pslist', component = pslist.PsList, version = (3, 0, 0)),
++            requirements.VersionRequirement(name = 'vadyarascan', component = vadyarascan.VadYaraScan, version = (1, 0, 0)),
+             requirements.ListRequirement(name = 'pid',
+                                          element_type = int,
+                                          description = "Process IDs to include (all other processes are excluded)",
+@@ -132,6 +132,5 @@ class PasswordManager(interfaces.plugins.PluginInterface):
+         return renderers.TreeGrid([("PID", int), ("Process", str), ("Username", str), ("Password", str), ("Domain", str)],
+                                   self._generator(
+                                       pslist.PsList.list_processes(context = self.context,
+-                                                                   layer_name = kernel.layer_name,
+-                                                                   symbol_table = kernel.symbol_table_name,
++                                                                   kernel_module_name = self.config['kernel'],
+                                                                    filter_func = filter_func)))
+diff --git a/vol3/richheader/richheader.py b/vol3/richheader/richheader.py
+index 48e9b7c..cdba3b6 100644
+--- a/vol3/richheader/richheader.py
++++ b/vol3/richheader/richheader.py
+@@ -48,7 +48,7 @@ class RichHeader(interfaces.plugins.PluginInterface):
+         return [
+             requirements.ModuleRequirement(name = 'kernel', description = 'Windows kernel',
+                                                      architectures = ["Intel32", "Intel64"]),
+-            requirements.PluginRequirement(name = 'pslist', plugin = pslist.PsList, version = (2, 0, 0)),
++            requirements.VersionRequirement(name = 'pslist', component = pslist.PsList, version = (3, 0, 0)),
+             requirements.ListRequirement(name = 'pid',
+                                          element_type = int,
+                                          description = "Process IDs to include (all other processes are excluded)",
+@@ -104,8 +104,7 @@ class RichHeader(interfaces.plugins.PluginInterface):
+         filter_func = pslist.PsList.create_pid_filter(self.config.get('pid', None))
+ 
+         for proc in pslist.PsList.list_processes(context = self.context,
+-                                                    layer_name = kernel.layer_name,
+-                                                    symbol_table = kernel.symbol_table_name,
++                                                    kernel_module_name = self.config['kernel'],
+                                                     filter_func = filter_func):
+             
+             try:
+diff --git a/vol3/zone-identifier/zoneid3.py b/vol3/zone-identifier/zoneid3.py
+index 51cc15f..253f028 100644
+--- a/vol3/zone-identifier/zoneid3.py
++++ b/vol3/zone-identifier/zoneid3.py
+@@ -41,7 +41,7 @@ class ZoneID3(interfaces.plugins.PluginInterface):
+ 
+         # Yara Rule to scan for MFT Header Signatures
+         rules = yarascan.YaraScan.process_yara_options(
+-            {"yara_rules": "[ZoneTransfer]\\r\\nZoneId=3"}
++            {"yara_string": "[ZoneTransfer]\\r\\nZoneId=3"}
+         )
+ 
+         # Scan the layer for Raw MFT records and parse the fields

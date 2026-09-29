@@ -9,10 +9,13 @@
   runtimeShell,
   vol-rs,
   volatility3,
-  volatility3-bitlocker,
+  volatility3-plugins,
   callPackage,
 }: let
   sources = callPackage ../../_sources/generated.nix {};
+  volatility3' = volatility3.overridePythonAttrs (old: {
+    dependencies = old.dependencies ++ volatility3-plugins.pythonDependencies;
+  });
 in
   stdenvNoCC.mkDerivation {
     pname = "volatility-toolkit";
@@ -23,8 +26,12 @@ in
 
     nativeBuildInputs = [makeWrapper];
 
-    # Runs windows.bitlocker.BitlockerFVEKScan on every Windows dump (--no-bitlocker skips it)
-    patches = [./bitlocker-scan.patch];
+    # Runs windows.bitlocker.BitlockerFVEKScan and windows.pypykatz on every
+    # Windows dump (--no-bitlocker and --no-credentials skip them)
+    patches = [
+      ./bitlocker-scan.patch
+      ./credentials-scan.patch
+    ];
 
     # Fix bash set -e bug where (( i++ )) causes the script to abort when i=0.
     # Colors are defined as literal '\033' text, which only renders through
@@ -52,8 +59,8 @@ in
         --subst-var-by shell ${runtimeShell} \
         --subst-var-by plugins $out/share/volatility-toolkit-plugins \
         --subst-var-by vol ${vol-rs}/bin/vol \
-        --subst-var-by vol3 ${lib.getExe' volatility3 "vol"} \
-        --subst-var-by vol3PluginDirs ${volatility3-bitlocker.pluginDir}
+        --subst-var-by vol3 ${lib.getExe' volatility3' "vol"} \
+        --subst-var-by vol3PluginDirs ${volatility3-plugins.pluginDir}
 
       wrapProgram $out/bin/vol-analyze \
         --prefix PATH : ${lib.makeBinPath [

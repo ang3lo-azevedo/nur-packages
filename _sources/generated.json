@@ -693,6 +693,111 @@
         },
         "version": "d2afab51fea4878db8a79cef835176360d19b901"
     },
+    "volatility3-fblock": {
+        "cargoLock": null,
+        "date": "2025-04-22",
+        "extract": null,
+        "name": "volatility3-fblock",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "f-block",
+            "repo": "volatility-plugins",
+            "rev": "c4b6ad45ce34f0b7eae9aef80dd6e9594e8c5b84",
+            "sha256": "sha256-PwSBIXrQlweSQ7Fkh8bBAvEDx1LLJwXvI8gOWrBhEgw=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "c4b6ad45ce34f0b7eae9aef80dd6e9594e8c5b84"
+    },
+    "volatility3-forensicxlab": {
+        "cargoLock": null,
+        "date": "2024-07-23",
+        "extract": null,
+        "name": "volatility3-forensicxlab",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "forensicxlab",
+            "repo": "volatility3_plugins",
+            "rev": "5d6c67eff47e065aa734eb7090d9ff92846d80ba",
+            "sha256": "sha256-jv/eqavf6IyGrdxna11/ZJ0y7Adti18Pp1/vee8lKfg=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "5d6c67eff47e065aa734eb7090d9ff92846d80ba"
+    },
+    "volatility3-kevthehermit": {
+        "cargoLock": null,
+        "date": "2023-07-22",
+        "extract": null,
+        "name": "volatility3-kevthehermit",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "kevthehermit",
+            "repo": "volatility_plugins",
+            "rev": "0f4f2fbbc93b8b59ead45f82e3287859a5ebc469",
+            "sha256": "sha256-F7KRm30B/32hZSxkXlK6GT6LuKQRidf5IaXHK7Hy25k=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "0f4f2fbbc93b8b59ead45f82e3287859a5ebc469"
+    },
+    "volatility3-openssh-sessionkeys": {
+        "cargoLock": null,
+        "date": "2024-05-22",
+        "extract": null,
+        "name": "volatility3-openssh-sessionkeys",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "fox-it",
+            "repo": "OpenSSH-Session-Key-Recovery",
+            "rev": "78f7955b1e1fccb4b1a7e2382e0ed5a7c8becea3",
+            "sha256": "sha256-7VKtiMJOncDYPqLNsfTzPUV01ovT2ZdMUMoLUzcZ0M8=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "78f7955b1e1fccb4b1a7e2382e0ed5a7c8becea3"
+    },
+    "volatility3-pypykatz": {
+        "cargoLock": null,
+        "date": "2025-05-30",
+        "extract": null,
+        "name": "volatility3-pypykatz",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "skelsec",
+            "repo": "pypykatz-volatility3",
+            "rev": "1b722f00f7095e8e13648ce6bd355af52c12b21c",
+            "sha256": "sha256-vFr92jJcvnzyL0Xsrd1RWwSMmEoQLxYVQHLP54tr5XA=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "1b722f00f7095e8e13648ce6bd355af52c12b21c"
+    },
     "vorion": {
         "cargoLock": null,
         "date": "2025-06-15",
