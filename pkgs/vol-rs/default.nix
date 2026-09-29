@@ -2,6 +2,8 @@
   lib,
   rustPlatform,
   fetchFromGitHub,
+  makeWrapper,
+  volatility3,
 }:
 
 rustPlatform.buildRustPackage rec {
@@ -17,7 +19,14 @@ rustPlatform.buildRustPackage rec {
 
   cargoHash = "sha256-eQRMP4h73UsqTtSM2TQ/on+KwNCbhq/XfIEEh20qf6I=";
 
+  nativeBuildInputs = [makeWrapper];
+
+  # vol-rs reads Volatility 3's generic ISF files (netscan, registry, services,
+  # callbacks, mbr) but does not ship them. Only the source tree is used, so the
+  # unfree volatility3 derivation itself is never built.
   postInstall = ''
+    wrapProgram $out/bin/vol-rs \
+      --suffix VOLRS_SYMBOL_PATH : ${volatility3.src}/volatility3/framework/symbols
     ln -s $out/bin/vol-rs $out/bin/vol
   '';
 
