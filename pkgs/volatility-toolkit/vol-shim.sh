@@ -6,8 +6,8 @@ plugins=@plugins@
 # Prefer the user's own Volatility 3 install, which may carry local patches.
 vol3() {
   local vol3
-  vol3=$(command -v volatility || command -v vol3 || echo @vol3@)
-  exec "$vol3" -p @vol3PluginDirs@ "$@"
+  vol3=$(type -P volatility || type -P vol3 || echo @vol3@)
+  exec "$vol3" -p "@vol3PluginDirs@" "$@"
 }
 
 args=()
@@ -17,7 +17,7 @@ for arg in "$@"; do
     (( ${#matches[@]} == 1 )) && arg=${matches[0]}
   fi
   # Python plugins bundled for Volatility 3 have no vol-rs port to try first.
-  [[ $arg == windows.bitlocker* ]] && vol3 "$@"
+  [[ $arg == windows.bitlocker* || $arg == windows.pypykatz* ]] && vol3 "$@"
   args+=("$arg")
 done
 

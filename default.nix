@@ -49,9 +49,15 @@
   trakt-scrobbler = pkgs.callPackage ./pkgs/trakt-scrobbler {};
   volatility-toolkit = pkgs.callPackage ./pkgs/volatility-toolkit {
     vol-rs = pkgs.callPackage ./pkgs/vol-rs {};
-    volatility3-bitlocker = pkgs.callPackage ./pkgs/volatility3-bitlocker {};
+    volatility3-plugins = pkgs.callPackage ./pkgs/volatility3-plugins {};
   };
   volatility3-bitlocker = pkgs.callPackage ./pkgs/volatility3-bitlocker {};
+  volatility3-fblock = pkgs.callPackage ./pkgs/volatility3-fblock {};
+  volatility3-forensicxlab = pkgs.callPackage ./pkgs/volatility3-forensicxlab {};
+  volatility3-kevthehermit = pkgs.callPackage ./pkgs/volatility3-kevthehermit {};
+  volatility3-openssh-sessionkeys = pkgs.callPackage ./pkgs/volatility3-openssh-sessionkeys {};
+  volatility3-plugins = pkgs.callPackage ./pkgs/volatility3-plugins {};
+  volatility3-pypykatz = pkgs.callPackage ./pkgs/volatility3-pypykatz {};
   vol-rs = pkgs.callPackage ./pkgs/vol-rs {};
   vorion = pkgs.callPackage ./pkgs/vorion {};
 angr-management = pkgs.callPackage ./pkgs/angr-management {};

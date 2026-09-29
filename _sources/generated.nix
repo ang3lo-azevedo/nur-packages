@@ -394,6 +394,66 @@
     };
     date = "2025-09-08";
   };
+  volatility3-fblock = {
+    pname = "volatility3-fblock";
+    version = "c4b6ad45ce34f0b7eae9aef80dd6e9594e8c5b84";
+    src = fetchFromGitHub {
+      owner = "f-block";
+      repo = "volatility-plugins";
+      rev = "c4b6ad45ce34f0b7eae9aef80dd6e9594e8c5b84";
+      fetchSubmodules = false;
+      sha256 = "sha256-PwSBIXrQlweSQ7Fkh8bBAvEDx1LLJwXvI8gOWrBhEgw=";
+    };
+    date = "2025-04-22";
+  };
+  volatility3-forensicxlab = {
+    pname = "volatility3-forensicxlab";
+    version = "5d6c67eff47e065aa734eb7090d9ff92846d80ba";
+    src = fetchFromGitHub {
+      owner = "forensicxlab";
+      repo = "volatility3_plugins";
+      rev = "5d6c67eff47e065aa734eb7090d9ff92846d80ba";
+      fetchSubmodules = false;
+      sha256 = "sha256-jv/eqavf6IyGrdxna11/ZJ0y7Adti18Pp1/vee8lKfg=";
+    };
+    date = "2024-07-23";
+  };
+  volatility3-kevthehermit = {
+    pname = "volatility3-kevthehermit";
+    version = "0f4f2fbbc93b8b59ead45f82e3287859a5ebc469";
+    src = fetchFromGitHub {
+      owner = "kevthehermit";
+      repo = "volatility_plugins";
+      rev = "0f4f2fbbc93b8b59ead45f82e3287859a5ebc469";
+      fetchSubmodules = false;
+      sha256 = "sha256-F7KRm30B/32hZSxkXlK6GT6LuKQRidf5IaXHK7Hy25k=";
+    };
+    date = "2023-07-22";
+  };
+  volatility3-openssh-sessionkeys = {
+    pname = "volatility3-openssh-sessionkeys";
+    version = "78f7955b1e1fccb4b1a7e2382e0ed5a7c8becea3";
+    src = fetchFromGitHub {
+      owner = "fox-it";
+      repo = "OpenSSH-Session-Key-Recovery";
+      rev = "78f7955b1e1fccb4b1a7e2382e0ed5a7c8becea3";
+      fetchSubmodules = false;
+      sha256 = "sha256-7VKtiMJOncDYPqLNsfTzPUV01ovT2ZdMUMoLUzcZ0M8=";
+    };
+    date = "2024-05-22";
+  };
+  volatility3-pypykatz = {
+    pname = "volatility3-pypykatz";
+    version = "1b722f00f7095e8e13648ce6bd355af52c12b21c";
+    src = fetchFromGitHub {
+      owner = "skelsec";
+      repo = "pypykatz-volatility3";
+      rev = "1b722f00f7095e8e13648ce6bd355af52c12b21c";
+      fetchSubmodules = false;
+      sha256 = "sha256-vFr92jJcvnzyL0Xsrd1RWwSMmEoQLxYVQHLP54tr5XA=";
+    };
+    date = "2025-05-30";
+  };
   vorion = {
     pname = "vorion";
     version = "13bf254a806f9e062e5a09e00181917288bdf7b3";
