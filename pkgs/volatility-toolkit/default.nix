@@ -42,7 +42,7 @@ in
         gnugrep
         vol-rs
       ]} \
-        --set VOL3_CMD vol-rs
+        --set VOL3_CMD ${vol-rs}/bin/vol
 
       runHook postInstall
     '';
