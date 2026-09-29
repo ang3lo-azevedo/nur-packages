@@ -9,6 +9,7 @@
   runtimeShell,
   vol-rs,
   volatility3,
+  volatility3-bitlocker,
   callPackage,
 }: let
   sources = callPackage ../../_sources/generated.nix {};
@@ -21,6 +22,9 @@ in
     src = sources.volatility-toolkit.src;
 
     nativeBuildInputs = [makeWrapper];
+
+    # Runs windows.bitlocker.BitlockerFVEKScan on every Windows dump (--no-bitlocker skips it)
+    patches = [./bitlocker-scan.patch];
 
     # Fix bash set -e bug where (( i++ )) causes the script to abort when i=0.
     # Colors are defined as literal '\033' text, which only renders through
@@ -48,7 +52,8 @@ in
         --subst-var-by shell ${runtimeShell} \
         --subst-var-by plugins $out/share/volatility-toolkit-plugins \
         --subst-var-by vol ${vol-rs}/bin/vol \
-        --subst-var-by vol3 ${lib.getExe' volatility3 "vol"}
+        --subst-var-by vol3 ${lib.getExe' volatility3 "vol"} \
+        --subst-var-by vol3PluginDirs ${volatility3-bitlocker.pluginDir}
 
       wrapProgram $out/bin/vol-analyze \
         --prefix PATH : ${lib.makeBinPath [

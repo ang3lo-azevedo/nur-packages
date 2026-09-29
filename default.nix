@@ -49,7 +49,9 @@
   trakt-scrobbler = pkgs.callPackage ./pkgs/trakt-scrobbler {};
   volatility-toolkit = pkgs.callPackage ./pkgs/volatility-toolkit {
     vol-rs = pkgs.callPackage ./pkgs/vol-rs {};
+    volatility3-bitlocker = pkgs.callPackage ./pkgs/volatility3-bitlocker {};
   };
+  volatility3-bitlocker = pkgs.callPackage ./pkgs/volatility3-bitlocker {};
   vol-rs = pkgs.callPackage ./pkgs/vol-rs {};
   vorion = pkgs.callPackage ./pkgs/vorion {};
 angr-management = pkgs.callPackage ./pkgs/angr-management {};

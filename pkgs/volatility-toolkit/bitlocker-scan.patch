@@ -1,0 +1,87 @@
+--- a/scripts/vol-analyze.sh
++++ b/scripts/vol-analyze.sh
+@@ -69,6 +69,7 @@
+     -j, --jobs N                Max parallel plugins (default: ${DEFAULT_MAX_PARALLEL})
+         --dump-registry         Dump registry hives to disk (Windows only)
+         --dump-files            Dump files from memory (Windows only)
++        --no-bitlocker          Skip the BitLocker FVEK scan (Windows only)
+         --extract-strings       Extract and categorize IOC strings
+         --json                  Generate JSON summary report
+         --interactive           Enable interactive prompts (disabled by default)
+@@ -106,6 +107,8 @@
+ TARGET_OS="auto"
+ DUMP_REGISTRY=false
+ DUMP_FILES=false
++BITLOCKER=true
++BITLOCKER_HITS=""
+ EXTRACT_STRINGS=false
+ JSON_OUTPUT=false
+ INTERACTIVE=false
+@@ -120,6 +123,7 @@
+             -j|--jobs)            MAX_PARALLEL="${2:?Missing argument for $1}"; shift 2 ;;
+             --dump-registry)      DUMP_REGISTRY=true; shift ;;
+             --dump-files)         DUMP_FILES=true; shift ;;
++            --no-bitlocker)       BITLOCKER=false; shift ;;
+             --extract-strings)    EXTRACT_STRINGS=true; shift ;;
+             --json)               JSON_OUTPUT=true; shift ;;
+             --interactive)        INTERACTIVE=true; shift ;;
+@@ -633,6 +637,33 @@
+     fi
+ }
+ 
++# ─── BitLocker FVEK Scan (Windows only) ─────────────────────────────────────
++
++bitlocker_scan() {
++    header "Scanning for BitLocker keys"
++
++    local bl_dir="${OUTPUT_DIR}/bitlocker"
++    mkdir -p "$bl_dir"
++
++    info "Running windows.bitlocker.BitlockerFVEKScan..."
++    if ! "$VOL" -o "$bl_dir/" -f "$MEMORY_DUMP" windows.bitlocker.BitlockerFVEKScan --dislocker \
++            > "${OUTPUT_DIR}/bitlocker.txt" 2>"${OUTPUT_DIR}/bitlocker.err"; then
++        BITLOCKER_HITS="error"
++        warn "BitLocker scan failed (check bitlocker.err)"
++        return
++    fi
++
++    BITLOCKER_HITS=$(find "$bl_dir" -name '*.fvek' -type f 2>/dev/null | wc -l)
++    if (( BITLOCKER_HITS == 0 )); then
++        rmdir "$bl_dir" 2>/dev/null || true
++        info "No BitLocker keys found (no volume was unlocked when the dump was taken)"
++        return
++    fi
++
++    success "Found ${BITLOCKER_HITS} candidate FVEK(s), keys in bitlocker.txt"
++    info "Unlock with: dislocker -k ${bl_dir}/<hit>-Dislocker.fvek -V <disk image> <mountpoint>"
++}
++
+ # ─── Registry Dump (Windows only) ───────────────────────────────────────────
+ 
+ dump_registry() {
+@@ -706,6 +737,16 @@
+         fi
+     done
+ 
++    if [[ -n "$BITLOCKER_HITS" ]]; then
++        cat >> "$report" <<-REPORT
++
++	───────────────────────────────────────────────────────────────
++	  BitLocker
++	───────────────────────────────────────────────────────────────
++	  Candidate FVEKs : ${BITLOCKER_HITS} (see bitlocker.txt)
++	REPORT
++    fi
++
+     cat >> "$report" <<-REPORT
+ 
+ 	───────────────────────────────────────────────────────────────
+@@ -839,6 +880,8 @@
+     # ── Phase 2: Core analysis ──
+     run_all_plugins
+ 
++    if [[ "$TARGET_OS" == "windows" ]] && [[ "$BITLOCKER" == true ]]; then bitlocker_scan; fi
++
+     # ── Phase 3: Optional operations ──
+     if [[ "$DUMP_FILES" == true ]];       then dump_files;       fi
+     if [[ "$EXTRACT_STRINGS" == true ]];  then extract_strings;  fi
