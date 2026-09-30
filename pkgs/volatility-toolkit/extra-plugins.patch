@@ -1,0 +1,147 @@
+--- a/scripts/vol-analyze.sh
++++ b/scripts/vol-analyze.sh
+@@ -71,6 +71,8 @@
+         --dump-files            Dump files from memory (Windows only)
+         --no-bitlocker          Skip the BitLocker FVEK scan (Windows only)
+         --no-credentials        Skip the pypykatz LSASS credential scan (Windows only)
++        --deep                  Also run the slow PTE malfind, patched image and MFT scans (Windows only)
++        --timeline              Also build a super-timeline with timeliner (slow)
+         --extract-strings       Extract and categorize IOC strings
+         --json                  Generate JSON summary report
+         --interactive           Enable interactive prompts (disabled by default)
+@@ -90,8 +92,8 @@
+     ${SCRIPT_NAME} memory.lime --os linux --extract-strings
+ 
+ ${BOLD}SUPPORTED OS${NC}
+-    windows   30 plugins — processes, network, registry, malware, drivers, services
+-    linux     21 plugins — processes, kernel modules, network, rootkit checks
++    windows   49 plugins — processes, network, registry, malware, drivers, services
++    linux     31 plugins — processes, kernel modules, network, rootkit checks
+     mac       20 plugins — processes, kernel, network, TrustedBSD, kauth
+ 
+ ${BOLD}MORE INFO${NC}
+@@ -112,6 +114,8 @@
+ BITLOCKER_HITS=""
+ CREDENTIALS=true
+ CREDENTIAL_HITS=""
++DEEP=false
++TIMELINE=false
+ EXTRACT_STRINGS=false
+ JSON_OUTPUT=false
+ INTERACTIVE=false
+@@ -128,6 +132,8 @@
+             --dump-files)         DUMP_FILES=true; shift ;;
+             --no-bitlocker)       BITLOCKER=false; shift ;;
+             --no-credentials)     CREDENTIALS=false; shift ;;
++            --deep)               DEEP=true; shift ;;
++            --timeline)           TIMELINE=true; shift ;;
+             --extract-strings)    EXTRACT_STRINGS=true; shift ;;
+             --json)               JSON_OUTPUT=true; shift ;;
+             --interactive)        INTERACTIVE=true; shift ;;
+@@ -365,12 +371,16 @@
+     "windows.pslist"
+     "windows.psscan"
+     "windows.pstree"
++    "windows.malware.psxview"
+     "windows.cmdline"
++    "windows.cmdscan"
++    "windows.consoles"
+     "windows.sessions"
+     "windows.getsids"
+     "windows.privileges"
+     "windows.envars"
+     "windows.dlllist"
++    "windows.malware.ldrmodules"
+     "windows.vadinfo"
+     "windows.handles"
+     "windows.netscan"
+@@ -379,16 +389,31 @@
+     "windows.registry.hivelist"
+     "windows.registry.printkey"
+     "windows.registry.userassist"
+-    "windows.hashdump"
+-    "windows.lsadump"
++    "windows.registry.amcache"
++    "windows.registry.scheduled_tasks"
++    "windows.shimcachemem"
++    "windows.registry.hashdump"
++    "windows.registry.lsadump"
++    "windows.registry.cachedump"
++    "windows.truecrypt"
+     "windows.driverscan"
+     "windows.modscan"
+     "windows.modules"
++    "windows.malware.drivermodule"
++    "windows.unloadedmodules"
++    "windows.driverirp"
+     "windows.ssdt"
+     "windows.callbacks"
+-    "windows.malfind"
++    "windows.malware.malfind"
++    "windows.malware.hollowprocesses"
++    "windows.malware.processghosting"
++    "windows.malware.suspicious_threads"
+     "windows.mutantscan"
+     "windows.svcscan"
++    "windows.malware.svcdiff"
++    "windows.etwpatch"
++    "windows.malware.skeleton_key_check"
++    "windows.malware.unhooked_system_calls"
+     "windows.mbrscan"
+     "windows.thrdscan"
+ )
+@@ -396,6 +421,8 @@
+ readonly LINUX_PLUGINS=(
+     "linux.pslist"
+     "linux.pstree"
++    "linux.psscan"
++    "linux.ptrace"
+     "linux.psaux"
+     "linux.bash"
+     "linux.envars"
+@@ -403,18 +430,26 @@
+     "linux.lsof"
+     "linux.proc.Maps"
+     "linux.sockstat"
++    "linux.ip.Addr"
++    "linux.ip.Link"
+     "linux.mountinfo"
+     "linux.kmsg"
+     "linux.iomem"
+     "linux.elfs"
+-    "linux.malfind"
+-    "linux.check_syscall"
+-    "linux.check_idt"
+-    "linux.check_modules"
+-    "linux.check_creds"
+-    "linux.check_afinfo"
+-    "linux.tty_check"
+-    "linux.keyboard_notifiers"
++    "linux.malware.malfind"
++    "linux.malware.check_syscall"
++    "linux.malware.check_idt"
++    "linux.malware.check_modules"
++    "linux.malware.check_creds"
++    "linux.malware.check_afinfo"
++    "linux.malware.tty_check"
++    "linux.malware.keyboard_notifiers"
++    "linux.malware.hidden_modules"
++    "linux.malware.modxview"
++    "linux.malware.netfilter"
++    "linux.ebpf"
++    "linux.tracing.ftrace"
++    "linux.tracing.tracepoints"
+ )
+ 
+ readonly MAC_PLUGINS=(
+@@ -449,6 +484,10 @@
+         linux)   PLUGINS=("${LINUX_PLUGINS[@]}") ;;
+         mac)     PLUGINS=("${MAC_PLUGINS[@]}") ;;
+     esac
++    if [[ "$DEEP" == true ]] && [[ "$TARGET_OS" == "windows" ]]; then
++        PLUGINS+=("windows.ptemalfind" "windows.imgmalfind" "windows.mftscan.MFTScan" "windows.mftscan.ADS")
++    fi
++    if [[ "$TIMELINE" == true ]]; then PLUGINS+=("timeliner.Timeliner"); fi
+ }
+ 
+ # ─── Plugin Execution ────────────────────────────────────────────────────────

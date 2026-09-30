@@ -1,0 +1,62 @@
+--- a/scripts/vol-analyze.sh
++++ b/scripts/vol-analyze.sh
+@@ -305,7 +305,10 @@
+ 
+ # ─── OS Detection ────────────────────────────────────────────────────────────
+ 
+-readonly DETECT_TIMEOUT_SECS="${VOL_DETECT_TIMEOUT:-60}"
++# A probe on a kernel build Volatility 3 has not seen yet also downloads its
++# symbols, and killing it mid-download leaves a truncated file in the symbol
++# cache that breaks every later run, so leave it plenty of time.
++readonly DETECT_TIMEOUT_SECS="${VOL_DETECT_TIMEOUT:-300}"
+ 
+ # stdout returns the detected OS name; everything else goes to stderr so
+ # `$(detect_os)` is not polluted by status messages.
+@@ -750,6 +753,24 @@
+     success "Found ${hits} credential(s), see pypykatz.txt"
+ }
+ 
++# ─── Symbol Fetch ────────────────────────────────────────────────────────────
++
++# FIXME(volatility3): it writes a downloaded symbol file in place while the
++# download runs, so plugins started in parallel on a new kernel build read a
++# half-written file (EOFError) or find the symbol cache database locked. One
++# serial run first lets the parallel ones start with the symbols cached.
++fetch_symbols() {
++    local probe
++    case "$TARGET_OS" in
++        windows) probe="windows.info" ;;
++        linux)   probe="linux.pslist" ;;
++        mac)     probe="mac.pslist" ;;
++        *)       return 0 ;;
++    esac
++    info "Fetching ${TARGET_OS} symbols (downloaded on the first run for a kernel build)..."
++    "$VOL" -f "$MEMORY_DUMP" "$probe" &>/dev/null || warn "Symbol fetch failed, each plugin will try on its own"
++}
++
+ # ─── KeePass Scan (Windows only) ────────────────────────────────────────────
+ 
+ # windows.keepass needs the KeePass PID, so it only runs when pslist found one.
+@@ -990,11 +1011,14 @@
+     chmod 700 "$OUTPUT_DIR"
+ 
+     # ── OS detection ──
++    # A successful detection probe has already fetched the symbols.
++    local symbols_fetched=false
+     if [[ "$TARGET_OS" == "auto" ]]; then
+         TARGET_OS=$(detect_os)
+         if [[ -z "$TARGET_OS" ]]; then
+             fatal "Could not auto-detect OS. Specify manually with --os windows|linux|mac"
+         fi
++        symbols_fetched=true
+     else
+         info "Target OS: ${BOLD}${TARGET_OS}${NC}"
+     fi
+@@ -1015,6 +1039,7 @@
+     compute_checksums
+ 
+     # ── Phase 2: Core analysis ──
++    [[ "$symbols_fetched" == true ]] || fetch_symbols
+     run_all_plugins
+ 
+     if [[ "$TARGET_OS" == "windows" ]] && [[ "$BITLOCKER" == true ]]; then bitlocker_scan; fi
