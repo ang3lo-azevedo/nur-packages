@@ -6,7 +6,7 @@
  
 -readonly DETECT_TIMEOUT_SECS="${VOL_DETECT_TIMEOUT:-60}"
 +# A probe on a kernel build Volatility 3 has not seen yet also downloads its
-+# symbols, and killing it mid-download leaves a truncated file in the symbol
++# symbols, and killing it mid-download leaves a truncated PDB in the download
 +# cache that breaks every later run, so leave it plenty of time.
 +readonly DETECT_TIMEOUT_SECS="${VOL_DETECT_TIMEOUT:-300}"
  
@@ -18,7 +18,7 @@
  
 +# ─── Symbol Fetch ────────────────────────────────────────────────────────────
 +
-+# FIXME(volatility3): it writes a downloaded symbol file in place while the
++# FIXME(volatility3#2042): it writes a downloaded symbol file in place while the
 +# download runs, so plugins started in parallel on a new kernel build read a
 +# half-written file (EOFError) or find the symbol cache database locked. One
 +# serial run first lets the parallel ones start with the symbols cached.

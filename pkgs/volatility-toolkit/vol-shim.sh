@@ -22,20 +22,22 @@ for arg in "$@"; do
   # exits 0, so the fallback further down never triggers. Drop each rule once
   # vol-rs matches Volatility 3 on the same dump.
 
-  # FIXME(vol-rs): cmdscan and consoles misparse the console buffers. Both return
+  # FIXME(vol-rs): https://github.com/daffainfo/vol-rs/issues/5
+  # cmdscan and consoles misparse the console buffers. Both return
   # the same rows, blank HistoryBuffer entries and fragments of PATH, while
   # Volatility 3 returns the real _COMMAND_HISTORY and _CONSOLE_INFORMATION fields.
   [[ $arg == windows.cmdscan.* || $arg == windows.consoles.* ]] && vol3 "$@"
 
-  # FIXME(vol-rs): on Linux (tested on linux-sample-1.bin, Debian kernel 3.2),
+  # FIXME(vol-rs): https://github.com/daffainfo/vol-rs/issues/6
+  # On Linux (tested on linux-sample-1.bin, Debian kernel 3.2),
   # bash, proc.Maps, mountinfo and elfs return no rows at all; modxview reports
   # "In scan" False for every module; pslist drops creation times, sockstat
   # IPv6 addresses, and ip the NetNS and interface flags.
   [[ $arg == linux.* ]] && vol3 "$@"
 
-  # FIXME(vol-rs): timeliner returns about half of Volatility 3's rows, with
-  # different counts per source plugin (fewer MFTScan, more SymlinkScan), even
-  # though those plugins match when run on their own.
+  # FIXME(vol-rs): https://github.com/daffainfo/vol-rs/issues/7
+  # timeliner drops about half of Volatility 3's timestamp rows (mostly
+  # MFTScan), even though those plugins match when run on their own.
   [[ $arg == timeliner.* ]] && vol3 "$@"
 
   # Not a known bug: vol-rs has never been compared with Volatility 3 on a macOS
