@@ -9,7 +9,6 @@
   apk-mitm = pkgs.callPackage ./pkgs/apk-mitm {};
   archi = pkgs.callPackage ./pkgs/archi {};
   betterbird = pkgs.callPackage ./pkgs/betterbird {};
-  burpsuite-pro = pkgs.callPackage ./pkgs/burpsuite-pro {};
   chainsaw-rules = pkgs.callPackage ./pkgs/chainsaw-rules {};
   ciphey = pkgs.callPackage ./pkgs/ciphey {};
   ctf-dl = pkgs.callPackage ./pkgs/ctf-dl {
