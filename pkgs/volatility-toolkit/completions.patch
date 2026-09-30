@@ -1,0 +1,24 @@
+--- a/completions/vol-analyze.bash
++++ b/completions/vol-analyze.bash
+@@ -7,7 +7,7 @@
+     cur="${COMP_WORDS[COMP_CWORD]}"
+     prev="${COMP_WORDS[COMP_CWORD-1]}"
+ 
+-    opts="--os -o --output -j --jobs --dump-registry --dump-files --extract-strings --json --interactive --no-color -h --help -v --version"
++    opts="--os -o --output -j --jobs --dump-registry --dump-files --no-bitlocker --no-credentials --deep --timeline --extract-strings --json --interactive --no-color -h --help -v --version"
+ 
+     case "$prev" in
+         --os)
+--- a/completions/vol-analyze.zsh
++++ b/completions/vol-analyze.zsh
+@@ -12,6 +12,10 @@
+         '--jobs[Max parallel plugins]:jobs:_message "positive integer"'
+         '--dump-registry[Dump registry hives (Windows only)]'
+         '--dump-files[Dump files from memory (Windows only)]'
++        '--no-bitlocker[Skip the BitLocker FVEK scan (Windows only)]'
++        '--no-credentials[Skip the pypykatz LSASS credential scan (Windows only)]'
++        '--deep[Also run the slow PTE malfind, patched image and MFT scans (Windows only)]'
++        '--timeline[Also build a super-timeline and mactime bodyfile with timeliner]'
+         '--extract-strings[Extract and categorize IOC strings]'
+         '--json[Generate JSON summary report]'
+         '--interactive[Enable interactive prompts]'

@@ -24,10 +24,12 @@ rustPlatform.buildRustPackage rec {
   # vol-rs reads Volatility 3's generic ISF files (netscan, registry, services,
   # callbacks, mbr) but does not ship them. Only the source tree is used, so the
   # unfree volatility3 derivation itself is never built.
+  # vol-rs cannot download kernel symbols, but reads the ones Volatility 3 has
+  # already downloaded, which use the same file layout.
   postInstall = ''
     wrapProgram $out/bin/vol-rs \
+      --run 'export VOLRS_SYMBOL_PATH="''${VOLRS_SYMBOL_PATH:+$VOLRS_SYMBOL_PATH:}''${XDG_DATA_HOME:-$HOME/.local/share}/volatility3/symbols"' \
       --suffix VOLRS_SYMBOL_PATH : ${volatility3.src}/volatility3/framework/symbols
-    ln -s $out/bin/vol-rs $out/bin/vol
   '';
 
   meta = with lib; {

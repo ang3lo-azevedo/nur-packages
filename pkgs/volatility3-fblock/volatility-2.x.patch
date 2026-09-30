@@ -1,0 +1,137 @@
+diff --git a/apisearch.py b/apisearch.py
+index 0aeefa0..7fa9392 100644
+--- a/apisearch.py
++++ b/apisearch.py
+@@ -550,8 +550,8 @@ class ApiSearch(interfaces.plugins.PluginInterface, PteMalfindInterface):
+                                              description = 'Filter on specific process IDs',
+                                              element_type = int,
+                                              optional = True),
+-                requirements.PluginRequirement(name = 'pslist', plugin = pslist.PsList, version = (3, 0, 0)),
+-                requirements.PluginRequirement(name = 'pedump', plugin = pedump.PEDump, version = (2, 0, 0)),
++                requirements.VersionRequirement(name = 'pslist', component = pslist.PsList, version = (3, 0, 0)),
++                requirements.VersionRequirement(name = 'pedump', component = pedump.PEDump, version = (2, 0, 0)),
+                 requirements.IntRequirement(name = 'address',
+                                             description = "A VAD's virtual start address to include " \
+                                                           "(all other address ranges are excluded). This must be " \
+diff --git a/imgmalfind.py b/imgmalfind.py
+index 4ecb931..24fb650 100644
+--- a/imgmalfind.py
++++ b/imgmalfind.py
+@@ -312,9 +312,9 @@ class ImageMalfind(interfaces.plugins.PluginInterface):
+     @classmethod
+     def get_requirements(cls):
+         return [*kernel_reqs,
+-                requirements.PluginRequirement(name = 'pslist',
+-                                               plugin = pslist.PsList,
+-                                               version = (3, 0, 0)),
++                requirements.VersionRequirement(name = 'pslist',
++                                                component = pslist.PsList,
++                                                version = (3, 0, 0)),
+                 requirements.ListRequirement(name = 'pid',
+                                             element_type = int,
+                                             description = "Process ID to include (all other processes are excluded)",
+diff --git a/pte_resolve.py b/pte_resolve.py
+index 6cc52ca..d2ff0c0 100644
+--- a/pte_resolve.py
++++ b/pte_resolve.py
+@@ -61,9 +61,9 @@ class PteResolve(interfaces.plugins.PluginInterface, ptenum.PteEnumerator):
+     @classmethod
+     def get_requirements(cls):
+         return [*kernel_reqs,
+-                requirements.PluginRequirement(name = 'pslist',
+-                                               plugin = pslist.PsList,
+-                                               version = (3, 0, 0)),
++                requirements.VersionRequirement(name = 'pslist',
++                                                component = pslist.PsList,
++                                                version = (3, 0, 0)),
+                 requirements.ListRequirement(name = 'pid',
+                                              element_type = int,
+                                              description = "Process ID to include (all other processes are excluded)",
+diff --git a/ptemalfind.py b/ptemalfind.py
+index 7f0f7eb..c29a5f3 100644
+--- a/ptemalfind.py
++++ b/ptemalfind.py
+@@ -104,12 +104,12 @@ class PteMalfind(interfaces.plugins.PluginInterface):
+                                                 description = "Dumps the executable memory regions to files.",
+                                                 default = False,
+                                                 optional = True),
+-                requirements.PluginRequirement(name = 'pslist',
+-                                               plugin = pslist.PsList,
+-                                               version = (3, 0, 0)),
+-                requirements.PluginRequirement(name = 'info',
+-                                               plugin = info.Info,
+-                                               version = (2, 0, 0)),
++                requirements.VersionRequirement(name = 'pslist',
++                                                component = pslist.PsList,
++                                                version = (3, 0, 0)),
++                requirements.VersionRequirement(name = 'info',
++                                                component = info.Info,
++                                                version = (2, 0, 0)),
+                 requirements.ListRequirement(name = 'pid',
+                                             element_type = int,
+                                             description = "Process ID to include (all other processes are excluded)",
+@@ -162,7 +162,7 @@ class PteMalfind(interfaces.plugins.PluginInterface):
+                                    ("End Addr", format_hints.Hex), ("Protection", str),
+                                    ("Type", str), ("File output", str),
+                                    ("Details", str), ("Hexdump", format_hints.HexBytes), 
+-                                   ("Disasm", interfaces.renderers.Disassembly),
++                                   ("Disasm", renderers.Disassembly),
+                                    ("Extension(s)", str)],
+                                   self._generator(
+                                       pslist.PsList.list_processes(
+@@ -310,7 +310,7 @@ class PteMalfind(interfaces.plugins.PluginInterface):
+         else:
+             data = b''
+ 
+-        disassembler = interfaces.renderers.Disassembly(
++        disassembler = renderers.Disassembly(
+             data, first_printable_page.vaddr, ptenum.arch_proc)
+ 
+         file_output = "Disabled"
+diff --git a/ptenum.py b/ptenum.py
+index e638b8c..d079232 100644
+--- a/ptenum.py
++++ b/ptenum.py
+@@ -63,7 +63,7 @@ from __future__ import annotations
+ 
+ import struct, logging, textwrap
+ from builtins import object
+-from past.utils import old_div
++from operator import floordiv as old_div
+ from typing import Dict, Tuple, Generator, List, Type, Optional
+ from functools import wraps, cached_property, lru_cache, cache
+ 
+diff --git a/simple_pteenum.py b/simple_pteenum.py
+index 67df7ab..20e48e1 100644
+--- a/simple_pteenum.py
++++ b/simple_pteenum.py
+@@ -68,9 +68,9 @@ class SimplePteEnumerator(interfaces.plugins.PluginInterface, ptenum.PteEnumerat
+     @classmethod
+     def get_requirements(cls):
+         return [*kernel_reqs,
+-                requirements.PluginRequirement(name = 'pslist',
+-                                               plugin = pslist.PsList,
+-                                               version = (3, 0, 0)),
++                requirements.VersionRequirement(name = 'pslist',
++                                                component = pslist.PsList,
++                                                version = (3, 0, 0)),
+                 requirements.ListRequirement(name = 'pid',
+                                             element_type = int,
+                                             description = "Process ID to include (all other processes are excluded)",
+diff --git a/swap_enum.py b/swap_enum.py
+index cca4f39..40b4840 100644
+--- a/swap_enum.py
++++ b/swap_enum.py
+@@ -70,9 +70,9 @@ class SwapEnumerator(interfaces.plugins.PluginInterface, ptenum.PteEnumerator):
+     @classmethod
+     def get_requirements(cls):
+         return [*kernel_reqs,
+-                requirements.PluginRequirement(name = 'pslist',
+-                                               plugin = pslist.PsList,
+-                                               version = (3, 0, 0)),
++                requirements.VersionRequirement(name = 'pslist',
++                                                component = pslist.PsList,
++                                                version = (3, 0, 0)),
+                 requirements.ListRequirement(name = 'pid',
+                                             element_type = int,
+                                             description = "Process ID to include (all other processes are excluded)",

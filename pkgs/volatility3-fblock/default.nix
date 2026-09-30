@@ -10,9 +10,10 @@ in
     inherit (sources.volatility3-fblock) version src;
     dontBuild = true;
 
-    # ptenum only needs old_div from the Python 2 compatibility library future,
-    # and every call divides integers
-    patches = [./drop-future.patch];
+    # Replaces the deprecated PluginRequirement and interfaces.renderers.Disassembly,
+    # and swaps ptenum's old_div from the Python 2 library future for floordiv,
+    # since every call divides integers
+    patches = [./volatility-2.x.patch];
 
     installPhase = ''
       runHook preInstall

@@ -1,0 +1,93 @@
+--- a/scripts/vol-analyze.sh
++++ b/scripts/vol-analyze.sh
+@@ -72,7 +72,7 @@
+         --no-bitlocker          Skip the BitLocker FVEK scan (Windows only)
+         --no-credentials        Skip the pypykatz LSASS credential scan (Windows only)
+         --deep                  Also run the slow PTE malfind, patched image and MFT scans (Windows only)
+-        --timeline              Also build a super-timeline with timeliner (slow)
++        --timeline              Also build a super-timeline and mactime bodyfile with timeliner (slow)
+         --extract-strings       Extract and categorize IOC strings
+         --json                  Generate JSON summary report
+         --interactive           Enable interactive prompts (disabled by default)
+@@ -94,7 +94,7 @@
+ ${BOLD}SUPPORTED OS${NC}
+     windows   49 plugins — processes, network, registry, malware, drivers, services
+     linux     31 plugins — processes, kernel modules, network, rootkit checks
+-    mac       20 plugins — processes, kernel, network, TrustedBSD, kauth
++    mac       23 plugins — processes, kernel, network, TrustedBSD, kauth
+ 
+ ${BOLD}MORE INFO${NC}
+     https://github.com/gl0bal01/volatility-toolkit
+@@ -477,6 +477,9 @@
+     "mac.kevents"
+     "mac.list_files"
+     "mac.trustedbsd"
++    "mac.dmesg"
++    "mac.timers"
++    "mac.vfsevents"
+ )
+ 
+ # Active plugin list — set at runtime by select_plugins()
+@@ -491,7 +494,6 @@
+     if [[ "$DEEP" == true ]] && [[ "$TARGET_OS" == "windows" ]]; then
+         PLUGINS+=("windows.ptemalfind" "windows.imgmalfind" "windows.mftscan.MFTScan" "windows.mftscan.ADS")
+     fi
+-    if [[ "$TIMELINE" == true ]]; then PLUGINS+=("timeliner.Timeliner"); fi
+ }
+ 
+ # ─── Plugin Execution ────────────────────────────────────────────────────────
+@@ -748,6 +750,45 @@
+     success "Found ${hits} credential(s), see pypykatz.txt"
+ }
+ 
++# ─── KeePass Scan (Windows only) ────────────────────────────────────────────
++
++# windows.keepass needs the KeePass PID, so it only runs when pslist found one.
++# KeePassXC is a different program and not affected (CVE-2023-32784).
++keepass_scan() {
++    local pids pid
++    pids=$(awk -F'\t' 'tolower($3) == "keepass.exe" { print $1 }' "${OUTPUT_DIR}/pslist.txt" 2>/dev/null)
++    [[ -n "$pids" ]] || return 0
++
++    header "Scanning KeePass memory"
++    for pid in $pids; do
++        info "Running windows.keepass.KeePass on PID ${pid}..."
++        if "$VOL" -f "$MEMORY_DUMP" windows.keepass.KeePass --pid "$pid" \
++                > "${OUTPUT_DIR}/keepass_${pid}.txt" 2>"${OUTPUT_DIR}/keepass_${pid}.err"; then
++            success "Master password candidates in keepass_${pid}.txt"
++        else
++            warn "KeePass scan of PID ${pid} failed (check keepass_${pid}.err)"
++        fi
++    done
++}
++
++# ─── Super-Timeline ──────────────────────────────────────────────────────────
++
++timeline_scan() {
++    header "Building super-timeline"
++
++    local tl_dir="${OUTPUT_DIR}/timeline"
++    mkdir -p "$tl_dir"
++
++    info "Running timeliner.Timeliner (slow, it reruns every plugin with timestamps)..."
++    if "$VOL" -o "$tl_dir/" -f "$MEMORY_DUMP" timeliner.Timeliner --create-bodyfile \
++            > "${OUTPUT_DIR}/timeliner.txt" 2>"${OUTPUT_DIR}/timeliner.err"; then
++        success "Timeline in timeliner.txt, bodyfile in timeline/volatility.body"
++        info "For a CSV timeline: mactime -b ${tl_dir}/volatility.body -d > timeline.csv"
++    else
++        warn "Timeline failed (check timeliner.err)"
++    fi
++}
++
+ # ─── Registry Dump (Windows only) ───────────────────────────────────────────
+ 
+ dump_registry() {
+@@ -978,6 +1019,8 @@
+ 
+     if [[ "$TARGET_OS" == "windows" ]] && [[ "$BITLOCKER" == true ]]; then bitlocker_scan; fi
+     if [[ "$TARGET_OS" == "windows" ]] && [[ "$CREDENTIALS" == true ]]; then credentials_scan; fi
++    if [[ "$TARGET_OS" == "windows" ]]; then keepass_scan; fi
++    if [[ "$TIMELINE" == true ]]; then timeline_scan; fi
+ 
+     # ── Phase 3: Optional operations ──
+     if [[ "$DUMP_FILES" == true ]];       then dump_files;       fi

@@ -1,0 +1,60 @@
+--- a/scripts/vol-analyze.sh
++++ b/scripts/vol-analyze.sh
+@@ -112,8 +112,12 @@
+ DUMP_FILES=false
+ BITLOCKER=true
+ BITLOCKER_HITS=""
++BITLOCKER_STATUS="skipped"
++BITLOCKER_COUNT=0
+ CREDENTIALS=true
+ CREDENTIAL_HITS=""
++CREDENTIAL_STATUS="skipped"
++CREDENTIAL_COUNT=0
+ DEEP=false
+ TIMELINE=false
+ EXTRACT_STRINGS=false
+@@ -692,11 +696,14 @@
+     if ! "$VOL" -o "$bl_dir/" -f "$MEMORY_DUMP" windows.bitlocker.BitlockerFVEKScan --dislocker \
+             > "${OUTPUT_DIR}/bitlocker.txt" 2>"${OUTPUT_DIR}/bitlocker.err"; then
+         BITLOCKER_HITS="error"
++        BITLOCKER_STATUS="error"
+         warn "BitLocker scan failed (check bitlocker.err)"
+         return
+     fi
+ 
+     BITLOCKER_HITS=$(find "$bl_dir" -name '*.fvek' -type f 2>/dev/null | wc -l)
++    BITLOCKER_COUNT=$BITLOCKER_HITS
++    if (( BITLOCKER_COUNT > 0 )); then BITLOCKER_STATUS="found"; else BITLOCKER_STATUS="none"; fi
+     if (( BITLOCKER_HITS == 0 )); then
+         rmdir "$bl_dir" 2>/dev/null || true
+         info "No BitLocker keys found (no volume was unlocked when the dump was taken)"
+@@ -718,9 +725,11 @@
+         # pypykatz raises this when the lsasrv.dll pages holding the LSA keys were paged out
+         if grep -q "All detection methods failed" "${OUTPUT_DIR}/pypykatz.err"; then
+             CREDENTIAL_HITS="none (LSA keys not resident in dump)"
++            CREDENTIAL_STATUS="not_resident"
+             warn "LSASS key material was not resident in the dump, no credentials recovered"
+         else
+             CREDENTIAL_HITS="error (see pypykatz.err)"
++            CREDENTIAL_STATUS="error"
+             warn "Credential scan failed (check pypykatz.err)"
+         fi
+         return
+@@ -729,6 +738,8 @@
+     local hits
+     hits=$(awk -F'\t' '$1 == "credtype" { h = 1; next } h && NF' "${OUTPUT_DIR}/pypykatz.txt" | wc -l)
+     CREDENTIAL_HITS="${hits} (see pypykatz.txt)"
++    CREDENTIAL_COUNT=$hits
++    if (( hits > 0 )); then CREDENTIAL_STATUS="found"; else CREDENTIAL_STATUS="none"; fi
+     if (( hits == 0 )); then
+         info "No credentials found in LSASS"
+         return
+@@ -896,6 +907,8 @@
+         done
+ 
+         printf '\n  },\n'
++        printf '  "bitlocker": {"status": "%s", "candidates": %d, "output": "bitlocker.txt"},\n' "$BITLOCKER_STATUS" "$BITLOCKER_COUNT"
++        printf '  "credentials": {"status": "%s", "entries": %d, "output": "pypykatz.txt"},\n' "$CREDENTIAL_STATUS" "$CREDENTIAL_COUNT"
+         printf '  "output_directory": "%s"\n' "$(json_escape "$out_path")"
+         printf '}\n'
+     } > "$report"
