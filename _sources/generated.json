@@ -483,6 +483,21 @@
         },
         "version": "2.7.1"
     },
+    "openlogi": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "openlogi",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-wtwuOaHoYhD0bytcZnOCpE9K1UKjaDfiGhq+f/Guz/c=",
+            "type": "url",
+            "url": "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.10.tar.gz"
+        },
+        "version": "0.8.10"
+    },
     "registry-spy": {
         "cargoLock": null,
         "date": null,

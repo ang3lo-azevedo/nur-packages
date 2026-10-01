@@ -280,6 +280,14 @@
       sha256 = "sha256-nK5PLMBmaewaFHcQLR0lrPlvg5PJwdYcNyhCTS7cpdE=";
     };
   };
+  openlogi = {
+    pname = "openlogi";
+    version = "0.8.10";
+    src = fetchurl {
+      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.10.tar.gz";
+      sha256 = "sha256-wtwuOaHoYhD0bytcZnOCpE9K1UKjaDfiGhq+f/Guz/c=";
+    };
+  };
   registry-spy = {
     pname = "registry-spy";
     version = "v1.1.0";
