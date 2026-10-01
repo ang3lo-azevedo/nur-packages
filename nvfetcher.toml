@@ -32,6 +32,16 @@ fetch.github = "andyjsmith/Registry-Spy"
 src.github = "JamesHabben/evolve"
 fetch.github = "JamesHabben/evolve"
 
+[gdsdecomp]
+src.github = "GDRETools/gdsdecomp"
+fetch.url = "https://github.com/GDRETools/gdsdecomp/releases/download/v$ver/GDRE_tools-v$ver-linux.zip"
+src.prefix = "v"
+
+[gdsdecomp-icon]
+src.github = "GDRETools/gdsdecomp"
+fetch.url = "https://raw.githubusercontent.com/GDRETools/gdsdecomp/v$ver/standalone/gdre_icon.png"
+src.prefix = "v"
+
 [dnspy]
 src.github = "dnSpyEx/dnSpy"
 fetch.url = "https://github.com/dnSpyEx/dnSpy/releases/download/v$ver/dnSpy-netframework.zip"

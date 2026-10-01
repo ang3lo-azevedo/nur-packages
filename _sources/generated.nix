@@ -143,6 +143,22 @@
       sha256 = "sha256-0Qzsd3h/JtjX8WzkFUBdFIxg/HUKFvP1p8K0b0Ai8UY=";
     };
   };
+  gdsdecomp = {
+    pname = "gdsdecomp";
+    version = "2.6.4";
+    src = fetchurl {
+      url = "https://github.com/GDRETools/gdsdecomp/releases/download/v2.6.4/GDRE_tools-v2.6.4-linux.zip";
+      sha256 = "sha256-7ajLCeZKBgco+jcaqArhSNPFWEp94vVTaZk22qhOe04=";
+    };
+  };
+  gdsdecomp-icon = {
+    pname = "gdsdecomp-icon";
+    version = "2.6.4";
+    src = fetchurl {
+      url = "https://raw.githubusercontent.com/GDRETools/gdsdecomp/v2.6.4/standalone/gdre_icon.png";
+      sha256 = "sha256-dXzeDZsqt51PWIrKrCnx5C136tOu03/LTE7Lua56Drk=";
+    };
+  };
   harbor = {
     pname = "harbor";
     version = "0.9.21";

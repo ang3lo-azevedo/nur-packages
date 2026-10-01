@@ -21,6 +21,7 @@
   ese-database-view = pkgs.callPackage ./pkgs/ese-database-view {};
   evolve = pkgs.callPackage ./pkgs/evolve {};
   ffmpeg-encoder-plugin-resolve = pkgs.callPackage ./pkgs/ffmpeg-encoder-plugin-resolve {};
+  gdsdecomp = pkgs.callPackage ./pkgs/gdsdecomp {};
   harbor = pkgs.callPackage ./pkgs/harbor {};
   hayabusa = pkgs.callPackage ./pkgs/hayabusa {};
   hyprfm = pkgs.callPackage ./pkgs/hyprfm {};
