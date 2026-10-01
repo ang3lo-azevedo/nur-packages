@@ -29,11 +29,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-4Z72qR/dSXqaqokjWrnu3xnEivNEuU6/vuSmP0U/Dwg=",
+            "sha256": "sha256-t42xaE0kBj+DsN9ou63bSNiPV+ikOXIdVZh7giD+PWQ=",
             "type": "url",
-            "url": "https://github.com/angr/angr-management/releases/download/v10.0.0/angr-management-v10.0.0-x86_64.AppImage"
+            "url": "https://github.com/angr/angr-management/releases/download/v10.0.1/angr-management-v10.0.1-x86_64.AppImage"
         },
-        "version": "v10.0.0"
+        "version": "v10.0.1"
     },
     "angr-management-src": {
         "cargoLock": null,
@@ -49,12 +49,12 @@
             "name": null,
             "owner": "angr",
             "repo": "angr-management",
-            "rev": "v10.0.0",
-            "sha256": "sha256-byenMrlOf+2r4AqZwWVeAb+licplvBI1ifYfo+qojkc=",
+            "rev": "v10.0.1",
+            "sha256": "sha256-WhtNErqBIusZXbbiY9MOaD5wV3pt0Er8G1zVm0J9xwc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v10.0.0"
+        "version": "v10.0.1"
     },
     "apk-mitm": {
         "cargoLock": null,
