@@ -239,6 +239,36 @@
         },
         "version": "1.4.0"
     },
+    "gdsdecomp": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "gdsdecomp",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-7ajLCeZKBgco+jcaqArhSNPFWEp94vVTaZk22qhOe04=",
+            "type": "url",
+            "url": "https://github.com/GDRETools/gdsdecomp/releases/download/v2.6.4/GDRE_tools-v2.6.4-linux.zip"
+        },
+        "version": "2.6.4"
+    },
+    "gdsdecomp-icon": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "gdsdecomp-icon",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-dXzeDZsqt51PWIrKrCnx5C136tOu03/LTE7Lua56Drk=",
+            "type": "url",
+            "url": "https://raw.githubusercontent.com/GDRETools/gdsdecomp/v2.6.4/standalone/gdre_icon.png"
+        },
+        "version": "2.6.4"
+    },
     "harbor": {
         "cargoLock": null,
         "date": null,
