@@ -862,5 +862,20 @@
             "url": "https://github.com/Zexolver/Vorion.git"
         },
         "version": "13bf254a806f9e062e5a09e00181917288bdf7b3"
+    },
+    "zapfast": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "zapfast",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-heeE2YjfoIXx44lZYH1k130Bc3bl9WFknW5YmpMdkeI=",
+            "type": "url",
+            "url": "https://github.com/crmne/zapfast/archive/refs/tags/v0.18.2.tar.gz"
+        },
+        "version": "0.18.2"
     }
 }
