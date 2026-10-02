@@ -38,11 +38,11 @@ src.github = "AprilNEA/OpenLogi"
 fetch.url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v$ver.tar.gz"
 src.prefix = "v"
 
-# Version only: nix-config pins its zapfast flake input to this release tag.
 [zapfast]
 src.github = "crmne/zapfast"
-fetch.url = "https://github.com/crmne/zapfast/archive/refs/tags/v$ver.tar.gz"
+fetch.tarball = "https://github.com/crmne/zapfast/archive/refs/tags/v$ver.tar.gz"
 src.prefix = "v"
+cargo_lock = ["Cargo.lock"]
 
 [gdsdecomp]
 src.github = "GDRETools/gdsdecomp"

@@ -60,6 +60,7 @@
   volatility3-pypykatz = pkgs.callPackage ./pkgs/volatility3-pypykatz {};
   vol-rs = pkgs.callPackage ./pkgs/vol-rs {};
   vorion = pkgs.callPackage ./pkgs/vorion {};
+  zapfast = pkgs.callPackage ./pkgs/zapfast {};
 angr-management = pkgs.callPackage ./pkgs/angr-management {};
   autodesk-fusion = pkgs.callPackage ./pkgs/autodesk-fusion {
     wine = pkgs.wineWow64Packages.full;

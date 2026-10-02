@@ -495,9 +495,19 @@
   zapfast = {
     pname = "zapfast";
     version = "0.18.2";
-    src = fetchurl {
+    src = fetchTarball {
       url = "https://github.com/crmne/zapfast/archive/refs/tags/v0.18.2.tar.gz";
-      sha256 = "sha256-heeE2YjfoIXx44lZYH1k130Bc3bl9WFknW5YmpMdkeI=";
+      sha256 = "sha256-tWtORPQuM9trxlNB6MuZ3VBqLkdh6pf1erb78prujPI=";
+    };
+    cargoLock."Cargo.lock" = {
+      lockFile = ./. + "/sha256-tWtORPQuM9trxlNB6MuZ3VBqLkdh6pf1erb78prujPI=/Cargo.lock";
+      outputHashes = {
+        "fastframe-emoji-0.2.2" = "sha256-7X6IMHIxykQIGpODle2gssJaEezaka0KATiPHK1BLYY=";
+        "wacore-0.7.0" = "sha256-+hV1XKntNGClwBUH5t06LSP3YpKJXnP2pmhNXKm2lU0=";
+        "ecolor-0.36.1" = "sha256-uzNVqMeYdLI9jqvPxdsmOkJC17GiPWU0BpJ+aqDz5RM=";
+        "dpi-0.1.1" = "sha256-x93WYXGAA6SifvOrayIQtyc7N8jT+atScx/R1YRT06k=";
+        "rodio-0.22.2" = "sha256-snwSU8P9iZeMSKJcX80FWl0IL32dCQqWGjNispeKlps=";
+      };
     };
   };
 }
