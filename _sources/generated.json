@@ -491,9 +491,8 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "name": null,
-            "sha256": "sha256-wtwuOaHoYhD0bytcZnOCpE9K1UKjaDfiGhq+f/Guz/c=",
-            "type": "url",
+            "sha256": "sha256-hpaRfyJC10JiR58dQJT0bIrsGmiL2RdikKBDlqhsl6U=",
+            "type": "tarball",
             "url": "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.10.tar.gz"
         },
         "version": "0.8.10"

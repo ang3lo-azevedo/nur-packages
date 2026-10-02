@@ -32,10 +32,9 @@ fetch.github = "andyjsmith/Registry-Spy"
 src.github = "JamesHabben/evolve"
 fetch.github = "JamesHabben/evolve"
 
-# Version only: nix-config pins its openlogi flake input to this release tag.
 [openlogi]
 src.github = "AprilNEA/OpenLogi"
-fetch.url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v$ver.tar.gz"
+fetch.tarball = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v$ver.tar.gz"
 src.prefix = "v"
 
 [zapfast]

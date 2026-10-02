@@ -34,6 +34,7 @@
   nordvpn = pkgs.callPackage ./pkgs/nordvpn {};
   nuvio = pkgs.callPackage ./pkgs/nuvio {};
   onlinefix-linux = pkgs.callPackage ./pkgs/onlinefix-linux {};
+  openlogi = pkgs.callPackage ./pkgs/openlogi {};
   proton-linuwux = pkgs.callPackage ./pkgs/proton-linuwux {};
   registry-spy = pkgs.callPackage ./pkgs/registry-spy {};
   rem = pkgs.callPackage ./pkgs/rem {};
