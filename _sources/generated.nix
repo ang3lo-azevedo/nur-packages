@@ -492,4 +492,12 @@
     };
     date = "2025-06-15";
   };
+  zapfast = {
+    pname = "zapfast";
+    version = "0.18.2";
+    src = fetchurl {
+      url = "https://github.com/crmne/zapfast/archive/refs/tags/v0.18.2.tar.gz";
+      sha256 = "sha256-heeE2YjfoIXx44lZYH1k130Bc3bl9WFknW5YmpMdkeI=";
+    };
+  };
 }
