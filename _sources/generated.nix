@@ -283,9 +283,9 @@
   openlogi = {
     pname = "openlogi";
     version = "0.8.10";
-    src = fetchurl {
+    src = fetchTarball {
       url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.10.tar.gz";
-      sha256 = "sha256-wtwuOaHoYhD0bytcZnOCpE9K1UKjaDfiGhq+f/Guz/c=";
+      sha256 = "sha256-hpaRfyJC10JiR58dQJT0bIrsGmiL2RdikKBDlqhsl6U=";
     };
   };
   registry-spy = {
