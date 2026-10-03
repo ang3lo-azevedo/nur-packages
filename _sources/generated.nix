@@ -145,17 +145,17 @@
   };
   gdsdecomp = {
     pname = "gdsdecomp";
-    version = "2.6.4";
+    version = "2.7.0";
     src = fetchurl {
-      url = "https://github.com/GDRETools/gdsdecomp/releases/download/v2.6.4/GDRE_tools-v2.6.4-linux.zip";
-      sha256 = "sha256-7ajLCeZKBgco+jcaqArhSNPFWEp94vVTaZk22qhOe04=";
+      url = "https://github.com/GDRETools/gdsdecomp/releases/download/v2.7.0/GDRE_tools-v2.7.0-linux.zip";
+      sha256 = "sha256-q7TBl/5RfWpGtn+vQfx22YkMiCZhpVyi1JumBZVd+sw=";
     };
   };
   gdsdecomp-icon = {
     pname = "gdsdecomp-icon";
-    version = "2.6.4";
+    version = "2.7.0";
     src = fetchurl {
-      url = "https://raw.githubusercontent.com/GDRETools/gdsdecomp/v2.6.4/standalone/gdre_icon.png";
+      url = "https://raw.githubusercontent.com/GDRETools/gdsdecomp/v2.7.0/standalone/gdre_icon.png";
       sha256 = "sha256-dXzeDZsqt51PWIrKrCnx5C136tOu03/LTE7Lua56Drk=";
     };
   };
@@ -282,10 +282,10 @@
   };
   openlogi = {
     pname = "openlogi";
-    version = "0.8.10";
+    version = "0.8.11";
     src = fetchTarball {
-      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.10.tar.gz";
-      sha256 = "sha256-hpaRfyJC10JiR58dQJT0bIrsGmiL2RdikKBDlqhsl6U=";
+      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.11.tar.gz";
+      sha256 = "sha256-zoG0a28Z+bxAipK/auAEmGWje8Zwbryyy3lSj6agNiQ=";
     };
   };
   registry-spy = {
