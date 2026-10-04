@@ -494,18 +494,18 @@
   };
   zapfast = {
     pname = "zapfast";
-    version = "0.18.2";
+    version = "0.19.0";
     src = fetchTarball {
-      url = "https://github.com/crmne/zapfast/archive/refs/tags/v0.18.2.tar.gz";
-      sha256 = "sha256-tWtORPQuM9trxlNB6MuZ3VBqLkdh6pf1erb78prujPI=";
+      url = "https://github.com/crmne/zapfast/archive/refs/tags/v0.19.0.tar.gz";
+      sha256 = "sha256-FDB9iAkDL2uaHKpSam1ehc8yGbrYbZy2A5NqE2oXs8Q=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-tWtORPQuM9trxlNB6MuZ3VBqLkdh6pf1erb78prujPI=/Cargo.lock";
+      lockFile = ./. + "/sha256-FDB9iAkDL2uaHKpSam1ehc8yGbrYbZy2A5NqE2oXs8Q=/Cargo.lock";
       outputHashes = {
-        "fastframe-emoji-0.2.2" = "sha256-7X6IMHIxykQIGpODle2gssJaEezaka0KATiPHK1BLYY=";
         "wacore-0.7.0" = "sha256-+hV1XKntNGClwBUH5t06LSP3YpKJXnP2pmhNXKm2lU0=";
-        "ecolor-0.36.1" = "sha256-uzNVqMeYdLI9jqvPxdsmOkJC17GiPWU0BpJ+aqDz5RM=";
-        "dpi-0.1.1" = "sha256-x93WYXGAA6SifvOrayIQtyc7N8jT+atScx/R1YRT06k=";
+        "ecolor-0.36.1" = "sha256-jF+5LjNkGAvdlwstYPVMIj0KKnnxHqpbcjC2ZgsUmoo=";
+        "dpi-0.1.1" = "sha256-5ioLeQqbyXFgbsE3Iik/FgtHYSIFv+35hGjP8UMQl9k=";
+        "fastframe-emoji-0.4.1" = "sha256-ztK6UbU+M5zfM0kByNgsv0gwpyGVtne+3GxNA1z6x5g=";
         "rodio-0.22.2" = "sha256-snwSU8P9iZeMSKJcX80FWl0IL32dCQqWGjNispeKlps=";
       };
     };
