@@ -3,39 +3,36 @@
   rustPlatform,
   fetchFromGitHub,
   makeWrapper,
-  volatility3,
 }:
 
 rustPlatform.buildRustPackage rec {
   pname = "vol-rs";
-  version = "6ece85d645786ceb768329045af8c59996cd334d";
+  version = "c93b75fde0ba71a3164c86d520571c58351dc64b";
 
   src = fetchFromGitHub {
     owner = "daffainfo";
     repo = "vol-rs";
     rev = version;
-    hash = "sha256-x0CiK4NuZa/+57jL0kZiFURUZnDqBZoseigZPMFJ/CM=";
+    hash = "sha256-ZalSSboslTk5wsr5dfo/WtE6n5+eoYR3HrNsTKWwaxI=";
   };
 
-  cargoHash = "sha256-eQRMP4h73UsqTtSM2TQ/on+KwNCbhq/XfIEEh20qf6I=";
+  cargoHash = "sha256-ofaqI1MtrC8A989CCGeiqQJFrptKMJsk18NnYNlUYFY=";
 
   nativeBuildInputs = [makeWrapper];
 
-  # vol-rs reads Volatility 3's generic ISF files (netscan, registry, services,
-  # callbacks, mbr) but does not ship them. Only the source tree is used, so the
-  # unfree volatility3 derivation itself is never built.
-  # vol-rs cannot download kernel symbols, but reads the ones Volatility 3 has
-  # already downloaded, which use the same file layout.
+  # Share Volatility 3's symbol directory, which uses the same file layout.
+  # vol-rs only downloads Windows kernel symbols, so it reads the Linux and
+  # macOS ones Volatility 3 fetched, and it writes the Windows ones it builds
+  # to the first directory listed, where Volatility 3 finds them in turn.
   postInstall = ''
     wrapProgram $out/bin/vol-rs \
-      --run 'export VOLRS_SYMBOL_PATH="''${VOLRS_SYMBOL_PATH:+$VOLRS_SYMBOL_PATH:}''${XDG_DATA_HOME:-$HOME/.local/share}/volatility3/symbols"' \
-      --suffix VOLRS_SYMBOL_PATH : ${volatility3.src}/volatility3/framework/symbols
+      --run 'export VOLRS_SYMBOL_PATH="''${VOLRS_SYMBOL_PATH:+$VOLRS_SYMBOL_PATH:}''${XDG_DATA_HOME:-$HOME/.local/share}/volatility3/symbols"'
   '';
 
   meta = with lib; {
     description = "Volatility 3 ported to Rust. Same output, much faster.";
     homepage = "https://github.com/daffainfo/vol-rs";
-    license = licenses.mit;
+    license = licenses.vol-sl;
     mainProgram = "vol-rs";
   };
 }

@@ -1,6 +1,8 @@
 #!@shell@
-# vol-rs only accepts fully qualified plugin names (windows.info.Info), while
-# vol-analyze passes the short form that Volatility 3 resolves itself.
+# vol-analyze passes short plugin names (windows.info). They are expanded to the
+# fully qualified form (windows.info.Info) so the routing rules below can match
+# them against the list of plugins vol-rs has. vol-rs resolves short names
+# itself, so an unexpanded one would slip past those rules.
 plugins=@plugins@
 
 # Prefer the user's own Volatility 3 install, which may carry local patches.
@@ -12,43 +14,32 @@ vol3() {
 
 args=()
 for arg in "$@"; do
-  if [[ $arg == *.* ]] && ! grep -qxF -- "$arg" "$plugins"; then
+  if [[ $arg == *.* || $arg =~ ^[a-z_]+$ ]] && ! grep -qxF -- "$arg" "$plugins"; then
     mapfile -t matches < <(grep -xE -- "${arg//./\\.}\\.[A-Za-z0-9_]+" "$plugins")
     (( ${#matches[@]} == 1 )) && arg=${matches[0]}
   fi
   # Python plugins bundled for Volatility 3 have no vol-rs port to try first.
   [[ $arg =~ ^(windows|linux|mac)\. ]] && ! grep -qxF -- "$arg" "$plugins" && vol3 "$@"
-  # The rules below route around vol-rs bugs where it returns wrong results but
-  # exits 0, so the fallback further down never triggers. Drop each rule once
+  # The rule below routes around a vol-rs result that differs from Volatility 3
+  # but exits 0, so the fallback further down never triggers. Drop it once
   # vol-rs matches Volatility 3 on the same dump.
 
-  # FIXME(vol-rs): https://github.com/daffainfo/vol-rs/issues/5
-  # cmdscan and consoles misparse the console buffers. Both return
-  # the same rows, blank HistoryBuffer entries and fragments of PATH, while
-  # Volatility 3 returns the real _COMMAND_HISTORY and _CONSOLE_INFORMATION fields.
-  [[ $arg == windows.cmdscan.* || $arg == windows.consoles.* ]] && vol3 "$@"
-
-  # FIXME(vol-rs): https://github.com/daffainfo/vol-rs/issues/6
-  # On Linux (tested on linux-sample-1.bin, Debian kernel 3.2),
-  # bash, proc.Maps, mountinfo and elfs return no rows at all; modxview reports
-  # "In scan" False for every module; pslist drops creation times, sockstat
-  # IPv6 addresses, and ip the NetNS and interface flags.
-  [[ $arg == linux.* ]] && vol3 "$@"
-
   # FIXME(vol-rs): https://github.com/daffainfo/vol-rs/issues/7
-  # timeliner drops about half of Volatility 3's timestamp rows (mostly
-  # MFTScan), even though those plugins match when run on their own.
+  # On Volatility's Windows 10 test dump, vol-rs 1.0.2 prints 87,778 timeliner
+  # rows and Volatility 3 2.28.2 prints 138,308 (82,156 and 129,757 distinct),
+  # mostly MFTScan ones, even though MFTScan matches when run on its own.
   [[ $arg == timeliner.* ]] && vol3 "$@"
 
-  # Not a known bug: vol-rs has never been compared with Volatility 3 on a macOS
-  # dump. Given the Linux results, use Volatility 3 until someone checks.
+  # Not a known bug: upstream has not run the macOS plugins on a real capture
+  # yet, and neither have we. Use Volatility 3 until someone checks.
   [[ $arg == mac.* ]] && vol3 "$@"
   args+=("$arg")
 done
 
-# vol-rs cannot fetch Windows kernel symbols and lacks some plugins, so a failed
-# run is retried with Volatility 3. Output is buffered so a partial vol-rs
-# result never ends up in front of the retry's output.
+# vol-rs only downloads Windows kernel symbols and may not read every dump
+# Volatility 3 can, so a failed run is retried with Volatility 3. Output is
+# buffered so a partial vol-rs result never ends up in front of the retry's
+# output.
 out=$(mktemp) err=$(mktemp)
 
 if @vol@ "${args[@]}" >"$out" 2>"$err"; then
