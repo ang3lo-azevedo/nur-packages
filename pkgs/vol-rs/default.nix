@@ -20,6 +20,10 @@ rustPlatform.buildRustPackage rec {
 
   nativeBuildInputs = [makeWrapper];
 
+  # The test suite rebuilds the whole crate (about 14 minutes) for two tests
+  # that only check how the plugins are registered.
+  doCheck = false;
+
   # Share Volatility 3's symbol directory, which uses the same file layout.
   # vol-rs only downloads Windows kernel symbols, so it reads the Linux and
   # macOS ones Volatility 3 fetched, and it writes the Windows ones it builds

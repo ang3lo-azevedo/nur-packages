@@ -25,9 +25,10 @@ for arg in "$@"; do
   # vol-rs matches Volatility 3 on the same dump.
 
   # FIXME(vol-rs): https://github.com/daffainfo/vol-rs/issues/7
-  # On Volatility's Windows 10 test dump, vol-rs 1.0.2 prints 87,778 timeliner
-  # rows and Volatility 3 2.28.2 prints 138,308 (82,156 and 129,757 distinct),
-  # mostly MFTScan ones, even though MFTScan matches when run on its own.
+  # With --plugin-filter both print the same rows, but an unfiltered timeliner
+  # runs its plugins in a different order than Volatility 3 2.28.2. timeliner
+  # prints the rows so far again after each plugin, so the totals differ: 87,235
+  # rows against 137,769 on Volatility's Windows 10 test dump.
   [[ $arg == timeliner.* ]] && vol3 "$@"
 
   # Not a known bug: upstream has not run the macOS plugins on a real capture
