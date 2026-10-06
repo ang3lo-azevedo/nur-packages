@@ -688,12 +688,12 @@
             "name": null,
             "owner": "daffainfo",
             "repo": "vol-rs",
-            "rev": "v1.0.1",
-            "sha256": "sha256-olM3JlSwPZQ/p3+n7Hmxd58FUm7/vWDiVSgZdqvCu1Y=",
+            "rev": "v1.0.2",
+            "sha256": "sha256-C3qvHMFh/NmnAGNI9Huwh1ZkunikKcj615di+I4EE98=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v1.0.1"
+        "version": "v1.0.2"
     },
     "volatility-toolkit": {
         "cargoLock": null,

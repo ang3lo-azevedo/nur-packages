@@ -386,13 +386,13 @@
   };
   vol-rs = {
     pname = "vol-rs";
-    version = "v1.0.1";
+    version = "v1.0.2";
     src = fetchFromGitHub {
       owner = "daffainfo";
       repo = "vol-rs";
-      rev = "v1.0.1";
+      rev = "v1.0.2";
       fetchSubmodules = false;
-      sha256 = "sha256-olM3JlSwPZQ/p3+n7Hmxd58FUm7/vWDiVSgZdqvCu1Y=";
+      sha256 = "sha256-C3qvHMFh/NmnAGNI9Huwh1ZkunikKcj615di+I4EE98=";
     };
   };
   volatility-toolkit = {
