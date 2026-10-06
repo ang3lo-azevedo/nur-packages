@@ -4,6 +4,7 @@
   bash,
   coreutils,
   gawk,
+  getent,
   gnugrep,
   makeWrapper,
   mokutil,
@@ -30,7 +31,7 @@ stdenv.mkDerivation {
       pam/pam_tpm_keyring_authtok.c \
       -I${pam}/include -L${pam}/lib -lpam
 
-    substitute pam/tpm-keyring-unseal.sh "$out/bin/tpm-keyring-unseal" \
+    substitute pam/tpm-keyring-unseal.sh "$out/libexec/tpm-keyring-unseal" \
       --replace-fail "/usr/bin/env bash" "${bash}/bin/bash" \
       --replace-fail "tpm2_createprimary" "${tpm2-tools}/bin/tpm2_createprimary" \
       --replace-fail "tpm2_load" "${tpm2-tools}/bin/tpm2_load" \
@@ -38,7 +39,11 @@ stdenv.mkDerivation {
       --replace-fail "tpm2_policypcr" "${tpm2-tools}/bin/tpm2_policypcr" \
       --replace-fail "tpm2_unseal" "${tpm2-tools}/bin/tpm2_unseal" \
       --replace-fail "tpm2_flushcontext" "${tpm2-tools}/bin/tpm2_flushcontext"
-    chmod 0500 "$out/bin/tpm-keyring-unseal"
+    chmod 0500 "$out/libexec/tpm-keyring-unseal"
+    # The PAM module execs the helper with an empty environment, so PATH has
+    # to come from the wrapper.
+    makeWrapper "$out/libexec/tpm-keyring-unseal" "$out/bin/tpm-keyring-unseal" \
+      --set PATH "${lib.makeBinPath [coreutils getent util-linux]}"
 
     substitute bin/seal.sh "$out/libexec/tpm-keyring-seal" \
       --replace-fail "/usr/bin/env bash" "${bash}/bin/bash"
