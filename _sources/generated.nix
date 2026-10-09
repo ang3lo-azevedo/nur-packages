@@ -145,17 +145,17 @@
   };
   gdsdecomp = {
     pname = "gdsdecomp";
-    version = "2.7.0";
+    version = "2.7.1";
     src = fetchurl {
-      url = "https://github.com/GDRETools/gdsdecomp/releases/download/v2.7.0/GDRE_tools-v2.7.0-linux.zip";
-      sha256 = "sha256-q7TBl/5RfWpGtn+vQfx22YkMiCZhpVyi1JumBZVd+sw=";
+      url = "https://github.com/GDRETools/gdsdecomp/releases/download/v2.7.1/GDRE_tools-v2.7.1-linux.zip";
+      sha256 = "sha256-0gGZKl/juksTEe3rGSayDe+IH5w20WvIUQ+PX34P4UM=";
     };
   };
   gdsdecomp-icon = {
     pname = "gdsdecomp-icon";
-    version = "2.7.0";
+    version = "2.7.1";
     src = fetchurl {
-      url = "https://raw.githubusercontent.com/GDRETools/gdsdecomp/v2.7.0/standalone/gdre_icon.png";
+      url = "https://raw.githubusercontent.com/GDRETools/gdsdecomp/v2.7.1/standalone/gdre_icon.png";
       sha256 = "sha256-dXzeDZsqt51PWIrKrCnx5C136tOu03/LTE7Lua56Drk=";
     };
   };
@@ -297,14 +297,6 @@
       rev = "v1.1.0";
       fetchSubmodules = false;
       sha256 = "sha256-5D6uDjcCFGtkAyMp0S3blwc5vMP39dyKWTM+nocSIm0=";
-    };
-  };
-  rem = {
-    pname = "rem";
-    version = "1.4.0";
-    src = fetchurl {
-      url = "https://github.com/liriliri/rem/releases/download/v1.4.0/REM-1.4.0-linux-x86_64.AppImage";
-      sha256 = "sha256-rL6ebeURL3dcts53xIq5olHHnEQoK9rzIPdfXbu3H/c=";
     };
   };
   reverser_ai = {
