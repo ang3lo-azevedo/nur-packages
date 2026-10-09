@@ -248,11 +248,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-q7TBl/5RfWpGtn+vQfx22YkMiCZhpVyi1JumBZVd+sw=",
+            "sha256": "sha256-0gGZKl/juksTEe3rGSayDe+IH5w20WvIUQ+PX34P4UM=",
             "type": "url",
-            "url": "https://github.com/GDRETools/gdsdecomp/releases/download/v2.7.0/GDRE_tools-v2.7.0-linux.zip"
+            "url": "https://github.com/GDRETools/gdsdecomp/releases/download/v2.7.1/GDRE_tools-v2.7.1-linux.zip"
         },
-        "version": "2.7.0"
+        "version": "2.7.1"
     },
     "gdsdecomp-icon": {
         "cargoLock": null,
@@ -265,9 +265,9 @@
             "name": null,
             "sha256": "sha256-dXzeDZsqt51PWIrKrCnx5C136tOu03/LTE7Lua56Drk=",
             "type": "url",
-            "url": "https://raw.githubusercontent.com/GDRETools/gdsdecomp/v2.7.0/standalone/gdre_icon.png"
+            "url": "https://raw.githubusercontent.com/GDRETools/gdsdecomp/v2.7.1/standalone/gdre_icon.png"
         },
-        "version": "2.7.0"
+        "version": "2.7.1"
     },
     "harbor": {
         "cargoLock": null,
@@ -517,21 +517,6 @@
             "type": "github"
         },
         "version": "v1.1.0"
-    },
-    "rem": {
-        "cargoLock": null,
-        "date": null,
-        "extract": null,
-        "name": "rem",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "name": null,
-            "sha256": "sha256-rL6ebeURL3dcts53xIq5olHHnEQoK9rzIPdfXbu3H/c=",
-            "type": "url",
-            "url": "https://github.com/liriliri/rem/releases/download/v1.4.0/REM-1.4.0-linux-x86_64.AppImage"
-        },
-        "version": "1.4.0"
     },
     "reverser_ai": {
         "cargoLock": null,
