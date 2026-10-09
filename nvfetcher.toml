@@ -95,9 +95,9 @@ src.github = "niklashigi/apk-mitm"
 fetch.github = "niklashigi/apk-mitm"
 
 
+# Pinned: 1.5.0 ships no AppImage, only deb and rpm
 [rem]
-src.github = "liriliri/rem"
-src.prefix = "v"
+src.manual = "1.4.0"
 fetch.url = "https://github.com/liriliri/rem/releases/download/v$ver/REM-$ver-linux-x86_64.AppImage"
 
 [scrollmpris]
