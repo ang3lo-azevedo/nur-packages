@@ -19,21 +19,21 @@
   };
   angr-management = {
     pname = "angr-management";
-    version = "v10.0.1";
+    version = "v10.0.3";
     src = fetchurl {
-      url = "https://github.com/angr/angr-management/releases/download/v10.0.1/angr-management-v10.0.1-x86_64.AppImage";
-      sha256 = "sha256-t42xaE0kBj+DsN9ou63bSNiPV+ikOXIdVZh7giD+PWQ=";
+      url = "https://github.com/angr/angr-management/releases/download/v10.0.3/angr-management-v10.0.3-x86_64.AppImage";
+      sha256 = "sha256-UAhn9d1Ko3b7b5x5ikYq7SzmLunC7jsEk/QhNhiIbEw=";
     };
   };
   angr-management-src = {
     pname = "angr-management-src";
-    version = "v10.0.1";
+    version = "v10.0.3";
     src = fetchFromGitHub {
       owner = "angr";
       repo = "angr-management";
-      rev = "v10.0.1";
+      rev = "v10.0.3";
       fetchSubmodules = false;
-      sha256 = "sha256-WhtNErqBIusZXbbiY9MOaD5wV3pt0Er8G1zVm0J9xwc=";
+      sha256 = "sha256-ybtFQnTUGurccDm/Bq5wsxsWqmrr4QG676rxIDAUxSA=";
     };
   };
   apk-mitm = {
@@ -145,17 +145,17 @@
   };
   gdsdecomp = {
     pname = "gdsdecomp";
-    version = "2.7.1";
+    version = "2.7.3";
     src = fetchurl {
-      url = "https://github.com/GDRETools/gdsdecomp/releases/download/v2.7.1/GDRE_tools-v2.7.1-linux.zip";
-      sha256 = "sha256-0gGZKl/juksTEe3rGSayDe+IH5w20WvIUQ+PX34P4UM=";
+      url = "https://github.com/GDRETools/gdsdecomp/releases/download/v2.7.3/GDRE_tools-v2.7.3-linux.zip";
+      sha256 = "sha256-GNR2riDb5iOzOCuVaadyGwXVXFKSvvR7J5svv82bQlQ=";
     };
   };
   gdsdecomp-icon = {
     pname = "gdsdecomp-icon";
-    version = "2.7.1";
+    version = "2.7.3";
     src = fetchurl {
-      url = "https://raw.githubusercontent.com/GDRETools/gdsdecomp/v2.7.1/standalone/gdre_icon.png";
+      url = "https://raw.githubusercontent.com/GDRETools/gdsdecomp/v2.7.3/standalone/gdre_icon.png";
       sha256 = "sha256-dXzeDZsqt51PWIrKrCnx5C136tOu03/LTE7Lua56Drk=";
     };
   };
@@ -282,10 +282,10 @@
   };
   openlogi = {
     pname = "openlogi";
-    version = "0.8.11";
+    version = "0.8.13";
     src = fetchTarball {
-      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.11.tar.gz";
-      sha256 = "sha256-zoG0a28Z+bxAipK/auAEmGWje8Zwbryyy3lSj6agNiQ=";
+      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.13.tar.gz";
+      sha256 = "sha256-1c8a6QDMajiFqUc9dc8dmlWuzO8Pxsq1parD79iSGWQ=";
     };
   };
   registry-spy = {
