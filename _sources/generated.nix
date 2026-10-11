@@ -145,17 +145,17 @@
   };
   gdsdecomp = {
     pname = "gdsdecomp";
-    version = "2.7.3";
+    version = "2.7.4";
     src = fetchurl {
-      url = "https://github.com/GDRETools/gdsdecomp/releases/download/v2.7.3/GDRE_tools-v2.7.3-linux.zip";
-      sha256 = "sha256-GNR2riDb5iOzOCuVaadyGwXVXFKSvvR7J5svv82bQlQ=";
+      url = "https://github.com/GDRETools/gdsdecomp/releases/download/v2.7.4/GDRE_tools-v2.7.4-linux.zip";
+      sha256 = "sha256-PcTxJE3aYuQeDJUqwApp5g4H87DVohEWSAa/nUGlR1g=";
     };
   };
   gdsdecomp-icon = {
     pname = "gdsdecomp-icon";
-    version = "2.7.3";
+    version = "2.7.4";
     src = fetchurl {
-      url = "https://raw.githubusercontent.com/GDRETools/gdsdecomp/v2.7.3/standalone/gdre_icon.png";
+      url = "https://raw.githubusercontent.com/GDRETools/gdsdecomp/v2.7.4/standalone/gdre_icon.png";
       sha256 = "sha256-dXzeDZsqt51PWIrKrCnx5C136tOu03/LTE7Lua56Drk=";
     };
   };
@@ -208,31 +208,31 @@
   };
   libesedb = {
     pname = "libesedb";
-    version = "4e3b876d94887e53fb626e91a7427f29c7699365";
+    version = "b0899ab6082ba6c60fb6b4113b5de120c35abc84";
     src = fetchgit {
       url = "https://github.com/libyal/libesedb.git";
-      rev = "4e3b876d94887e53fb626e91a7427f29c7699365";
+      rev = "b0899ab6082ba6c60fb6b4113b5de120c35abc84";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-W9iVu75C1/nf+SkDJvs2Gjd3pLfPAnYFoe+sv4MmeZo=";
+      sha256 = "sha256-uOGEf5yl5lmO8CLze7lauz9bKG/a2Jfq6ktrPh+MMXo=";
     };
-    date = "2026-09-23";
+    date = "2026-10-11";
   };
   libfsntfs = {
     pname = "libfsntfs";
-    version = "84e98ff25092e2c422d392194783e22c9d280af9";
+    version = "faaa031d0f779578559d5c025c9583d103702bcc";
     src = fetchgit {
       url = "https://github.com/libyal/libfsntfs.git";
-      rev = "84e98ff25092e2c422d392194783e22c9d280af9";
+      rev = "faaa031d0f779578559d5c025c9583d103702bcc";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-HdU9+XzrcNdbBVvxVNzutyR0x+qgqUV2Ek9Teaet2FI=";
+      sha256 = "sha256-HOZh2bPZ3al9iNIixq9+GT7TJhhcUiGQtirqjBCyruI=";
     };
-    date = "2026-09-23";
+    date = "2026-10-11";
   };
   linoffice = {
     pname = "linoffice";
