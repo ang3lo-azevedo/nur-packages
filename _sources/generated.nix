@@ -169,10 +169,10 @@
   };
   hayabusa = {
     pname = "hayabusa";
-    version = "4.1.0";
+    version = "4.2.0";
     src = fetchurl {
-      url = "https://github.com/Yamato-Security/hayabusa/releases/download/v4.1.0/hayabusa-4.1.0-lin-x64-gnu.zip";
-      sha256 = "sha256-7SxFlflbjnZdN/OSISWHMEzontfPtmgrQlqW0SbtZ+s=";
+      url = "https://github.com/Yamato-Security/hayabusa/releases/download/v4.2.0/hayabusa-4.2.0-lin-x64-gnu.zip";
+      sha256 = "sha256-lV1IOt8ulSze7QakBXuBrNEd2MII4Y8fXI6zfMCbbRw=";
     };
   };
   ida-chat-plugin = {
@@ -258,10 +258,10 @@
   };
   nordvpn = {
     pname = "nordvpn";
-    version = "5.4.0";
+    version = "5.4.1";
     src = fetchurl {
-      url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_5.4.0_amd64.deb";
-      sha256 = "sha256-V2adQHIV80zYC1bQuVPc0KuNzTQT7RjGRvZm4FguATo=";
+      url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_5.4.1_amd64.deb";
+      sha256 = "sha256-CfukzyKKDfC5EDx7NAqUr7feDbi2XMtIBGRvqKgUtlw=";
     };
   };
   nuvio = {
