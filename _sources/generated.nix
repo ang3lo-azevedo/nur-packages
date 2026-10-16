@@ -236,24 +236,24 @@
   };
   linoffice = {
     pname = "linoffice";
-    version = "v2.3.1";
+    version = "v3.0.0";
     src = fetchFromGitHub {
       owner = "eylenburg";
       repo = "linoffice";
-      rev = "v2.3.1";
+      rev = "v3.0.0";
       fetchSubmodules = false;
-      sha256 = "sha256-dbYQcG/92zSHFLUzVr5YykfGT4W9Tshwlih0nX2bAps=";
+      sha256 = "sha256-IwIlDocpH5VgpHYJd+XmlUgr+4zr2SxA3/Z/fTe4heg=";
     };
   };
   monkeylauncher = {
     pname = "monkeylauncher";
-    version = "v0.5.3";
+    version = "v0.5.4";
     src = fetchFromGitHub {
       owner = "SaruM4N3";
       repo = "MonkeyLauncher";
-      rev = "v0.5.3";
+      rev = "v0.5.4";
       fetchSubmodules = false;
-      sha256 = "sha256-rtIhPz8ZWuSAMt42xuK5GQcgXwx+eNSNSPxgR0r0/UQ=";
+      sha256 = "sha256-TIyQx53dtxeFVSkNC95Nvr/pWK1PdV2PYUQLdxSyFrs=";
     };
   };
   nordvpn = {
@@ -282,10 +282,10 @@
   };
   openlogi = {
     pname = "openlogi";
-    version = "0.8.13";
+    version = "0.8.14";
     src = fetchTarball {
-      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.13.tar.gz";
-      sha256 = "sha256-1c8a6QDMajiFqUc9dc8dmlWuzO8Pxsq1parD79iSGWQ=";
+      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.14.tar.gz";
+      sha256 = "sha256-d/G9BlF66mB7M9vpMVsSmuzA1i/4Zp9xYcWlUbfj3Z8=";
     };
   };
   registry-spy = {
