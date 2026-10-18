@@ -50,11 +50,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-UAhn9d1Ko3b7b5x5ikYq7SzmLunC7jsEk/QhNhiIbEw=",
+            "sha256": "sha256-plDvvfs1UpG4tvFWVzI2Yb5Qbh7b00lMToHHOBwCEw4=",
             "type": "url",
-            "url": "https://github.com/angr/angr-management/releases/download/v10.0.3/angr-management-v10.0.3-x86_64.AppImage"
+            "url": "https://github.com/angr/angr-management/releases/download/v10.0.4/angr-management-v10.0.4-x86_64.AppImage"
         },
-        "version": "v10.0.3"
+        "version": "v10.0.4"
     },
     "angr-management-src": {
         "cargoLock": null,
@@ -70,12 +70,12 @@
             "name": null,
             "owner": "angr",
             "repo": "angr-management",
-            "rev": "v10.0.3",
-            "sha256": "sha256-ybtFQnTUGurccDm/Bq5wsxsWqmrr4QG676rxIDAUxSA=",
+            "rev": "v10.0.4",
+            "sha256": "sha256-jK1ctIiLHUbZZs5A9lWF2Jsl8y91LrB4RAK2NAsQSHM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v10.0.3"
+        "version": "v10.0.4"
     },
     "apk-mitm": {
         "cargoLock": null,
@@ -377,11 +377,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-7SxFlflbjnZdN/OSISWHMEzontfPtmgrQlqW0SbtZ+s=",
+            "sha256": "sha256-lV1IOt8ulSze7QakBXuBrNEd2MII4Y8fXI6zfMCbbRw=",
             "type": "url",
-            "url": "https://github.com/Yamato-Security/hayabusa/releases/download/v4.1.0/hayabusa-4.1.0-lin-x64-gnu.zip"
+            "url": "https://github.com/Yamato-Security/hayabusa/releases/download/v4.2.0/hayabusa-4.2.0-lin-x64-gnu.zip"
         },
-        "version": "4.1.0"
+        "version": "4.2.0"
     },
     "hindsight": {
         "cargoLock": null,
@@ -515,12 +515,12 @@
             "name": null,
             "owner": "eylenburg",
             "repo": "linoffice",
-            "rev": "v2.3.1",
-            "sha256": "sha256-dbYQcG/92zSHFLUzVr5YykfGT4W9Tshwlih0nX2bAps=",
+            "rev": "v3.0.0",
+            "sha256": "sha256-IwIlDocpH5VgpHYJd+XmlUgr+4zr2SxA3/Z/fTe4heg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2.3.1"
+        "version": "v3.0.0"
     },
     "mister-skinnylegs": {
         "cargoLock": null,
@@ -557,12 +557,12 @@
             "name": null,
             "owner": "SaruM4N3",
             "repo": "MonkeyLauncher",
-            "rev": "v0.5.3",
-            "sha256": "sha256-rtIhPz8ZWuSAMt42xuK5GQcgXwx+eNSNSPxgR0r0/UQ=",
+            "rev": "v0.5.4",
+            "sha256": "sha256-TIyQx53dtxeFVSkNC95Nvr/pWK1PdV2PYUQLdxSyFrs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v0.5.3"
+        "version": "v0.5.4"
     },
     "nordvpn": {
         "cargoLock": null,
@@ -573,11 +573,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-V2adQHIV80zYC1bQuVPc0KuNzTQT7RjGRvZm4FguATo=",
+            "sha256": "sha256-CfukzyKKDfC5EDx7NAqUr7feDbi2XMtIBGRvqKgUtlw=",
             "type": "url",
-            "url": "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_5.4.0_amd64.deb"
+            "url": "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_5.4.1_amd64.deb"
         },
-        "version": "5.4.0"
+        "version": "5.4.1"
     },
     "nuvio": {
         "cargoLock": null,
@@ -617,11 +617,11 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "sha256": "sha256-1c8a6QDMajiFqUc9dc8dmlWuzO8Pxsq1parD79iSGWQ=",
+            "sha256": "sha256-d/G9BlF66mB7M9vpMVsSmuzA1i/4Zp9xYcWlUbfj3Z8=",
             "type": "tarball",
-            "url": "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.13.tar.gz"
+            "url": "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.14.tar.gz"
         },
-        "version": "0.8.13"
+        "version": "0.8.14"
     },
     "registry-spy": {
         "cargoLock": null,
