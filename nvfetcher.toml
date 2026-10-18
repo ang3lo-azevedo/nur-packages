@@ -206,3 +206,31 @@ fetch.git = "https://codeberg.org/cryinkfly/Autodesk-Fusion-360-on-Linux.git"
 [ist-fenix-auto-enroller]
 src.github = "ang3lo-azevedo/ist-fenix-auto-enroller"
 fetch.github = "ang3lo-azevedo/ist-fenix-auto-enroller"
+
+[aleapp]
+src.github = "abrignoni/ALEAPP"
+fetch.github = "abrignoni/ALEAPP"
+
+[hindsight]
+# the repository also carries date-style tags from 2020 that sort above the releases
+src.github_tag = "obsidianforensics/hindsight"
+src.include_regex = "v\\d{4}\\.\\d{2}"
+fetch.github = "obsidianforensics/hindsight"
+
+# Hindsight and mister-skinnylegs follow the branch: the fixes they need land
+# long before a tag does
+[ccl-chromium-reader]
+src.git = "https://github.com/cclgroupltd/ccl_chromium_reader.git"
+fetch.github = "cclgroupltd/ccl_chromium_reader"
+
+[ccl-mozilla-reader]
+src.git = "https://github.com/cclgroupltd/ccl_mozilla_reader.git"
+fetch.github = "cclgroupltd/ccl_mozilla_reader"
+
+[ccl-simplesnappy]
+src.git = "https://github.com/cclgroupltd/ccl_simplesnappy.git"
+fetch.github = "cclgroupltd/ccl_simplesnappy"
+
+[mister-skinnylegs]
+src.github_tag = "cclgroupltd/mister-skinnylegs"
+fetch.github = "cclgroupltd/mister-skinnylegs"
