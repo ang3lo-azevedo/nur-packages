@@ -1,4 +1,25 @@
 {
+    "aleapp": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "aleapp",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "abrignoni",
+            "repo": "ALEAPP",
+            "rev": "v2026.4.3",
+            "sha256": "sha256-pJA9+yH7RZqJcn6duQ31KKIdi7XdBmZE8QVGKfWqugE=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v2026.4.3"
+    },
     "analyzeMFT": {
         "cargoLock": null,
         "date": null,
@@ -111,6 +132,69 @@
             "url": "https://codeberg.org/cryinkfly/Autodesk-Fusion-360-on-Linux.git"
         },
         "version": "53b02038548f01a6e0a1fa2def0a9b545f1561c1"
+    },
+    "ccl-chromium-reader": {
+        "cargoLock": null,
+        "date": "2026-08-06",
+        "extract": null,
+        "name": "ccl-chromium-reader",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cclgroupltd",
+            "repo": "ccl_chromium_reader",
+            "rev": "ef840de30221c4d65bc96d2f4d9057e9ef2f526d",
+            "sha256": "sha256-BRplu68GTnXmMkxfX/Pbb8IFPAzotbGCknzrZJvu8s8=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "ef840de30221c4d65bc96d2f4d9057e9ef2f526d"
+    },
+    "ccl-mozilla-reader": {
+        "cargoLock": null,
+        "date": "2026-07-20",
+        "extract": null,
+        "name": "ccl-mozilla-reader",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cclgroupltd",
+            "repo": "ccl_mozilla_reader",
+            "rev": "b3d0627f747a718e1e30ac02b92e82bdde354eb2",
+            "sha256": "sha256-ehHMwynjQgShBvCmOMLlLSlx+QYe9nLYqS5wfm1VLbA=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "b3d0627f747a718e1e30ac02b92e82bdde354eb2"
+    },
+    "ccl-simplesnappy": {
+        "cargoLock": null,
+        "date": "2024-07-30",
+        "extract": null,
+        "name": "ccl-simplesnappy",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cclgroupltd",
+            "repo": "ccl_simplesnappy",
+            "rev": "3d085230baa8c46cf2090ebba29bf6e8eab31087",
+            "sha256": "sha256-ssQIZyhrhttqaQjdk/DOiRwqBiKqCf9QiDN2rJ6E7+c=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "3d085230baa8c46cf2090ebba29bf6e8eab31087"
     },
     "ctf-dl": {
         "cargoLock": null,
@@ -299,6 +383,27 @@
         },
         "version": "4.1.0"
     },
+    "hindsight": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "hindsight",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "obsidianforensics",
+            "repo": "hindsight",
+            "rev": "v2026.06",
+            "sha256": "sha256-Euc8w9sDP+jF8MOlN7c/SYpZqUrM61X7jLUdy/+3uHw=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v2026.06"
+    },
     "ida-chat-plugin": {
         "cargoLock": null,
         "date": "2026-04-20",
@@ -416,6 +521,27 @@
             "type": "github"
         },
         "version": "v2.3.1"
+    },
+    "mister-skinnylegs": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "mister-skinnylegs",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "cclgroupltd",
+            "repo": "mister-skinnylegs",
+            "rev": "v0.0.18",
+            "sha256": "sha256-GrdFknDAIHyO1ZBmhgMUdQpy4dODq8aTiyrX4dnNSsU=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "v0.0.18"
     },
     "monkeylauncher": {
         "cargoLock": null,

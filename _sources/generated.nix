@@ -6,6 +6,17 @@
   dockerTools,
 }:
 {
+  aleapp = {
+    pname = "aleapp";
+    version = "v2026.4.3";
+    src = fetchFromGitHub {
+      owner = "abrignoni";
+      repo = "ALEAPP";
+      rev = "v2026.4.3";
+      fetchSubmodules = false;
+      sha256 = "sha256-pJA9+yH7RZqJcn6duQ31KKIdi7XdBmZE8QVGKfWqugE=";
+    };
+  };
   analyzeMFT = {
     pname = "analyzeMFT";
     version = "v3.1.1.0";
@@ -68,6 +79,42 @@
       sha256 = "sha256-k3ECZzYHV5gJq4qDR9YcYMoUGK4YW94iVGp62K5KbSM=";
     };
     date = "2026-06-20";
+  };
+  ccl-chromium-reader = {
+    pname = "ccl-chromium-reader";
+    version = "ef840de30221c4d65bc96d2f4d9057e9ef2f526d";
+    src = fetchFromGitHub {
+      owner = "cclgroupltd";
+      repo = "ccl_chromium_reader";
+      rev = "ef840de30221c4d65bc96d2f4d9057e9ef2f526d";
+      fetchSubmodules = false;
+      sha256 = "sha256-BRplu68GTnXmMkxfX/Pbb8IFPAzotbGCknzrZJvu8s8=";
+    };
+    date = "2026-08-06";
+  };
+  ccl-mozilla-reader = {
+    pname = "ccl-mozilla-reader";
+    version = "b3d0627f747a718e1e30ac02b92e82bdde354eb2";
+    src = fetchFromGitHub {
+      owner = "cclgroupltd";
+      repo = "ccl_mozilla_reader";
+      rev = "b3d0627f747a718e1e30ac02b92e82bdde354eb2";
+      fetchSubmodules = false;
+      sha256 = "sha256-ehHMwynjQgShBvCmOMLlLSlx+QYe9nLYqS5wfm1VLbA=";
+    };
+    date = "2026-07-20";
+  };
+  ccl-simplesnappy = {
+    pname = "ccl-simplesnappy";
+    version = "3d085230baa8c46cf2090ebba29bf6e8eab31087";
+    src = fetchFromGitHub {
+      owner = "cclgroupltd";
+      repo = "ccl_simplesnappy";
+      rev = "3d085230baa8c46cf2090ebba29bf6e8eab31087";
+      fetchSubmodules = false;
+      sha256 = "sha256-ssQIZyhrhttqaQjdk/DOiRwqBiKqCf9QiDN2rJ6E7+c=";
+    };
+    date = "2024-07-30";
   };
   ctf-dl = {
     pname = "ctf-dl";
@@ -175,6 +222,17 @@
       sha256 = "sha256-7SxFlflbjnZdN/OSISWHMEzontfPtmgrQlqW0SbtZ+s=";
     };
   };
+  hindsight = {
+    pname = "hindsight";
+    version = "v2026.06";
+    src = fetchFromGitHub {
+      owner = "obsidianforensics";
+      repo = "hindsight";
+      rev = "v2026.06";
+      fetchSubmodules = false;
+      sha256 = "sha256-Euc8w9sDP+jF8MOlN7c/SYpZqUrM61X7jLUdy/+3uHw=";
+    };
+  };
   ida-chat-plugin = {
     pname = "ida-chat-plugin";
     version = "883f9b3550725d81eed80c25dd28c75b320f22c7";
@@ -243,6 +301,17 @@
       rev = "v2.3.1";
       fetchSubmodules = false;
       sha256 = "sha256-dbYQcG/92zSHFLUzVr5YykfGT4W9Tshwlih0nX2bAps=";
+    };
+  };
+  mister-skinnylegs = {
+    pname = "mister-skinnylegs";
+    version = "v0.0.18";
+    src = fetchFromGitHub {
+      owner = "cclgroupltd";
+      repo = "mister-skinnylegs";
+      rev = "v0.0.18";
+      fetchSubmodules = false;
+      sha256 = "sha256-GrdFknDAIHyO1ZBmhgMUdQpy4dODq8aTiyrX4dnNSsU=";
     };
   };
   monkeylauncher = {

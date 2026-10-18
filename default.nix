@@ -5,10 +5,27 @@
   nixosModules = import ./nixos-modules;
   overlays = import ./overlays;
 
+  aleapp = pkgs.callPackage ./pkgs/aleapp {
+    mister-skinnylegs = pkgs.callPackage ./pkgs/mister-skinnylegs {
+      ccl-chromium-reader = pkgs.callPackage ./pkgs/ccl-chromium-reader {
+        ccl-simplesnappy = pkgs.callPackage ./pkgs/ccl-simplesnappy {};
+      };
+      ccl-mozilla-reader = pkgs.callPackage ./pkgs/ccl-mozilla-reader {
+        ccl-simplesnappy = pkgs.callPackage ./pkgs/ccl-simplesnappy {};
+      };
+    };
+  };
   analyzeMFT = pkgs.callPackage ./pkgs/analyzeMFT {};
   apk-mitm = pkgs.callPackage ./pkgs/apk-mitm {};
   archi = pkgs.callPackage ./pkgs/archi {};
   betterbird = pkgs.callPackage ./pkgs/betterbird {};
+  ccl-chromium-reader = pkgs.callPackage ./pkgs/ccl-chromium-reader {
+    ccl-simplesnappy = pkgs.callPackage ./pkgs/ccl-simplesnappy {};
+  };
+  ccl-mozilla-reader = pkgs.callPackage ./pkgs/ccl-mozilla-reader {
+    ccl-simplesnappy = pkgs.callPackage ./pkgs/ccl-simplesnappy {};
+  };
+  ccl-simplesnappy = pkgs.callPackage ./pkgs/ccl-simplesnappy {};
   chainsaw-rules = pkgs.callPackage ./pkgs/chainsaw-rules {};
   ciphey = pkgs.callPackage ./pkgs/ciphey {};
   ctf-dl = pkgs.callPackage ./pkgs/ctf-dl {
@@ -24,12 +41,25 @@
   gdsdecomp = pkgs.callPackage ./pkgs/gdsdecomp {};
   harbor = pkgs.callPackage ./pkgs/harbor {};
   hayabusa = pkgs.callPackage ./pkgs/hayabusa {};
+  hindsight = pkgs.callPackage ./pkgs/hindsight {
+    ccl-chromium-reader = pkgs.callPackage ./pkgs/ccl-chromium-reader {
+      ccl-simplesnappy = pkgs.callPackage ./pkgs/ccl-simplesnappy {};
+    };
+  };
   hyprfm = pkgs.callPackage ./pkgs/hyprfm {};
   jackify = pkgs.callPackage ./pkgs/jackify {};
   libesedb = pkgs.callPackage ./pkgs/libesedb {};
   libfsntfs = pkgs.callPackage ./pkgs/libfsntfs {};
   libscca = pkgs.callPackage ./pkgs/libscca {};
   linoffice = pkgs.callPackage ./pkgs/linoffice {};
+  mister-skinnylegs = pkgs.callPackage ./pkgs/mister-skinnylegs {
+    ccl-chromium-reader = pkgs.callPackage ./pkgs/ccl-chromium-reader {
+      ccl-simplesnappy = pkgs.callPackage ./pkgs/ccl-simplesnappy {};
+    };
+    ccl-mozilla-reader = pkgs.callPackage ./pkgs/ccl-mozilla-reader {
+      ccl-simplesnappy = pkgs.callPackage ./pkgs/ccl-simplesnappy {};
+    };
+  };
   monkeylauncher = pkgs.callPackage ./pkgs/monkeylauncher {};
   nordvpn = pkgs.callPackage ./pkgs/nordvpn {};
   nuvio = pkgs.callPackage ./pkgs/nuvio {};
