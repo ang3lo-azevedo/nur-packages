@@ -30,21 +30,21 @@
   };
   angr-management = {
     pname = "angr-management";
-    version = "v10.0.3";
+    version = "v10.0.4";
     src = fetchurl {
-      url = "https://github.com/angr/angr-management/releases/download/v10.0.3/angr-management-v10.0.3-x86_64.AppImage";
-      sha256 = "sha256-UAhn9d1Ko3b7b5x5ikYq7SzmLunC7jsEk/QhNhiIbEw=";
+      url = "https://github.com/angr/angr-management/releases/download/v10.0.4/angr-management-v10.0.4-x86_64.AppImage";
+      sha256 = "sha256-plDvvfs1UpG4tvFWVzI2Yb5Qbh7b00lMToHHOBwCEw4=";
     };
   };
   angr-management-src = {
     pname = "angr-management-src";
-    version = "v10.0.3";
+    version = "v10.0.4";
     src = fetchFromGitHub {
       owner = "angr";
       repo = "angr-management";
-      rev = "v10.0.3";
+      rev = "v10.0.4";
       fetchSubmodules = false;
-      sha256 = "sha256-ybtFQnTUGurccDm/Bq5wsxsWqmrr4QG676rxIDAUxSA=";
+      sha256 = "sha256-jK1ctIiLHUbZZs5A9lWF2Jsl8y91LrB4RAK2NAsQSHM=";
     };
   };
   apk-mitm = {
@@ -216,10 +216,10 @@
   };
   hayabusa = {
     pname = "hayabusa";
-    version = "4.1.0";
+    version = "4.2.0";
     src = fetchurl {
-      url = "https://github.com/Yamato-Security/hayabusa/releases/download/v4.1.0/hayabusa-4.1.0-lin-x64-gnu.zip";
-      sha256 = "sha256-7SxFlflbjnZdN/OSISWHMEzontfPtmgrQlqW0SbtZ+s=";
+      url = "https://github.com/Yamato-Security/hayabusa/releases/download/v4.2.0/hayabusa-4.2.0-lin-x64-gnu.zip";
+      sha256 = "sha256-lV1IOt8ulSze7QakBXuBrNEd2MII4Y8fXI6zfMCbbRw=";
     };
   };
   hindsight = {
@@ -294,13 +294,13 @@
   };
   linoffice = {
     pname = "linoffice";
-    version = "v2.3.1";
+    version = "v3.0.0";
     src = fetchFromGitHub {
       owner = "eylenburg";
       repo = "linoffice";
-      rev = "v2.3.1";
+      rev = "v3.0.0";
       fetchSubmodules = false;
-      sha256 = "sha256-dbYQcG/92zSHFLUzVr5YykfGT4W9Tshwlih0nX2bAps=";
+      sha256 = "sha256-IwIlDocpH5VgpHYJd+XmlUgr+4zr2SxA3/Z/fTe4heg=";
     };
   };
   mister-skinnylegs = {
@@ -316,21 +316,21 @@
   };
   monkeylauncher = {
     pname = "monkeylauncher";
-    version = "v0.5.3";
+    version = "v0.5.4";
     src = fetchFromGitHub {
       owner = "SaruM4N3";
       repo = "MonkeyLauncher";
-      rev = "v0.5.3";
+      rev = "v0.5.4";
       fetchSubmodules = false;
-      sha256 = "sha256-rtIhPz8ZWuSAMt42xuK5GQcgXwx+eNSNSPxgR0r0/UQ=";
+      sha256 = "sha256-TIyQx53dtxeFVSkNC95Nvr/pWK1PdV2PYUQLdxSyFrs=";
     };
   };
   nordvpn = {
     pname = "nordvpn";
-    version = "5.4.0";
+    version = "5.4.1";
     src = fetchurl {
-      url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_5.4.0_amd64.deb";
-      sha256 = "sha256-V2adQHIV80zYC1bQuVPc0KuNzTQT7RjGRvZm4FguATo=";
+      url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_5.4.1_amd64.deb";
+      sha256 = "sha256-CfukzyKKDfC5EDx7NAqUr7feDbi2XMtIBGRvqKgUtlw=";
     };
   };
   nuvio = {
@@ -351,10 +351,10 @@
   };
   openlogi = {
     pname = "openlogi";
-    version = "0.8.13";
+    version = "0.8.14";
     src = fetchTarball {
-      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.13.tar.gz";
-      sha256 = "sha256-1c8a6QDMajiFqUc9dc8dmlWuzO8Pxsq1parD79iSGWQ=";
+      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.14.tar.gz";
+      sha256 = "sha256-d/G9BlF66mB7M9vpMVsSmuzA1i/4Zp9xYcWlUbfj3Z8=";
     };
   };
   registry-spy = {
