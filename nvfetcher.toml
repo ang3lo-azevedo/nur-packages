@@ -211,6 +211,44 @@ fetch.github = "ang3lo-azevedo/ist-fenix-auto-enroller"
 src.github = "abrignoni/ALEAPP"
 fetch.github = "abrignoni/ALEAPP"
 
+[batch-leapp]
+src.github = "abrignoni/batch-leapp"
+fetch.github = "abrignoni/batch-leapp"
+
+[dleapp]
+src.github = "abrignoni/DLEAPP"
+fetch.github = "abrignoni/DLEAPP"
+
+[gleapp]
+src.github = "abrignoni/GLEAPP"
+fetch.github = "abrignoni/GLEAPP"
+
+[ileapp]
+src.github = "abrignoni/iLEAPP"
+fetch.github = "abrignoni/iLEAPP"
+
+[rleapp]
+src.github = "abrignoni/RLEAPP"
+fetch.github = "abrignoni/RLEAPP"
+
+[vleapp]
+src.github = "abrignoni/VLEAPP"
+fetch.github = "abrignoni/VLEAPP"
+
+# Neither has a release since their last commits, so both follow the branch
+[cleapp]
+src.git = "https://github.com/markmckinnon/cLeapp.git"
+fetch.github = "markmckinnon/cLeapp"
+
+[lleapp]
+src.git = "https://github.com/markmckinnon/lLeapp.git"
+fetch.github = "markmckinnon/lLeapp"
+
+[lava]
+src.github = "leapps-org/LAVA-releases"
+src.prefix = "v"
+fetch.url = "https://github.com/leapps-org/LAVA-releases/releases/download/v$ver/LAVA-$ver-Linux_x64.AppImage"
+
 [hindsight]
 # the repository also carries date-style tags from 2020 that sort above the releases
 src.github_tag = "obsidianforensics/hindsight"

@@ -38,6 +38,6 @@ in
       homepage = "https://github.com/obsidianforensics/hindsight";
       license = licenses.asl20;
       maintainers = [];
-      mainProgram = "hindsight";
+      mainProgram = "hindsight.py";
     };
   }

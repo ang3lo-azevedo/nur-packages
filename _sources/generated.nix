@@ -80,6 +80,17 @@
     };
     date = "2026-06-20";
   };
+  batch-leapp = {
+    pname = "batch-leapp";
+    version = "v1.2.0";
+    src = fetchFromGitHub {
+      owner = "abrignoni";
+      repo = "batch-leapp";
+      rev = "v1.2.0";
+      fetchSubmodules = false;
+      sha256 = "sha256-BuhpYwWr2oZspUypnsvKEzn7Fg3jDll4i41ev7HW87Q=";
+    };
+  };
   ccl-chromium-reader = {
     pname = "ccl-chromium-reader";
     version = "ef840de30221c4d65bc96d2f4d9057e9ef2f526d";
@@ -115,6 +126,18 @@
       sha256 = "sha256-ssQIZyhrhttqaQjdk/DOiRwqBiKqCf9QiDN2rJ6E7+c=";
     };
     date = "2024-07-30";
+  };
+  cleapp = {
+    pname = "cleapp";
+    version = "03ec0be9151612ab4d8f44e8e41c3e5e6a77cf04";
+    src = fetchFromGitHub {
+      owner = "markmckinnon";
+      repo = "cLeapp";
+      rev = "03ec0be9151612ab4d8f44e8e41c3e5e6a77cf04";
+      fetchSubmodules = false;
+      sha256 = "sha256-TOZ36P5PMg3jP6FdOuvjz+Doy0SnGOTz6DHiqz1/wfQ=";
+    };
+    date = "2022-12-13";
   };
   ctf-dl = {
     pname = "ctf-dl";
@@ -153,6 +176,17 @@
       rev = "1.1";
       fetchSubmodules = false;
       sha256 = "sha256-2Rbe97xz48r22X61jjnwFPBiN0dIeUKd4zcSJxBrSd0=";
+    };
+  };
+  dleapp = {
+    pname = "dleapp";
+    version = "v2026.4.3";
+    src = fetchFromGitHub {
+      owner = "abrignoni";
+      repo = "DLEAPP";
+      rev = "v2026.4.3";
+      fetchSubmodules = false;
+      sha256 = "sha256-vv8K6tjEHcWS0exZ2qs3JTLXE2T2YuiBGWmGuu8KyjA=";
     };
   };
   dnspy = {
@@ -206,6 +240,17 @@
       sha256 = "sha256-dXzeDZsqt51PWIrKrCnx5C136tOu03/LTE7Lua56Drk=";
     };
   };
+  gleapp = {
+    pname = "gleapp";
+    version = "v2026.5.4";
+    src = fetchFromGitHub {
+      owner = "abrignoni";
+      repo = "GLEAPP";
+      rev = "v2026.5.4";
+      fetchSubmodules = false;
+      sha256 = "sha256-l0fQrk2zMCB8gaY1SgrB+D70x/60Hb16vHAN2MZl9M8=";
+    };
+  };
   harbor = {
     pname = "harbor";
     version = "0.9.21";
@@ -245,6 +290,17 @@
     };
     date = "2026-04-20";
   };
+  ileapp = {
+    pname = "ileapp";
+    version = "v2026.4.4";
+    src = fetchFromGitHub {
+      owner = "abrignoni";
+      repo = "iLEAPP";
+      rev = "v2026.4.4";
+      fetchSubmodules = false;
+      sha256 = "sha256-ETWXHMk2EB3XBHCrtim+W+LVNdiEcAdfh2MbuR1Jns4=";
+    };
+  };
   ist-fenix-auto-enroller = {
     pname = "ist-fenix-auto-enroller";
     version = "v0.2.1";
@@ -262,6 +318,14 @@
     src = fetchurl {
       url = "https://github.com/Omni-guides/Jackify/releases/download/v0.8.1.3/Jackify.AppImage";
       sha256 = "sha256-Z3T4Gu3WxnyMOO7kIF/BSXGJfNurmcZULTWCl4rzlTI=";
+    };
+  };
+  lava = {
+    pname = "lava";
+    version = "0.15.0";
+    src = fetchurl {
+      url = "https://github.com/leapps-org/LAVA-releases/releases/download/v0.15.0/LAVA-0.15.0-Linux_x64.AppImage";
+      sha256 = "sha256-HIM+YhgPRBqFJdteNkXAfmED74aknUNTzyVzhgglJ/s=";
     };
   };
   libesedb = {
@@ -302,6 +366,18 @@
       fetchSubmodules = false;
       sha256 = "sha256-IwIlDocpH5VgpHYJd+XmlUgr+4zr2SxA3/Z/fTe4heg=";
     };
+  };
+  lleapp = {
+    pname = "lleapp";
+    version = "13ab71f998edbc767949e4d7a2967b568c514649";
+    src = fetchFromGitHub {
+      owner = "markmckinnon";
+      repo = "lLeapp";
+      rev = "13ab71f998edbc767949e4d7a2967b568c514649";
+      fetchSubmodules = false;
+      sha256 = "sha256-LSzQGw0fysa3WlZBayHtrhWwNeEbcBs3ELwWlDhb8DE=";
+    };
+    date = "2023-07-07";
   };
   mister-skinnylegs = {
     pname = "mister-skinnylegs";
@@ -388,6 +464,17 @@
     };
     date = "2026-05-20";
   };
+  rleapp = {
+    pname = "rleapp";
+    version = "v2026.4.3";
+    src = fetchFromGitHub {
+      owner = "abrignoni";
+      repo = "RLEAPP";
+      rev = "v2026.4.3";
+      fetchSubmodules = false;
+      sha256 = "sha256-DTec1vlu136a0xBobLe5XmXBIqG4KnXG6fkDP6SB2f8=";
+    };
+  };
   scrollmpris = {
     pname = "scrollmpris";
     version = "21df3617577758ef5f8a92255faece8ecceec22a";
@@ -451,6 +538,17 @@
       rev = "v1.9.0b1";
       fetchSubmodules = false;
       sha256 = "sha256-ylgCDWmcZzz6mMBpEAj16jK1loTxQJmk9G/3Hnp9WuI=";
+    };
+  };
+  vleapp = {
+    pname = "vleapp";
+    version = "v2026.4.3";
+    src = fetchFromGitHub {
+      owner = "abrignoni";
+      repo = "VLEAPP";
+      rev = "v2026.4.3";
+      fetchSubmodules = false;
+      sha256 = "sha256-phcgOosokwnIEwvFqPTbEsJaG2lpjc7CAdAtuV1i64g=";
     };
   };
   vol-rs = {
