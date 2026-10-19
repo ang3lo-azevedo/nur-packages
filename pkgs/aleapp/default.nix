@@ -4,25 +4,17 @@
   python3,
   makeWrapper,
   callPackage,
+  bencoding,
   mister-skinnylegs,
+  pyliblzfse,
 }: let
   sources = callPackage ../../_sources/generated.nix {};
-
-  bencoding = python3.pkgs.buildPythonPackage rec {
-    pname = "bencoding";
-    version = "0.2.6";
-    pyproject = true;
-    src = python3.pkgs.fetchPypi {
-      inherit pname version;
-      hash = "sha256-Q8zjHUhj4p1rxhFVHU6fJlK+KZXp1eFbRtg4PxgNREA=";
-    };
-    build-system = [python3.pkgs.setuptools];
-    doCheck = false;
-  };
+  writable-copies = callPackage ../leapp-common {};
 
   # blackboxprotobuf is left out on purpose: upstream runs its own vendored copy
   python = python3.withPackages (ps:
     with ps; [
+      writable-copies
       bcrypt
       beautifulsoup4
       bencoding
@@ -34,12 +26,14 @@
       protobuf
       sqlcipher3
       pycryptodome
+      pyliblzfse
       pytz
       mister-skinnylegs
       simplekml
       xlsxwriter
       xmltodict
       tkinter
+      zstandard
     ]);
 in
   stdenvNoCC.mkDerivation {
