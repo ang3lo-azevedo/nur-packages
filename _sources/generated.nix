@@ -501,15 +501,15 @@
   };
   volatility3-forensicxlab = {
     pname = "volatility3-forensicxlab";
-    version = "5d6c67eff47e065aa734eb7090d9ff92846d80ba";
+    version = "366694c9df913c81e688e560c4a89b4dccdcd116";
     src = fetchFromGitHub {
       owner = "forensicxlab";
       repo = "volatility3_plugins";
-      rev = "5d6c67eff47e065aa734eb7090d9ff92846d80ba";
+      rev = "366694c9df913c81e688e560c4a89b4dccdcd116";
       fetchSubmodules = false;
-      sha256 = "sha256-jv/eqavf6IyGrdxna11/ZJ0y7Adti18Pp1/vee8lKfg=";
+      sha256 = "sha256-OcqtAtJRvjMdHhAbTasNqmt9uvvCfcGC+V1tBT5wXww=";
     };
-    date = "2024-07-23";
+    date = "2026-10-18";
   };
   volatility3-kevthehermit = {
     pname = "volatility3-kevthehermit";
