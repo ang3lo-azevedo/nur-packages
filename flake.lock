@@ -63,11 +63,11 @@
     "tpm-keyring-unlock": {
       "flake": false,
       "locked": {
-        "lastModified": 1787050439,
-        "narHash": "sha256-US2zRK340a2NE3hvkfPTdIHXzdcMDytGmv+KFgGKeOM=",
+        "lastModified": 1791314259,
+        "narHash": "sha256-DLStYIAWEcVJEY6rrDPHF2OXmp3EWxvdsNZTOWgliGA=",
         "owner": "dmitriitimoshenko",
         "repo": "tpm-keyring-unlock",
-        "rev": "485c9f57c705f4d4714f8a085a09514051389204",
+        "rev": "54b6008a21e181826df4e19d32da3b5a57243720",
         "type": "github"
       },
       "original": {
