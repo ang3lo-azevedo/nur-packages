@@ -3,6 +3,9 @@
   stdenvNoCC,
   python3,
   makeWrapper,
+  copyDesktopItems,
+  imagemagick,
+  makeDesktopItem,
   callPackage,
 }: let
   sources = callPackage ../../_sources/generated.nix {};
@@ -14,13 +17,30 @@ in
 
     src = sources.batch-leapp.src;
 
-    nativeBuildInputs = [makeWrapper];
+    nativeBuildInputs = [
+      makeWrapper
+      copyDesktopItems
+      imagemagick
+    ];
 
     dontBuild = true;
+
+    desktopItems = [
+      (makeDesktopItem {
+        name = "batch-leapp";
+        desktopName = "Batch-LEAPP";
+        comment = "Run a LEAPP tool over a folder of extractions";
+        exec = "batch-leapp-gui";
+        icon = "batch-leapp";
+        categories = ["System" "Utility"];
+      })
+    ];
 
     installPhase = ''
       runHook preInstall
       mkdir -p $out/share/batch-leapp $out/bin
+      mkdir -p $out/share/icons/hicolor/256x256/apps
+      magick docs/icon.png -resize 256x256 $out/share/icons/hicolor/256x256/apps/batch-leapp.png
       cp batch_leapp.py batch_leapp_gui.py batch_coverage.py $out/share/batch-leapp/
       makeWrapper ${python}/bin/python $out/bin/batch-leapp --add-flags $out/share/batch-leapp/batch_leapp.py
       makeWrapper ${python}/bin/python $out/bin/batch-leapp-gui --add-flags $out/share/batch-leapp/batch_leapp_gui.py

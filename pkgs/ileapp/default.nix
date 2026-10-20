@@ -3,6 +3,8 @@
   stdenvNoCC,
   python3,
   makeWrapper,
+  copyDesktopItems,
+  makeDesktopItem,
   callPackage,
   astc-decomp-faster,
   bencoding,
@@ -52,9 +54,30 @@ in
 
     src = sources.ileapp.src;
 
-    nativeBuildInputs = [makeWrapper];
+    nativeBuildInputs = [
+      makeWrapper
+      copyDesktopItems
+    ];
 
     dontBuild = true;
+
+    # The GUI looks for its assets under the working directory, which only
+    # works when it is started from a source checkout
+    postPatch = ''
+      substituteInPlace ileappGUI.py \
+        --replace-fail 'base_path = os.path.abspath(".")' 'base_path = os.path.dirname(os.path.abspath(__file__))'
+    '';
+
+    desktopItems = [
+      (makeDesktopItem {
+        name = "ileapp";
+        desktopName = "iLEAPP";
+        comment = "Parse iOS extractions into a forensic report";
+        exec = "ileapp-gui";
+        icon = "ileapp";
+        categories = ["System" "Utility"];
+      })
+    ];
 
     # It has no installer and finds its artifact plugins and report assets
     # relative to its own scripts, so the tree is kept whole.
@@ -63,6 +86,7 @@ in
     installPhase = ''
       runHook preInstall
       mkdir -p $out/share/ileapp $out/bin
+      install -Dm444 assets/icon.png $out/share/icons/hicolor/256x256/apps/ileapp.png
       cp -r ileapp.py ileappGUI.py assets leapp_functions scripts $out/share/ileapp/
       makeWrapper ${python}/bin/python $out/bin/ileapp --add-flags $out/share/ileapp/ileapp.py \
         --prefix PATH : ${lib.makeBinPath [unifiedlog-iterator]}
