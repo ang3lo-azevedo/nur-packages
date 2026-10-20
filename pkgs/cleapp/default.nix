@@ -3,6 +3,9 @@
   stdenvNoCC,
   python3,
   makeWrapper,
+  copyDesktopItems,
+  imagemagick,
+  makeDesktopItem,
   callPackage,
   freesimplegui,
 }: let
@@ -26,9 +29,24 @@ in
 
     src = sources.cleapp.src;
 
-    nativeBuildInputs = [makeWrapper];
+    nativeBuildInputs = [
+      makeWrapper
+      copyDesktopItems
+      imagemagick
+    ];
 
     dontBuild = true;
+
+    desktopItems = [
+      (makeDesktopItem {
+        name = "cleapp";
+        desktopName = "cLEAPP";
+        comment = "Parse ChromeOS extractions into a forensic report";
+        exec = "cleapp-gui";
+        icon = "cleapp";
+        categories = ["System" "Utility"];
+      })
+    ];
 
     # PySimpleGUI 4 was pulled from PyPI when it went proprietary
     postPatch = ''
@@ -40,6 +58,8 @@ in
     installPhase = ''
       runHook preInstall
       mkdir -p $out/share/cleapp $out/bin
+      mkdir -p $out/share/icons/hicolor/256x256/apps
+      magick scripts/logo.jpg -resize 256x256 $out/share/icons/hicolor/256x256/apps/cleapp.png
       cp -r cleapp.py cleappGUI.py scripts $out/share/cleapp/
       makeWrapper ${python}/bin/python $out/bin/cleapp --add-flags $out/share/cleapp/cleapp.py
       makeWrapper ${python}/bin/python $out/bin/cleapp-gui --add-flags $out/share/cleapp/cleappGUI.py

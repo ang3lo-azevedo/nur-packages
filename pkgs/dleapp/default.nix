@@ -3,6 +3,8 @@
   stdenvNoCC,
   python3,
   makeWrapper,
+  copyDesktopItems,
+  makeDesktopItem,
   callPackage,
   bencoding,
   pyliblzfse,
@@ -49,9 +51,30 @@ in
 
     src = sources.dleapp.src;
 
-    nativeBuildInputs = [makeWrapper];
+    nativeBuildInputs = [
+      makeWrapper
+      copyDesktopItems
+    ];
 
     dontBuild = true;
+
+    # The GUI looks for its assets under the working directory, which only
+    # works when it is started from a source checkout
+    postPatch = ''
+      substituteInPlace dleappGUI.py \
+        --replace-fail 'base_path = os.path.abspath(".")' 'base_path = os.path.dirname(os.path.abspath(__file__))'
+    '';
+
+    desktopItems = [
+      (makeDesktopItem {
+        name = "dleapp";
+        desktopName = "DLEAPP";
+        comment = "Parse desktop app and Windows artifacts into a forensic report";
+        exec = "dleapp-gui";
+        icon = "dleapp";
+        categories = ["System" "Utility"];
+      })
+    ];
 
     # It has no installer and finds its artifact plugins and report assets
     # relative to its own scripts, so the tree is kept whole.
@@ -60,6 +83,7 @@ in
     installPhase = ''
       runHook preInstall
       mkdir -p $out/share/dleapp $out/bin
+      install -Dm444 assets/icon.png $out/share/icons/hicolor/256x256/apps/dleapp.png
       cp -r dleapp.py dleappGUI.py assets leapp_functions scripts *.dlprofile $out/share/dleapp/
       makeWrapper ${python}/bin/python $out/bin/dleapp --add-flags $out/share/dleapp/dleapp.py \
         --prefix PATH : ${lib.makeBinPath [unifiedlog-iterator]}

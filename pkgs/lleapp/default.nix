@@ -3,6 +3,9 @@
   stdenvNoCC,
   python3,
   makeWrapper,
+  copyDesktopItems,
+  imagemagick,
+  makeDesktopItem,
   callPackage,
   apachelogs,
   freesimplegui,
@@ -31,9 +34,24 @@ in
 
     src = sources.lleapp.src;
 
-    nativeBuildInputs = [makeWrapper];
+    nativeBuildInputs = [
+      makeWrapper
+      copyDesktopItems
+      imagemagick
+    ];
 
     dontBuild = true;
+
+    desktopItems = [
+      (makeDesktopItem {
+        name = "lleapp";
+        desktopName = "lLEAPP";
+        comment = "Parse Linux extractions into a forensic report";
+        exec = "lleapp-gui";
+        icon = "lleapp";
+        categories = ["System" "Utility"];
+      })
+    ];
 
     # PySimpleGUI 4 was pulled from PyPI when it went proprietary.
     # The log artifacts search var/logs/, which is not where Linux keeps them
@@ -48,6 +66,8 @@ in
     installPhase = ''
       runHook preInstall
       mkdir -p $out/share/lleapp $out/bin
+      mkdir -p $out/share/icons/hicolor/256x256/apps
+      magick scripts/logo.jpg -resize 256x256 $out/share/icons/hicolor/256x256/apps/lleapp.png
       cp -r lleapp.py lleappGUI.py plugin_loader.py lib scripts $out/share/lleapp/
       makeWrapper ${python}/bin/python $out/bin/lleapp --add-flags $out/share/lleapp/lleapp.py
       makeWrapper ${python}/bin/python $out/bin/lleapp-gui --add-flags $out/share/lleapp/lleappGUI.py

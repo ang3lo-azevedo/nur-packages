@@ -2,6 +2,8 @@
   lib,
   python3Packages,
   callPackage,
+  copyDesktopItems,
+  makeDesktopItem,
   gobject-introspection,
   gtk3,
   webkitgtk_4_1,
@@ -21,6 +23,7 @@ in
     build-system = with python3Packages; [setuptools];
 
     nativeBuildInputs = [
+      copyDesktopItems
       gobject-introspection
       wrapGAppsHook3
     ];
@@ -55,6 +58,21 @@ in
     # with nixpkgs' OpenCV 4 that one feature fails and the rest works
     pythonRemoveDeps = ["pi-heif"];
     pythonRelaxDeps = ["opencv-python-headless"];
+
+    desktopItems = [
+      (makeDesktopItem {
+        name = "gleapp";
+        desktopName = "GLEAPP";
+        comment = "Triage images and video from extractions and disk images";
+        exec = "gleapp-desktop";
+        icon = "gleapp";
+        categories = ["System" "Utility"];
+      })
+    ];
+
+    postInstall = ''
+      install -Dm444 gleapp/web/static/gleapp-logo.png $out/share/icons/hicolor/256x256/apps/gleapp.png
+    '';
 
     dontWrapGApps = true;
     preFixup = ''

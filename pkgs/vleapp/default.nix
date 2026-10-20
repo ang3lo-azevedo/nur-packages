@@ -3,6 +3,8 @@
   stdenvNoCC,
   python3,
   makeWrapper,
+  copyDesktopItems,
+  makeDesktopItem,
   callPackage,
   pyliblzfse,
 }: let
@@ -32,15 +34,37 @@ in
 
     src = sources.vleapp.src;
 
-    nativeBuildInputs = [makeWrapper];
+    nativeBuildInputs = [
+      makeWrapper
+      copyDesktopItems
+    ];
 
     dontBuild = true;
+
+    # The GUI looks for its assets under the working directory, which only
+    # works when it is started from a source checkout
+    postPatch = ''
+      substituteInPlace vleappGUI.py \
+        --replace-fail 'base_path = os.path.abspath(".")' 'base_path = os.path.dirname(os.path.abspath(__file__))'
+    '';
+
+    desktopItems = [
+      (makeDesktopItem {
+        name = "vleapp";
+        desktopName = "VLEAPP";
+        comment = "Parse vehicle extractions into a forensic report";
+        exec = "vleapp-gui";
+        icon = "vleapp";
+        categories = ["System" "Utility"];
+      })
+    ];
 
     # It has no installer and finds its artifact plugins and report assets
     # relative to its own scripts, so the tree is kept whole.
     installPhase = ''
       runHook preInstall
       mkdir -p $out/share/vleapp $out/bin
+      install -Dm444 assets/icon.png $out/share/icons/hicolor/256x256/apps/vleapp.png
       cp -r vleapp.py vleappGUI.py assets leapp_functions scripts $out/share/vleapp/
       makeWrapper ${python}/bin/python $out/bin/vleapp --add-flags $out/share/vleapp/vleapp.py
       makeWrapper ${python}/bin/python $out/bin/vleapp-gui --add-flags $out/share/vleapp/vleappGUI.py
