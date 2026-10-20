@@ -11,12 +11,14 @@
   pam,
   tpm2-tools,
   util-linux,
-  src,
-}:
+  callPackage,
+}: let
+  sources = callPackage ../../_sources/generated.nix {};
+in
 stdenv.mkDerivation {
   pname = "tpm-keyring-unlock";
-  version = "unstable-2026-09-07";
-  inherit src;
+  version = "0-unstable-${builtins.substring 0 7 sources.tpm-keyring-unlock.version}";
+  inherit (sources.tpm-keyring-unlock) src;
 
   nativeBuildInputs = [makeWrapper];
   buildInputs = [pam];

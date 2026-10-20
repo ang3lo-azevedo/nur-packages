@@ -33,7 +33,9 @@ in
       libx11
     ];
 
-    ZAPFAST_TEST_RTL_FONT = "${pkgs.dejavu_fonts}/share/fonts/truetype/DejaVuSans.ttf";
+    # The test run compiles all 745 crates a second time, in test mode, which roughly
+    # doubles a build that already takes over 20 minutes and 25 GB of memory
+    doCheck = false;
 
     postInstall = ''
       install -Dm644 packaging/applications/zapfast.desktop \

@@ -28,7 +28,8 @@ in
 
     doCheck = false;
 
-    SETUPTOOLS_SCM_PRETEND_VERSION = "0.9.0";
+    # setuptools-scm 10.2 only reads the per-package override
+    env.SETUPTOOLS_SCM_PRETEND_VERSION_FOR_CTFBRIDGE = "0.9.0";
 
     meta = with lib; {
       description = "A Python library for interacting with multiple CTF platforms";
