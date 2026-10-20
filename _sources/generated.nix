@@ -529,6 +529,17 @@
       sha256 = "sha256-a+knxg/rd5Ied4RVK8Gg7xeFElovJab0gqxpjs11fAU=";
     };
   };
+  tpm-keyring-unlock = {
+    pname = "tpm-keyring-unlock";
+    version = "485c9f57c705f4d4714f8a085a09514051389204";
+    src = fetchFromGitHub {
+      owner = "dmitriitimoshenko";
+      repo = "tpm-keyring-unlock";
+      rev = "485c9f57c705f4d4714f8a085a09514051389204";
+      fetchSubmodules = false;
+      sha256 = "sha256-US2zRK340a2NE3hvkfPTdIHXzdcMDytGmv+KFgGKeOM=";
+    };
+  };
   trakt-scrobbler = {
     pname = "trakt-scrobbler";
     version = "v1.9.0b1";

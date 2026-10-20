@@ -272,3 +272,8 @@ fetch.github = "cclgroupltd/ccl_simplesnappy"
 [mister-skinnylegs]
 src.github_tag = "cclgroupltd/mister-skinnylegs"
 fetch.github = "cclgroupltd/mister-skinnylegs"
+
+# A PAM module in the login path: pinned, and moved forward by hand after reading the diff
+[tpm-keyring-unlock]
+src.manual = "485c9f57c705f4d4714f8a085a09514051389204"
+fetch.github = "dmitriitimoshenko/tpm-keyring-unlock"

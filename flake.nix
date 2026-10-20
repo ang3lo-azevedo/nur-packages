@@ -6,13 +6,9 @@
       url = "github:cachix/pre-commit-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    tpm-keyring-unlock = {
-      url = "github:dmitriitimoshenko/tpm-keyring-unlock";
-      flake = false;
-    };
   };
 
-  outputs = { self, nixpkgs, pre-commit-hooks, tpm-keyring-unlock, ... }:
+  outputs = { self, nixpkgs, pre-commit-hooks, ... }:
     let
       forAllSystems = nixpkgs.lib.genAttrs nixpkgs.lib.systems.flakeExposed;
     in
@@ -22,7 +18,6 @@
           inherit system;
           config.allowUnfree = true;
         };
-        inherit tpm-keyring-unlock;
       });
       packages = forAllSystems (system: nixpkgs.lib.filterAttrs (_: v: nixpkgs.lib.isDerivation v) self.legacyPackages.${system});
       nixosModules = import ./nixos-modules;

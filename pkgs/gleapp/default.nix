@@ -54,9 +54,9 @@ in
     ];
 
     # pi-heif is the slim build of pillow-heif, which GLEAPP falls back to.
-    # Only OpenCV 5 loads the DINOv2 model behind visual similarity search;
-    # with nixpkgs' OpenCV 4 that one feature fails and the rest works
     pythonRemoveDeps = ["pi-heif"];
+    # FIXME: Drop once nixpkgs has OpenCV 5. Only OpenCV 5 loads the DINOv2 model
+    # behind visual similarity search; with OpenCV 4 that one feature fails
     pythonRelaxDeps = ["opencv-python-headless"];
 
     desktopItems = [

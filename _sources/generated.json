@@ -941,6 +941,27 @@
         },
         "version": "1.2.0"
     },
+    "tpm-keyring-unlock": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "tpm-keyring-unlock",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "dmitriitimoshenko",
+            "repo": "tpm-keyring-unlock",
+            "rev": "485c9f57c705f4d4714f8a085a09514051389204",
+            "sha256": "sha256-US2zRK340a2NE3hvkfPTdIHXzdcMDytGmv+KFgGKeOM=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "485c9f57c705f4d4714f8a085a09514051389204"
+    },
     "trakt-scrobbler": {
         "cargoLock": null,
         "date": null,
