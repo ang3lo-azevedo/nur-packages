@@ -37,7 +37,8 @@ in
 
     doCheck = false;
 
-    SETUPTOOLS_SCM_PRETEND_VERSION = "0.0.0";
+    # setuptools-scm 10.2 only reads the per-package override
+    env.SETUPTOOLS_SCM_PRETEND_VERSION_FOR_CTF_DL = "0.0.0";
 
     meta = with lib; {
       description = "Command-line tool to download CTF challenges";
