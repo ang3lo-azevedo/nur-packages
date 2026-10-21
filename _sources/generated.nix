@@ -358,13 +358,13 @@
   };
   linoffice = {
     pname = "linoffice";
-    version = "v3.0.0";
+    version = "v3.0.1";
     src = fetchFromGitHub {
       owner = "eylenburg";
       repo = "linoffice";
-      rev = "v3.0.0";
+      rev = "v3.0.1";
       fetchSubmodules = false;
-      sha256 = "sha256-IwIlDocpH5VgpHYJd+XmlUgr+4zr2SxA3/Z/fTe4heg=";
+      sha256 = "sha256-z19qiDUCR1CDGDX9MFRn0TLPmxvKdgf/fsc2jfPIK8A=";
     };
   };
   lleapp = {
@@ -403,10 +403,10 @@
   };
   nordvpn = {
     pname = "nordvpn";
-    version = "5.4.1";
+    version = "6.0.0";
     src = fetchurl {
-      url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_5.4.1_amd64.deb";
-      sha256 = "sha256-CfukzyKKDfC5EDx7NAqUr7feDbi2XMtIBGRvqKgUtlw=";
+      url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_6.0.0_amd64.deb";
+      sha256 = "sha256-5pFhYkP01a3LYRwsRU7zdl8kckTQjk3uhBxOBYQeHnI=";
     };
   };
   nuvio = {
@@ -427,10 +427,10 @@
   };
   openlogi = {
     pname = "openlogi";
-    version = "0.8.14";
+    version = "0.8.15";
     src = fetchTarball {
-      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.14.tar.gz";
-      sha256 = "sha256-d/G9BlF66mB7M9vpMVsSmuzA1i/4Zp9xYcWlUbfj3Z8=";
+      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.15.tar.gz";
+      sha256 = "sha256-IvZoYu2m/8ffbQ5xAbtl4+xHb6XeOFJZKBUq6Y/1/bM=";
     };
   };
   registry-spy = {
