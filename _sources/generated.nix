@@ -403,10 +403,10 @@
   };
   nordvpn = {
     pname = "nordvpn";
-    version = "6.0.0";
+    version = "6.0.1";
     src = fetchurl {
-      url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_6.0.0_amd64.deb";
-      sha256 = "sha256-5pFhYkP01a3LYRwsRU7zdl8kckTQjk3uhBxOBYQeHnI=";
+      url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_6.0.1_amd64.deb";
+      sha256 = "sha256-SYQ+zPNHfLapX9qXMYNcIa+Ittel0EkvuYF31vsDp3k=";
     };
   };
   nuvio = {
