@@ -427,10 +427,10 @@
   };
   openlogi = {
     pname = "openlogi";
-    version = "0.8.15";
+    version = "0.8.16";
     src = fetchTarball {
-      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.15.tar.gz";
-      sha256 = "sha256-IvZoYu2m/8ffbQ5xAbtl4+xHb6XeOFJZKBUq6Y/1/bM=";
+      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.16.tar.gz";
+      sha256 = "sha256-vvIQANH+gAYvivjrngJxZ9DRkwDNysjAaD3vsxwQ/rI=";
     };
   };
   registry-spy = {
