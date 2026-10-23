@@ -30,21 +30,21 @@
   };
   angr-management = {
     pname = "angr-management";
-    version = "v10.0.4";
+    version = "v10.0.5";
     src = fetchurl {
-      url = "https://github.com/angr/angr-management/releases/download/v10.0.4/angr-management-v10.0.4-x86_64.AppImage";
-      sha256 = "sha256-plDvvfs1UpG4tvFWVzI2Yb5Qbh7b00lMToHHOBwCEw4=";
+      url = "https://github.com/angr/angr-management/releases/download/v10.0.5/angr-management-v10.0.5-x86_64.AppImage";
+      sha256 = "sha256-1xXnFNBHZi55zArtK60pfHCv2dwPjv6e/Ft8eLcjYmE=";
     };
   };
   angr-management-src = {
     pname = "angr-management-src";
-    version = "v10.0.4";
+    version = "v10.0.5";
     src = fetchFromGitHub {
       owner = "angr";
       repo = "angr-management";
-      rev = "v10.0.4";
+      rev = "v10.0.5";
       fetchSubmodules = false;
-      sha256 = "sha256-jK1ctIiLHUbZZs5A9lWF2Jsl8y91LrB4RAK2NAsQSHM=";
+      sha256 = "sha256-ST9vkSM8I3TbnmVpC1naB9S+5jZSxkU7GCKoVdKaPgM=";
     };
   };
   apk-mitm = {
@@ -427,10 +427,10 @@
   };
   openlogi = {
     pname = "openlogi";
-    version = "0.8.16";
+    version = "0.8.17";
     src = fetchTarball {
-      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.16.tar.gz";
-      sha256 = "sha256-vvIQANH+gAYvivjrngJxZ9DRkwDNysjAaD3vsxwQ/rI=";
+      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.17.tar.gz";
+      sha256 = "sha256-ZJoEsxZO8G0L5+HHoFoTalShQs02sqnlfew64/cWktE=";
     };
   };
   registry-spy = {

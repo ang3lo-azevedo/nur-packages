@@ -50,11 +50,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-plDvvfs1UpG4tvFWVzI2Yb5Qbh7b00lMToHHOBwCEw4=",
+            "sha256": "sha256-1xXnFNBHZi55zArtK60pfHCv2dwPjv6e/Ft8eLcjYmE=",
             "type": "url",
-            "url": "https://github.com/angr/angr-management/releases/download/v10.0.4/angr-management-v10.0.4-x86_64.AppImage"
+            "url": "https://github.com/angr/angr-management/releases/download/v10.0.5/angr-management-v10.0.5-x86_64.AppImage"
         },
-        "version": "v10.0.4"
+        "version": "v10.0.5"
     },
     "angr-management-src": {
         "cargoLock": null,
@@ -70,12 +70,12 @@
             "name": null,
             "owner": "angr",
             "repo": "angr-management",
-            "rev": "v10.0.4",
-            "sha256": "sha256-jK1ctIiLHUbZZs5A9lWF2Jsl8y91LrB4RAK2NAsQSHM=",
+            "rev": "v10.0.5",
+            "sha256": "sha256-ST9vkSM8I3TbnmVpC1naB9S+5jZSxkU7GCKoVdKaPgM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v10.0.4"
+        "version": "v10.0.5"
     },
     "apk-mitm": {
         "cargoLock": null,
@@ -758,11 +758,11 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "sha256": "sha256-vvIQANH+gAYvivjrngJxZ9DRkwDNysjAaD3vsxwQ/rI=",
+            "sha256": "sha256-ZJoEsxZO8G0L5+HHoFoTalShQs02sqnlfew64/cWktE=",
             "type": "tarball",
-            "url": "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.16.tar.gz"
+            "url": "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.17.tar.gz"
         },
-        "version": "0.8.16"
+        "version": "0.8.17"
     },
     "registry-spy": {
         "cargoLock": null,
