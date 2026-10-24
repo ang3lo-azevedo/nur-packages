@@ -358,13 +358,13 @@
   };
   linoffice = {
     pname = "linoffice";
-    version = "v3.0.1";
+    version = "v3.0.2";
     src = fetchFromGitHub {
       owner = "eylenburg";
       repo = "linoffice";
-      rev = "v3.0.1";
+      rev = "v3.0.2";
       fetchSubmodules = false;
-      sha256 = "sha256-z19qiDUCR1CDGDX9MFRn0TLPmxvKdgf/fsc2jfPIK8A=";
+      sha256 = "sha256-+6UX7YDKBDWwYFCIhFm/DHZ+KuplJ2R5Mrs0gIH9qB8=";
     };
   };
   lleapp = {
@@ -672,19 +672,20 @@
   };
   zapfast = {
     pname = "zapfast";
-    version = "0.19.0";
+    version = "0.20.0";
     src = fetchTarball {
-      url = "https://github.com/crmne/zapfast/archive/refs/tags/v0.19.0.tar.gz";
-      sha256 = "sha256-FDB9iAkDL2uaHKpSam1ehc8yGbrYbZy2A5NqE2oXs8Q=";
+      url = "https://github.com/crmne/zapfast/archive/refs/tags/v0.20.0.tar.gz";
+      sha256 = "sha256-KnCjDqbrlLpaetqJC/nBcGrBfhEVNfSXUS3D+Uyu0gA=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-FDB9iAkDL2uaHKpSam1ehc8yGbrYbZy2A5NqE2oXs8Q=/Cargo.lock";
+      lockFile = ./. + "/sha256-KnCjDqbrlLpaetqJC_nBcGrBfhEVNfSXUS3D+Uyu0gA=/Cargo.lock";
       outputHashes = {
-        "wacore-0.7.0" = "sha256-+hV1XKntNGClwBUH5t06LSP3YpKJXnP2pmhNXKm2lU0=";
-        "ecolor-0.36.1" = "sha256-jF+5LjNkGAvdlwstYPVMIj0KKnnxHqpbcjC2ZgsUmoo=";
-        "dpi-0.1.1" = "sha256-5ioLeQqbyXFgbsE3Iik/FgtHYSIFv+35hGjP8UMQl9k=";
-        "fastframe-emoji-0.4.1" = "sha256-ztK6UbU+M5zfM0kByNgsv0gwpyGVtne+3GxNA1z6x5g=";
-        "rodio-0.22.2" = "sha256-snwSU8P9iZeMSKJcX80FWl0IL32dCQqWGjNispeKlps=";
+        "wacore-0.7.0" = "sha256-LYYjwvUaN0cLZ0MtPUIKky5Ey29MRHd815JVbd3NDLk=";
+        "dpi-0.1.1" = "sha256-zUErcFIlDxOtA8lnP4vHp6DHxsUziyXz9e1IIWnXq/U=";
+        "cpal-0.18.2" = "sha256-ntJYSSipB0YyIpZ+zsJi0LXwtYcuBZbJHrZtGD5r4iw=";
+        "fastframe-audio-0.14.1" = "sha256-vWE6qdgoIkn2oVPXlLnCRZmnF0lgWtsKjcGK92Xiqm8=";
+        "rodio-0.22.2" = "sha256-imsXaaGgE3TIkQO3GwljMSsEZDPktcFHf2mUhy3mfAo=";
+        "ecolor-0.36.2" = "sha256-2InNvJTXd6du0Rux4BpZsPXY0lbf6sPlTxDYVtWJbjE=";
       };
     };
   };
