@@ -26,11 +26,15 @@ in
       cmake
       perl
       makeWrapper
+      # libspa-sys runs bindgen, which needs libclang: this sets LIBCLANG_PATH
+      rustPlatform.bindgenHook
     ];
     buildInputs = with pkgs; [
       alsa-lib
       libGL
       libx11
+      # libspa-sys/pipewire-rs, added in 0.20.0, probe libspa and libpipewire with pkg-config
+      pipewire
     ];
 
     # The test run compiles all 745 crates a second time, in test mode, which roughly
