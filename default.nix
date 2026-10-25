@@ -24,6 +24,12 @@
   apk-mitm = pkgs.callPackage ./pkgs/apk-mitm {};
   archi = pkgs.callPackage ./pkgs/archi {};
   astc-decomp-faster = pkgs.callPackage ./pkgs/astc-decomp-faster {};
+  bloodhound-quickwin = pkgs.callPackage ./pkgs/bloodhound-quickwin {
+    py2neo = pkgs.callPackage ./pkgs/py2neo {
+      interchange = pkgs.callPackage ./pkgs/interchange {};
+      pansi = pkgs.callPackage ./pkgs/pansi {};
+    };
+  };
   batch-leapp = pkgs.callPackage ./pkgs/batch-leapp {};
   bencoding = pkgs.callPackage ./pkgs/bencoding {};
   betterbird = pkgs.callPackage ./pkgs/betterbird {};
@@ -38,6 +44,7 @@
   cleapp = pkgs.callPackage ./pkgs/cleapp {
     freesimplegui = pkgs.callPackage ./pkgs/freesimplegui {};
   };
+  interchange = pkgs.callPackage ./pkgs/interchange {};
   ciphey = pkgs.callPackage ./pkgs/ciphey {};
   ctf-dl = pkgs.callPackage ./pkgs/ctf-dl {
     ctfbridge = pkgs.callPackage ./pkgs/ctfbridge {};
@@ -111,6 +118,11 @@
   pyliblzfse = pkgs.callPackage ./pkgs/pyliblzfse {};
   python-evtx = pkgs.callPackage ./pkgs/python-evtx {};
   pytypedstream = pkgs.callPackage ./pkgs/pytypedstream {};
+  pansi = pkgs.callPackage ./pkgs/pansi {};
+  py2neo = pkgs.callPackage ./pkgs/py2neo {
+    interchange = pkgs.callPackage ./pkgs/interchange {};
+    pansi = pkgs.callPackage ./pkgs/pansi {};
+  };
   registry-spy = pkgs.callPackage ./pkgs/registry-spy {};
   rem = pkgs.callPackage ./pkgs/rem {};
   rleapp = pkgs.callPackage ./pkgs/rleapp {
