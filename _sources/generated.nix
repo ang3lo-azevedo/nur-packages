@@ -8,13 +8,13 @@
 {
   aleapp = {
     pname = "aleapp";
-    version = "v2026.4.3";
+    version = "v2026.4.4";
     src = fetchFromGitHub {
       owner = "abrignoni";
       repo = "ALEAPP";
-      rev = "v2026.4.3";
+      rev = "v2026.4.4";
       fetchSubmodules = false;
-      sha256 = "sha256-pJA9+yH7RZqJcn6duQ31KKIdi7XdBmZE8QVGKfWqugE=";
+      sha256 = "sha256-D7zUz2rG+yEwntd5kAUOlD9NAjLemvZQ2F9DrBwz6zA=";
     };
   };
   analyzeMFT = {
@@ -180,13 +180,13 @@
   };
   dleapp = {
     pname = "dleapp";
-    version = "v2026.4.3";
+    version = "v2026.4.4";
     src = fetchFromGitHub {
       owner = "abrignoni";
       repo = "DLEAPP";
-      rev = "v2026.4.3";
+      rev = "v2026.4.4";
       fetchSubmodules = false;
-      sha256 = "sha256-vv8K6tjEHcWS0exZ2qs3JTLXE2T2YuiBGWmGuu8KyjA=";
+      sha256 = "sha256-PhQ5+xm3ohkHNRQmUmZyHy8+ZhOrak2/3WnhA9MIAsE=";
     };
   };
   dnspy = {
@@ -242,13 +242,13 @@
   };
   gleapp = {
     pname = "gleapp";
-    version = "v2026.5.4";
+    version = "v2026.5.5";
     src = fetchFromGitHub {
       owner = "abrignoni";
       repo = "GLEAPP";
-      rev = "v2026.5.4";
+      rev = "v2026.5.5";
       fetchSubmodules = false;
-      sha256 = "sha256-l0fQrk2zMCB8gaY1SgrB+D70x/60Hb16vHAN2MZl9M8=";
+      sha256 = "sha256-mxaKr+68fjpbCuhiQH138st2HOul0tV+LapwISRAMsQ=";
     };
   };
   harbor = {
@@ -292,13 +292,13 @@
   };
   ileapp = {
     pname = "ileapp";
-    version = "v2026.4.4";
+    version = "v2026.4.5";
     src = fetchFromGitHub {
       owner = "abrignoni";
       repo = "iLEAPP";
-      rev = "v2026.4.4";
+      rev = "v2026.4.5";
       fetchSubmodules = false;
-      sha256 = "sha256-ETWXHMk2EB3XBHCrtim+W+LVNdiEcAdfh2MbuR1Jns4=";
+      sha256 = "sha256-M5sm+Sq/159AAikRq+zJXZzElTkXhObp31tQlFj0bRk=";
     };
   };
   ist-fenix-auto-enroller = {
@@ -466,13 +466,13 @@
   };
   rleapp = {
     pname = "rleapp";
-    version = "v2026.4.3";
+    version = "v2026.4.4";
     src = fetchFromGitHub {
       owner = "abrignoni";
       repo = "RLEAPP";
-      rev = "v2026.4.3";
+      rev = "v2026.4.4";
       fetchSubmodules = false;
-      sha256 = "sha256-DTec1vlu136a0xBobLe5XmXBIqG4KnXG6fkDP6SB2f8=";
+      sha256 = "sha256-8xYmax6Uil8C8Qy3NnN7LMN320BZMFxj9YvI1uEHsLk=";
     };
   };
   scrollmpris = {
@@ -553,13 +553,13 @@
   };
   vleapp = {
     pname = "vleapp";
-    version = "v2026.4.3";
+    version = "v2026.4.4";
     src = fetchFromGitHub {
       owner = "abrignoni";
       repo = "VLEAPP";
-      rev = "v2026.4.3";
+      rev = "v2026.4.4";
       fetchSubmodules = false;
-      sha256 = "sha256-phcgOosokwnIEwvFqPTbEsJaG2lpjc7CAdAtuV1i64g=";
+      sha256 = "sha256-GCcC/m8SZ3kwblgcqSM4pAa3J+Ogjz9n4dbyUQWFRc0=";
     };
   };
   vol-rs = {
@@ -672,13 +672,13 @@
   };
   zapfast = {
     pname = "zapfast";
-    version = "0.20.0";
+    version = "0.20.1";
     src = fetchTarball {
-      url = "https://github.com/crmne/zapfast/archive/refs/tags/v0.20.0.tar.gz";
-      sha256 = "sha256-KnCjDqbrlLpaetqJC/nBcGrBfhEVNfSXUS3D+Uyu0gA=";
+      url = "https://github.com/crmne/zapfast/archive/refs/tags/v0.20.1.tar.gz";
+      sha256 = "sha256-kkj9oikkNAxMlLC4zMJNPUqB/HQ47h+mmhowOBJoD1E=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-KnCjDqbrlLpaetqJC_nBcGrBfhEVNfSXUS3D+Uyu0gA=/Cargo.lock";
+      lockFile = ./. + "/sha256-kkj9oikkNAxMlLC4zMJNPUqB_HQ47h+mmhowOBJoD1E=/Cargo.lock";
       outputHashes = {
         "wacore-0.7.0" = "sha256-LYYjwvUaN0cLZ0MtPUIKky5Ey29MRHd815JVbd3NDLk=";
         "dpi-0.1.1" = "sha256-zUErcFIlDxOtA8lnP4vHp6DHxsUziyXz9e1IIWnXq/U=";
