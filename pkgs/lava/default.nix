@@ -7,7 +7,7 @@
   pname = "lava";
   version = lib.removePrefix "v" sources.lava.version;
   src = sources.lava.src;
-  appimageContents = appimageTools.extractType2 {inherit pname version src;};
+  appimageContents = appimageTools.extract {inherit pname version src;};
 in
   appimageTools.wrapType2 {
     inherit pname version src;
