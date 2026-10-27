@@ -1,6 +1,6 @@
 --- a/scripts/vol-analyze.sh
 +++ b/scripts/vol-analyze.sh
-@@ -71,6 +71,8 @@
+@@ -84,6 +84,8 @@
          --dump-files            Dump files from memory (Windows only)
          --no-bitlocker          Skip the BitLocker FVEK scan (Windows only)
          --no-credentials        Skip the pypykatz LSASS credential scan (Windows only)
@@ -9,18 +9,18 @@
          --extract-strings       Extract and categorize IOC strings
          --json                  Generate JSON summary report
          --interactive           Enable interactive prompts (disabled by default)
-@@ -90,8 +92,8 @@
-     ${SCRIPT_NAME} memory.lime --os linux --extract-strings
+@@ -106,8 +108,8 @@
+     ${SCRIPT_NAME} memory.lime --isf-url https://github.com/Abyss-W4tcher/volatility3-symbols/raw/master/banners/banners.json
  
  ${BOLD}SUPPORTED OS${NC}
--    windows   30 plugins — processes, network, registry, malware, drivers, services
+-    windows   32 plugins — processes, console history, network, registry, malware, drivers, services
 -    linux     21 plugins — processes, kernel modules, network, rootkit checks
 +    windows   49 plugins — processes, network, registry, malware, drivers, services
 +    linux     31 plugins — processes, kernel modules, network, rootkit checks
      mac       20 plugins — processes, kernel, network, TrustedBSD, kauth
  
  ${BOLD}MORE INFO${NC}
-@@ -112,6 +114,8 @@
+@@ -128,6 +130,8 @@
  BITLOCKER_HITS=""
  CREDENTIALS=true
  CREDENTIAL_HITS=""
@@ -29,7 +29,7 @@
  EXTRACT_STRINGS=false
  JSON_OUTPUT=false
  INTERACTIVE=false
-@@ -128,6 +132,8 @@
+@@ -151,6 +155,8 @@
              --dump-files)         DUMP_FILES=true; shift ;;
              --no-bitlocker)       BITLOCKER=false; shift ;;
              --no-credentials)     CREDENTIALS=false; shift ;;
@@ -38,16 +38,15 @@
              --extract-strings)    EXTRACT_STRINGS=true; shift ;;
              --json)               JSON_OUTPUT=true; shift ;;
              --interactive)        INTERACTIVE=true; shift ;;
-@@ -365,12 +371,16 @@
+@@ -443,6 +449,7 @@
      "windows.pslist"
      "windows.psscan"
      "windows.pstree"
 +    "windows.malware.psxview"
      "windows.cmdline"
-+    "windows.cmdscan"
-+    "windows.consoles"
-     "windows.sessions"
-     "windows.getsids"
+     "windows.cmdscan"
+     "windows.consoles"
+@@ -451,6 +458,7 @@
      "windows.privileges"
      "windows.envars"
      "windows.dlllist"
@@ -55,17 +54,15 @@
      "windows.vadinfo"
      "windows.handles"
      "windows.netscan"
-@@ -379,16 +389,31 @@
+@@ -459,16 +467,31 @@
      "windows.registry.hivelist"
      "windows.registry.printkey"
      "windows.registry.userassist"
--    "windows.hashdump"
--    "windows.lsadump"
 +    "windows.registry.amcache"
 +    "windows.registry.scheduled_tasks"
 +    "windows.shimcachemem"
-+    "windows.registry.hashdump"
-+    "windows.registry.lsadump"
+     "windows.registry.hashdump"
+     "windows.registry.lsadump"
 +    "windows.registry.cachedump"
 +    "windows.truecrypt"
      "windows.driverscan"
@@ -76,8 +73,7 @@
 +    "windows.driverirp"
      "windows.ssdt"
      "windows.callbacks"
--    "windows.malfind"
-+    "windows.malware.malfind"
+     "windows.malware.malfind"
 +    "windows.malware.hollowprocesses"
 +    "windows.malware.processghosting"
 +    "windows.malware.suspicious_threads"
@@ -90,7 +86,7 @@
      "windows.mbrscan"
      "windows.thrdscan"
  )
-@@ -396,6 +421,8 @@
+@@ -476,6 +499,8 @@
  readonly LINUX_PLUGINS=(
      "linux.pslist"
      "linux.pstree"
@@ -99,7 +95,7 @@
      "linux.psaux"
      "linux.bash"
      "linux.envars"
-@@ -403,18 +430,26 @@
+@@ -483,6 +508,8 @@
      "linux.lsof"
      "linux.proc.Maps"
      "linux.sockstat"
@@ -108,23 +104,10 @@
      "linux.mountinfo"
      "linux.kmsg"
      "linux.iomem"
-     "linux.elfs"
--    "linux.malfind"
--    "linux.check_syscall"
--    "linux.check_idt"
--    "linux.check_modules"
--    "linux.check_creds"
--    "linux.check_afinfo"
--    "linux.tty_check"
--    "linux.keyboard_notifiers"
-+    "linux.malware.malfind"
-+    "linux.malware.check_syscall"
-+    "linux.malware.check_idt"
-+    "linux.malware.check_modules"
-+    "linux.malware.check_creds"
-+    "linux.malware.check_afinfo"
-+    "linux.malware.tty_check"
-+    "linux.malware.keyboard_notifiers"
+@@ -495,6 +522,12 @@
+     "linux.malware.check_afinfo"
+     "linux.malware.tty_check"
+     "linux.malware.keyboard_notifiers"
 +    "linux.malware.hidden_modules"
 +    "linux.malware.modxview"
 +    "linux.malware.netfilter"
@@ -134,7 +117,7 @@
  )
  
  readonly MAC_PLUGINS=(
-@@ -449,6 +484,10 @@
+@@ -529,6 +562,10 @@
          linux)   PLUGINS=("${LINUX_PLUGINS[@]}") ;;
          mac)     PLUGINS=("${MAC_PLUGINS[@]}") ;;
      esac

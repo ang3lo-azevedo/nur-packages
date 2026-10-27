@@ -1,6 +1,6 @@
 --- a/scripts/vol-analyze.sh
 +++ b/scripts/vol-analyze.sh
-@@ -112,8 +112,12 @@
+@@ -128,8 +128,12 @@
  DUMP_FILES=false
  BITLOCKER=true
  BITLOCKER_HITS=""
@@ -13,7 +13,7 @@
  DEEP=false
  TIMELINE=false
  EXTRACT_STRINGS=false
-@@ -692,11 +696,14 @@
+@@ -806,11 +810,14 @@
      if ! "$VOL" -o "$bl_dir/" -f "$MEMORY_DUMP" windows.bitlocker.BitlockerFVEKScan --dislocker \
              > "${OUTPUT_DIR}/bitlocker.txt" 2>"${OUTPUT_DIR}/bitlocker.err"; then
          BITLOCKER_HITS="error"
@@ -28,7 +28,7 @@
      if (( BITLOCKER_HITS == 0 )); then
          rmdir "$bl_dir" 2>/dev/null || true
          info "No BitLocker keys found (no volume was unlocked when the dump was taken)"
-@@ -718,9 +725,11 @@
+@@ -832,9 +839,11 @@
          # pypykatz raises this when the lsasrv.dll pages holding the LSA keys were paged out
          if grep -q "All detection methods failed" "${OUTPUT_DIR}/pypykatz.err"; then
              CREDENTIAL_HITS="none (LSA keys not resident in dump)"
@@ -40,7 +40,7 @@
              warn "Credential scan failed (check pypykatz.err)"
          fi
          return
-@@ -729,6 +738,8 @@
+@@ -843,6 +852,8 @@
      local hits
      hits=$(awk -F'\t' '$1 == "credtype" { h = 1; next } h && NF' "${OUTPUT_DIR}/pypykatz.txt" | wc -l)
      CREDENTIAL_HITS="${hits} (see pypykatz.txt)"
@@ -49,7 +49,7 @@
      if (( hits == 0 )); then
          info "No credentials found in LSASS"
          return
-@@ -896,6 +907,8 @@
+@@ -994,6 +1005,8 @@
          done
  
          printf '\n  },\n'

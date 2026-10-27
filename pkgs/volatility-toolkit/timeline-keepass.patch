@@ -1,6 +1,6 @@
 --- a/scripts/vol-analyze.sh
 +++ b/scripts/vol-analyze.sh
-@@ -72,7 +72,7 @@
+@@ -85,7 +85,7 @@
          --no-bitlocker          Skip the BitLocker FVEK scan (Windows only)
          --no-credentials        Skip the pypykatz LSASS credential scan (Windows only)
          --deep                  Also run the slow PTE malfind, patched image and MFT scans (Windows only)
@@ -9,7 +9,7 @@
          --extract-strings       Extract and categorize IOC strings
          --json                  Generate JSON summary report
          --interactive           Enable interactive prompts (disabled by default)
-@@ -94,7 +94,7 @@
+@@ -110,7 +110,7 @@
  ${BOLD}SUPPORTED OS${NC}
      windows   49 plugins — processes, network, registry, malware, drivers, services
      linux     31 plugins — processes, kernel modules, network, rootkit checks
@@ -18,7 +18,7 @@
  
  ${BOLD}MORE INFO${NC}
      https://github.com/gl0bal01/volatility-toolkit
-@@ -477,6 +477,9 @@
+@@ -555,6 +555,9 @@
      "mac.kevents"
      "mac.list_files"
      "mac.trustedbsd"
@@ -28,7 +28,7 @@
  )
  
  # Active plugin list — set at runtime by select_plugins()
-@@ -491,7 +494,6 @@
+@@ -569,7 +572,6 @@
      if [[ "$DEEP" == true ]] && [[ "$TARGET_OS" == "windows" ]]; then
          PLUGINS+=("windows.ptemalfind" "windows.imgmalfind" "windows.mftscan.MFTScan" "windows.mftscan.ADS")
      fi
@@ -36,7 +36,7 @@
  }
  
  # ─── Plugin Execution ────────────────────────────────────────────────────────
-@@ -748,6 +750,45 @@
+@@ -862,6 +864,45 @@
      success "Found ${hits} credential(s), see pypykatz.txt"
  }
  
@@ -82,7 +82,7 @@
  # ─── Registry Dump (Windows only) ───────────────────────────────────────────
  
  dump_registry() {
-@@ -978,6 +1019,8 @@
+@@ -1087,6 +1128,8 @@
  
      if [[ "$TARGET_OS" == "windows" ]] && [[ "$BITLOCKER" == true ]]; then bitlocker_scan; fi
      if [[ "$TARGET_OS" == "windows" ]] && [[ "$CREDENTIALS" == true ]]; then credentials_scan; fi
