@@ -35,6 +35,7 @@ in
     ];
 
     dependencies = with python3Packages; [
+      argon2-cffi
       flask
       imagehash
       numpy
