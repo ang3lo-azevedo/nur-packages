@@ -1,6 +1,6 @@
 --- a/scripts/vol-analyze.sh
 +++ b/scripts/vol-analyze.sh
-@@ -305,7 +305,10 @@
+@@ -356,7 +356,10 @@
  
  # ─── OS Detection ────────────────────────────────────────────────────────────
  
@@ -10,9 +10,9 @@
 +# cache that breaks every later run, so leave it plenty of time.
 +readonly DETECT_TIMEOUT_SECS="${VOL_DETECT_TIMEOUT:-300}"
  
- # stdout returns the detected OS name; everything else goes to stderr so
- # `$(detect_os)` is not polluted by status messages.
-@@ -750,6 +753,24 @@
+ # Sets TARGET_OS. Runs in the main shell, not `$(...)`, so a signal is
+ # handled at once instead of after the remaining probes.
+@@ -864,6 +867,24 @@
      success "Found ${hits} credential(s), see pypykatz.txt"
  }
  
@@ -37,22 +37,19 @@
  # ─── KeePass Scan (Windows only) ────────────────────────────────────────────
  
  # windows.keepass needs the KeePass PID, so it only runs when pslist found one.
-@@ -990,11 +1011,14 @@
-     chmod 700 "$OUTPUT_DIR"
+@@ -1102,8 +1123,11 @@
+     fi
  
      # ── OS detection ──
 +    # A successful detection probe has already fetched the symbols.
 +    local symbols_fetched=false
      if [[ "$TARGET_OS" == "auto" ]]; then
-         TARGET_OS=$(detect_os)
-         if [[ -z "$TARGET_OS" ]]; then
-             fatal "Could not auto-detect OS. Specify manually with --os windows|linux|mac"
-         fi
+         detect_os
 +        symbols_fetched=true
      else
          info "Target OS: ${BOLD}${TARGET_OS}${NC}"
      fi
-@@ -1015,6 +1039,7 @@
+@@ -1124,6 +1148,7 @@
      compute_checksums
  
      # ── Phase 2: Core analysis ──

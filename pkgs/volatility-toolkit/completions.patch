@@ -4,15 +4,15 @@
      cur="${COMP_WORDS[COMP_CWORD]}"
      prev="${COMP_WORDS[COMP_CWORD-1]}"
  
--    opts="--os -o --output -j --jobs --dump-registry --dump-files --extract-strings --json --interactive --no-color -h --help -v --version"
-+    opts="--os -o --output -j --jobs --dump-registry --dump-files --no-bitlocker --no-credentials --deep --timeline --extract-strings --json --interactive --no-color -h --help -v --version"
+-    opts="--os -o --output -j --jobs --symbols --isf-url --dump-registry --dump-files --extract-strings --json --interactive --no-color -h --help -v --version"
++    opts="--os -o --output -j --jobs --symbols --isf-url --dump-registry --dump-files --no-bitlocker --no-credentials --deep --timeline --extract-strings --json --interactive --no-color -h --help -v --version"
  
+     # mapfile keeps paths containing spaces as single candidates.
      case "$prev" in
-         --os)
 --- a/completions/vol-analyze.zsh
 +++ b/completions/vol-analyze.zsh
-@@ -12,6 +12,10 @@
-         '--jobs[Max parallel plugins]:jobs:_message "positive integer"'
+@@ -14,6 +14,10 @@
+         '--isf-url[Remote ISF index URL]:url:(https\://github.com/Abyss-W4tcher/volatility3-symbols/raw/master/banners/banners.json)'
          '--dump-registry[Dump registry hives (Windows only)]'
          '--dump-files[Dump files from memory (Windows only)]'
 +        '--no-bitlocker[Skip the BitLocker FVEK scan (Windows only)]'
