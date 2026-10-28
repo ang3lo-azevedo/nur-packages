@@ -18,9 +18,13 @@ in
 
     propagatedBuildInputs = [
       python3Packages.pyside6
+      # registry-spy pins python-registry==1.3.1, so keep that label. nixpkgs' new
+      # pythonMetadataCheckPhase rejects the package because nixpkgs set its version
+      # attr out of sync with the source .dist-info METADATA; skip that check here.
       (python3Packages.python-registry.overridePythonAttrs (_: {
         version = "1.3.1";
         name = "python-registry-1.3.1";
+        dontCheckPythonMetadata = true;
       }))
     ];
 
