@@ -93,27 +93,27 @@
   };
   ccl-chromium-reader = {
     pname = "ccl-chromium-reader";
-    version = "ef840de30221c4d65bc96d2f4d9057e9ef2f526d";
+    version = "3af0bd7d56216d499a8792e9fbfa6604d584b09b";
     src = fetchFromGitHub {
       owner = "cclgroupltd";
       repo = "ccl_chromium_reader";
-      rev = "ef840de30221c4d65bc96d2f4d9057e9ef2f526d";
+      rev = "3af0bd7d56216d499a8792e9fbfa6604d584b09b";
       fetchSubmodules = false;
-      sha256 = "sha256-BRplu68GTnXmMkxfX/Pbb8IFPAzotbGCknzrZJvu8s8=";
+      sha256 = "sha256-DetQYdlDANS98UPargWn+FB26mSaZD7LopfY84aw6Go=";
     };
-    date = "2026-08-06";
+    date = "2026-10-27";
   };
   ccl-mozilla-reader = {
     pname = "ccl-mozilla-reader";
-    version = "b3d0627f747a718e1e30ac02b92e82bdde354eb2";
+    version = "eb5053dfdbacf72bdce966654f53d24c6a01db85";
     src = fetchFromGitHub {
       owner = "cclgroupltd";
       repo = "ccl_mozilla_reader";
-      rev = "b3d0627f747a718e1e30ac02b92e82bdde354eb2";
+      rev = "eb5053dfdbacf72bdce966654f53d24c6a01db85";
       fetchSubmodules = false;
-      sha256 = "sha256-ehHMwynjQgShBvCmOMLlLSlx+QYe9nLYqS5wfm1VLbA=";
+      sha256 = "sha256-nfz786gfqcq4fP98ayv8rjggUGmZV6ci2EBa6WhhZIY=";
     };
-    date = "2026-07-20";
+    date = "2026-10-27";
   };
   ccl-simplesnappy = {
     pname = "ccl-simplesnappy";
@@ -242,13 +242,13 @@
   };
   gleapp = {
     pname = "gleapp";
-    version = "v2026.5.5";
+    version = "v2026.5.6";
     src = fetchFromGitHub {
       owner = "abrignoni";
       repo = "GLEAPP";
-      rev = "v2026.5.5";
+      rev = "v2026.5.6";
       fetchSubmodules = false;
-      sha256 = "sha256-mxaKr+68fjpbCuhiQH138st2HOul0tV+LapwISRAMsQ=";
+      sha256 = "sha256-VQr+x6b6atJRqIQ6WDdZgBarvJ3aOQ4G8yDnXBd8bpw=";
     };
   };
   harbor = {
@@ -261,10 +261,10 @@
   };
   hayabusa = {
     pname = "hayabusa";
-    version = "4.2.0";
+    version = "4.3.0";
     src = fetchurl {
-      url = "https://github.com/Yamato-Security/hayabusa/releases/download/v4.2.0/hayabusa-4.2.0-lin-x64-gnu.zip";
-      sha256 = "sha256-lV1IOt8ulSze7QakBXuBrNEd2MII4Y8fXI6zfMCbbRw=";
+      url = "https://github.com/Yamato-Security/hayabusa/releases/download/v4.3.0/hayabusa-4.3.0-lin-x64-gnu.zip";
+      sha256 = "sha256-AeRFCxEMdCjm07mD6eXJrw0hbgNmmF8vZ+SoVgNJSQ0=";
     };
   };
   hindsight = {
@@ -358,13 +358,13 @@
   };
   linoffice = {
     pname = "linoffice";
-    version = "v3.0.2";
+    version = "v3.0.3";
     src = fetchFromGitHub {
       owner = "eylenburg";
       repo = "linoffice";
-      rev = "v3.0.2";
+      rev = "v3.0.3";
       fetchSubmodules = false;
-      sha256 = "sha256-+6UX7YDKBDWwYFCIhFm/DHZ+KuplJ2R5Mrs0gIH9qB8=";
+      sha256 = "sha256-GhRxBhoQBaNAHyEl/c1jZN4qtN/aA8LF8AuuHabfMgM=";
     };
   };
   lleapp = {
@@ -403,10 +403,10 @@
   };
   nordvpn = {
     pname = "nordvpn";
-    version = "6.0.1";
+    version = "6.0.2";
     src = fetchurl {
-      url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_6.0.1_amd64.deb";
-      sha256 = "sha256-SYQ+zPNHfLapX9qXMYNcIa+Ittel0EkvuYF31vsDp3k=";
+      url = "https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/n/nordvpn/nordvpn_6.0.2_amd64.deb";
+      sha256 = "sha256-gd95B8qM1U4O0ItSId1r4rwqrJxHMAYlv5SUqN6pQ+E=";
     };
   };
   nuvio = {
