@@ -32,6 +32,7 @@ in
       (makeDesktopItem {
         name = "registry-spy";
         exec = "registryspy";
+        icon = "preferences-system";
         desktopName = "Registry Spy";
         comment = "Cross-platform Windows Registry browser";
         categories = ["Utility" "System"];
