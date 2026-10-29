@@ -156,7 +156,7 @@
     },
     "ccl-chromium-reader": {
         "cargoLock": null,
-        "date": "2026-10-27",
+        "date": "2026-10-28",
         "extract": null,
         "name": "ccl-chromium-reader",
         "passthru": null,
@@ -168,12 +168,12 @@
             "name": null,
             "owner": "cclgroupltd",
             "repo": "ccl_chromium_reader",
-            "rev": "3af0bd7d56216d499a8792e9fbfa6604d584b09b",
-            "sha256": "sha256-DetQYdlDANS98UPargWn+FB26mSaZD7LopfY84aw6Go=",
+            "rev": "ad37443541dd91dac3ac1fb2eecaeb8693f36815",
+            "sha256": "sha256-JRDeb5gNPjeV/mvovY3jI+1ATf9U3xJURmvdyX/VGYs=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "3af0bd7d56216d499a8792e9fbfa6604d584b09b"
+        "version": "ad37443541dd91dac3ac1fb2eecaeb8693f36815"
     },
     "ccl-mozilla-reader": {
         "cargoLock": null,
@@ -461,11 +461,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-AeRFCxEMdCjm07mD6eXJrw0hbgNmmF8vZ+SoVgNJSQ0=",
+            "sha256": "sha256-pPva6bE6X+Dzs9mJgd0Yd19Q5UAs897juoXU7NJSNw4=",
             "type": "url",
-            "url": "https://github.com/Yamato-Security/hayabusa/releases/download/v4.3.0/hayabusa-4.3.0-lin-x64-gnu.zip"
+            "url": "https://github.com/Yamato-Security/hayabusa/releases/download/v4.3.1/hayabusa-4.3.1-lin-x64-gnu.zip"
         },
-        "version": "4.3.0"
+        "version": "4.3.1"
     },
     "hindsight": {
         "cargoLock": null,
