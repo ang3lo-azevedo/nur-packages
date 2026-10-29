@@ -93,15 +93,15 @@
   };
   ccl-chromium-reader = {
     pname = "ccl-chromium-reader";
-    version = "3af0bd7d56216d499a8792e9fbfa6604d584b09b";
+    version = "ad37443541dd91dac3ac1fb2eecaeb8693f36815";
     src = fetchFromGitHub {
       owner = "cclgroupltd";
       repo = "ccl_chromium_reader";
-      rev = "3af0bd7d56216d499a8792e9fbfa6604d584b09b";
+      rev = "ad37443541dd91dac3ac1fb2eecaeb8693f36815";
       fetchSubmodules = false;
-      sha256 = "sha256-DetQYdlDANS98UPargWn+FB26mSaZD7LopfY84aw6Go=";
+      sha256 = "sha256-JRDeb5gNPjeV/mvovY3jI+1ATf9U3xJURmvdyX/VGYs=";
     };
-    date = "2026-10-27";
+    date = "2026-10-28";
   };
   ccl-mozilla-reader = {
     pname = "ccl-mozilla-reader";
@@ -261,10 +261,10 @@
   };
   hayabusa = {
     pname = "hayabusa";
-    version = "4.3.0";
+    version = "4.3.1";
     src = fetchurl {
-      url = "https://github.com/Yamato-Security/hayabusa/releases/download/v4.3.0/hayabusa-4.3.0-lin-x64-gnu.zip";
-      sha256 = "sha256-AeRFCxEMdCjm07mD6eXJrw0hbgNmmF8vZ+SoVgNJSQ0=";
+      url = "https://github.com/Yamato-Security/hayabusa/releases/download/v4.3.1/hayabusa-4.3.1-lin-x64-gnu.zip";
+      sha256 = "sha256-pPva6bE6X+Dzs9mJgd0Yd19Q5UAs897juoXU7NJSNw4=";
     };
   };
   hindsight = {
