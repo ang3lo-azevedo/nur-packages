@@ -427,10 +427,10 @@
   };
   openlogi = {
     pname = "openlogi";
-    version = "0.8.18";
+    version = "0.8.19";
     src = fetchTarball {
-      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.18.tar.gz";
-      sha256 = "sha256-HG0hpvk6UGSOvpLt7LSVbGNS9/xppQt9dCdezn/2cDM=";
+      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.19.tar.gz";
+      sha256 = "sha256-utjPJonTu8/G4UVFLvNJsFZu590yfIdTvgXc5n3RFd8=";
     };
   };
   registry-spy = {
@@ -575,13 +575,13 @@
   };
   volatility-toolkit = {
     pname = "volatility-toolkit";
-    version = "v3.0.0";
+    version = "v4.0.0";
     src = fetchFromGitHub {
       owner = "gl0bal01";
       repo = "volatility-toolkit";
-      rev = "v3.0.0";
+      rev = "v4.0.0";
       fetchSubmodules = false;
-      sha256 = "sha256-U0EYHWcN92aOLuAsiUvR/ADyy5Jj/i5wO++aH3ChDKk=";
+      sha256 = "sha256-AU9J8FwE7Ib21YjPZCPhcEzMMv+ghStGB7t+8pU03RI=";
     };
   };
   volatility3-bitlocker = {
