@@ -2,6 +2,7 @@
   eden,
   callPackage,
   fetchFromGitHub,
+  sdl3,
 }: let
   sources = callPackage ../../_sources/generated.nix {};
 
@@ -23,6 +24,10 @@ in
     pname = "eglantine";
     version = "nx2-unstable-${sources.eglantine.date}";
     src = sources.eglantine.src;
+
+    # Switch 2 moved from SDL2 (which eden provides) to SDL3, resolved as a system
+    # library here (CPMUTIL_FORCE_SYSTEM does find_package(SDL3)).
+    buildInputs = (old.buildInputs or []) ++ [sdl3];
 
     # zbic_FORCE_BUNDLED overrides the global CPMUTIL_FORCE_SYSTEM so CPMUtil skips
     # find_package for zbic, and zbic_CUSTOM_DIR points it at the pre-fetched source
