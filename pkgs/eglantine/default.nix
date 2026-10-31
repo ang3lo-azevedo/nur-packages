@@ -40,7 +40,12 @@ in
       # Offload to the AMD eGPU (Navi 44, RX 9060 XT, 1002:7590) for Vulkan, with
       # DRI_PRIME for any GL path. --set-default so an unplugged eGPU falls back to
       # the iGPU and a manual env still wins.
+      #
+      # The AppImage bundles only the xcb Qt platform plugin (no qtwayland), so under
+      # a Wayland session that exports QT_QPA_PLATFORM=wayland it finds no usable
+      # plugin and aborts. Force xcb so it runs through XWayland (xwayland-satellite).
       wrapProgram $out/bin/${pname} \
+        --set QT_QPA_PLATFORM xcb \
         --set-default MESA_VK_DEVICE_SELECT 1002:7590 \
         --set-default DRI_PRIME 1
 
