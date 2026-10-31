@@ -55,6 +55,6 @@
          printf '\n  },\n'
 +        printf '  "bitlocker": {"status": "%s", "candidates": %d, "output": "bitlocker.txt"},\n' "$BITLOCKER_STATUS" "$BITLOCKER_COUNT"
 +        printf '  "credentials": {"status": "%s", "entries": %d, "output": "pypykatz.txt"},\n' "$CREDENTIAL_STATUS" "$CREDENTIAL_COUNT"
-         printf '  "output_directory": "%s"\n' "$(json_escape "$out_path")"
+         printf '  "output_directory": "%s"\n' "$(json_escape "$OUTPUT_PATH")"
          printf '}\n'
      } > "$report"
