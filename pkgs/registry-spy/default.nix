@@ -32,12 +32,19 @@ in
       (makeDesktopItem {
         name = "registry-spy";
         exec = "registryspy";
-        icon = "preferences-system";
+        icon = "registry-spy";
         desktopName = "Registry Spy";
         comment = "Cross-platform Windows Registry browser";
         categories = ["Utility" "System"];
       })
     ];
+
+    # Install Registry Spy's own 512x512 icon (shipped in the source) under hicolor so
+    # the desktop entry's Icon=registry-spy resolves to the real app icon.
+    postInstall = ''
+      install -Dm644 registryspy/img/icon.png \
+        $out/share/icons/hicolor/512x512/apps/registry-spy.png
+    '';
 
     doCheck = false;
 

@@ -335,6 +335,27 @@
         },
         "version": "6.6.0"
     },
+    "eglantine": {
+        "cargoLock": null,
+        "date": "2026-10-31",
+        "extract": null,
+        "name": "eglantine",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Djihads80",
+            "repo": "Eglantine",
+            "rev": "f6298e2eb67012cc9e93bc68b4894ee62e0b5f48",
+            "sha256": "sha256-1KLVkopqD+0Fr8lg6L/px0wy2uuu2DDXudQRYdN9638=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "f6298e2eb67012cc9e93bc68b4894ee62e0b5f48"
+    },
     "ese-database-view": {
         "cargoLock": null,
         "date": null,
