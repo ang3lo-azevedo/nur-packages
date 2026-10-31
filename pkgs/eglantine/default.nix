@@ -3,7 +3,6 @@
   fetchurl,
   makeWrapper,
   symlinkJoin,
-  vulkan-loader,
 }: let
   pname = "eglantine";
 
@@ -24,10 +23,12 @@
 
   # wrapType2 runs the AppImage in an FHS sandbox; its binary is $out/bin/eglantine.
   # vulkan-loader lets the bundled app reach the NixOS GPU drivers under
-  # /run/opengl-driver so Vulkan (the emulator's main renderer) works.
+  # /run/opengl-driver so Vulkan (the emulator's main renderer) works. libgpg-error
+  # is linked by a bundled lib but, unlike libgcrypt, is absent from appimageTools'
+  # default FHS on this nixpkgs, so the AppImage fails to load without it.
   fhs = appimageTools.wrapType2 {
     inherit pname version src;
-    extraPkgs = _: [vulkan-loader];
+    extraPkgs = pkgs: [pkgs.vulkan-loader pkgs.libgpg-error];
   };
 in
   symlinkJoin {
