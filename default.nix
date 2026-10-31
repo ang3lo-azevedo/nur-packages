@@ -114,6 +114,7 @@
   nska-deserialize = pkgs.callPackage ./pkgs/nska-deserialize {};
   onlinefix-linux = pkgs.callPackage ./pkgs/onlinefix-linux {};
   openlogi = pkgs.callPackage ./pkgs/openlogi {};
+  pokedinner = pkgs.callPackage ./pkgs/pokedinner {};
   proton-linuwux = pkgs.callPackage ./pkgs/proton-linuwux {};
   pydicti = pkgs.callPackage ./pkgs/pydicti {};
   pyliblzfse = pkgs.callPackage ./pkgs/pyliblzfse {};
