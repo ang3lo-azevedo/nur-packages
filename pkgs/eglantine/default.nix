@@ -1,85 +1,58 @@
 {
-  eden,
-  callPackage,
-  fetchFromGitHub,
-  applyPatches,
-  sdl3,
+  appimageTools,
+  fetchurl,
+  makeWrapper,
+  symlinkJoin,
+  vulkan-loader,
 }: let
-  sources = callPackage ../../_sources/generated.nix {};
+  pname = "eglantine";
 
-  # Switch 2 adds zbic texture (de)compression, a header-only CPM dependency Eden
-  # never pulled. eden builds with CPMUTIL_FORCE_SYSTEM, so CPMUtil does
-  # find_package(zbic) and aborts since it is not in nixpkgs. Pre-fetch the pinned
-  # source (rev/hash from Eglantine's cpmfile.json) and hand it to CPMUtil below.
-  zbicSrc = fetchFromGitHub {
-    owner = "kinnay";
-    repo = "zbic";
-    rev = "11b08f2712264bbed731545085cbd9702096ceb7";
-    hash = "sha256-pHvxa1gkUvQo6mUgmLWtj1kcu01BLdGmttZyb8ZAj/o=";
+  # Upstream's prebuilt nx2 AppImage (PGO build) from the newest `build-NN`
+  # pre-release. The asset filename embeds the commit, so nvfetcher cannot template
+  # the URL: bump `version`, `commit` and `hash` by hand from the latest release at
+  # https://github.com/Djihads80/Eglantine/releases (pick the newest build-NN).
+  version = "build-73";
+  commit = "e82731c2c9fb0994156e4d865c7946fcd7f028fc";
+
+  src = fetchurl {
+    url = "https://github.com/Djihads80/Eglantine/releases/download/${version}/eglantine-${commit}-linux-x86_64-pgo.AppImage";
+    hash = "sha256-UL+sjJie12wJxIy0NJ4rXDIjVPsQB34a53cOCHzrnfY=";
   };
 
-  # ENABLE_RESHADE (on by default) pulls reshadefx, another bundled-only CPM
-  # dependency. Same treatment as zbic, but CPMUtil applies a package's cpmfile
-  # patches only when it downloads the source itself: since we hand it a CUSTOM_DIR
-  # the from-chars fallback patch has to be pre-applied here (rev/hash/patch from
-  # Eglantine's cpmfile.json and .patch/reshade).
-  reshadeSrc = applyPatches {
-    name = "reshade-patched-source";
-    src = fetchFromGitHub {
-      owner = "crosire";
-      repo = "reshade";
-      rev = "v6.8.0";
-      hash = "sha256-K6QC7CLqy8M318n9WbuqGvcRF9g9abvDD/xbr7T+nXo=";
-    };
-    patches = ["${sources.eglantine.src}/.patch/reshade/0001-from-chars-fallback.patch"];
+  # The desktop entry (Exec=eglantine already) and icon live inside the AppImage.
+  contents = appimageTools.extract {inherit pname version src;};
+
+  # wrapType2 runs the AppImage in an FHS sandbox; its binary is $out/bin/eglantine.
+  # vulkan-loader lets the bundled app reach the NixOS GPU drivers under
+  # /run/opengl-driver so Vulkan (the emulator's main renderer) works.
+  fhs = appimageTools.wrapType2 {
+    inherit pname version src;
+    extraPkgs = _: [vulkan-loader];
   };
 in
-  # Eglantine is a Switch 2 emulator derived from Eden, so reuse nixpkgs' eden
-  # derivation (Qt, Vulkan, SDL, system-library deps via CPMUTIL_FORCE_SYSTEM) and
-  # swap in Eglantine's nx2 source (tracked by nvfetcher) instead of repackaging.
-  eden.overrideAttrs (old: {
-    pname = "eglantine";
-    version = "nx2-unstable-${sources.eglantine.date}";
-    src = sources.eglantine.src;
+  symlinkJoin {
+    name = "${pname}-${version}";
+    paths = [fhs];
+    nativeBuildInputs = [makeWrapper];
 
-    # Switch 2 moved from SDL2 (which eden provides) to SDL3, resolved as a system
-    # library here (CPMUTIL_FORCE_SYSTEM does find_package(SDL3)).
-    buildInputs = (old.buildInputs or []) ++ [sdl3];
+    postBuild = ''
+      # Offload to the AMD eGPU (Navi 44, RX 9060 XT, 1002:7590) for Vulkan, with
+      # DRI_PRIME for any GL path. --set-default so an unplugged eGPU falls back to
+      # the iGPU and a manual env still wins.
+      wrapProgram $out/bin/${pname} \
+        --set-default MESA_VK_DEVICE_SELECT 1002:7590 \
+        --set-default DRI_PRIME 1
 
-    # zbic_FORCE_BUNDLED overrides the global CPMUTIL_FORCE_SYSTEM so CPMUtil skips
-    # find_package for zbic, and zbic_CUSTOM_DIR points it at the pre-fetched source
-    # so it never tries to download (the Nix build sandbox has no network).
-    cmakeFlags =
-      (old.cmakeFlags or [])
-      ++ [
-        "-Dzbic_FORCE_BUNDLED=ON"
-        "-Dzbic_CUSTOM_DIR=${zbicSrc}"
-        "-Dreshade_FORCE_BUNDLED=ON"
-        "-Dreshade_CUSTOM_DIR=${reshadeSrc}"
-      ];
-
-    # Eglantine renamed the udev rules file (yuzu -> eden) and the GUI binary
-    # (yuzu -> eglantine, via OUTPUT_NAME in src/yuzu/CMakeLists.txt), so eden's own
-    # postInstall/mainProgram no longer match.
-    postInstall = ''
-      install -Dm444 $src/dist/72-eden-input.rules $out/lib/udev/rules.d/72-eden-input.rules
+      install -Dm444 ${contents}/usr/share/applications/dev.eden_emu.eden.desktop \
+        $out/share/applications/eglantine.desktop
+      install -Dm444 ${contents}/usr/share/icons/hicolor/512x512/apps/dev.eglantine.eglantine.png \
+        $out/share/icons/hicolor/512x512/apps/dev.eglantine.eglantine.png
     '';
 
-    # eden sets LD_LIBRARY_PATH through qtWrapperArgs in preFixup; append the eGPU
-    # offload so the Qt wrapper runs the emulator on the AMD eGPU (Navi 44, RX 9060 XT,
-    # 1002:7590) for Vulkan, with DRI_PRIME for any GL path. --set-default so an
-    # unplugged eGPU falls back to the iGPU and a manual env still wins.
-    preFixup =
-      (old.preFixup or "")
-      + ''
-        qtWrapperArgs+=(--set-default MESA_VK_DEVICE_SELECT 1002:7590)
-        qtWrapperArgs+=(--set-default DRI_PRIME 1)
-      '';
-
-    meta =
-      old.meta
-      // {
-        description = "Experimental Nintendo Switch 2 emulator derived from Eden, Yuzu and Sudachi";
-        mainProgram = "eglantine";
-      };
-  })
+    meta = {
+      description = "Experimental Nintendo Switch 2 emulator derived from Eden, Yuzu and Sudachi (upstream AppImage)";
+      homepage = "https://github.com/Djihads80/Eglantine";
+      mainProgram = pname;
+      platforms = ["x86_64-linux"];
+    };
+  }
