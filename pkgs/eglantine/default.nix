@@ -2,6 +2,7 @@
   eden,
   callPackage,
   fetchFromGitHub,
+  applyPatches,
   sdl3,
 }: let
   sources = callPackage ../../_sources/generated.nix {};
@@ -15,6 +16,22 @@
     repo = "zbic";
     rev = "11b08f2712264bbed731545085cbd9702096ceb7";
     hash = "sha256-pHvxa1gkUvQo6mUgmLWtj1kcu01BLdGmttZyb8ZAj/o=";
+  };
+
+  # ENABLE_RESHADE (on by default) pulls reshadefx, another bundled-only CPM
+  # dependency. Same treatment as zbic, but CPMUtil applies a package's cpmfile
+  # patches only when it downloads the source itself: since we hand it a CUSTOM_DIR
+  # the from-chars fallback patch has to be pre-applied here (rev/hash/patch from
+  # Eglantine's cpmfile.json and .patch/reshade).
+  reshadeSrc = applyPatches {
+    name = "reshade-patched-source";
+    src = fetchFromGitHub {
+      owner = "crosire";
+      repo = "reshade";
+      rev = "v6.8.0";
+      hash = "sha256-K6QC7CLqy8M318n9WbuqGvcRF9g9abvDD/xbr7T+nXo=";
+    };
+    patches = ["${sources.eglantine.src}/.patch/reshade/0001-from-chars-fallback.patch"];
   };
 in
   # Eglantine is a Switch 2 emulator derived from Eden, so reuse nixpkgs' eden
@@ -37,6 +54,8 @@ in
       ++ [
         "-Dzbic_FORCE_BUNDLED=ON"
         "-Dzbic_CUSTOM_DIR=${zbicSrc}"
+        "-Dreshade_FORCE_BUNDLED=ON"
+        "-Dreshade_CUSTOM_DIR=${reshadeSrc}"
       ];
 
     # Eglantine renamed the udev rules file (yuzu -> eden) and the GUI binary
