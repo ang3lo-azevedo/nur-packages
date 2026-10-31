@@ -197,6 +197,18 @@
       sha256 = "sha256-Lq239JMa0YgtEEd89XGF0ojKzG46v5lY565zwKDzHdE=";
     };
   };
+  eglantine = {
+    pname = "eglantine";
+    version = "f6298e2eb67012cc9e93bc68b4894ee62e0b5f48";
+    src = fetchFromGitHub {
+      owner = "Djihads80";
+      repo = "Eglantine";
+      rev = "f6298e2eb67012cc9e93bc68b4894ee62e0b5f48";
+      fetchSubmodules = false;
+      sha256 = "sha256-1KLVkopqD+0Fr8lg6L/px0wy2uuu2DDXudQRYdN9638=";
+    };
+    date = "2026-10-31";
+  };
   ese-database-view = {
     pname = "ese-database-view";
     version = "1.79";

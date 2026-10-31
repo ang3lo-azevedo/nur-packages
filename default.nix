@@ -59,6 +59,7 @@
     unifiedlog-iterator = pkgs.callPackage ./pkgs/unifiedlog-iterator {};
   };
   dnspy = pkgs.callPackage ./pkgs/dnspy {};
+  eglantine = pkgs.callPackage ./pkgs/eglantine {};
   ese-database-view = pkgs.callPackage ./pkgs/ese-database-view {};
   evolve = pkgs.callPackage ./pkgs/evolve {};
   ffmpeg-encoder-plugin-resolve = pkgs.callPackage ./pkgs/ffmpeg-encoder-plugin-resolve {};

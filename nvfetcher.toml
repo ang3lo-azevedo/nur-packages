@@ -12,6 +12,11 @@ fetch.url = "https://github.com/archimatetool/archi.io/releases/latest/download/
 src.git = "https://github.com/mrphrazer/reverser_ai.git"
 fetch.github = "mrphrazer/reverser_ai"
 
+# Eglantine's default branch is nx2 (the Switch 2 work), so src.git tracks it directly.
+[eglantine]
+src.git = "https://github.com/Djihads80/Eglantine.git"
+fetch.github = "Djihads80/Eglantine"
+
 [ida-chat-plugin]
 src.git = "https://github.com/HexRaysSA/ida-chat-plugin.git"
 fetch.github = "HexRaysSA/ida-chat-plugin"
