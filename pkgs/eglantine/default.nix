@@ -10,12 +10,12 @@
   # pre-release. The asset filename embeds the commit, so nvfetcher cannot template
   # the URL: bump `version`, `commit` and `hash` by hand from the latest release at
   # https://github.com/Djihads80/Eglantine/releases (pick the newest build-NN).
-  version = "build-96";
-  commit = "e96917cd0e68851ec389dd519f03b52adc11d493";
+  version = "build-104";
+  commit = "6bde8c20d1f7c020a920e59a989c03822a08445d";
 
   src = fetchurl {
     url = "https://github.com/Djihads80/Eglantine/releases/download/${version}/eglantine-${commit}-linux-x86_64-pgo.AppImage";
-    hash = "sha256-4IKkFW/oFmosdCAdb4LdM+4p/26IHe1ULf6EBP98BtM=";
+    hash = "sha256-dHZ2Xr3RyPavyUvKJPG2NwYj8VbMuaGbH1MA03J6wLk=";
   };
 
   # The desktop entry (Exec=eglantine already) and icon live inside the AppImage.
