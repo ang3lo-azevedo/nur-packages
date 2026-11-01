@@ -27,10 +27,13 @@
   # vulkan-loader lets the bundled app reach the NixOS GPU drivers under
   # /run/opengl-driver so Vulkan (the emulator's main renderer) works. libgpg-error
   # is linked by a bundled lib but absent from appimageTools' default FHS on this
-  # nixpkgs, so the AppImage fails to load without it.
+  # nixpkgs, so the AppImage fails to load without it. xcb-util-cursor provides
+  # libxcb-cursor.so.0, which this fork's newer Qt (6.5+) requires to load its xcb
+  # platform plugin; without it the plugin init fails and the app aborts. Eglantine
+  # ships an older Qt that does not need it.
   fhs = appimageTools.wrapType2 {
     inherit pname version src;
-    extraPkgs = pkgs: [pkgs.vulkan-loader pkgs.libgpg-error];
+    extraPkgs = pkgs: [pkgs.vulkan-loader pkgs.libgpg-error pkgs.xcb-util-cursor];
   };
 in
   symlinkJoin {
