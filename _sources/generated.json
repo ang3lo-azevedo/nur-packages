@@ -337,7 +337,7 @@
     },
     "eglantine": {
         "cargoLock": null,
-        "date": "2026-10-31",
+        "date": "2026-11-01",
         "extract": null,
         "name": "eglantine",
         "passthru": null,
@@ -349,12 +349,12 @@
             "name": null,
             "owner": "Djihads80",
             "repo": "Eglantine",
-            "rev": "f6298e2eb67012cc9e93bc68b4894ee62e0b5f48",
-            "sha256": "sha256-1KLVkopqD+0Fr8lg6L/px0wy2uuu2DDXudQRYdN9638=",
+            "rev": "e96917cd0e68851ec389dd519f03b52adc11d493",
+            "sha256": "sha256-I88q/6v1cY08YFBU7XJDboEuNHYqyXDSUJZ1Rx0q6OE=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "f6298e2eb67012cc9e93bc68b4894ee62e0b5f48"
+        "version": "e96917cd0e68851ec389dd519f03b52adc11d493"
     },
     "ese-database-view": {
         "cargoLock": null,
@@ -604,7 +604,7 @@
     },
     "libesedb": {
         "cargoLock": null,
-        "date": "2026-10-11",
+        "date": "2026-11-01",
         "extract": null,
         "name": "libesedb",
         "passthru": null,
@@ -614,13 +614,13 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "rev": "b0899ab6082ba6c60fb6b4113b5de120c35abc84",
-            "sha256": "sha256-uOGEf5yl5lmO8CLze7lauz9bKG/a2Jfq6ktrPh+MMXo=",
+            "rev": "f798638cc9a77307abff94d8c28854f6eac4bf46",
+            "sha256": "sha256-E9/lmkV1qV6tK+S0uhnjUe8QGsqu1O/DkCUgjs5Whwo=",
             "sparseCheckout": [],
             "type": "git",
             "url": "https://github.com/libyal/libesedb.git"
         },
-        "version": "b0899ab6082ba6c60fb6b4113b5de120c35abc84"
+        "version": "f798638cc9a77307abff94d8c28854f6eac4bf46"
     },
     "libfsntfs": {
         "cargoLock": null,

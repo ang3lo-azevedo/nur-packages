@@ -199,15 +199,15 @@
   };
   eglantine = {
     pname = "eglantine";
-    version = "f6298e2eb67012cc9e93bc68b4894ee62e0b5f48";
+    version = "e96917cd0e68851ec389dd519f03b52adc11d493";
     src = fetchFromGitHub {
       owner = "Djihads80";
       repo = "Eglantine";
-      rev = "f6298e2eb67012cc9e93bc68b4894ee62e0b5f48";
+      rev = "e96917cd0e68851ec389dd519f03b52adc11d493";
       fetchSubmodules = false;
-      sha256 = "sha256-1KLVkopqD+0Fr8lg6L/px0wy2uuu2DDXudQRYdN9638=";
+      sha256 = "sha256-I88q/6v1cY08YFBU7XJDboEuNHYqyXDSUJZ1Rx0q6OE=";
     };
-    date = "2026-10-31";
+    date = "2026-11-01";
   };
   ese-database-view = {
     pname = "ese-database-view";
@@ -342,17 +342,17 @@
   };
   libesedb = {
     pname = "libesedb";
-    version = "b0899ab6082ba6c60fb6b4113b5de120c35abc84";
+    version = "f798638cc9a77307abff94d8c28854f6eac4bf46";
     src = fetchgit {
       url = "https://github.com/libyal/libesedb.git";
-      rev = "b0899ab6082ba6c60fb6b4113b5de120c35abc84";
+      rev = "f798638cc9a77307abff94d8c28854f6eac4bf46";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-uOGEf5yl5lmO8CLze7lauz9bKG/a2Jfq6ktrPh+MMXo=";
+      sha256 = "sha256-E9/lmkV1qV6tK+S0uhnjUe8QGsqu1O/DkCUgjs5Whwo=";
     };
-    date = "2026-10-11";
+    date = "2026-11-01";
   };
   libfsntfs = {
     pname = "libfsntfs";
