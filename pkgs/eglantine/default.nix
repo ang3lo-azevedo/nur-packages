@@ -11,10 +11,9 @@
   # the URL: bump `version`, `commit` and `hash` by hand from the latest release at
   # https://github.com/Djihads80/Eglantine/releases (pick the newest build-NN).
   version = "build-142";
-  commit = "eglantine-linux-x86_64-pgo.AppImage";
 
   src = fetchurl {
-    url = "https://github.com/Djihads80/Eglantine/releases/download/${version}/eglantine-${commit}-linux-x86_64-pgo.AppImage";
+    url = "https://github.com/Djihads80/Eglantine/releases/download/${version}/eglantine-linux-x86_64-pgo.AppImage";
     hash = "sha256-Xy91BeLOaGR6oMf4M/obcKWsxg1eWhkwvHeqeuiZK/w=";
   };
 
