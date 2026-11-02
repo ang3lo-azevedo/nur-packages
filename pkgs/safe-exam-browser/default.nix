@@ -21,6 +21,9 @@ in
     extraPkgs = pkgs: [
       pkgs.libgpg-error
       pkgs.libgcrypt
+      (pkgs.writeShellScriptBin "pkexec" ''
+        exec /run/wrappers/bin/pkexec "$@"
+      '')
     ];
 
     extraInstallCommands = ''
@@ -33,7 +36,7 @@ in
       mv $out/bin/safe-exam-browser $out/bin/.safe-exam-browser-wrapped
       cat > $out/bin/safe-exam-browser <<WRAPPER
 #!/bin/sh
-exec env QT_QPA_PLATFORM=xcb "$out/bin/.safe-exam-browser-wrapped" "\$@"
+exec env QT_QPA_PLATFORM=xcb PATH="/run/wrappers/bin:$PATH" "$out/bin/.safe-exam-browser-wrapped" "\$@"
 WRAPPER
       chmod +x $out/bin/safe-exam-browser
     '';
