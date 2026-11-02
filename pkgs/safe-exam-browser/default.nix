@@ -2,6 +2,7 @@
   lib,
   appimageTools,
   fetchurl,
+  pkgs,
 }: let
   pname = "safe-exam-browser";
   version = "0.6.0";
@@ -39,6 +40,14 @@ in
 exec env -u QT_STYLE_OVERRIDE -u QT_QPA_PLATFORMTHEME QT_QPA_PLATFORM=xcb PATH="/run/wrappers/bin:$PATH" "$out/bin/.safe-exam-browser-wrapped" "\$@"
 WRAPPER
       chmod +x $out/bin/safe-exam-browser
+
+      # The FHS environment is executed through bubblewrap. Point the sandbox
+      # wrapper at the NixOS-managed setuid wrapper (/run/wrappers/bin/bwrap)
+      # so bubblewrap runs with real privileges. When bubblewrap runs
+      # unprivileged, it falls back to an unprivileged user namespace in which
+      # setuid binaries (polkit's pkexec) can no longer gain root, which made
+      # Safe Exam Browser abort with "pkexec must be setuid root".
+      sed -i "s|${pkgs.bubblewrap}/bin/bwrap|/run/wrappers/bin/bwrap|" $out/bin/safe-exam-browser-bwrap
     '';
 
     meta = with lib; {
