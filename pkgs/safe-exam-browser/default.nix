@@ -18,6 +18,11 @@ in
   appimageTools.wrapType2 {
     inherit pname version src;
 
+    extraPkgs = pkgs: [
+      pkgs.libgpg-error
+      pkgs.libgcrypt
+    ];
+
     extraInstallCommands = ''
       install -m 444 -D ${appimageContents}/safe-exam-browser.desktop -t $out/share/applications || true
       mkdir -p $out/share/icons/hicolor/256x256/apps
