@@ -36,7 +36,7 @@ in
       mv $out/bin/safe-exam-browser $out/bin/.safe-exam-browser-wrapped
       cat > $out/bin/safe-exam-browser <<WRAPPER
 #!/bin/sh
-exec env QT_QPA_PLATFORM=xcb PATH="/run/wrappers/bin:$PATH" "$out/bin/.safe-exam-browser-wrapped" "\$@"
+exec env -u QT_STYLE_OVERRIDE -u QT_QPA_PLATFORMTHEME QT_QPA_PLATFORM=xcb PATH="/run/wrappers/bin:$PATH" "$out/bin/.safe-exam-browser-wrapped" "\$@"
 WRAPPER
       chmod +x $out/bin/safe-exam-browser
     '';
