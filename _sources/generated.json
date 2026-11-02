@@ -337,7 +337,7 @@
     },
     "eglantine": {
         "cargoLock": null,
-        "date": "2026-11-01",
+        "date": "2026-11-02",
         "extract": null,
         "name": "eglantine",
         "passthru": null,
@@ -349,12 +349,12 @@
             "name": null,
             "owner": "Djihads80",
             "repo": "Eglantine",
-            "rev": "e96917cd0e68851ec389dd519f03b52adc11d493",
-            "sha256": "sha256-I88q/6v1cY08YFBU7XJDboEuNHYqyXDSUJZ1Rx0q6OE=",
+            "rev": "a407703f6d29a5ab73328b4ededb12cf29b2758d",
+            "sha256": "sha256-qLuTRyLuMNM3q2mRwkX2sfFQhL5eKr8+QwylYsO5PHA=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "e96917cd0e68851ec389dd519f03b52adc11d493"
+        "version": "a407703f6d29a5ab73328b4ededb12cf29b2758d"
     },
     "ese-database-view": {
         "cargoLock": null,
@@ -779,11 +779,11 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "sha256": "sha256-utjPJonTu8/G4UVFLvNJsFZu590yfIdTvgXc5n3RFd8=",
+            "sha256": "sha256-QqQiQCkIlHehMKQYI2nfKAsZRkbErLkM0HBPzyZN8X8=",
             "type": "tarball",
-            "url": "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.19.tar.gz"
+            "url": "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.20.tar.gz"
         },
-        "version": "0.8.19"
+        "version": "0.8.20"
     },
     "registry-spy": {
         "cargoLock": null,
@@ -1216,12 +1216,12 @@
     "zapfast": {
         "cargoLock": {
             "Cargo.lock": [
-                "sha256-kkj9oikkNAxMlLC4zMJNPUqB_HQ47h+mmhowOBJoD1E=/Cargo.lock",
+                "sha256-3S4UWz9vBus4aqpgoy9ncazI24VC94WRpD+49vI0Ay4=/Cargo.lock",
                 {
                     "cpal-0.18.2": "sha256-ntJYSSipB0YyIpZ+zsJi0LXwtYcuBZbJHrZtGD5r4iw=",
-                    "dpi-0.1.1": "sha256-zUErcFIlDxOtA8lnP4vHp6DHxsUziyXz9e1IIWnXq/U=",
-                    "ecolor-0.36.2": "sha256-2InNvJTXd6du0Rux4BpZsPXY0lbf6sPlTxDYVtWJbjE=",
-                    "fastframe-audio-0.14.1": "sha256-vWE6qdgoIkn2oVPXlLnCRZmnF0lgWtsKjcGK92Xiqm8=",
+                    "dpi-0.1.1": "sha256-hK2A6bbFZUGD9hU+kG+ZedBtix5cLrrVH4uwUEBSD+Y=",
+                    "ecolor-0.36.2": "sha256-rWQWy0zvdCmiKhTJtl0JFVUuz3OpQo1FPswNzXUP2Bk=",
+                    "fastframe-audio-0.15.4": "sha256-EW8bwDa6P8YUyMl8dn+Ue1CIZuYphwSos02t+v7Wkcw=",
                     "rodio-0.22.2": "sha256-imsXaaGgE3TIkQO3GwljMSsEZDPktcFHf2mUhy3mfAo=",
                     "wacore-0.7.0": "sha256-LYYjwvUaN0cLZ0MtPUIKky5Ey29MRHd815JVbd3NDLk="
                 }
@@ -1233,10 +1233,10 @@
         "passthru": null,
         "pinned": false,
         "src": {
-            "sha256": "sha256-kkj9oikkNAxMlLC4zMJNPUqB/HQ47h+mmhowOBJoD1E=",
+            "sha256": "sha256-3S4UWz9vBus4aqpgoy9ncazI24VC94WRpD+49vI0Ay4=",
             "type": "tarball",
-            "url": "https://github.com/crmne/zapfast/archive/refs/tags/v0.20.1.tar.gz"
+            "url": "https://github.com/crmne/zapfast/archive/refs/tags/v0.21.0.tar.gz"
         },
-        "version": "0.20.1"
+        "version": "0.21.0"
     }
 }
