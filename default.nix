@@ -132,8 +132,8 @@
     pyliblzfse = pkgs.callPackage ./pkgs/pyliblzfse {};
   };
   rsactftool = pkgs.callPackage ./pkgs/rsactftool {};
-  scrollmpris = pkgs.callPackage ./pkgs/scrollmpris {};
-  sidr = pkgs.callPackage ./pkgs/sidr {};
+  safe-exam-browser = pkgs.callPackage ./pkgs/safe-exam-browser {};
+  scrollmpris = pkgs.callPackage ./pkgs/scrollmpris {};  sidr = pkgs.callPackage ./pkgs/sidr {};
   so-crates = pkgs.callPackage ./pkgs/so-crates {};
   sstv = pkgs.callPackage ./pkgs/sstv {};
   steamidra = pkgs.callPackage ./pkgs/steamidra {};
