@@ -22,6 +22,15 @@ in
       install -m 444 -D ${appimageContents}/safe-exam-browser.desktop -t $out/share/applications || true
       mkdir -p $out/share/icons/hicolor/256x256/apps
       install -m 444 ${appimageContents}/safe-exam-browser.png $out/share/icons/hicolor/256x256/apps/safe-exam-browser.png || true
+
+      # The bundled Qt only ships the xcb platform plugin, so force xcb instead of
+      # letting it try (and fail) to use Wayland under Wayland compositors.
+      mv $out/bin/safe-exam-browser $out/bin/.safe-exam-browser-wrapped
+      cat > $out/bin/safe-exam-browser <<WRAPPER
+#!/bin/sh
+exec env QT_QPA_PLATFORM=xcb "$out/bin/.safe-exam-browser-wrapped" "\$@"
+WRAPPER
+      chmod +x $out/bin/safe-exam-browser
     '';
 
     meta = with lib; {
