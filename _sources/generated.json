@@ -13,12 +13,12 @@
             "name": null,
             "owner": "abrignoni",
             "repo": "ALEAPP",
-            "rev": "v2026.4.4",
-            "sha256": "sha256-D7zUz2rG+yEwntd5kAUOlD9NAjLemvZQ2F9DrBwz6zA=",
+            "rev": "v2026.4.5",
+            "sha256": "sha256-KlxENMho7b1tJNrDfjoZS8gLbtjSIrmX6NCvuPhhhQw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2026.4.4"
+        "version": "v2026.4.5"
     },
     "analyzeMFT": {
         "cargoLock": null,
@@ -313,12 +313,12 @@
             "name": null,
             "owner": "abrignoni",
             "repo": "DLEAPP",
-            "rev": "v2026.4.4",
-            "sha256": "sha256-PhQ5+xm3ohkHNRQmUmZyHy8+ZhOrak2/3WnhA9MIAsE=",
+            "rev": "v2026.4.5",
+            "sha256": "sha256-Nfvcr3hnPVy4L2gem1kk0ekeWYTLrFOXoJruGSU5804=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2026.4.4"
+        "version": "v2026.4.5"
     },
     "dnspy": {
         "cargoLock": null,
@@ -337,7 +337,7 @@
     },
     "eglantine": {
         "cargoLock": null,
-        "date": "2026-11-02",
+        "date": "2026-11-03",
         "extract": null,
         "name": "eglantine",
         "passthru": null,
@@ -349,12 +349,12 @@
             "name": null,
             "owner": "Djihads80",
             "repo": "Eglantine",
-            "rev": "a407703f6d29a5ab73328b4ededb12cf29b2758d",
-            "sha256": "sha256-qLuTRyLuMNM3q2mRwkX2sfFQhL5eKr8+QwylYsO5PHA=",
+            "rev": "46967a1b84e857a783ace6dcbabffddd008463ff",
+            "sha256": "sha256-5Gavx3WLulEy8NMQp7qu6ZeeKZYWAmTWDXwfQW1/yx4=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "a407703f6d29a5ab73328b4ededb12cf29b2758d"
+        "version": "46967a1b84e857a783ace6dcbabffddd008463ff"
     },
     "ese-database-view": {
         "cargoLock": null,
@@ -451,12 +451,12 @@
             "name": null,
             "owner": "abrignoni",
             "repo": "GLEAPP",
-            "rev": "v2026.5.6",
-            "sha256": "sha256-VQr+x6b6atJRqIQ6WDdZgBarvJ3aOQ4G8yDnXBd8bpw=",
+            "rev": "v2026.5.7",
+            "sha256": "sha256-rsf3OuXy9TgXlp8NfBaCvr9QKMiO3ZvexPcL63U5mU8=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2026.5.6"
+        "version": "v2026.5.7"
     },
     "harbor": {
         "cargoLock": null,
@@ -544,12 +544,12 @@
             "name": null,
             "owner": "abrignoni",
             "repo": "iLEAPP",
-            "rev": "v2026.4.5",
-            "sha256": "sha256-M5sm+Sq/159AAikRq+zJXZzElTkXhObp31tQlFj0bRk=",
+            "rev": "v2026.4.6",
+            "sha256": "sha256-FnegiEfturGfT27gbqwkmNmeAX5sJidp5Tm2s7c6Oew=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2026.4.5"
+        "version": "v2026.4.6"
     },
     "ist-fenix-auto-enroller": {
         "cargoLock": null,
@@ -656,12 +656,12 @@
             "name": null,
             "owner": "eylenburg",
             "repo": "linoffice",
-            "rev": "v3.0.3",
-            "sha256": "sha256-GhRxBhoQBaNAHyEl/c1jZN4qtN/aA8LF8AuuHabfMgM=",
+            "rev": "v3.0.4",
+            "sha256": "sha256-WFWfa129RF2nyaitxZT6Mvf6pyrizbKBrAQ1/iuWYKw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.0.3"
+        "version": "v3.0.4"
     },
     "lleapp": {
         "cargoLock": null,
@@ -919,12 +919,12 @@
             "name": null,
             "owner": "abrignoni",
             "repo": "RLEAPP",
-            "rev": "v2026.4.4",
-            "sha256": "sha256-8xYmax6Uil8C8Qy3NnN7LMN320BZMFxj9YvI1uEHsLk=",
+            "rev": "v2026.4.5",
+            "sha256": "sha256-bwCxhmgZOoIfICnFcBWBL0I77oJS/qEJNeeZtFYrODU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2026.4.4"
+        "version": "v2026.4.5"
     },
     "scrollmpris": {
         "cargoLock": null,
@@ -1081,12 +1081,12 @@
             "name": null,
             "owner": "abrignoni",
             "repo": "VLEAPP",
-            "rev": "v2026.4.4",
-            "sha256": "sha256-GCcC/m8SZ3kwblgcqSM4pAa3J+Ogjz9n4dbyUQWFRc0=",
+            "rev": "v2026.4.5",
+            "sha256": "sha256-9jOOGR37Tv3XgFWfEr4VSSXmKig/QLV2/OKvNW7gNrw=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v2026.4.4"
+        "version": "v2026.4.5"
     },
     "vol-rs": {
         "cargoLock": null,
