@@ -8,13 +8,13 @@
 {
   aleapp = {
     pname = "aleapp";
-    version = "v2026.4.4";
+    version = "v2026.4.5";
     src = fetchFromGitHub {
       owner = "abrignoni";
       repo = "ALEAPP";
-      rev = "v2026.4.4";
+      rev = "v2026.4.5";
       fetchSubmodules = false;
-      sha256 = "sha256-D7zUz2rG+yEwntd5kAUOlD9NAjLemvZQ2F9DrBwz6zA=";
+      sha256 = "sha256-KlxENMho7b1tJNrDfjoZS8gLbtjSIrmX6NCvuPhhhQw=";
     };
   };
   analyzeMFT = {
@@ -180,13 +180,13 @@
   };
   dleapp = {
     pname = "dleapp";
-    version = "v2026.4.4";
+    version = "v2026.4.5";
     src = fetchFromGitHub {
       owner = "abrignoni";
       repo = "DLEAPP";
-      rev = "v2026.4.4";
+      rev = "v2026.4.5";
       fetchSubmodules = false;
-      sha256 = "sha256-PhQ5+xm3ohkHNRQmUmZyHy8+ZhOrak2/3WnhA9MIAsE=";
+      sha256 = "sha256-Nfvcr3hnPVy4L2gem1kk0ekeWYTLrFOXoJruGSU5804=";
     };
   };
   dnspy = {
@@ -199,15 +199,15 @@
   };
   eglantine = {
     pname = "eglantine";
-    version = "a407703f6d29a5ab73328b4ededb12cf29b2758d";
+    version = "46967a1b84e857a783ace6dcbabffddd008463ff";
     src = fetchFromGitHub {
       owner = "Djihads80";
       repo = "Eglantine";
-      rev = "a407703f6d29a5ab73328b4ededb12cf29b2758d";
+      rev = "46967a1b84e857a783ace6dcbabffddd008463ff";
       fetchSubmodules = false;
-      sha256 = "sha256-qLuTRyLuMNM3q2mRwkX2sfFQhL5eKr8+QwylYsO5PHA=";
+      sha256 = "sha256-5Gavx3WLulEy8NMQp7qu6ZeeKZYWAmTWDXwfQW1/yx4=";
     };
-    date = "2026-11-02";
+    date = "2026-11-03";
   };
   ese-database-view = {
     pname = "ese-database-view";
@@ -254,13 +254,13 @@
   };
   gleapp = {
     pname = "gleapp";
-    version = "v2026.5.6";
+    version = "v2026.5.7";
     src = fetchFromGitHub {
       owner = "abrignoni";
       repo = "GLEAPP";
-      rev = "v2026.5.6";
+      rev = "v2026.5.7";
       fetchSubmodules = false;
-      sha256 = "sha256-VQr+x6b6atJRqIQ6WDdZgBarvJ3aOQ4G8yDnXBd8bpw=";
+      sha256 = "sha256-rsf3OuXy9TgXlp8NfBaCvr9QKMiO3ZvexPcL63U5mU8=";
     };
   };
   harbor = {
@@ -304,13 +304,13 @@
   };
   ileapp = {
     pname = "ileapp";
-    version = "v2026.4.5";
+    version = "v2026.4.6";
     src = fetchFromGitHub {
       owner = "abrignoni";
       repo = "iLEAPP";
-      rev = "v2026.4.5";
+      rev = "v2026.4.6";
       fetchSubmodules = false;
-      sha256 = "sha256-M5sm+Sq/159AAikRq+zJXZzElTkXhObp31tQlFj0bRk=";
+      sha256 = "sha256-FnegiEfturGfT27gbqwkmNmeAX5sJidp5Tm2s7c6Oew=";
     };
   };
   ist-fenix-auto-enroller = {
@@ -370,13 +370,13 @@
   };
   linoffice = {
     pname = "linoffice";
-    version = "v3.0.3";
+    version = "v3.0.4";
     src = fetchFromGitHub {
       owner = "eylenburg";
       repo = "linoffice";
-      rev = "v3.0.3";
+      rev = "v3.0.4";
       fetchSubmodules = false;
-      sha256 = "sha256-GhRxBhoQBaNAHyEl/c1jZN4qtN/aA8LF8AuuHabfMgM=";
+      sha256 = "sha256-WFWfa129RF2nyaitxZT6Mvf6pyrizbKBrAQ1/iuWYKw=";
     };
   };
   lleapp = {
@@ -514,13 +514,13 @@
   };
   rleapp = {
     pname = "rleapp";
-    version = "v2026.4.4";
+    version = "v2026.4.5";
     src = fetchFromGitHub {
       owner = "abrignoni";
       repo = "RLEAPP";
-      rev = "v2026.4.4";
+      rev = "v2026.4.5";
       fetchSubmodules = false;
-      sha256 = "sha256-8xYmax6Uil8C8Qy3NnN7LMN320BZMFxj9YvI1uEHsLk=";
+      sha256 = "sha256-bwCxhmgZOoIfICnFcBWBL0I77oJS/qEJNeeZtFYrODU=";
     };
   };
   scrollmpris = {
@@ -601,13 +601,13 @@
   };
   vleapp = {
     pname = "vleapp";
-    version = "v2026.4.4";
+    version = "v2026.4.5";
     src = fetchFromGitHub {
       owner = "abrignoni";
       repo = "VLEAPP";
-      rev = "v2026.4.4";
+      rev = "v2026.4.5";
       fetchSubmodules = false;
-      sha256 = "sha256-GCcC/m8SZ3kwblgcqSM4pAa3J+Ogjz9n4dbyUQWFRc0=";
+      sha256 = "sha256-9jOOGR37Tv3XgFWfEr4VSSXmKig/QLV2/OKvNW7gNrw=";
     };
   };
   vol-rs = {
