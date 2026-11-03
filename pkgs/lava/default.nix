@@ -2,6 +2,7 @@
   lib,
   appimageTools,
   callPackage,
+  imagemagick,
 }: let
   sources = callPackage ../../_sources/generated.nix {};
   pname = "lava";
@@ -16,7 +17,13 @@ in
       install -Dm444 ${appimageContents}/lava.desktop -t $out/share/applications
       substituteInPlace $out/share/applications/lava.desktop \
         --replace-fail 'Exec=AppRun --no-sandbox' 'Exec=lava'
-      cp -r ${appimageContents}/usr/share/icons $out/share
+      # The AppImage ships the icon only at 1024x1024, a size hicolor's index.theme
+      # does not list, so themed lookup (fuzzel, etc.) never finds it. Resize into a
+      # listed size so the launcher resolves Icon=lava.
+      ${imagemagick}/bin/magick \
+        ${appimageContents}/usr/share/icons/hicolor/1024x1024/apps/lava.png \
+        -resize 256x256 lava.png
+      install -Dm444 lava.png $out/share/icons/hicolor/256x256/apps/lava.png
     '';
 
     meta = with lib; {
