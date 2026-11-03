@@ -86,6 +86,7 @@
   };
   jackify = pkgs.callPackage ./pkgs/jackify {};
   lava = pkgs.callPackage ./pkgs/lava {};
+  lichii = pkgs.callPackage ./pkgs/lichii {};
   libesedb = pkgs.callPackage ./pkgs/libesedb {};
   libfsntfs = pkgs.callPackage ./pkgs/libfsntfs {};
   libscca = pkgs.callPackage ./pkgs/libscca {};
