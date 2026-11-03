@@ -421,6 +421,30 @@
       sha256 = "sha256-gd95B8qM1U4O0ItSId1r4rwqrJxHMAYlv5SUqN6pQ+E=";
     };
   };
+  nsp-box = {
+    pname = "nsp-box";
+    version = "07ab3fe0ef72bc5b163935ecb41aec4c87c254f0";
+    src = fetchFromGitHub {
+      owner = "smarkyie";
+      repo = "NSP-Box";
+      rev = "07ab3fe0ef72bc5b163935ecb41aec4c87c254f0";
+      fetchSubmodules = false;
+      sha256 = "sha256-WxZ2rqGJAsXZJK2BLVFWT3AqruIsLni2yheRKMauHa4=";
+    };
+    date = "2026-11-02";
+  };
+  nup = {
+    pname = "nup";
+    version = "744fb7e30ce3ace787f1839ee3e7f8a010e36c04";
+    src = fetchFromGitHub {
+      owner = "a55uka";
+      repo = "nup";
+      rev = "744fb7e30ce3ace787f1839ee3e7f8a010e36c04";
+      fetchSubmodules = false;
+      sha256 = "sha256-dboiD5vyfdAyylUhRczwj+trNRZBRZBdtoOO7RxSmN0=";
+    };
+    date = "2026-11-02";
+  };
   nuvio = {
     pname = "nuvio";
     version = "0.3.8";
@@ -428,6 +452,18 @@
       url = "https://github.com/blarns/NuvioForLinux/releases/download/v0.3.8/Nuvio-0.3.8-x86_64.AppImage";
       sha256 = "sha256-oGpNnc6x1CS6fiXdW9ybQ0cC8sAPAFHzeYtHr1DLINY=";
     };
+  };
+  nx2android = {
+    pname = "nx2android";
+    version = "34333894c5192606d1ac88b10e8e040667d556c8";
+    src = fetchFromGitHub {
+      owner = "shirai91";
+      repo = "nx2android";
+      rev = "34333894c5192606d1ac88b10e8e040667d556c8";
+      fetchSubmodules = false;
+      sha256 = "sha256-zdEoPTQh4OYYU8UxR3o6N1kjR25Mp+6Mp+jDkSYVAr0=";
+    };
+    date = "2026-11-03";
   };
   onlinefix-linux = {
     pname = "onlinefix-linux";
