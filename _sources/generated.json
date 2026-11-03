@@ -741,6 +741,48 @@
         },
         "version": "6.0.2"
     },
+    "nsp-box": {
+        "cargoLock": null,
+        "date": "2026-11-02",
+        "extract": null,
+        "name": "nsp-box",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "smarkyie",
+            "repo": "NSP-Box",
+            "rev": "07ab3fe0ef72bc5b163935ecb41aec4c87c254f0",
+            "sha256": "sha256-WxZ2rqGJAsXZJK2BLVFWT3AqruIsLni2yheRKMauHa4=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "07ab3fe0ef72bc5b163935ecb41aec4c87c254f0"
+    },
+    "nup": {
+        "cargoLock": null,
+        "date": "2026-11-02",
+        "extract": null,
+        "name": "nup",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "a55uka",
+            "repo": "nup",
+            "rev": "744fb7e30ce3ace787f1839ee3e7f8a010e36c04",
+            "sha256": "sha256-dboiD5vyfdAyylUhRczwj+trNRZBRZBdtoOO7RxSmN0=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "744fb7e30ce3ace787f1839ee3e7f8a010e36c04"
+    },
     "nuvio": {
         "cargoLock": null,
         "date": null,
@@ -755,6 +797,27 @@
             "url": "https://github.com/blarns/NuvioForLinux/releases/download/v0.3.8/Nuvio-0.3.8-x86_64.AppImage"
         },
         "version": "0.3.8"
+    },
+    "nx2android": {
+        "cargoLock": null,
+        "date": "2026-11-03",
+        "extract": null,
+        "name": "nx2android",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "shirai91",
+            "repo": "nx2android",
+            "rev": "34333894c5192606d1ac88b10e8e040667d556c8",
+            "sha256": "sha256-zdEoPTQh4OYYU8UxR3o6N1kjR25Mp+6Mp+jDkSYVAr0=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "34333894c5192606d1ac88b10e8e040667d556c8"
     },
     "onlinefix-linux": {
         "cargoLock": null,

@@ -1,7 +1,5 @@
-{ pkgs ? import <nixpkgs> { } }:
-
-{
-  lib = import ./lib { inherit pkgs; };
+{pkgs ? import <nixpkgs> {}}: {
+  lib = import ./lib {inherit pkgs;};
   nixosModules = import ./nixos-modules;
   overlays = import ./overlays;
 
@@ -110,7 +108,10 @@
   };
   monkeylauncher = pkgs.callPackage ./pkgs/monkeylauncher {};
   nordvpn = pkgs.callPackage ./pkgs/nordvpn {};
+  nsp-box = pkgs.callPackage ./pkgs/nsp-box {};
+  nup = pkgs.callPackage ./pkgs/nup {};
   nuvio = pkgs.callPackage ./pkgs/nuvio {};
+  nx2android = pkgs.callPackage ./pkgs/nx2android {};
   nska-deserialize = pkgs.callPackage ./pkgs/nska-deserialize {};
   onlinefix-linux = pkgs.callPackage ./pkgs/onlinefix-linux {};
   openlogi = pkgs.callPackage ./pkgs/openlogi {};
@@ -133,7 +134,8 @@
   };
   rsactftool = pkgs.callPackage ./pkgs/rsactftool {};
   safe-exam-browser = pkgs.callPackage ./pkgs/safe-exam-browser {};
-  scrollmpris = pkgs.callPackage ./pkgs/scrollmpris {};  sidr = pkgs.callPackage ./pkgs/sidr {};
+  scrollmpris = pkgs.callPackage ./pkgs/scrollmpris {};
+  sidr = pkgs.callPackage ./pkgs/sidr {};
   so-crates = pkgs.callPackage ./pkgs/so-crates {};
   sstv = pkgs.callPackage ./pkgs/sstv {};
   steamidra = pkgs.callPackage ./pkgs/steamidra {};
@@ -161,7 +163,7 @@
   vol-rs = pkgs.callPackage ./pkgs/vol-rs {};
   vorion = pkgs.callPackage ./pkgs/vorion {};
   zapfast = pkgs.callPackage ./pkgs/zapfast {};
-angr-management = pkgs.callPackage ./pkgs/angr-management {};
+  angr-management = pkgs.callPackage ./pkgs/angr-management {};
   autodesk-fusion = pkgs.callPackage ./pkgs/autodesk-fusion {
     wine = pkgs.wineWow64Packages.full;
   };

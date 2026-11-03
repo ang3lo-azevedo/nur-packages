@@ -17,6 +17,20 @@ fetch.github = "mrphrazer/reverser_ai"
 src.git = "https://github.com/Djihads80/Eglantine.git"
 fetch.github = "Djihads80/Eglantine"
 
+# No release tags yet, so track the default branch directly.
+[nup]
+src.git = "https://github.com/a55uka/nup.git"
+fetch.github = "a55uka/nup"
+
+# Track the default branch: new game ports land there before a tagged release.
+[nx2android]
+src.git = "https://github.com/shirai91/nx2android.git"
+fetch.github = "shirai91/nx2android"
+
+[nsp-box]
+src.git = "https://github.com/smarkyie/NSP-Box.git"
+fetch.github = "smarkyie/NSP-Box"
+
 [ida-chat-plugin]
 src.git = "https://github.com/HexRaysSA/ida-chat-plugin.git"
 fetch.github = "HexRaysSA/ida-chat-plugin"
