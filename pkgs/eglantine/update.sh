@@ -1,10 +1,8 @@
 #!/usr/bin/env bash
 # Repins default.nix to the newest Eglantine nx2 pre-release AppImage.
 #
-# nvfetcher can't track this: the asset URL needs both the build-NN tag (in the
-# path) and the full commit SHA (in the filename), but nvfetcher templates a
-# single version string, and the releases are prereleases its release tracker
-# skips. So fetch the two values from the API and rewrite them here.
+# nvfetcher can't track this: the releases are prereleases its release tracker
+# skips. So fetch the newest build-NN tag from the API and rewrite it here.
 #
 # Needs: curl, jq, nix. Set GITHUB_TOKEN to avoid API rate limits.
 set -euo pipefail
@@ -32,14 +30,11 @@ read -r tag url < <(
   exit 1
 }
 
-# The URL is the only place that carries the commit: it is in the filename.
-commit="$(basename "$url" | sed -E 's/^eglantine-([0-9a-f]+)-linux.*/\1/')"
 hash="$(nix store prefetch-file --json "$url" | jq -r .hash)"
 
-echo "eglantine: $tag ($commit)"
+echo "eglantine: $tag"
 
 sed -i -E \
   -e "s|(version = \")[^\"]*(\";)|\1${tag}\2|" \
-  -e "s|(commit = \")[^\"]*(\";)|\1${commit}\2|" \
   -e "s|(hash = \")[^\"]*(\";)|\1${hash}\2|" \
   "$nix"

@@ -7,14 +7,13 @@
   pname = "eglantine";
 
   # Upstream's prebuilt nx2 AppImage (PGO build) from the newest `build-NN`
-  # pre-release. The asset filename embeds the commit, so nvfetcher cannot template
-  # the URL: bump `version`, `commit` and `hash` by hand from the latest release at
+  # pre-release. These are prereleases nvfetcher's release tracker skips, so bump
+  # `version` and `hash` by hand from the latest release at
   # https://github.com/Djihads80/Eglantine/releases (pick the newest build-NN).
   version = "build-189";
-  commit = "eglantine-linux-x86_64-pgo.AppImage";
 
   src = fetchurl {
-    url = "https://github.com/Djihads80/Eglantine/releases/download/${version}/eglantine-${commit}-linux-x86_64-pgo.AppImage";
+    url = "https://github.com/Djihads80/Eglantine/releases/download/${version}/eglantine-linux-x86_64-pgo.AppImage";
     hash = "sha256-TBh+TweacLDvLGUiqFcJH3qGUV/dezjjnn7MR3lFIRs=";
   };
 

@@ -12,6 +12,12 @@
   # exam shell runs on a multi-monitor setup. Set to false to restore upstream's
   # single-display enforcement.
   allowMultipleDisplays ? true,
+  # When true, compute the SEB Config Key with the official algorithm
+  # (dictionary keys sorted case-insensitively and recursively, "originatorVersion"
+  # removed) instead of upstream's QJsonObject ordering, which sorts keys
+  # case-sensitively and does not match the hash Moodle computes server-side. Set
+  # to false to keep upstream's computation.
+  standardConfigKey ? true,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "safe-exam-browser";
@@ -76,6 +82,81 @@ stdenv.mkDerivation (finalAttrs: {
     # no-op so SEB runs on multi-monitor setups.
     substituteInPlace src/security/security_service.cpp \
       --replace-fail 'return QGuiApplication::screens().size() > 1;' 'return false; // multi-display check disabled (allowMultipleDisplays)'
+  ''
+  + lib.optionalString standardConfigKey ''
+    # Replace upstream's Config Key computation (QJsonObject sorts keys
+    # case-sensitively) with the official SEB algorithm so the ConfigKeyHash
+    # header matches what Moodle expects: serialize the settings to JSON with
+    # dictionary keys sorted case-insensitively and recursively, drop
+    # "originatorVersion", then SHA256. Qt's own encoding is reused for leaf
+    # values so number/string formatting stays identical.
+    substituteInPlace src/settings/settings_parsing.cpp \
+      --replace-fail 'QString calculateConfigurationKey(const QVariantMap &data)
+{
+    const QJsonObject object = toJsonValue(data).toObject();
+    return sha256Hex(QJsonDocument(object).toJson(QJsonDocument::Compact));
+}' 'namespace {
+
+void appendConfigKeyValue(const QVariant &value, QByteArray &out);
+
+void appendConfigKeyEncoded(const QJsonValue &json, QByteArray &out)
+{
+    QJsonArray wrapper;
+    wrapper.append(json);
+    const QByteArray encoded = QJsonDocument(wrapper).toJson(QJsonDocument::Compact);
+    out.append(encoded.mid(1, encoded.size() - 2));
+}
+
+void appendConfigKeyValue(const QVariant &value, QByteArray &out)
+{
+    if (value.metaType().id() == QMetaType::QVariantMap) {
+        const QVariantMap map = value.toMap();
+        QStringList keys = map.keys();
+        keys.sort(Qt::CaseInsensitive);
+        out.append(char(0x7b));
+        bool first = true;
+        for (const QString &key : keys) {
+            if (key == QLatin1String("originatorVersion")) {
+                continue;
+            }
+            if (!first) {
+                out.append(char(0x2c));
+            }
+            first = false;
+            appendConfigKeyEncoded(QJsonValue(key), out);
+            out.append(char(0x3a));
+            appendConfigKeyValue(map.value(key), out);
+        }
+        out.append(char(0x7d));
+        return;
+    }
+
+    if (value.metaType().id() == QMetaType::QVariantList) {
+        const QVariantList list = value.toList();
+        out.append(char(0x5b));
+        bool first = true;
+        for (const QVariant &item : list) {
+            if (!first) {
+                out.append(char(0x2c));
+            }
+            first = false;
+            appendConfigKeyValue(item, out);
+        }
+        out.append(char(0x5d));
+        return;
+    }
+
+    appendConfigKeyEncoded(toJsonValue(value), out);
+}
+
+}  // namespace
+
+QString calculateConfigurationKey(const QVariantMap &data)
+{
+    QByteArray serialized;
+    appendConfigKeyValue(QVariant(data), serialized);
+    return sha256Hex(serialized);
+}'
   '';
 
   # force_qtwebengine makes qmake fail loudly if the WebEngine Qt modules are
