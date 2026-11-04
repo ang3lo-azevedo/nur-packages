@@ -10,11 +10,11 @@
   # pre-release. These are prereleases nvfetcher's release tracker skips, so bump
   # `version` and `hash` by hand from the latest release at
   # https://github.com/Djihads80/Eglantine/releases (pick the newest build-NN).
-  version = "build-189";
+  version = "build-204";
 
   src = fetchurl {
     url = "https://github.com/Djihads80/Eglantine/releases/download/${version}/eglantine-linux-x86_64-pgo.AppImage";
-    hash = "sha256-TBh+TweacLDvLGUiqFcJH3qGUV/dezjjnn7MR3lFIRs=";
+    hash = "sha256-QYOyGYaC6FxilyeiRl66oY9rILu8AfK0HE8n06qaCIQ=";
   };
 
   # The desktop entry (Exec=eglantine already) and icon live inside the AppImage.
