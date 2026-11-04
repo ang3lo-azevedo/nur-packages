@@ -523,6 +523,17 @@
       sha256 = "sha256-bwCxhmgZOoIfICnFcBWBL0I77oJS/qEJNeeZtFYrODU=";
     };
   };
+  safe-exam-browser = {
+    pname = "safe-exam-browser";
+    version = "3176207e21c065f0a7cfbc80df6dc3f25efaaeb9";
+    src = fetchFromGitHub {
+      owner = "Jvr2022";
+      repo = "seb-linux";
+      rev = "3176207e21c065f0a7cfbc80df6dc3f25efaaeb9";
+      fetchSubmodules = false;
+      sha256 = "sha256-+SxPx2ZGtOGsE/VLMKB1F0bVqBKaxDEf+8fnYW+9WG4=";
+    };
+  };
   scrollmpris = {
     pname = "scrollmpris";
     version = "21df3617577758ef5f8a92255faece8ecceec22a";

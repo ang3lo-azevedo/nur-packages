@@ -1,0 +1,56 @@
+diff --git a/src/main.cpp b/src/main.cpp
+index a645f8b..1aa5af7 100644
+--- a/src/main.cpp
++++ b/src/main.cpp
+@@ -244,11 +244,11 @@ void applyEarlyEnvironment(int argc, char *argv[])
+ 
+     if (isExamAntiCheat || isMenuLockdown) {
+         if (isMenuLockdown || (isExamAntiCheat && hasResource)) {
+-            if (!setup_barebones_vt()) {
++            if (false) {
+                 qCritical() << "Anti-cheat VT setup failed; aborting.";
+                 _exit(1);
+             }
+-            qputenv("QT_QPA_PLATFORM", "linuxfb");
++            /* linuxfb VT kiosk disabled: stay in the xcb session */
+             qputenv("QT_QUICK_BACKEND", "software");
+         }
+ #if SEB_HAS_QTWEBENGINE
+@@ -471,6 +471,18 @@ int main(int argc, char *argv[])
+             appendPkexecEnvironmentVariable(pkexecArgs, "XDG_SESSION_TYPE");
+             appendPkexecEnvironmentVariable(pkexecArgs, "DBUS_SESSION_BUS_ADDRESS");
+             appendPkexecEnvironmentVariable(pkexecArgs, "QT_QPA_PLATFORM");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QT_PLUGIN_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QT_QPA_PLATFORM_PLUGIN_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QML2_IMPORT_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QML_IMPORT_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QTWEBENGINEPROCESS_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QTWEBENGINE_RESOURCES_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QTWEBENGINE_LOCALES_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QTWEBENGINE_DICTIONARIES_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "LD_LIBRARY_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "XDG_DATA_DIRS");
++            appendPkexecEnvironmentVariable(pkexecArgs, "FONTCONFIG_FILE");
++            appendPkexecEnvironmentVariable(pkexecArgs, "FONTCONFIG_PATH");
+             pkexecArgs << QCoreApplication::applicationFilePath();
+             pkexecArgs << args;
+ 
+@@ -512,6 +524,18 @@ int main(int argc, char *argv[])
+             appendPkexecEnvironmentVariable(pkexecArgs, "XDG_SESSION_TYPE");
+             appendPkexecEnvironmentVariable(pkexecArgs, "DBUS_SESSION_BUS_ADDRESS");
+             appendPkexecEnvironmentVariable(pkexecArgs, "QT_QPA_PLATFORM");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QT_PLUGIN_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QT_QPA_PLATFORM_PLUGIN_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QML2_IMPORT_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QML_IMPORT_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QTWEBENGINEPROCESS_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QTWEBENGINE_RESOURCES_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QTWEBENGINE_LOCALES_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "QTWEBENGINE_DICTIONARIES_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "LD_LIBRARY_PATH");
++            appendPkexecEnvironmentVariable(pkexecArgs, "XDG_DATA_DIRS");
++            appendPkexecEnvironmentVariable(pkexecArgs, "FONTCONFIG_FILE");
++            appendPkexecEnvironmentVariable(pkexecArgs, "FONTCONFIG_PATH");
+             if (usedPassword) {
+                 pkexecArgs << (QStringLiteral("SEB_PASSWORD=") + userPassword);
+             }

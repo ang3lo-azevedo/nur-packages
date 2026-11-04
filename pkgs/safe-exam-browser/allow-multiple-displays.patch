@@ -1,0 +1,13 @@
+diff --git a/src/security/security_service.cpp b/src/security/security_service.cpp
+index 02116f7..34aed7d 100644
+--- a/src/security/security_service.cpp
++++ b/src/security/security_service.cpp
+@@ -125,7 +125,7 @@ void SecurityService::stopMonitoring()
+ 
+ bool SecurityService::isMultipleDisplaysActive() const
+ {
+-    return QGuiApplication::screens().size() > 1;
++    return false; // multi-display check disabled (allowMultipleDisplays)
+ }
+ 
+ void SecurityService::performCheck()

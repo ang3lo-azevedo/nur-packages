@@ -1,0 +1,77 @@
+diff --git a/src/settings/settings_parsing.cpp b/src/settings/settings_parsing.cpp
+index b4ff0cd..47cda45 100644
+--- a/src/settings/settings_parsing.cpp
++++ b/src/settings/settings_parsing.cpp
+@@ -96,10 +96,70 @@ QVariant parsePlistElement(const QDomElement &element)
+ 
+ }  // namespace
+ 
++namespace {
++
++void appendConfigKeyValue(const QVariant &value, QByteArray &out);
++
++void appendConfigKeyEncoded(const QJsonValue &json, QByteArray &out)
++{
++    QJsonArray wrapper;
++    wrapper.append(json);
++    const QByteArray encoded = QJsonDocument(wrapper).toJson(QJsonDocument::Compact);
++    out.append(encoded.mid(1, encoded.size() - 2));
++}
++
++void appendConfigKeyValue(const QVariant &value, QByteArray &out)
++{
++    if (value.metaType().id() == QMetaType::QVariantMap) {
++        const QVariantMap map = value.toMap();
++        QStringList keys = map.keys();
++        keys.sort(Qt::CaseInsensitive);
++        out.append(char(0x7b));
++        bool first = true;
++        for (const QString &key : keys) {
++            if (key == QLatin1String("originatorVersion")) {
++                continue;
++            }
++            if (!first) {
++                out.append(char(0x2c));
++            }
++            first = false;
++            appendConfigKeyEncoded(QJsonValue(key), out);
++            out.append(char(0x3a));
++            appendConfigKeyValue(map.value(key), out);
++        }
++        out.append(char(0x7d));
++        return;
++    }
++
++    if (value.metaType().id() == QMetaType::QVariantList) {
++        const QVariantList list = value.toList();
++        out.append(char(0x5b));
++        bool first = true;
++        for (const QVariant &item : list) {
++            if (!first) {
++                out.append(char(0x2c));
++            }
++            first = false;
++            appendConfigKeyValue(item, out);
++        }
++        out.append(char(0x5d));
++        return;
++    }
++
++    appendConfigKeyEncoded(toJsonValue(value), out);
++}
++
++}  // namespace
++
+ QString calculateConfigurationKey(const QVariantMap &data)
+ {
+-    const QJsonObject object = toJsonValue(data).toObject();
+-    return sha256Hex(QJsonDocument(object).toJson(QJsonDocument::Compact));
++    // Official SEB Config Key: serialize settings to JSON with dictionary keys
++    // sorted case-insensitively (recursively) and "originatorVersion" removed,
++    // then SHA256. Matches the hash Moodle computes server-side.
++    QByteArray serialized;
++    appendConfigKeyValue(QVariant(data), serialized);
++    return sha256Hex(serialized);
+ }
+ 
+ QByteArray inflateGzip(const QByteArray &data, QString *error)
