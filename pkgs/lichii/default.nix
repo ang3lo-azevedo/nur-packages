@@ -6,16 +6,15 @@
 }: let
   pname = "lichii";
 
-  # zortos293's Eglantine fork, which the app now brands as Lichii. Prebuilt nx2
-  # AppImage (PGO build) from the newest `build-NN` pre-release. The asset filename
-  # embeds the commit, so nvfetcher cannot template the URL: bump `version`,
-  # `commit` and `hash` by hand (or run update.sh) from the latest release at
-  # https://github.com/zortos293/Eglantine/releases (pick the newest build-NN).
+  # zortos293's Eglantine fork, which the app now brands as Lichii (the repo was
+  # renamed from Eglantine to Lichii too). Prebuilt nx2 AppImage (PGO build) from
+  # the newest `build-NN` pre-release, which nvfetcher's release tracker skips:
+  # bump `version` and `hash` by hand (or run update.sh) from the latest release
+  # at https://github.com/zortos293/Lichii/releases (pick the newest build-NN).
   version = "build-70";
-  commit = "lichii-linux-x86_64-pgo.AppImage";
 
   src = fetchurl {
-    url = "https://github.com/zortos293/Eglantine/releases/download/${version}/eglantine-${commit}-linux-x86_64-pgo.AppImage";
+    url = "https://github.com/zortos293/Lichii/releases/download/${version}/lichii-linux-x86_64-pgo.AppImage";
     hash = "sha256-Wf+uSKDAwpEMh6TMIAVxxW4I+KDVlvfKzvQgQ0maMU8=";
   };
 
@@ -58,7 +57,7 @@ in
 
     meta = {
       description = "Experimental Nintendo Switch 2 emulator (zortos293's Eglantine fork, branded Lichii; upstream AppImage)";
-      homepage = "https://github.com/zortos293/Eglantine";
+      homepage = "https://github.com/zortos293/Lichii";
       mainProgram = pname;
       platforms = ["x86_64-linux"];
     };
