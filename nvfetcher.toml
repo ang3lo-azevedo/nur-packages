@@ -296,3 +296,10 @@ fetch.github = "cclgroupltd/mister-skinnylegs"
 [tpm-keyring-unlock]
 src.manual = "485c9f57c705f4d4714f8a085a09514051389204"
 fetch.github = "dmitriitimoshenko/tpm-keyring-unlock"
+
+# Built from source (not the prebuilt AppImage) so the exam lockdown's pkexec
+# relaunch can gain real root on the host. Track the default branch like the
+# other source-built packages; the source patches in the package target it.
+[safe-exam-browser]
+src.git = "https://github.com/Jvr2022/seb-linux.git"
+fetch.github = "Jvr2022/seb-linux"
