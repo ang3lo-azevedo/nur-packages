@@ -2,26 +2,27 @@
 # Repins default.nix to the newest Lichii (zortos293's Eglantine fork) nx2
 # pre-release AppImage.
 #
-# nvfetcher can't track this: the asset URL needs both the build-NN tag (in the
-# path) and the full commit SHA (in the filename), but nvfetcher templates a
-# single version string, and the releases are prereleases its release tracker
-# skips. So fetch the two values from the API and rewrite them here.
+# nvfetcher can't track this: the releases are prereleases its release tracker
+# skips. So fetch the newest build-NN tag from the API and rewrite it here. The
+# asset name is fixed (lichii-linux-x86_64-pgo.AppImage), so the URL templates
+# off the tag alone.
 #
 # Needs: curl, jq, nix. Set GITHUB_TOKEN to avoid API rate limits.
 set -euo pipefail
 
-repo="zortos293/Eglantine"
+repo="zortos293/Lichii"
+asset="lichii-linux-x86_64-pgo.AppImage"
 nix="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/default.nix"
 
-# Newest build-* release that ships a linux x86_64 PGO AppImage.
+# Newest build-* release that ships the linux x86_64 PGO AppImage.
 read -r tag url < <(
   curl -fsSL ${GITHUB_TOKEN:+-H "Authorization: Bearer $GITHUB_TOKEN"} \
     "https://api.github.com/repos/$repo/releases?per_page=30" \
-    | jq -r '
+    | jq -r --arg asset "$asset" '
         [ .[]
           | select(.tag_name | startswith("build-")) as $r
           | $r.assets[]
-          | select(.name | test("linux-x86_64-pgo\\.AppImage$"))
+          | select(.name == $asset)
           | {published: $r.published_at, tag: $r.tag_name, url: .browser_download_url}
         ]
         | sort_by(.published) | last
@@ -33,14 +34,11 @@ read -r tag url < <(
   exit 1
 }
 
-# The URL is the only place that carries the commit: it is in the filename.
-commit="$(basename "$url" | sed -E 's/^eglantine-([0-9a-f]+)-linux.*/\1/')"
 hash="$(nix store prefetch-file --json "$url" | jq -r .hash)"
 
-echo "lichii: $tag ($commit)"
+echo "lichii: $tag"
 
 sed -i -E \
   -e "s|(version = \")[^\"]*(\";)|\1${tag}\2|" \
-  -e "s|(commit = \")[^\"]*(\";)|\1${commit}\2|" \
   -e "s|(hash = \")[^\"]*(\";)|\1${hash}\2|" \
   "$nix"
