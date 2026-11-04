@@ -19,7 +19,7 @@
   # removed) instead of upstream's QJsonObject ordering, which sorts keys
   # case-sensitively and does not match the hash Moodle computes server-side. Set
   # to false to keep upstream's computation.
-  standardConfigKey ? true,
+  standardConfigKey ? false,
 }: let
   sources = callPackage ../../_sources/generated.nix {};
 in
