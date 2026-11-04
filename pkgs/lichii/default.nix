@@ -11,12 +11,12 @@
   # embeds the commit, so nvfetcher cannot template the URL: bump `version`,
   # `commit` and `hash` by hand (or run update.sh) from the latest release at
   # https://github.com/zortos293/Eglantine/releases (pick the newest build-NN).
-  version = "build-65";
-  commit = "3bdd53d08adfd96b7e3e3f09344c514540ef1ce6";
+  version = "build-70";
+  commit = "lichii-linux-x86_64-pgo.AppImage";
 
   src = fetchurl {
     url = "https://github.com/zortos293/Eglantine/releases/download/${version}/eglantine-${commit}-linux-x86_64-pgo.AppImage";
-    hash = "sha256-vMLtA03GQftLlGhOYmoWMeVMy2T54CPa3Coef/KPBGM=";
+    hash = "sha256-Wf+uSKDAwpEMh6TMIAVxxW4I+KDVlvfKzvQgQ0maMU8=";
   };
 
   # The desktop entry (Exec=lichii already) and icon live inside the AppImage.
