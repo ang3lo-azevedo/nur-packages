@@ -52,9 +52,11 @@ stdenv.mkDerivation (finalAttrs: {
       # them and leaves the root relaunch unable to find its plugins.
       ./run-in-session.patch
     ]
+    
     # Make the anti-cheat "Multiple displays detected" check (not configurable
     # through the .seb file) a no-op so SEB runs on multi-monitor setups.
     ++ lib.optional allowMultipleDisplays ./allow-multiple-displays.patch
+    
     # Compute the SEB Config Key with the official algorithm (keys sorted
     # case-insensitively and recursively, "originatorVersion" removed) so the
     # ConfigKeyHash header matches what Moodle computes server-side.
