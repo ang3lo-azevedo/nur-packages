@@ -134,7 +134,9 @@
     pyliblzfse = pkgs.callPackage ./pkgs/pyliblzfse {};
   };
   rsactftool = pkgs.callPackage ./pkgs/rsactftool {};
-  safe-exam-browser = pkgs.callPackage ./pkgs/safe-exam-browser {};
+  safe-exam-browser = pkgs.callPackage ./pkgs/safe-exam-browser {
+    standardConfigKey = true;
+  };
   scrollmpris = pkgs.callPackage ./pkgs/scrollmpris {};
   sidr = pkgs.callPackage ./pkgs/sidr {};
   so-crates = pkgs.callPackage ./pkgs/so-crates {};
