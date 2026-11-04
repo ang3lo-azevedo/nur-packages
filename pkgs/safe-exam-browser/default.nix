@@ -8,6 +8,10 @@
   pkg-config,
   copyDesktopItems,
   makeDesktopItem,
+  # When true, neuter the anti-cheat "Multiple displays detected" check so the
+  # exam shell runs on a multi-monitor setup. Set to false to restore upstream's
+  # single-display enforcement.
+  allowMultipleDisplays ? true,
 }:
 stdenv.mkDerivation (finalAttrs: {
   pname = "safe-exam-browser";
@@ -65,6 +69,13 @@ stdenv.mkDerivation (finalAttrs: {
             appendPkexecEnvironmentVariable(pkexecArgs, "XDG_DATA_DIRS");
             appendPkexecEnvironmentVariable(pkexecArgs, "FONTCONFIG_FILE");
             appendPkexecEnvironmentVariable(pkexecArgs, "FONTCONFIG_PATH");'
+  ''
+  + lib.optionalString allowMultipleDisplays ''
+    # The anti-cheat monitor hard-fails the exam when more than one screen is
+    # connected (it is not configurable through the .seb file). Make the check a
+    # no-op so SEB runs on multi-monitor setups.
+    substituteInPlace src/security/security_service.cpp \
+      --replace-fail 'return QGuiApplication::screens().size() > 1;' 'return false; // multi-display check disabled (allowMultipleDisplays)'
   '';
 
   # force_qtwebengine makes qmake fail loudly if the WebEngine Qt modules are
