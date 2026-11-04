@@ -199,15 +199,15 @@
   };
   eglantine = {
     pname = "eglantine";
-    version = "46967a1b84e857a783ace6dcbabffddd008463ff";
+    version = "d9558f05a2e43f6f23d030d920f70c283cf81b70";
     src = fetchFromGitHub {
       owner = "Djihads80";
       repo = "Eglantine";
-      rev = "46967a1b84e857a783ace6dcbabffddd008463ff";
+      rev = "d9558f05a2e43f6f23d030d920f70c283cf81b70";
       fetchSubmodules = false;
-      sha256 = "sha256-5Gavx3WLulEy8NMQp7qu6ZeeKZYWAmTWDXwfQW1/yx4=";
+      sha256 = "sha256-e2aNjYNKVJLAflNOAHDPZFJzeQDYw7z6wjM0vdqiudA=";
     };
-    date = "2026-11-03";
+    date = "2026-11-04";
   };
   ese-database-view = {
     pname = "ese-database-view";
@@ -423,27 +423,27 @@
   };
   nsp-box = {
     pname = "nsp-box";
-    version = "07ab3fe0ef72bc5b163935ecb41aec4c87c254f0";
+    version = "c3de7a120cb4b3c86cd5b5bcdbf5f33bbffe0fc0";
     src = fetchFromGitHub {
       owner = "smarkyie";
       repo = "NSP-Box";
-      rev = "07ab3fe0ef72bc5b163935ecb41aec4c87c254f0";
+      rev = "c3de7a120cb4b3c86cd5b5bcdbf5f33bbffe0fc0";
       fetchSubmodules = false;
-      sha256 = "sha256-WxZ2rqGJAsXZJK2BLVFWT3AqruIsLni2yheRKMauHa4=";
+      sha256 = "sha256-6bVbIrwp51kBeIpxx2WRfVRkIEOqQ7O742poJFYf1m8=";
     };
-    date = "2026-11-02";
+    date = "2026-11-03";
   };
   nup = {
     pname = "nup";
-    version = "744fb7e30ce3ace787f1839ee3e7f8a010e36c04";
+    version = "fc12cc1277d8ab3f90900f9e8292513a22968197";
     src = fetchFromGitHub {
       owner = "a55uka";
       repo = "nup";
-      rev = "744fb7e30ce3ace787f1839ee3e7f8a010e36c04";
+      rev = "fc12cc1277d8ab3f90900f9e8292513a22968197";
       fetchSubmodules = false;
-      sha256 = "sha256-dboiD5vyfdAyylUhRczwj+trNRZBRZBdtoOO7RxSmN0=";
+      sha256 = "sha256-NUelXx6q3vg8D/LHRnu41v12T+WLIxfert5eyOnz5BA=";
     };
-    date = "2026-11-02";
+    date = "2026-11-04";
   };
   nuvio = {
     pname = "nuvio";
@@ -455,15 +455,15 @@
   };
   nx2android = {
     pname = "nx2android";
-    version = "34333894c5192606d1ac88b10e8e040667d556c8";
+    version = "70c8cb8a3b8843856e295f005ed8abd092f233fd";
     src = fetchFromGitHub {
       owner = "shirai91";
       repo = "nx2android";
-      rev = "34333894c5192606d1ac88b10e8e040667d556c8";
+      rev = "70c8cb8a3b8843856e295f005ed8abd092f233fd";
       fetchSubmodules = false;
-      sha256 = "sha256-zdEoPTQh4OYYU8UxR3o6N1kjR25Mp+6Mp+jDkSYVAr0=";
+      sha256 = "sha256-+9hmCon0lrVquF6DJFT2ZVJK8ktsGPdriDYtu5jrZKY=";
     };
-    date = "2026-11-03";
+    date = "2026-11-04";
   };
   onlinefix-linux = {
     pname = "onlinefix-linux";
@@ -475,10 +475,10 @@
   };
   openlogi = {
     pname = "openlogi";
-    version = "0.8.20";
+    version = "0.9.0";
     src = fetchTarball {
-      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.8.20.tar.gz";
-      sha256 = "sha256-QqQiQCkIlHehMKQYI2nfKAsZRkbErLkM0HBPzyZN8X8=";
+      url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.9.0.tar.gz";
+      sha256 = "sha256-lJVX6pUFgv6bWDczIkLGkrx8iYIHuqu4a2Neu5rVVFI=";
     };
   };
   registry-spy = {
@@ -533,6 +533,7 @@
       fetchSubmodules = false;
       sha256 = "sha256-+SxPx2ZGtOGsE/VLMKB1F0bVqBKaxDEf+8fnYW+9WG4=";
     };
+    date = "2026-10-14";
   };
   scrollmpris = {
     pname = "scrollmpris";
@@ -731,18 +732,19 @@
   };
   zapfast = {
     pname = "zapfast";
-    version = "0.21.0";
+    version = "0.21.1";
     src = fetchTarball {
-      url = "https://github.com/crmne/zapfast/archive/refs/tags/v0.21.0.tar.gz";
-      sha256 = "sha256-3S4UWz9vBus4aqpgoy9ncazI24VC94WRpD+49vI0Ay4=";
+      url = "https://github.com/crmne/zapfast/archive/refs/tags/v0.21.1.tar.gz";
+      sha256 = "sha256-nY1v8fY+4vOLFOEwHRnhY3lTlrQRLyljilLHE97/kGY=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-3S4UWz9vBus4aqpgoy9ncazI24VC94WRpD+49vI0Ay4=/Cargo.lock";
+      lockFile = ./. + "/sha256-nY1v8fY+4vOLFOEwHRnhY3lTlrQRLyljilLHE97_kGY=/Cargo.lock";
       outputHashes = {
         "wacore-0.7.0" = "sha256-LYYjwvUaN0cLZ0MtPUIKky5Ey29MRHd815JVbd3NDLk=";
         "fastframe-audio-0.15.4" = "sha256-EW8bwDa6P8YUyMl8dn+Ue1CIZuYphwSos02t+v7Wkcw=";
         "dpi-0.1.1" = "sha256-hK2A6bbFZUGD9hU+kG+ZedBtix5cLrrVH4uwUEBSD+Y=";
         "cpal-0.18.2" = "sha256-ntJYSSipB0YyIpZ+zsJi0LXwtYcuBZbJHrZtGD5r4iw=";
+        "mp4-0.14.0" = "sha256-ZYS2obVa/n/y8FoUzk1xLmp8RoXdlfyVFmmZTISzuM8=";
         "rodio-0.22.2" = "sha256-imsXaaGgE3TIkQO3GwljMSsEZDPktcFHf2mUhy3mfAo=";
         "ecolor-0.36.2" = "sha256-rWQWy0zvdCmiKhTJtl0JFVUuz3OpQo1FPswNzXUP2Bk=";
       };
