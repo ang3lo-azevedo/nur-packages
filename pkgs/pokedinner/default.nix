@@ -7,15 +7,17 @@
   pname = "pokedinner";
 
   # PokeDinner is a fork of Eglantine (itself derived from Eden/Yuzu/Sudachi),
-  # kept alongside eglantine so the two can be compared. Unlike eglantine the
+  # kept alongside eglantine so the two can be compared. Like eglantine and
+  # lichii we track the newest build including pre-releases; unlike those the
   # releases use plain semver tags and a commit-free asset name, so the URL
-  # templates cleanly: bump `version` and `hash` from the newest release at
+  # templates cleanly: bump `version` and `hash` from the newest release (pre-
+  # releases included) at
   # https://git.eden-emu.dev/Franseven/PokeDinner-a-Eglantine-Fork/releases.
-  version = "2.0.0";
+  version = "2.5.0";
 
   src = fetchurl {
     url = "https://git.eden-emu.dev/Franseven/PokeDinner-a-Eglantine-Fork/releases/download/${version}/Eglantine-PokeDinner-${version}-linux-x86_64.AppImage";
-    hash = "sha256-9bl/Ze1wOW0YbRe1JgnwOskHIIJQ8VvSjl12GyPWPpo=";
+    hash = "sha256-l91FM6IAajoFi2mzxfEOptwZ9CYZKfFp3DPA6CLAIbg=";
   };
 
   # The desktop entry and icon sit at the AppImage root (not under usr/share as

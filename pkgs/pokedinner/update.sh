@@ -13,7 +13,7 @@ api="https://git.eden-emu.dev/api/v1"
 repo="Franseven/PokeDinner-a-Eglantine-Fork"
 nix="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/default.nix"
 
-# Newest release that ships a linux x86_64 AppImage.
+# Newest release (pre-releases included) that ships a linux x86_64 AppImage.
 read -r tag url < <(
   curl -fsSL "$api/repos/$repo/releases?limit=30" \
     | jq -r '
