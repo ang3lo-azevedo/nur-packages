@@ -6,10 +6,13 @@
 }: let
   pname = "eglantine";
 
-  # Upstream's prebuilt nx2 AppImage (PGO build) from the newest `build-NN`
-  # pre-release. These are prereleases nvfetcher's release tracker skips, so bump
-  # `version` and `hash` by hand from the latest release at
-  # https://github.com/Djihads80/Eglantine/releases (pick the newest build-NN).
+  # Upstream's prebuilt nx2 AppImage (PGO build). All upstream builds are
+  # prereleases, so run ../../update-switch-emulators.sh to refresh `version`
+  # and `hash` to the newest release by publish date. `version` is the release
+  # tag: upstream publishes several kinds (build-NN, daily-*, v*, and
+  # branch-<name>-<hash> feature builds), and the newest by date may be any of
+  # them; every tag ships the eglantine-linux-x86_64-pgo.AppImage asset, so the
+  # URL below is unchanged.
   version = "build-212";
 
   src = fetchurl {
