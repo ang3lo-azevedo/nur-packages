@@ -1,16 +1,21 @@
 {pkgs, ...}: let
   sources = pkgs.callPackage ../../_sources/generated.nix {};
+  pname = "jackify";
   version = sources.jackify.version;
-  appimage = sources.jackify.src;
+  src = sources.jackify.src;
+  # wrapType2 never exposes the AppImage's bundled icon, so pull it from the
+  # extracted contents and install it under the Icon= name the entry references.
+  extracted = pkgs.appimageTools.extract {inherit pname version src;};
 in
   pkgs.appimageTools.wrapType2 {
-    pname = "jackify";
-    inherit version;
-    src = appimage;
+    inherit pname version src;
 
     extraPkgs = pkgs: with pkgs; [zstd];
 
     extraInstallCommands = ''
+      install -Dm644 ${extracted}/usr/share/icons/hicolor/256x256/apps/com.jackify.app.png \
+        $out/share/icons/hicolor/256x256/apps/com.jackify.app.png
+
       mkdir -p $out/share/applications
       cp ${pkgs.makeDesktopItem {
         name = "jackify";

@@ -27,6 +27,7 @@ in
       (pkgs.makeDesktopItem {
         name = "ist-fenix-auto-enroller";
         exec = "ist-fenix-auto-enroller";
+        icon = "x-office-calendar";
         desktopName = "IST Fenix Auto-Enroller";
         comment = "Automatically enroll in IST Fenix shifts";
         categories = ["Utility"];
