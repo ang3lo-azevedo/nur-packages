@@ -337,7 +337,7 @@
     },
     "eglantine": {
         "cargoLock": null,
-        "date": "2026-11-04",
+        "date": "2026-11-05",
         "extract": null,
         "name": "eglantine",
         "passthru": null,
@@ -349,12 +349,12 @@
             "name": null,
             "owner": "Djihads80",
             "repo": "Eglantine",
-            "rev": "d9558f05a2e43f6f23d030d920f70c283cf81b70",
-            "sha256": "sha256-e2aNjYNKVJLAflNOAHDPZFJzeQDYw7z6wjM0vdqiudA=",
+            "rev": "e736dfde9e45bc3640935e373927814883803d95",
+            "sha256": "sha256-Ur6joil00cdxEKVgiAoknrWWi0ylXuSgNhJAL04jqes=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "d9558f05a2e43f6f23d030d920f70c283cf81b70"
+        "version": "e736dfde9e45bc3640935e373927814883803d95"
     },
     "ese-database-view": {
         "cargoLock": null,
@@ -776,12 +776,12 @@
             "name": null,
             "owner": "a55uka",
             "repo": "nup",
-            "rev": "fc12cc1277d8ab3f90900f9e8292513a22968197",
-            "sha256": "sha256-NUelXx6q3vg8D/LHRnu41v12T+WLIxfert5eyOnz5BA=",
+            "rev": "d40d9cfa50792ba8021d2967d994d1b1c25d62b0",
+            "sha256": "sha256-EPU0AKK/2zbAMOWs0MmVm+El0ACfJgRr9EdxGYcJVOM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "fc12cc1277d8ab3f90900f9e8292513a22968197"
+        "version": "d40d9cfa50792ba8021d2967d994d1b1c25d62b0"
     },
     "nuvio": {
         "cargoLock": null,
@@ -800,7 +800,7 @@
     },
     "nx2android": {
         "cargoLock": null,
-        "date": "2026-11-04",
+        "date": "2026-11-05",
         "extract": null,
         "name": "nx2android",
         "passthru": null,
@@ -812,12 +812,12 @@
             "name": null,
             "owner": "shirai91",
             "repo": "nx2android",
-            "rev": "70c8cb8a3b8843856e295f005ed8abd092f233fd",
-            "sha256": "sha256-+9hmCon0lrVquF6DJFT2ZVJK8ktsGPdriDYtu5jrZKY=",
+            "rev": "27c1a11fd3cc61f656dfb70d660417fdf8e97ad4",
+            "sha256": "sha256-loyeflFPhv++9pvnRBJyBuZwTVr2UrmEOUhb6GC9x+E=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "70c8cb8a3b8843856e295f005ed8abd092f233fd"
+        "version": "27c1a11fd3cc61f656dfb70d660417fdf8e97ad4"
     },
     "onlinefix-linux": {
         "cargoLock": null,
