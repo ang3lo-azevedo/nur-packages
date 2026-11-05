@@ -7,12 +7,11 @@
   pname = "pokedinner";
 
   # PokeDinner is a fork of Eglantine (itself derived from Eden/Yuzu/Sudachi),
-  # kept alongside eglantine so the two can be compared. Like eglantine and
-  # lichii we track the newest build including pre-releases; unlike those the
-  # releases use plain semver tags and a commit-free asset name, so the URL
-  # templates cleanly: bump `version` and `hash` from the newest release (pre-
-  # releases included) at
-  # https://git.eden-emu.dev/Franseven/PokeDinner-a-Eglantine-Fork/releases.
+  # kept alongside eglantine so the two can be compared. The releases use plain
+  # semver tags and a version-templated asset name, so the URL below rebuilds
+  # cleanly from `version`. Newer releases are sometimes Windows-only, so run
+  # ../../update-switch-emulators.sh: it picks the newest release that still
+  # ships a linux x86_64 AppImage and refreshes `version` and `hash`.
   version = "2.5.0";
 
   src = fetchurl {
