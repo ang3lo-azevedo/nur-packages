@@ -31,6 +31,7 @@ in
       (makeDesktopItem {
         name = "onlinefix-linux";
         exec = "onlinefix-linux";
+        icon = "applications-games";
         desktopName = "OnlineFix Linux";
         comment = "Launcher for running games with custom multiplayer fixes";
         categories = ["Game"];
