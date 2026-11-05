@@ -199,15 +199,15 @@
   };
   eglantine = {
     pname = "eglantine";
-    version = "d9558f05a2e43f6f23d030d920f70c283cf81b70";
+    version = "e736dfde9e45bc3640935e373927814883803d95";
     src = fetchFromGitHub {
       owner = "Djihads80";
       repo = "Eglantine";
-      rev = "d9558f05a2e43f6f23d030d920f70c283cf81b70";
+      rev = "e736dfde9e45bc3640935e373927814883803d95";
       fetchSubmodules = false;
-      sha256 = "sha256-e2aNjYNKVJLAflNOAHDPZFJzeQDYw7z6wjM0vdqiudA=";
+      sha256 = "sha256-Ur6joil00cdxEKVgiAoknrWWi0ylXuSgNhJAL04jqes=";
     };
-    date = "2026-11-04";
+    date = "2026-11-05";
   };
   ese-database-view = {
     pname = "ese-database-view";
@@ -435,13 +435,13 @@
   };
   nup = {
     pname = "nup";
-    version = "fc12cc1277d8ab3f90900f9e8292513a22968197";
+    version = "d40d9cfa50792ba8021d2967d994d1b1c25d62b0";
     src = fetchFromGitHub {
       owner = "a55uka";
       repo = "nup";
-      rev = "fc12cc1277d8ab3f90900f9e8292513a22968197";
+      rev = "d40d9cfa50792ba8021d2967d994d1b1c25d62b0";
       fetchSubmodules = false;
-      sha256 = "sha256-NUelXx6q3vg8D/LHRnu41v12T+WLIxfert5eyOnz5BA=";
+      sha256 = "sha256-EPU0AKK/2zbAMOWs0MmVm+El0ACfJgRr9EdxGYcJVOM=";
     };
     date = "2026-11-04";
   };
@@ -455,15 +455,15 @@
   };
   nx2android = {
     pname = "nx2android";
-    version = "70c8cb8a3b8843856e295f005ed8abd092f233fd";
+    version = "27c1a11fd3cc61f656dfb70d660417fdf8e97ad4";
     src = fetchFromGitHub {
       owner = "shirai91";
       repo = "nx2android";
-      rev = "70c8cb8a3b8843856e295f005ed8abd092f233fd";
+      rev = "27c1a11fd3cc61f656dfb70d660417fdf8e97ad4";
       fetchSubmodules = false;
-      sha256 = "sha256-+9hmCon0lrVquF6DJFT2ZVJK8ktsGPdriDYtu5jrZKY=";
+      sha256 = "sha256-loyeflFPhv++9pvnRBJyBuZwTVr2UrmEOUhb6GC9x+E=";
     };
-    date = "2026-11-04";
+    date = "2026-11-05";
   };
   onlinefix-linux = {
     pname = "onlinefix-linux";
