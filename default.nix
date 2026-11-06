@@ -141,6 +141,7 @@
   };
   scrollmpris = pkgs.callPackage ./pkgs/scrollmpris {};
   sidr = pkgs.callPackage ./pkgs/sidr {};
+  smiley-eglantine = pkgs.callPackage ./pkgs/smiley-eglantine {};
   so-crates = pkgs.callPackage ./pkgs/so-crates {};
   sstv = pkgs.callPackage ./pkgs/sstv {};
   steamidra = pkgs.callPackage ./pkgs/steamidra {};
