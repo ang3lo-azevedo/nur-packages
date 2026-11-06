@@ -13,11 +13,11 @@
   # branch-<name>-<hash> feature builds) and the newest by date may be any of
   # them; every tag ships the eglantine-linux-x86_64-pgo.AppImage asset, so the
   # URL below templates off the tag.
-  version = "build-212";
+  version = "daily-20261106";
 
   src = fetchurl {
     url = "https://github.com/Djihads80/Eglantine/releases/download/${version}/eglantine-linux-x86_64-pgo.AppImage";
-    hash = "sha256-z8Mo9KbGVDJiN8oxON9DmtFi2mEPebURwLir/VgvH/4=";
+    hash = "sha256-EOESVF8/AWocECvyeeF7p+PBfwqlDrxA0vcFI9/gz0c=";
   };
 
   # The desktop entry (Exec=eglantine already) and icon live inside the AppImage.
