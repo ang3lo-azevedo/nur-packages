@@ -108,6 +108,7 @@
     };
   };
   monkeylauncher = pkgs.callPackage ./pkgs/monkeylauncher {};
+  nemyu = pkgs.callPackage ./pkgs/nemyu {};
   nordvpn = pkgs.callPackage ./pkgs/nordvpn {};
   nsp-box = pkgs.callPackage ./pkgs/nsp-box {};
   nup = pkgs.callPackage ./pkgs/nup {};

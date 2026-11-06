@@ -10,8 +10,8 @@
   # kept alongside eglantine so the two can be compared. The releases use plain
   # semver tags and a version-templated asset name, so the URL below rebuilds
   # cleanly from `version`. Newer releases are sometimes Windows-only, so run
-  # ../../update-switch-emulators.sh: it picks the newest release that still
-  # ships a linux x86_64 AppImage and refreshes `version` and `hash`.
+  # ./update.sh: it picks the newest release that still ships a linux x86_64
+  # AppImage and refreshes `version` and `hash`.
   version = "2.5.0";
 
   src = fetchurl {

@@ -8,9 +8,9 @@
 
   # zortos293's Eglantine fork, which the app now brands as Lichii (the repo was
   # renamed from Eglantine to Lichii too). Prebuilt nx2 AppImage (PGO build).
-  # All upstream builds are prereleases, so run ../../update-switch-emulators.sh
-  # to refresh `version` and `hash` to the newest release by publish date
-  # (whatever its tag) from https://github.com/zortos293/Lichii/releases.
+  # All upstream builds are prereleases nvfetcher skips, so run ./update.sh to
+  # refresh `version` and `hash` to the newest release by publish date (whatever
+  # its tag) from https://github.com/zortos293/Lichii/releases.
   version = "build-75";
 
   src = fetchurl {

@@ -2,7 +2,9 @@
 # Repins default.nix to the newest Eglantine nx2 pre-release AppImage.
 #
 # nvfetcher can't track this: the releases are prereleases its release tracker
-# skips. So fetch the newest build-NN tag from the API and rewrite it here.
+# skips. So fetch the newest release by publish date from the API and rewrite it
+# here. Upstream tags several kinds (build-NN, daily-*, v*, branch-<name>); the
+# newest by date wins whatever it is, including experimental branch builds.
 #
 # Needs: curl, jq, nix. Set GITHUB_TOKEN to avoid API rate limits.
 set -euo pipefail
@@ -10,13 +12,13 @@ set -euo pipefail
 repo="Djihads80/Eglantine"
 nix="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/default.nix"
 
-# Newest build-* release that ships a linux x86_64 PGO AppImage.
+# Newest release by date that ships a linux x86_64 PGO AppImage.
 read -r tag url < <(
   curl -fsSL ${GITHUB_TOKEN:+-H "Authorization: Bearer $GITHUB_TOKEN"} \
     "https://api.github.com/repos/$repo/releases?per_page=30" \
     | jq -r '
         [ .[]
-          | select(.tag_name | startswith("build-")) as $r
+          | . as $r
           | $r.assets[]
           | select(.name | test("linux-x86_64-pgo\\.AppImage$"))
           | {published: $r.published_at, tag: $r.tag_name, url: .browser_download_url}
