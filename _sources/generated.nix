@@ -199,13 +199,13 @@
   };
   eglantine = {
     pname = "eglantine";
-    version = "e736dfde9e45bc3640935e373927814883803d95";
+    version = "0ca2032bffc5f1a3fca75427f7d4a4718adda660";
     src = fetchFromGitHub {
       owner = "Djihads80";
       repo = "Eglantine";
-      rev = "e736dfde9e45bc3640935e373927814883803d95";
+      rev = "0ca2032bffc5f1a3fca75427f7d4a4718adda660";
       fetchSubmodules = false;
-      sha256 = "sha256-Ur6joil00cdxEKVgiAoknrWWi0ylXuSgNhJAL04jqes=";
+      sha256 = "sha256-MZ9V1rdP9Ad8UFzRzLdzzPAblkLXVDlkGk9bs9gWdkI=";
     };
     date = "2026-11-05";
   };
@@ -455,15 +455,15 @@
   };
   nx2android = {
     pname = "nx2android";
-    version = "27c1a11fd3cc61f656dfb70d660417fdf8e97ad4";
+    version = "496b4142bd33aa9d33b095b310a62c7fad64e5fc";
     src = fetchFromGitHub {
       owner = "shirai91";
       repo = "nx2android";
-      rev = "27c1a11fd3cc61f656dfb70d660417fdf8e97ad4";
+      rev = "496b4142bd33aa9d33b095b310a62c7fad64e5fc";
       fetchSubmodules = false;
-      sha256 = "sha256-loyeflFPhv++9pvnRBJyBuZwTVr2UrmEOUhb6GC9x+E=";
+      sha256 = "sha256-NFqfsxNExO7shi/k+q6nq0Re2oim+HKYSESv9RkXipw=";
     };
-    date = "2026-11-05";
+    date = "2026-11-06";
   };
   onlinefix-linux = {
     pname = "onlinefix-linux";
