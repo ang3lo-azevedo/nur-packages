@@ -199,15 +199,15 @@
   };
   eglantine = {
     pname = "eglantine";
-    version = "0ca2032bffc5f1a3fca75427f7d4a4718adda660";
+    version = "a017245408212015bb3c13688695e3f857a4bed5";
     src = fetchFromGitHub {
       owner = "Djihads80";
       repo = "Eglantine";
-      rev = "0ca2032bffc5f1a3fca75427f7d4a4718adda660";
+      rev = "a017245408212015bb3c13688695e3f857a4bed5";
       fetchSubmodules = false;
-      sha256 = "sha256-MZ9V1rdP9Ad8UFzRzLdzzPAblkLXVDlkGk9bs9gWdkI=";
+      sha256 = "sha256-UmxFwQ3mCiJOyIEYMHDLKUpoqJLXaBcSD183V8EaXsU=";
     };
-    date = "2026-11-05";
+    date = "2026-11-07";
   };
   ese-database-view = {
     pname = "ese-database-view";
@@ -334,25 +334,25 @@
   };
   lava = {
     pname = "lava";
-    version = "0.15.0";
+    version = "2026.1.1";
     src = fetchurl {
-      url = "https://github.com/leapps-org/LAVA-releases/releases/download/v0.15.0/LAVA-0.15.0-Linux_x64.AppImage";
-      sha256 = "sha256-HIM+YhgPRBqFJdteNkXAfmED74aknUNTzyVzhgglJ/s=";
+      url = "https://github.com/leapps-org/LAVA-releases/releases/download/v2026.1.1/LAVA-2026.1.1-Linux_x64.AppImage";
+      sha256 = "sha256-/sKAqkJg4TaNqOpxyC5PT/abEQp37viMrt/dQPWBOxI=";
     };
   };
   libesedb = {
     pname = "libesedb";
-    version = "f798638cc9a77307abff94d8c28854f6eac4bf46";
+    version = "bd12fbe75d31005a4180688f0b49400445b321fb";
     src = fetchgit {
       url = "https://github.com/libyal/libesedb.git";
-      rev = "f798638cc9a77307abff94d8c28854f6eac4bf46";
+      rev = "bd12fbe75d31005a4180688f0b49400445b321fb";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-E9/lmkV1qV6tK+S0uhnjUe8QGsqu1O/DkCUgjs5Whwo=";
+      sha256 = "sha256-9Nzet/23vodrPi24l6rlfSXPpdiXF5ZRpTkSnuDSV2c=";
     };
-    date = "2026-11-01";
+    date = "2026-11-07";
   };
   libfsntfs = {
     pname = "libfsntfs";
@@ -435,15 +435,15 @@
   };
   nup = {
     pname = "nup";
-    version = "d40d9cfa50792ba8021d2967d994d1b1c25d62b0";
+    version = "a4840f06c94ddeb414eea5b33c9704ffe995f11c";
     src = fetchFromGitHub {
       owner = "a55uka";
       repo = "nup";
-      rev = "d40d9cfa50792ba8021d2967d994d1b1c25d62b0";
+      rev = "a4840f06c94ddeb414eea5b33c9704ffe995f11c";
       fetchSubmodules = false;
-      sha256 = "sha256-EPU0AKK/2zbAMOWs0MmVm+El0ACfJgRr9EdxGYcJVOM=";
+      sha256 = "sha256-n6pi1IRDFYn/omK59/zdy2q+LHs5d/b5VCWDdh2Rt5Q=";
     };
-    date = "2026-11-04";
+    date = "2026-11-06";
   };
   nuvio = {
     pname = "nuvio";
@@ -455,13 +455,13 @@
   };
   nx2android = {
     pname = "nx2android";
-    version = "496b4142bd33aa9d33b095b310a62c7fad64e5fc";
+    version = "68b5968be9fb72708c6fa0f5f3ffcd2c071b8029";
     src = fetchFromGitHub {
       owner = "shirai91";
       repo = "nx2android";
-      rev = "496b4142bd33aa9d33b095b310a62c7fad64e5fc";
+      rev = "68b5968be9fb72708c6fa0f5f3ffcd2c071b8029";
       fetchSubmodules = false;
-      sha256 = "sha256-NFqfsxNExO7shi/k+q6nq0Re2oim+HKYSESv9RkXipw=";
+      sha256 = "sha256-h1rDUV2Hd6J5L3hN4MA6OQpRsAzJa2aUg6q87O3squU=";
     };
     date = "2026-11-06";
   };
