@@ -74,6 +74,7 @@
       ccl-simplesnappy = pkgs.callPackage ./pkgs/ccl-simplesnappy {};
     };
   };
+  horizon = pkgs.callPackage ./pkgs/horizon {};
   hyprfm = pkgs.callPackage ./pkgs/hyprfm {};
   ileapp = pkgs.callPackage ./pkgs/ileapp {
     astc-decomp-faster = pkgs.callPackage ./pkgs/astc-decomp-faster {};
