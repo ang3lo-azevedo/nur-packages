@@ -14,11 +14,11 @@
   # `hash` to the newest release by publish date that ships the PGO AppImage.
   # Upstream tags builds build-NN and every stable build ships
   # eglantine-linux-x86_64-pgo.AppImage, so the URL templates off the tag.
-  version = "build-18";
+  version = "build-20";
 
   src = fetchurl {
     url = "https://github.com/SmileyTatsu/Eglantine/releases/download/${version}/eglantine-linux-x86_64-pgo.AppImage";
-    hash = "sha256-64tgS2uVoPqfR/3KLLVybc0ULSlfkRNreTOPPrUPcoU=";
+    hash = "sha256-l6uG9O/y5Ch5gaMnI0MuVcx6HkeZN2obR5PStXHkORs=";
   };
 
   # The desktop entry and icon live inside the AppImage, both named for the
