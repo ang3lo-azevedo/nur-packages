@@ -39,9 +39,9 @@
     extraPkgs = pkgs: [
       pkgs.vulkan-loader
       pkgs.libGL
-      pkgs.xorg.libX11
-      pkgs.xorg.libXext
-      pkgs.xorg.libXrender
+      pkgs.libx11
+      pkgs.libxext
+      pkgs.libxrender
       pkgs.libxkbcommon
       pkgs.fontconfig
       pkgs.freetype
