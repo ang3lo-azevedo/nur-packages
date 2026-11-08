@@ -18,7 +18,7 @@
 
   src = fetchurl {
     url = "https://github.com/Djihads80/Eglantine/releases/download/${version}/eglantine-linux-x86_64-pgo.AppImage";
-    hash = "sha256-UQY2fibBZW7l0pmNyajrKq/h20fexrwhcqZ2vczEZQU=";
+    hash = "sha256-vw0sbUi5orwuPBRr7IDQujmlSp+dUg+HwNLq6UjQnG8=";
   };
 
   # The desktop entry (Exec=eglantine already) and icon live inside the AppImage.
