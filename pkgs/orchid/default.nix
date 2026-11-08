@@ -12,11 +12,11 @@
   # rebuilds cleanly from `version`. Run ./update.sh to refresh `version` and
   # `hash` to the newest release by publish date from
   # https://github.com/MythosOfs/Orchid/releases.
-  version = "v0.9.0";
+  version = "v0.9.1";
 
   src = fetchurl {
     url = "https://github.com/MythosOfs/Orchid/releases/download/${version}/orchid-${version}-linux-x86_64-pgo.AppImage";
-    hash = "sha256-gWT7CRK3PeuXBfZUFvMXBqNgZvgmiOEC6ge7mJu64NM=";
+    hash = "sha256-PvBjid9ljGDk+C3zjFzDtxktu1u3wQdZnOeK34npBqk=";
   };
 
   # The desktop entry (Exec=orchid already) and icon live inside the AppImage.
