@@ -93,15 +93,15 @@
   };
   ccl-chromium-reader = {
     pname = "ccl-chromium-reader";
-    version = "ad37443541dd91dac3ac1fb2eecaeb8693f36815";
+    version = "1bc482c0078cad4288ad0a0072ef46d7d7929596";
     src = fetchFromGitHub {
       owner = "cclgroupltd";
       repo = "ccl_chromium_reader";
-      rev = "ad37443541dd91dac3ac1fb2eecaeb8693f36815";
+      rev = "1bc482c0078cad4288ad0a0072ef46d7d7929596";
       fetchSubmodules = false;
-      sha256 = "sha256-JRDeb5gNPjeV/mvovY3jI+1ATf9U3xJURmvdyX/VGYs=";
+      sha256 = "sha256-mGYwSW7xb0jbDlWVr2j/K0ITbJlXn/GD4XgSzZcwtUM=";
     };
-    date = "2026-10-28";
+    date = "2026-11-09";
   };
   ccl-mozilla-reader = {
     pname = "ccl-mozilla-reader";
@@ -199,15 +199,15 @@
   };
   eglantine = {
     pname = "eglantine";
-    version = "a017245408212015bb3c13688695e3f857a4bed5";
+    version = "78743f30c251f66bd77e6eea6c28d8632d642d6f";
     src = fetchFromGitHub {
       owner = "Djihads80";
       repo = "Eglantine";
-      rev = "a017245408212015bb3c13688695e3f857a4bed5";
+      rev = "78743f30c251f66bd77e6eea6c28d8632d642d6f";
       fetchSubmodules = false;
-      sha256 = "sha256-UmxFwQ3mCiJOyIEYMHDLKUpoqJLXaBcSD183V8EaXsU=";
+      sha256 = "sha256-sHfT2K2WoX3xbqyO8076JmPhB5VP6KKQsxLN2AH/TSU=";
     };
-    date = "2026-11-07";
+    date = "2026-11-08";
   };
   ese-database-view = {
     pname = "ese-database-view";
@@ -334,10 +334,10 @@
   };
   lava = {
     pname = "lava";
-    version = "2026.1.1";
+    version = "2026.1.2";
     src = fetchurl {
-      url = "https://github.com/leapps-org/LAVA-releases/releases/download/v2026.1.1/LAVA-2026.1.1-Linux_x64.AppImage";
-      sha256 = "sha256-/sKAqkJg4TaNqOpxyC5PT/abEQp37viMrt/dQPWBOxI=";
+      url = "https://github.com/leapps-org/LAVA-releases/releases/download/v2026.1.2/LAVA-2026.1.2-Linux_x64.AppImage";
+      sha256 = "sha256-d2ppRRVZAKAyfsDAsu7J3bfs05eIvUCp5U46tlGHwsE=";
     };
   };
   libesedb = {
@@ -370,13 +370,13 @@
   };
   linoffice = {
     pname = "linoffice";
-    version = "v3.0.4";
+    version = "v3.1.0";
     src = fetchFromGitHub {
       owner = "eylenburg";
       repo = "linoffice";
-      rev = "v3.0.4";
+      rev = "v3.1.0";
       fetchSubmodules = false;
-      sha256 = "sha256-WFWfa129RF2nyaitxZT6Mvf6pyrizbKBrAQ1/iuWYKw=";
+      sha256 = "sha256-971+u/QCX1STKTTvq+1TFcEtKi/NzqXXD6AvfV34SzM=";
     };
   };
   lleapp = {
@@ -455,15 +455,15 @@
   };
   nx2android = {
     pname = "nx2android";
-    version = "68b5968be9fb72708c6fa0f5f3ffcd2c071b8029";
+    version = "e9bd2b764608facf841e39292d868ee657eaf634";
     src = fetchFromGitHub {
       owner = "shirai91";
       repo = "nx2android";
-      rev = "68b5968be9fb72708c6fa0f5f3ffcd2c071b8029";
+      rev = "e9bd2b764608facf841e39292d868ee657eaf634";
       fetchSubmodules = false;
-      sha256 = "sha256-h1rDUV2Hd6J5L3hN4MA6OQpRsAzJa2aUg6q87O3squU=";
+      sha256 = "sha256-lmvTbkSDRynT1ZCAMBzKMh/QR5TXoVkPKILgsVKqgdc=";
     };
-    date = "2026-11-06";
+    date = "2026-11-09";
   };
   onlinefix-linux = {
     pname = "onlinefix-linux";
