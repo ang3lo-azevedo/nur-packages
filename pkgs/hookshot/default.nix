@@ -18,11 +18,11 @@
   # emulators the tag cannot be rebuilt from `version`. ./update.sh rewrites the
   # full `url`, `version` (the commit from the asset name) and `hash` to the
   # newest release that actually ships an x86_64 AppImage.
-  version = "ef2e1c4";
+  version = "v2.0.8-rc.1";
 
   src = fetchurl {
-    url = "https://github.com/NotRexed/Hookshot/releases/download/new-installer/Hookshot-ef2e1c4-x86_64.AppImage";
-    hash = "sha256-d8iw0kprHgCtO8sqKl+Na6rqHBKE8lhGwddiI3CHYIM=";
+    url = "https://github.com/NotRexed/Hookshot/releases/download/v2.0.8-rc.1/Hookshot-v2.0.8-rc.1-x86_64.AppImage";
+    hash = "sha256-XuaSmnecpwBbKz9aK25QANbH8QgsO636LwP81e4WGgQ=";
   };
 
   # The desktop entry and icon live inside the AppImage.
