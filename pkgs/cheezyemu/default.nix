@@ -23,6 +23,7 @@
     extraPkgs = pkgs: [
       pkgs.vulkan-loader
       pkgs.libgpg-error
+      pkgs.libusb1
     ];
   };
 in
@@ -35,7 +36,11 @@ in
       # Offload to the AMD eGPU (Navi 44, RX 9060 XT, 1002:7590) for Vulkan, with
       # DRI_PRIME for any GL path. --set-default so an unplugged eGPU falls back to
       # the iGPU and a manual env still wins.
+      #
+      # Ensure 64-bit multiPkgs libraries (e.g. libusb-1.0.so.0) in /lib64 and /usr/lib64
+      # are resolvable by the upstream binary's dynamic linker inside the FHS container.
       wrapProgram $out/bin/${pname} \
+        --prefix LD_LIBRARY_PATH : /lib64:/usr/lib64 \
         --set-default MESA_VK_DEVICE_SELECT 1002:7590 \
         --set-default DRI_PRIME 1
 
