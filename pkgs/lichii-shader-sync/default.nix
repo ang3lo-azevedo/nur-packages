@@ -13,11 +13,11 @@
 # refresh `version` and `hash`.
 stdenvNoCC.mkDerivation (finalAttrs: {
   pname = "lichii-shader-sync";
-  version = "1.1.1";
+  version = "1.1.2";
 
   src = fetchurl {
     url = "https://github.com/oceanpacificpeace/lichii-shader-sync/releases/download/v${finalAttrs.version}/lichii-sync-linux-amd64";
-    hash = "sha256-8y34WsrxglBPYrjXUIBc7E52urYAZA+qwVMi2QrEXhQ=";
+    hash = "sha256-/Tfcg6LXT6AruWr8XozFf44FFXowc6Px8eef08LRrq4=";
   };
 
   dontUnpack = true;
