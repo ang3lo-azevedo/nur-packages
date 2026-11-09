@@ -156,7 +156,7 @@
     },
     "ccl-chromium-reader": {
         "cargoLock": null,
-        "date": "2026-10-28",
+        "date": "2026-11-09",
         "extract": null,
         "name": "ccl-chromium-reader",
         "passthru": null,
@@ -168,12 +168,12 @@
             "name": null,
             "owner": "cclgroupltd",
             "repo": "ccl_chromium_reader",
-            "rev": "ad37443541dd91dac3ac1fb2eecaeb8693f36815",
-            "sha256": "sha256-JRDeb5gNPjeV/mvovY3jI+1ATf9U3xJURmvdyX/VGYs=",
+            "rev": "1bc482c0078cad4288ad0a0072ef46d7d7929596",
+            "sha256": "sha256-mGYwSW7xb0jbDlWVr2j/K0ITbJlXn/GD4XgSzZcwtUM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "ad37443541dd91dac3ac1fb2eecaeb8693f36815"
+        "version": "1bc482c0078cad4288ad0a0072ef46d7d7929596"
     },
     "ccl-mozilla-reader": {
         "cargoLock": null,
@@ -337,7 +337,7 @@
     },
     "eglantine": {
         "cargoLock": null,
-        "date": "2026-11-07",
+        "date": "2026-11-08",
         "extract": null,
         "name": "eglantine",
         "passthru": null,
@@ -349,12 +349,12 @@
             "name": null,
             "owner": "Djihads80",
             "repo": "Eglantine",
-            "rev": "a017245408212015bb3c13688695e3f857a4bed5",
-            "sha256": "sha256-UmxFwQ3mCiJOyIEYMHDLKUpoqJLXaBcSD183V8EaXsU=",
+            "rev": "78743f30c251f66bd77e6eea6c28d8632d642d6f",
+            "sha256": "sha256-sHfT2K2WoX3xbqyO8076JmPhB5VP6KKQsxLN2AH/TSU=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "a017245408212015bb3c13688695e3f857a4bed5"
+        "version": "78743f30c251f66bd77e6eea6c28d8632d642d6f"
     },
     "ese-database-view": {
         "cargoLock": null,
@@ -596,11 +596,11 @@
         "pinned": false,
         "src": {
             "name": null,
-            "sha256": "sha256-/sKAqkJg4TaNqOpxyC5PT/abEQp37viMrt/dQPWBOxI=",
+            "sha256": "sha256-d2ppRRVZAKAyfsDAsu7J3bfs05eIvUCp5U46tlGHwsE=",
             "type": "url",
-            "url": "https://github.com/leapps-org/LAVA-releases/releases/download/v2026.1.1/LAVA-2026.1.1-Linux_x64.AppImage"
+            "url": "https://github.com/leapps-org/LAVA-releases/releases/download/v2026.1.2/LAVA-2026.1.2-Linux_x64.AppImage"
         },
-        "version": "2026.1.1"
+        "version": "2026.1.2"
     },
     "libesedb": {
         "cargoLock": null,
@@ -656,12 +656,12 @@
             "name": null,
             "owner": "eylenburg",
             "repo": "linoffice",
-            "rev": "v3.0.4",
-            "sha256": "sha256-WFWfa129RF2nyaitxZT6Mvf6pyrizbKBrAQ1/iuWYKw=",
+            "rev": "v3.1.0",
+            "sha256": "sha256-971+u/QCX1STKTTvq+1TFcEtKi/NzqXXD6AvfV34SzM=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "v3.0.4"
+        "version": "v3.1.0"
     },
     "lleapp": {
         "cargoLock": null,
@@ -800,7 +800,7 @@
     },
     "nx2android": {
         "cargoLock": null,
-        "date": "2026-11-06",
+        "date": "2026-11-09",
         "extract": null,
         "name": "nx2android",
         "passthru": null,
@@ -812,12 +812,12 @@
             "name": null,
             "owner": "shirai91",
             "repo": "nx2android",
-            "rev": "68b5968be9fb72708c6fa0f5f3ffcd2c071b8029",
-            "sha256": "sha256-h1rDUV2Hd6J5L3hN4MA6OQpRsAzJa2aUg6q87O3squU=",
+            "rev": "e9bd2b764608facf841e39292d868ee657eaf634",
+            "sha256": "sha256-lmvTbkSDRynT1ZCAMBzKMh/QR5TXoVkPKILgsVKqgdc=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "68b5968be9fb72708c6fa0f5f3ffcd2c071b8029"
+        "version": "e9bd2b764608facf841e39292d868ee657eaf634"
     },
     "onlinefix-linux": {
         "cargoLock": null,
