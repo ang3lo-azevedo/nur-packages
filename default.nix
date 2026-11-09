@@ -45,6 +45,7 @@
   cleapp = pkgs.callPackage ./pkgs/cleapp {
     freesimplegui = pkgs.callPackage ./pkgs/freesimplegui { };
   };
+  cheezyemu = pkgs.callPackage ./pkgs/cheezyemu { };
   interchange = pkgs.callPackage ./pkgs/interchange { };
   ciphey = pkgs.callPackage ./pkgs/ciphey { };
   ctf-dl = pkgs.callPackage ./pkgs/ctf-dl {
