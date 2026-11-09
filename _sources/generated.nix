@@ -730,6 +730,14 @@
     };
     date = "2025-06-15";
   };
+  vrcd = {
+    pname = "vrcd";
+    version = "1.8.8";
+    src = fetchurl {
+      url = "https://github.com/DeliciousMeatPop/VRCD/releases/download/v1.8.8/vr-cyberdeck-1.8.8-x86_64.AppImage";
+      sha256 = "sha256-UAZyW+uTkwm7HoopE3ndPuqBJWl5RwarCsOrNa0UwKE=";
+    };
+  };
   zapfast = {
     pname = "zapfast";
     version = "0.21.1";

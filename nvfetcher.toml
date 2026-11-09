@@ -303,3 +303,9 @@ fetch.github = "dmitriitimoshenko/tpm-keyring-unlock"
 [safe-exam-browser]
 src.git = "https://github.com/Jvr2022/seb-linux.git"
 fetch.github = "Jvr2022/seb-linux"
+
+# Multi-OS sideloader for Android / Quest devices
+[vrcd]
+src.github = "DeliciousMeatPop/VRCD"
+src.prefix = "v"
+fetch.url = "https://github.com/DeliciousMeatPop/VRCD/releases/download/v$ver/vr-cyberdeck-$ver-x86_64.AppImage"

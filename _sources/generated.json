@@ -1297,6 +1297,21 @@
         },
         "version": "13bf254a806f9e062e5a09e00181917288bdf7b3"
     },
+    "vrcd": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "vrcd",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-UAZyW+uTkwm7HoopE3ndPuqBJWl5RwarCsOrNa0UwKE=",
+            "type": "url",
+            "url": "https://github.com/DeliciousMeatPop/VRCD/releases/download/v1.8.8/vr-cyberdeck-1.8.8-x86_64.AppImage"
+        },
+        "version": "1.8.8"
+    },
     "zapfast": {
         "cargoLock": {
             "Cargo.lock": [

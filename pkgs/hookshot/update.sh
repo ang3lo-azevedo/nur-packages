@@ -1,19 +1,16 @@
 #!/usr/bin/env bash
 # Repins default.nix to the newest Hookshot release that ships an x86_64 AppImage.
+# Tracks the Shakoquo AMD-fix fork for our RX 9060 XT eGPU.
 #
-# Upstream has no stable versioning: releases are tagged with feature names
-# (ultrawide, faster-fps, new-installer, ...), many ship no AppImage at all, and
-# the asset name embeds the commit (Hookshot-<commit>-x86_64.AppImage). So fetch
-# the newest release by date that actually has an x86_64 AppImage, and rewrite the
-# full url, the version (the <commit> token from the asset name) and the hash.
-#
-# Note: the very newest builds sometimes 504 from GitHub's CDN for a while; if the
-# prefetch fails, rerun later.
+# Upstream releases are tagged with feature names / fix versions, and the asset
+# name embeds the commit (Hookshot-<version>-x86_64.AppImage). So fetch the
+# newest release by date that actually has an x86_64 AppImage, and rewrite the
+# full url, the version (the token from the asset name) and the hash.
 #
 # Needs: curl, jq, nix. Set GITHUB_TOKEN to avoid API rate limits.
 set -euo pipefail
 
-repo="NotRexed/Hookshot"
+repo="Shakoquo/Hookshot"
 nix="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/default.nix"
 
 # Newest release by date that ships an x86_64 AppImage.
