@@ -13,30 +13,40 @@
   sources = callPackage ../../_sources/generated.nix {};
   writable-copies = callPackage ../leapp-common {};
 
+  py = python3.override {
+    packageOverrides = _: prev: {
+      geopandas = prev.geopandas.overridePythonAttrs (_: {
+        doCheck = false;
+      });
+    };
+  };
+
   # blackboxprotobuf is left out on purpose: upstream runs its own vendored copy
-  python = python3.withPackages (ps:
-    with ps; [
-      writable-copies
-      bcrypt
-      beautifulsoup4
-      bencoding
-      fitdecode
-      folium
-      packaging
-      pillow
-      polyline
-      protobuf
-      sqlcipher3
-      pycryptodome
-      pyliblzfse
-      pytz
-      mister-skinnylegs
-      simplekml
-      xlsxwriter
-      xmltodict
-      tkinter
-      zstandard
-    ]);
+  python = py.withPackages (
+    ps:
+      with ps; [
+        writable-copies
+        bcrypt
+        beautifulsoup4
+        bencoding
+        fitdecode
+        folium
+        packaging
+        pillow
+        polyline
+        protobuf
+        sqlcipher3
+        pycryptodome
+        pyliblzfse
+        pytz
+        mister-skinnylegs
+        simplekml
+        xlsxwriter
+        xmltodict
+        tkinter
+        zstandard
+      ]
+  );
 in
   stdenvNoCC.mkDerivation {
     pname = "aleapp";
@@ -65,7 +75,10 @@ in
         comment = "Parse Android extractions into a forensic report";
         exec = "aleapp-gui";
         icon = "aleapp";
-        categories = ["System" "Utility"];
+        categories = [
+          "System"
+          "Utility"
+        ];
       })
     ];
 

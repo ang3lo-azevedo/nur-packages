@@ -12,49 +12,49 @@
 # packages. Offloading them to remote builders requires uploading all missing
 # packages over SSH.
 #
-# By tagging these with `requiredSystemFeatures = ["local"]` (advertised only by
+# By tagging these with `requiredSystemFeatures = ["nixos-test"]` (advertised only by
 # the local host in nix.settings.system-features, not by eu.nixbuild.net), Nix is
 # strictly prevented from dispatching them over SSH to remote builders even when
 # local build slots are fully saturated.
-final: prev: {
+_: prev: {
   appimageTools = prev.appimageTools.override {
-    runCommand =
-      name: env: cmd:
+    runCommand = name: env: cmd:
       prev.runCommand name (
         env
         // {
           preferLocalBuild = true;
           allowSubstitutes = false;
-          requiredSystemFeatures = (env.requiredSystemFeatures or [ ]) ++ [ "local" ];
+          requiredSystemFeatures = (env.requiredSystemFeatures or []) ++ ["nixos-test"];
         }
-      ) cmd;
+      )
+      cmd;
   };
 
-  buildFHSEnvBubblewrap =
-    args:
+  buildFHSEnvBubblewrap = args:
     (prev.buildFHSEnvBubblewrap.override {
-      callPackage =
-        fn: a:
+      callPackage = fn: a:
         prev.callPackage fn (
           a
           // {
-            pkgs = prev // {
-              runCommand =
-                name: env: cmd:
-                prev.runCommand name (
-                  env
-                  // {
-                    preferLocalBuild = true;
-                    allowSubstitutes = false;
-                    requiredSystemFeatures = (env.requiredSystemFeatures or [ ]) ++ [ "local" ];
-                  }
-                ) cmd;
-            };
+            pkgs =
+              prev
+              // {
+                runCommand = name: env: cmd:
+                  prev.runCommand name (
+                    env
+                    // {
+                      preferLocalBuild = true;
+                      allowSubstitutes = false;
+                      requiredSystemFeatures = (env.requiredSystemFeatures or []) ++ ["nixos-test"];
+                    }
+                  )
+                  cmd;
+              };
           }
         );
     })
-      args
+    args
     // {
-      requiredSystemFeatures = [ "local" ];
+      requiredSystemFeatures = ["nixos-test"];
     };
 }
