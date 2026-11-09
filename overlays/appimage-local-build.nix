@@ -1,27 +1,60 @@
-# Force appimageTools AppImage extraction to build locally.
+# Force appimageTools AppImage extraction and buildFHSEnv rootfs to build locally.
 #
-# Every appimageTools.extract / wrapType2 package in this NUR (the nx2 emulators,
-# jackify, hookshot, and the rest) pulls a large AppImage from a custom GitHub or
-# GitLab URL that cache.nixos.org never holds, then does nothing but untar it.
-# When this NUR is consumed with distributed builds on (the parent's
-# modules/system/nixbuild), Nix routes that untar to the remote builder, which
-# first has to upload the whole AppImage (the emulators are ~130 MiB each, jackify
-# and hookshot north of 200 MiB): minutes of upstream bandwidth per version bump
-# for a step worth seconds locally.
+# appimageTools packages pulled from nixpkgs (code-cursor and the like) fetch a
+# large AppImage, then do nothing but untar it. With distributed builds on
+# (modules/system/nixbuild), Nix routes that untar to the remote builder, which
+# first has to upload the whole AppImage: minutes of upstream bandwidth for a step
+# worth seconds locally, and the unfree ones are never in cache.nixos.org to pull
+# from instead.
 #
-# The untar is a runCommand named "<pname>-<version>-extracted". Both the public
-# appimageTools.extract and the copy wrapType2 runs internally go through the
-# module's own runCommand argument, so override that one argument to stamp
-# preferLocalBuild on the extraction (overriding the .extract attribute alone
-# would miss the wrapType2 path, which closes over the module-local binding). This
-# shifts the extracted output hash, which costs nothing: these are consumed only
-# on the one desktop and were never in a shared cache anyway.
+# Similarly, buildFHSEnv rootfs derivations (such as steam-fhsenv-rootfs) do
+# nothing but create symlinks, but reference the entire closure of hundreds of
+# packages. Offloading them to remote builders requires uploading all missing
+# packages over SSH.
 #
-# Kept in sync with the parent repo's overlays/appimage-local-build.nix, which
-# does the same for appimageTools packages that come straight from nixpkgs. Both
-# are needed because the parent and this NUR evaluate separate nixpkgs instances.
+# By tagging these with `requiredSystemFeatures = ["local"]` (advertised only by
+# the local host in nix.settings.system-features, not by eu.nixbuild.net), Nix is
+# strictly prevented from dispatching them over SSH to remote builders even when
+# local build slots are fully saturated.
 final: prev: {
   appimageTools = prev.appimageTools.override {
-    runCommand = name: env: cmd: prev.runCommand name (env // {preferLocalBuild = true;}) cmd;
+    runCommand =
+      name: env: cmd:
+      prev.runCommand name (
+        env
+        // {
+          preferLocalBuild = true;
+          allowSubstitutes = false;
+          requiredSystemFeatures = (env.requiredSystemFeatures or [ ]) ++ [ "local" ];
+        }
+      ) cmd;
   };
+
+  buildFHSEnvBubblewrap =
+    args:
+    (prev.buildFHSEnvBubblewrap.override {
+      callPackage =
+        fn: a:
+        prev.callPackage fn (
+          a
+          // {
+            pkgs = prev // {
+              runCommand =
+                name: env: cmd:
+                prev.runCommand name (
+                  env
+                  // {
+                    preferLocalBuild = true;
+                    allowSubstitutes = false;
+                    requiredSystemFeatures = (env.requiredSystemFeatures or [ ]) ++ [ "local" ];
+                  }
+                ) cmd;
+            };
+          }
+        );
+    })
+      args
+    // {
+      requiredSystemFeatures = [ "local" ];
+    };
 }

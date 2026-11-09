@@ -58,7 +58,7 @@ in
       # The bundled entry calls itself "Eglantine" and runs the eglantine binary;
       # retarget it at this package so it shows up as its own launcher item next to
       # the eglantine package instead of colliding with it.
-      install -Dm444 ${contents}/usr/share/applications/dev.eden_emu.eden.desktop \
+      install -Dm444 ${contents}/usr/share/applications/dev.eglantine.eglantine.desktop \
         $out/share/applications/${pname}.desktop
       substituteInPlace $out/share/applications/${pname}.desktop \
         --replace-warn "Name=Eglantine" "Name=Eglantine (SmileyTatsu)" \
