@@ -21,7 +21,7 @@ let
   version = "v1.0-amd-fix-sharkiix-266-gf9281a3";
 
   src = fetchurl {
-    url = "https://github.com/Shakoquo/Hookshot/releases/download/amd-fix-2.1/Hookshot-v1.0-amd-fix-sharkiix-266-gf9281a3-x86_64.AppImage";
+    url = "https://github.com/Shakoquo/Mako/releases/download/amd-fix-2.1/Hookshot-v1.0-amd-fix-sharkiix-266-gf9281a3-x86_64.AppImage";
     hash = "sha256-zh3sXiMBcLNanKWO2dCTvytWQ0QLpqaOrzfzmVvRMQ0=";
   };
 
