@@ -30,21 +30,21 @@
   };
   angr-management = {
     pname = "angr-management";
-    version = "v10.0.5";
+    version = "v10.0.6";
     src = fetchurl {
-      url = "https://github.com/angr/angr-management/releases/download/v10.0.5/angr-management-v10.0.5-x86_64.AppImage";
-      sha256 = "sha256-1xXnFNBHZi55zArtK60pfHCv2dwPjv6e/Ft8eLcjYmE=";
+      url = "https://github.com/angr/angr-management/releases/download/v10.0.6/angr-management-v10.0.6-x86_64.AppImage";
+      sha256 = "sha256-slUaWIYPZSsTLnI7zpNEjmz6H2O43jfLksA3Ksfgsaw=";
     };
   };
   angr-management-src = {
     pname = "angr-management-src";
-    version = "v10.0.5";
+    version = "v10.0.6";
     src = fetchFromGitHub {
       owner = "angr";
       repo = "angr-management";
-      rev = "v10.0.5";
+      rev = "v10.0.6";
       fetchSubmodules = false;
-      sha256 = "sha256-ST9vkSM8I3TbnmVpC1naB9S+5jZSxkU7GCKoVdKaPgM=";
+      sha256 = "sha256-1vgT9hyaTpxeGHDgJjPDFazegVcYdi75jygLE/3Yj+8=";
     };
   };
   apk-mitm = {
@@ -60,10 +60,10 @@
   };
   archi = {
     pname = "archi";
-    version = "5.10.0";
+    version = "5.11.0";
     src = fetchurl {
-      url = "https://github.com/archimatetool/archi.io/releases/latest/download/Archi-Linux64-5.10.0.tgz";
-      sha256 = "sha256-+UIkVaAKIvU0DcKGks6v4K1yDIzeg56q+w+rHOpXKH8=";
+      url = "https://github.com/archimatetool/archi.io/releases/latest/download/Archi-Linux64-5.11.0.tgz";
+      sha256 = "sha256-oT9PBYwW2GU8EwehRbnda93UImq8lS9YxYbEbWHbIZ4=";
     };
   };
   autodesk-fusion = {
@@ -273,10 +273,10 @@
   };
   hayabusa = {
     pname = "hayabusa";
-    version = "4.3.1";
+    version = "4.4.0";
     src = fetchurl {
-      url = "https://github.com/Yamato-Security/hayabusa/releases/download/v4.3.1/hayabusa-4.3.1-lin-x64-gnu.zip";
-      sha256 = "sha256-pPva6bE6X+Dzs9mJgd0Yd19Q5UAs897juoXU7NJSNw4=";
+      url = "https://github.com/Yamato-Security/hayabusa/releases/download/v4.4.0/hayabusa-4.4.0-lin-x64-gnu.zip";
+      sha256 = "sha256-ONN/kMSE1wIXqMirSgjTgY5MQFMi7XBkpgyusfU7VCU=";
     };
   };
   hindsight = {
@@ -455,15 +455,15 @@
   };
   nx2android = {
     pname = "nx2android";
-    version = "e9bd2b764608facf841e39292d868ee657eaf634";
+    version = "165833fdf8839265a85ff81da38bcc1dfc4fba9d";
     src = fetchFromGitHub {
       owner = "shirai91";
       repo = "nx2android";
-      rev = "e9bd2b764608facf841e39292d868ee657eaf634";
+      rev = "165833fdf8839265a85ff81da38bcc1dfc4fba9d";
       fetchSubmodules = false;
-      sha256 = "sha256-lmvTbkSDRynT1ZCAMBzKMh/QR5TXoVkPKILgsVKqgdc=";
+      sha256 = "sha256-c/kpFzksDFDV1SodJl69tDtAhp9s4eqh4ko0V6yL2ww=";
     };
-    date = "2026-11-09";
+    date = "2026-11-10";
   };
   onlinefix-linux = {
     pname = "onlinefix-linux";
