@@ -9,11 +9,11 @@
   # CheezerWheezer's "CheezyEmu": a Nintendo Switch and Switch 2 emulator fork
   # tuned for AMD GPUs (FSR 4, AMD frame generation, saved compiled shaders).
   # Run ./update.sh to refresh `version` and `hash` to the newest release.
-  version = "build-10";
+  version = "build-11";
 
   src = fetchurl {
     url = "https://github.com/CheezerWheezer/CheezyEmu/releases/download/${version}/cheezyemu-linux-x86_64-pgo.AppImage";
-    hash = "sha256-ziwKvguNgKvkYFcP2nw/cL6N6gSey21+AnF17Sx8wzg=";
+    hash = "sha256-6oIdjU9WV2VWqcpQer9qnuyvcWSrfU7SD/3fu5SSddY=";
   };
 
   contents = appimageTools.extract {inherit pname version src;};
