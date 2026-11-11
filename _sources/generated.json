@@ -851,24 +851,18 @@
     },
     "nx2navi": {
         "cargoLock": null,
-        "date": "2026-11-11",
+        "date": null,
         "extract": null,
         "name": "nx2navi",
         "passthru": null,
         "pinned": false,
         "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
             "name": null,
-            "owner": "tangerineturtle1",
-            "repo": "NX2navi",
-            "rev": "bdcf07bbf624971d3d8edd27acf92610c571241a",
-            "sha256": "sha256-x+MSGsSeJlSpkmChjjgyEts+NfilCG8o6s2Iu7q9duo=",
-            "sparseCheckout": [],
-            "type": "github"
+            "sha256": "sha256-t963FHZY8NDJf07RuXIc547ryWySERthfRotMz0qOfc=",
+            "type": "url",
+            "url": "https://github.com/tangerineturtle1/NX2navi/releases/download/v0.8.0/NX2navi-Linux-0.8.0-x86_64.AppImage"
         },
-        "version": "bdcf07bbf624971d3d8edd27acf92610c571241a"
+        "version": "0.8.0"
     },
     "onlinefix-linux": {
         "cargoLock": null,

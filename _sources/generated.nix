@@ -483,15 +483,11 @@
   };
   nx2navi = {
     pname = "nx2navi";
-    version = "bdcf07bbf624971d3d8edd27acf92610c571241a";
-    src = fetchFromGitHub {
-      owner = "tangerineturtle1";
-      repo = "NX2navi";
-      rev = "bdcf07bbf624971d3d8edd27acf92610c571241a";
-      fetchSubmodules = false;
-      sha256 = "sha256-x+MSGsSeJlSpkmChjjgyEts+NfilCG8o6s2Iu7q9duo=";
+    version = "0.8.0";
+    src = fetchurl {
+      url = "https://github.com/tangerineturtle1/NX2navi/releases/download/v0.8.0/NX2navi-Linux-0.8.0-x86_64.AppImage";
+      sha256 = "sha256-t963FHZY8NDJf07RuXIc547ryWySERthfRotMz0qOfc=";
     };
-    date = "2026-11-11";
   };
   onlinefix-linux = {
     pname = "onlinefix-linux";
