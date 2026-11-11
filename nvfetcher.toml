@@ -27,6 +27,12 @@ fetch.github = "a55uka/nup"
 src.git = "https://github.com/shirai91/nx2android.git"
 fetch.github = "shirai91/nx2android"
 
+# Releases ship only a Windows setup .exe; the Linux build lives on the default
+# branch, so track it directly.
+[nx2navi]
+src.git = "https://github.com/tangerineturtle1/NX2navi.git"
+fetch.github = "tangerineturtle1/NX2navi"
+
 [nsp-box]
 src.git = "https://github.com/smarkyie/NSP-Box.git"
 fetch.github = "smarkyie/NSP-Box"

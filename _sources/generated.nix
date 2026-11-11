@@ -481,6 +481,18 @@
     };
     date = "2026-11-11";
   };
+  nx2navi = {
+    pname = "nx2navi";
+    version = "bdcf07bbf624971d3d8edd27acf92610c571241a";
+    src = fetchFromGitHub {
+      owner = "tangerineturtle1";
+      repo = "NX2navi";
+      rev = "bdcf07bbf624971d3d8edd27acf92610c571241a";
+      fetchSubmodules = false;
+      sha256 = "sha256-x+MSGsSeJlSpkmChjjgyEts+NfilCG8o6s2Iu7q9duo=";
+    };
+    date = "2026-11-11";
+  };
   onlinefix-linux = {
     pname = "onlinefix-linux";
     version = "2.7.1";

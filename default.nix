@@ -118,6 +118,7 @@
   nup = pkgs.callPackage ./pkgs/nup {};
   nuvio = pkgs.callPackage ./pkgs/nuvio {};
   nx2android = pkgs.callPackage ./pkgs/nx2android {};
+  nx2navi = pkgs.callPackage ./pkgs/nx2navi {};
   nska-deserialize = pkgs.callPackage ./pkgs/nska-deserialize {};
   onlinefix-linux = pkgs.callPackage ./pkgs/onlinefix-linux {};
   openlogi = pkgs.callPackage ./pkgs/openlogi {};

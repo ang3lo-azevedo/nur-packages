@@ -849,6 +849,27 @@
         },
         "version": "5e4ea3b5953944163987ecc2752258e551c3ba06"
     },
+    "nx2navi": {
+        "cargoLock": null,
+        "date": "2026-11-11",
+        "extract": null,
+        "name": "nx2navi",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "tangerineturtle1",
+            "repo": "NX2navi",
+            "rev": "bdcf07bbf624971d3d8edd27acf92610c571241a",
+            "sha256": "sha256-x+MSGsSeJlSpkmChjjgyEts+NfilCG8o6s2Iu7q9duo=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "bdcf07bbf624971d3d8edd27acf92610c571241a"
+    },
     "onlinefix-linux": {
         "cargoLock": null,
         "date": null,
