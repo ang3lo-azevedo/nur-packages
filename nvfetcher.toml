@@ -316,3 +316,16 @@ src.github = "NotRexed/Hookshot"
 src.github_use_latest_release = true
 src.prefix = "v"
 fetch.url = "https://github.com/NotRexed/Hookshot/releases/download/v$ver/Hookshot-v$ver-x86_64.AppImage"
+
+# Lichii Shader Sync
+[lichii-shader-sync]
+src.github = "oceanpacificpeace/lichii-shader-sync"
+src.github_use_latest_release = true
+src.prefix = "v"
+fetch.url = "https://github.com/oceanpacificpeace/lichii-shader-sync/releases/download/v$ver/lichii-sync-linux-amd64"
+
+# Orchid: Nintendo Switch 2 emulator
+[orchid]
+src.github = "MythosOfs/Orchid"
+src.github_use_latest_release = true
+fetch.url = "https://github.com/MythosOfs/Orchid/releases/download/$ver/orchid-$ver-linux-x86_64-pgo.AppImage"

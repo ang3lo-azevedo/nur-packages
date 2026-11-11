@@ -657,6 +657,21 @@
         },
         "version": "faaa031d0f779578559d5c025c9583d103702bcc"
     },
+    "lichii-shader-sync": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "lichii-shader-sync",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-n1qXKKPoDTOXCHR3oWmoDZbSv8OY7qK5LLEdO49Spps=",
+            "type": "url",
+            "url": "https://github.com/oceanpacificpeace/lichii-shader-sync/releases/download/v1.2.1/lichii-sync-linux-amd64"
+        },
+        "version": "1.2.1"
+    },
     "linoffice": {
         "cargoLock": null,
         "date": null,
@@ -862,6 +877,21 @@
             "url": "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.9.0.tar.gz"
         },
         "version": "0.9.0"
+    },
+    "orchid": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "orchid",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-aNNuPLgGHBnx/Rv6onpN/9G3df1JwLd9xXD2HEpBD7U=",
+            "type": "url",
+            "url": "https://github.com/MythosOfs/Orchid/releases/download/v0.9.5/orchid-v0.9.5-linux-x86_64-pgo.AppImage"
+        },
+        "version": "v0.9.5"
     },
     "registry-spy": {
         "cargoLock": null,

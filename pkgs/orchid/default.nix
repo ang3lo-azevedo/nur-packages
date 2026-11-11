@@ -1,23 +1,17 @@
 {
   appimageTools,
-  fetchurl,
+  callPackage,
   makeWrapper,
   symlinkJoin,
 }: let
+  sources = callPackage ../../_sources/generated.nix {};
   pname = "orchid";
 
   # Upstream's prebuilt nx2 AppImage (PGO build). Kept alongside eglantine and
-  # lichii so the Eden-derived nx2 emulators can be compared. Releases use plain
-  # semver tags (v*) with a version-templated asset name, so the URL below
-  # rebuilds cleanly from `version`. Run ./update.sh to refresh `version` and
-  # `hash` to the newest release by publish date from
-  # https://github.com/MythosOfs/Orchid/releases.
-  version = "v0.9.5";
-
-  src = fetchurl {
-    url = "https://github.com/MythosOfs/Orchid/releases/download/${version}/orchid-${version}-linux-x86_64-pgo.AppImage";
-    hash = "sha256-aNNuPLgGHBnx/Rv6onpN/9G3df1JwLd9xXD2HEpBD7U=";
-  };
+  # lichii so the Eden-derived nx2 emulators can be compared. Releases are
+  # tracked automatically via nvfetcher in nvfetcher.toml.
+  version = sources.orchid.version;
+  src = sources.orchid.src;
 
   # The desktop entry (Exec=orchid already) and icon live inside the AppImage.
   contents = appimageTools.extract {inherit pname version src;};
@@ -32,7 +26,11 @@
   # the app aborts.
   fhs = appimageTools.wrapType2 {
     inherit pname version src;
-    extraPkgs = pkgs: [pkgs.vulkan-loader pkgs.libgpg-error pkgs.xcb-util-cursor];
+    extraPkgs = pkgs: [
+      pkgs.vulkan-loader
+      pkgs.libgpg-error
+      pkgs.xcb-util-cursor
+    ];
   };
 in
   symlinkJoin {

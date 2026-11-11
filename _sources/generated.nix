@@ -376,6 +376,14 @@
     };
     date = "2026-10-11";
   };
+  lichii-shader-sync = {
+    pname = "lichii-shader-sync";
+    version = "1.2.1";
+    src = fetchurl {
+      url = "https://github.com/oceanpacificpeace/lichii-shader-sync/releases/download/v1.2.1/lichii-sync-linux-amd64";
+      sha256 = "sha256-n1qXKKPoDTOXCHR3oWmoDZbSv8OY7qK5LLEdO49Spps=";
+    };
+  };
   linoffice = {
     pname = "linoffice";
     version = "v3.1.0";
@@ -487,6 +495,14 @@
     src = fetchTarball {
       url = "https://github.com/AprilNEA/OpenLogi/archive/refs/tags/v0.9.0.tar.gz";
       sha256 = "sha256-lJVX6pUFgv6bWDczIkLGkrx8iYIHuqu4a2Neu5rVVFI=";
+    };
+  };
+  orchid = {
+    pname = "orchid";
+    version = "v0.9.5";
+    src = fetchurl {
+      url = "https://github.com/MythosOfs/Orchid/releases/download/v0.9.5/orchid-v0.9.5-linux-x86_64-pgo.AppImage";
+      sha256 = "sha256-aNNuPLgGHBnx/Rv6onpN/9G3df1JwLd9xXD2HEpBD7U=";
     };
   };
   registry-spy = {
