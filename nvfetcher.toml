@@ -309,3 +309,10 @@ fetch.github = "Jvr2022/seb-linux"
 src.github = "DeliciousMeatPop/VRCD"
 src.prefix = "v"
 fetch.url = "https://github.com/DeliciousMeatPop/VRCD/releases/download/v$ver/vr-cyberdeck-$ver-x86_64.AppImage"
+
+# Hookshot: static recompilation of Ocarina of Time (Switch 2 remake)
+[hookshot]
+src.github = "NotRexed/Hookshot"
+src.github_use_latest_release = true
+src.prefix = "v"
+fetch.url = "https://github.com/NotRexed/Hookshot/releases/download/v$ver/Hookshot-v$ver-x86_64.AppImage"

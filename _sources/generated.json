@@ -509,6 +509,21 @@
         },
         "version": "v2026.06"
     },
+    "hookshot": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "hookshot",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-wLLpWK4A3FYAchVPiQub5CJySr2btSLWr9mSJ4i4bgI=",
+            "type": "url",
+            "url": "https://github.com/NotRexed/Hookshot/releases/download/v2.1.0/Hookshot-v2.1.0-x86_64.AppImage"
+        },
+        "version": "2.1.0"
+    },
     "ida-chat-plugin": {
         "cargoLock": null,
         "date": "2026-04-20",

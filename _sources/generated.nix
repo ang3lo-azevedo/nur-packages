@@ -290,6 +290,14 @@
       sha256 = "sha256-Euc8w9sDP+jF8MOlN7c/SYpZqUrM61X7jLUdy/+3uHw=";
     };
   };
+  hookshot = {
+    pname = "hookshot";
+    version = "2.1.0";
+    src = fetchurl {
+      url = "https://github.com/NotRexed/Hookshot/releases/download/v2.1.0/Hookshot-v2.1.0-x86_64.AppImage";
+      sha256 = "sha256-wLLpWK4A3FYAchVPiQub5CJySr2btSLWr9mSJ4i4bgI=";
+    };
+  };
   ida-chat-plugin = {
     pname = "ida-chat-plugin";
     version = "883f9b3550725d81eed80c25dd28c75b320f22c7";
