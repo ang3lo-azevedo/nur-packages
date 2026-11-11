@@ -199,15 +199,15 @@
   };
   eglantine = {
     pname = "eglantine";
-    version = "78743f30c251f66bd77e6eea6c28d8632d642d6f";
+    version = "6be10b5c126a0faf88ffba00ff9ffeb9cd3f8c8e";
     src = fetchFromGitHub {
       owner = "Djihads80";
       repo = "Eglantine";
-      rev = "78743f30c251f66bd77e6eea6c28d8632d642d6f";
+      rev = "6be10b5c126a0faf88ffba00ff9ffeb9cd3f8c8e";
       fetchSubmodules = false;
       sha256 = "sha256-sHfT2K2WoX3xbqyO8076JmPhB5VP6KKQsxLN2AH/TSU=";
     };
-    date = "2026-11-08";
+    date = "2026-11-11";
   };
   ese-database-view = {
     pname = "ese-database-view";
@@ -276,7 +276,7 @@
     version = "4.4.0";
     src = fetchurl {
       url = "https://github.com/Yamato-Security/hayabusa/releases/download/v4.4.0/hayabusa-4.4.0-lin-x64-gnu.zip";
-      sha256 = "sha256-ONN/kMSE1wIXqMirSgjTgY5MQFMi7XBkpgyusfU7VCU=";
+      sha256 = "sha256-EAfEPJ0DRzx5bDldTUPXHD+zTRYNX76ZE031VpNEZPE=";
     };
   };
   hindsight = {
@@ -455,15 +455,15 @@
   };
   nx2android = {
     pname = "nx2android";
-    version = "165833fdf8839265a85ff81da38bcc1dfc4fba9d";
+    version = "5e4ea3b5953944163987ecc2752258e551c3ba06";
     src = fetchFromGitHub {
       owner = "shirai91";
       repo = "nx2android";
-      rev = "165833fdf8839265a85ff81da38bcc1dfc4fba9d";
+      rev = "5e4ea3b5953944163987ecc2752258e551c3ba06";
       fetchSubmodules = false;
-      sha256 = "sha256-c/kpFzksDFDV1SodJl69tDtAhp9s4eqh4ko0V6yL2ww=";
+      sha256 = "sha256-ZsUopoSB1KbiUOaZNBVPRHh8RrE4rP/ae0AWZA4/azY=";
     };
-    date = "2026-11-10";
+    date = "2026-11-11";
   };
   onlinefix-linux = {
     pname = "onlinefix-linux";
@@ -732,10 +732,10 @@
   };
   vrcd = {
     pname = "vrcd";
-    version = "1.8.8";
+    version = "1.8.9";
     src = fetchurl {
-      url = "https://github.com/DeliciousMeatPop/VRCD/releases/download/v1.8.8/vr-cyberdeck-1.8.8-x86_64.AppImage";
-      sha256 = "sha256-UAZyW+uTkwm7HoopE3ndPuqBJWl5RwarCsOrNa0UwKE=";
+      url = "https://github.com/DeliciousMeatPop/VRCD/releases/download/v1.8.9/vr-cyberdeck-1.8.9-x86_64.AppImage";
+      sha256 = "sha256-9PKeGit/h11a/cEAVZG2LV7VDJTNjASHrj+FBPo05CQ=";
     };
   };
   zapfast = {
