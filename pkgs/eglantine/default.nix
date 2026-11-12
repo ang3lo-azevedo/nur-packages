@@ -52,7 +52,7 @@ in
         --set-default MESA_VK_DEVICE_SELECT 1002:7590 \
         --set-default DRI_PRIME 1
 
-      install -Dm444 ${contents}/usr/share/applications/dev.eden_emu.eden.desktop \
+      install -Dm444 ${contents}/usr/share/applications/dev.eglantine.eglantine.desktop \
         $out/share/applications/eglantine.desktop
       install -Dm444 ${contents}/usr/share/icons/hicolor/512x512/apps/dev.eglantine.eglantine.png \
         $out/share/icons/hicolor/512x512/apps/dev.eglantine.eglantine.png
