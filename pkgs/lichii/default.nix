@@ -11,11 +11,11 @@
   # All upstream builds are prereleases nvfetcher skips, so run ./update.sh to
   # refresh `version` and `hash` to the newest release by publish date (whatever
   # its tag) from https://github.com/zortos293/Lichii/releases.
-  version = "build-160";
+  version = "build-177";
 
   src = fetchurl {
     url = "https://github.com/zortos293/Lichii/releases/download/${version}/lichii-linux-x86_64-pgo.AppImage";
-    hash = "sha256-zBoJ5Gw+Bg6vEJE0BAoUSK4I/b1RtYZuE+qfQrDZEzI=";
+    hash = "sha256-dZa6+ur8b8EqUATt2BBcxkNMIhYoh9dCGUfpJPBEj4A=";
   };
 
   # The desktop entry (Exec=lichii already) and icon live inside the AppImage.
