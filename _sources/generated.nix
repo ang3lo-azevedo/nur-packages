@@ -199,15 +199,15 @@
   };
   eglantine = {
     pname = "eglantine";
-    version = "6be10b5c126a0faf88ffba00ff9ffeb9cd3f8c8e";
+    version = "66ce46feb67a184ee4adae59ed07cf89c72aac9c";
     src = fetchFromGitHub {
       owner = "Djihads80";
       repo = "Eglantine";
-      rev = "6be10b5c126a0faf88ffba00ff9ffeb9cd3f8c8e";
+      rev = "66ce46feb67a184ee4adae59ed07cf89c72aac9c";
       fetchSubmodules = false;
-      sha256 = "sha256-sHfT2K2WoX3xbqyO8076JmPhB5VP6KKQsxLN2AH/TSU=";
+      sha256 = "sha256-e50DY4KDJxN3lB5Q7S8CNCypG1Pl6qP8Mngs9V6wYaM=";
     };
-    date = "2026-11-11";
+    date = "2026-11-12";
   };
   ese-database-view = {
     pname = "ese-database-view";
@@ -364,17 +364,17 @@
   };
   libfsntfs = {
     pname = "libfsntfs";
-    version = "faaa031d0f779578559d5c025c9583d103702bcc";
+    version = "2d22e7fe338bf7cc1718e1c94a8b44769dbb1aaa";
     src = fetchgit {
       url = "https://github.com/libyal/libfsntfs.git";
-      rev = "faaa031d0f779578559d5c025c9583d103702bcc";
+      rev = "2d22e7fe338bf7cc1718e1c94a8b44769dbb1aaa";
       fetchSubmodules = false;
       deepClone = false;
       leaveDotGit = false;
       sparseCheckout = [ ];
-      sha256 = "sha256-HOZh2bPZ3al9iNIixq9+GT7TJhhcUiGQtirqjBCyruI=";
+      sha256 = "sha256-vW5nZM5uktDJabrGfzIJZLeOpUyscSNcDBaDc9nQBgg=";
     };
-    date = "2026-10-11";
+    date = "2026-11-11";
   };
   lichii-shader-sync = {
     pname = "lichii-shader-sync";
@@ -471,22 +471,22 @@
   };
   nx2android = {
     pname = "nx2android";
-    version = "5e4ea3b5953944163987ecc2752258e551c3ba06";
+    version = "00f41ec9c0f436bf76a5cd2d5a214e848e860b64";
     src = fetchFromGitHub {
       owner = "shirai91";
       repo = "nx2android";
-      rev = "5e4ea3b5953944163987ecc2752258e551c3ba06";
+      rev = "00f41ec9c0f436bf76a5cd2d5a214e848e860b64";
       fetchSubmodules = false;
-      sha256 = "sha256-ZsUopoSB1KbiUOaZNBVPRHh8RrE4rP/ae0AWZA4/azY=";
+      sha256 = "sha256-Luu+jaqFwjS+XFr9x+vTTYv5GxzeFT+ZIlLscTjue9I=";
     };
-    date = "2026-11-11";
+    date = "2026-11-13";
   };
   nx2navi = {
     pname = "nx2navi";
-    version = "0.8.0";
+    version = "0.9.2";
     src = fetchurl {
-      url = "https://github.com/tangerineturtle1/NX2navi/releases/download/v0.8.0/NX2navi-Linux-0.8.0-x86_64.AppImage";
-      sha256 = "sha256-t963FHZY8NDJf07RuXIc547ryWySERthfRotMz0qOfc=";
+      url = "https://github.com/tangerineturtle1/NX2navi/releases/download/v0.9.2/NX2navi-Linux-0.9.2-x86_64.AppImage";
+      sha256 = "sha256-fdL/PncnGPQslHWnoThIv8p7CRU+zqLUIyXjRk7P4mM=";
     };
   };
   onlinefix-linux = {
@@ -507,10 +507,10 @@
   };
   orchid = {
     pname = "orchid";
-    version = "v0.9.5";
+    version = "v0.10.0";
     src = fetchurl {
-      url = "https://github.com/MythosOfs/Orchid/releases/download/v0.9.5/orchid-v0.9.5-linux-x86_64-pgo.AppImage";
-      sha256 = "sha256-aNNuPLgGHBnx/Rv6onpN/9G3df1JwLd9xXD2HEpBD7U=";
+      url = "https://github.com/MythosOfs/Orchid/releases/download/v0.10.0/orchid-v0.10.0-linux-x86_64-pgo.AppImage";
+      sha256 = "sha256-r6yio7cuSjjG4BGYg78K41ntGp18gzW5j2wv6sHnyEE=";
     };
   };
   registry-spy = {
@@ -764,10 +764,10 @@
   };
   vrcd = {
     pname = "vrcd";
-    version = "1.8.9";
+    version = "1.9.0";
     src = fetchurl {
-      url = "https://github.com/DeliciousMeatPop/VRCD/releases/download/v1.8.9/vr-cyberdeck-1.8.9-x86_64.AppImage";
-      sha256 = "sha256-9PKeGit/h11a/cEAVZG2LV7VDJTNjASHrj+FBPo05CQ=";
+      url = "https://github.com/DeliciousMeatPop/VRCD/releases/download/v1.9.0/vr-cyberdeck-1.9.0-x86_64.AppImage";
+      sha256 = "sha256-y68hMWwsN7e15nWzccVW0ADahugzm5HjATIv55UETQQ=";
     };
   };
   zapfast = {
