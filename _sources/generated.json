@@ -1,4 +1,19 @@
 {
+    "aiostreams-desktop": {
+        "cargoLock": null,
+        "date": null,
+        "extract": null,
+        "name": "aiostreams-desktop",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "name": null,
+            "sha256": "sha256-qafCziTquHgbSDOrNwEMv19dy5t0Exzw1Id+84Fv/2o=",
+            "type": "url",
+            "url": "https://github.com/Viren070/AIOStreams/releases/download/desktop-v0.25.0/aiostreams-desktop-linux-x64.flatpak"
+        },
+        "version": "0.25.0"
+    },
     "aleapp": {
         "cargoLock": null,
         "date": null,

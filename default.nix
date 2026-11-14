@@ -3,6 +3,7 @@
   nixosModules = import ./nixos-modules;
   overlays = import ./overlays;
 
+  aiostreams-desktop = pkgs.callPackage ./pkgs/aiostreams-desktop {};
   aleapp = pkgs.callPackage ./pkgs/aleapp {
     bencoding = pkgs.callPackage ./pkgs/bencoding {};
     pyliblzfse = pkgs.callPackage ./pkgs/pyliblzfse {};

@@ -337,3 +337,9 @@ fetch.url = "https://github.com/oceanpacificpeace/lichii-shader-sync/releases/do
 src.github = "MythosOfs/Orchid"
 src.github_use_latest_release = true
 fetch.url = "https://github.com/MythosOfs/Orchid/releases/download/$ver/orchid-$ver-linux-x86_64-pgo.AppImage"
+
+# AIOStreams desktop app
+[aiostreams-desktop]
+src.webpage = "https://github.com/Viren070/AIOStreams/releases"
+src.regex = "releases/tag/desktop-v([0-9.]+)"
+fetch.url = "https://github.com/Viren070/AIOStreams/releases/download/desktop-v$ver/aiostreams-desktop-linux-x64.flatpak"

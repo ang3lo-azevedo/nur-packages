@@ -6,6 +6,14 @@
   dockerTools,
 }:
 {
+  aiostreams-desktop = {
+    pname = "aiostreams-desktop";
+    version = "0.25.0";
+    src = fetchurl {
+      url = "https://github.com/Viren070/AIOStreams/releases/download/desktop-v0.25.0/aiostreams-desktop-linux-x64.flatpak";
+      sha256 = "sha256-qafCziTquHgbSDOrNwEMv19dy5t0Exzw1Id+84Fv/2o=";
+    };
+  };
   aleapp = {
     pname = "aleapp";
     version = "v2026.4.5";
