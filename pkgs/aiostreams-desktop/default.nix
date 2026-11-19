@@ -9,6 +9,8 @@
   webkitgtk_6_0,
   gtk4,
   glib,
+  glib-networking,
+  gsettings-desktop-schemas,
   mpv-unwrapped,
 }:
 let
@@ -30,6 +32,8 @@ stdenv.mkDerivation {
     webkitgtk_6_0
     gtk4
     glib
+    glib-networking
+    gsettings-desktop-schemas
     mpv-unwrapped
   ];
 
