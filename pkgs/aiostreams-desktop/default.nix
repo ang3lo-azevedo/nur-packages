@@ -21,6 +21,9 @@ in
 stdenv.mkDerivation {
   inherit pname version src;
 
+  preferLocalBuild = true;
+  requiredSystemFeatures = ["local"];
+
   nativeBuildInputs = [
     ostree
     flatpak
