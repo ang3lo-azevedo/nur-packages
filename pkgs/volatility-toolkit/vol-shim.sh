@@ -20,16 +20,6 @@ for arg in "$@"; do
   fi
   # Python plugins bundled for Volatility 3 have no vol-rs port to try first.
   [[ $arg =~ ^(windows|linux|mac)\. ]] && ! grep -qxF -- "$arg" "$plugins" && vol3 "$@"
-  # The rule below routes around a vol-rs result that differs from Volatility 3
-  # but exits 0, so the fallback further down never triggers. Drop it once
-  # vol-rs matches Volatility 3 on the same dump.
-
-  # FIXME(vol-rs): https://github.com/daffainfo/vol-rs/issues/7
-  # With --plugin-filter both print the same rows, but an unfiltered timeliner
-  # runs its plugins in a different order than Volatility 3 2.28.2. timeliner
-  # prints the rows so far again after each plugin, so the totals differ: 87,235
-  # rows against 137,769 on Volatility's Windows 10 test dump.
-  [[ $arg == timeliner.* ]] && vol3 "$@"
 
   # Not a known bug: upstream has not run the macOS plugins on a real capture
   # yet, and neither have we. Use Volatility 3 until someone checks.
