@@ -52,6 +52,7 @@
   ctfbridge = pkgs.callPackage ./pkgs/ctfbridge {};
   ctfd-parser = pkgs.callPackage ./pkgs/ctfd-parser {};
   cursor-id-modifier = pkgs.callPackage ./pkgs/cursor-id-modifier {};
+  discord-phoenix = pkgs.callPackage ./pkgs/discord-phoenix {};
   dleapp = pkgs.callPackage ./pkgs/dleapp {
     bencoding = pkgs.callPackage ./pkgs/bencoding {};
     pyliblzfse = pkgs.callPackage ./pkgs/pyliblzfse {};
