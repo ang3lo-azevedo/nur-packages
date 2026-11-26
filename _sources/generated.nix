@@ -73,6 +73,22 @@
       sha256 = "sha256-1vgT9hyaTpxeGHDgJjPDFazegVcYdi75jygLE/3Yj+8=";
     };
   };
+  anyps5-prx = {
+    pname = "anyps5-prx";
+    version = "0.1.5";
+    src = fetchurl {
+      url = "https://github.com/boykopovar/AnyPS5/releases/download/v0.1.5/prx-linux-v0.1.5.tar.gz";
+      sha256 = "sha256-snaXMSFOAxXXCtaCzR3tFDPXVPnlKGKQ39x2i0PK/zc=";
+    };
+  };
+  anyps5-relinker = {
+    pname = "anyps5-relinker";
+    version = "0.1.5";
+    src = fetchurl {
+      url = "https://github.com/boykopovar/AnyPS5/releases/download/v0.1.5/relinker-v0.1.5";
+      sha256 = "sha256-ZQHOT08osm6+69NLebhNvNEKD/3zMdIadmAG1J4uK9E=";
+    };
+  };
   apk-mitm = {
     pname = "apk-mitm";
     version = "v1.3.0";
@@ -364,6 +380,22 @@
     src = fetchurl {
       url = "https://github.com/Omni-guides/Jackify/releases/download/v0.8.1.3/Jackify.AppImage";
       sha256 = "sha256-Z3T4Gu3WxnyMOO7kIF/BSXGJfNurmcZULTWCl4rzlTI=";
+    };
+  };
+  kytyps5 = {
+    pname = "kytyps5";
+    version = "KytyPS5-2026-11-26-b3d8c04";
+    src = fetchurl {
+      url = "https://github.com/KytyPS5/KytyPS5/releases/download/KytyPS5-2026-11-26-b3d8c04/KytyPS5-2026-11-26-b3d8c04-Linux-x86_64.tar.gz";
+      sha256 = "sha256-m/oWO59Cimo1420ZMYT3qVUU8KOs9XSBs6s8ij5E0i8=";
+    };
+  };
+  kytyps5-icon = {
+    pname = "kytyps5-icon";
+    version = "KytyPS5-2026-11-26-b3d8c04";
+    src = fetchurl {
+      url = "https://raw.githubusercontent.com/KytyPS5/KytyPS5/KytyPS5-2026-11-26-b3d8c04/src/launcher/icons/kyty.svg";
+      sha256 = "sha256-M8Iia2u2U3bT7aN/YkpTmmy6nTlj/tPXEPz21+zA1+A=";
     };
   };
   lava = {

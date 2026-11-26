@@ -18,6 +18,7 @@
     };
   };
   analyzeMFT = pkgs.callPackage ./pkgs/analyzeMFT {};
+  anyps5 = pkgs.callPackage ./pkgs/anyps5 {};
   apachelogs = pkgs.callPackage ./pkgs/apachelogs {
     pydicti = pkgs.callPackage ./pkgs/pydicti {};
   };
@@ -90,6 +91,7 @@
     unifiedlog-iterator = pkgs.callPackage ./pkgs/unifiedlog-iterator {};
   };
   jackify = pkgs.callPackage ./pkgs/jackify {};
+  kytyps5 = pkgs.callPackage ./pkgs/kytyps5 {};
   lava = pkgs.callPackage ./pkgs/lava {};
   lichii = pkgs.callPackage ./pkgs/lichii {};
   lichii-amd-superior = pkgs.callPackage ./pkgs/lichii-amd-superior {};

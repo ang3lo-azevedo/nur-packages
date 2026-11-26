@@ -349,3 +349,27 @@ fetch.url = "https://github.com/Viren070/AIOStreams/releases/download/desktop-v$
 src.git = "https://github.com/Belobug/VIctory-Belobug-AMD.git"
 fetch.github = "Belobug/VIctory-Belobug-AMD"
 cargo_lock = ["Cargo.lock"]
+
+# KytyPS5: PlayStation 5 translation layer & emulator
+[kytyps5]
+src.github = "KytyPS5/KytyPS5"
+src.github_use_latest_release = true
+fetch.url = "https://github.com/KytyPS5/KytyPS5/releases/download/$ver/$ver-Linux-x86_64.tar.gz"
+
+[kytyps5-icon]
+src.github = "KytyPS5/KytyPS5"
+src.github_use_latest_release = true
+fetch.url = "https://raw.githubusercontent.com/KytyPS5/KytyPS5/$ver/src/launcher/icons/kyty.svg"
+
+# AnyPS5: PS5 eboot relinker and runtime PRX libraries
+[anyps5-relinker]
+src.github = "boykopovar/AnyPS5"
+src.github_use_latest_release = true
+src.prefix = "v"
+fetch.url = "https://github.com/boykopovar/AnyPS5/releases/download/v$ver/relinker-v$ver"
+
+[anyps5-prx]
+src.github = "boykopovar/AnyPS5"
+src.github_use_latest_release = true
+src.prefix = "v"
+fetch.url = "https://github.com/boykopovar/AnyPS5/releases/download/v$ver/prx-linux-v$ver.tar.gz"
