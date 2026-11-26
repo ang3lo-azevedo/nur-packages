@@ -153,6 +153,9 @@
   sstv = pkgs.callPackage ./pkgs/sstv {};
   steamidra = pkgs.callPackage ./pkgs/steamidra {};
   stremio-enhanced = pkgs.callPackage ./pkgs/stremio-enhanced {};
+  sunbird = pkgs.callPackage ./pkgs/sunbird {
+    discord-phoenix = pkgs.callPackage ./pkgs/discord-phoenix {};
+  };
   sysmontools = pkgs.callPackage ./pkgs/sysmontools {};
   texture2ddecoder = pkgs.callPackage ./pkgs/texture2ddecoder {};
   tplmap = pkgs.callPackage ./pkgs/tplmap {};
