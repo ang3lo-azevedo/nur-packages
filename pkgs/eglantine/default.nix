@@ -14,11 +14,11 @@
   # newest PGO one by date may be any of them. Requiring the PGO asset skips the
   # testing builds, which do not ship one; the stable builds all ship
   # eglantine-linux-x86_64-pgo.AppImage, so the URL below templates off the tag.
-  version = "daily-20261124";
+  version = "daily-20261125";
 
   src = fetchurl {
     url = "https://github.com/Djihads80/Eglantine/releases/download/${version}/eglantine-linux-x86_64-pgo.AppImage";
-    hash = "sha256-PMmO/WmqWstVGzKhiTTs9vojJ3YdZN8MHa+Bjt4yaB0=";
+    hash = "sha256-U6eyhQFwmbjk5a9nJDDvYKWyEuCvEH4AUN0Ww6b9ZA4=";
   };
 
   # The desktop entry (Exec=eglantine already) and icon live inside the AppImage.
