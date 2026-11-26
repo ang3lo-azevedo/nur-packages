@@ -162,6 +162,7 @@
   trakt-scrobbler = pkgs.callPackage ./pkgs/trakt-scrobbler {};
   unifiedlog-iterator = pkgs.callPackage ./pkgs/unifiedlog-iterator {};
   utmp = pkgs.callPackage ./pkgs/utmp {};
+  victory = pkgs.callPackage ./pkgs/victory {};
   vleapp = pkgs.callPackage ./pkgs/vleapp {
     pyliblzfse = pkgs.callPackage ./pkgs/pyliblzfse {};
   };
