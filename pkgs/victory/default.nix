@@ -1,31 +1,23 @@
 {
   lib,
   stdenvNoCC,
-  fetchFromGitHub,
+  callPackage,
   pkgsCross,
   umu-launcher,
   proton-ge-bin,
 }: let
+  sources = callPackage ../../_sources/generated.nix {};
   pname = "victory";
-  version = "0.1.0-unstable-2026-11-26";
-  rev = "cd8dfc06ace7ccb91a19431e74bc2d0de2a10145";
-
-  src = fetchFromGitHub {
-    owner = "Belobug";
-    repo = "VIctory-Belobug-AMD";
-    inherit rev;
-    hash = "sha256-fdoSziay1qKvD/iGcbSGx09zBZd72nmhQiKCWhkgQCo=";
-  };
+  version = "0.1.0-unstable-${sources.victory.date}";
 
   mingw = pkgsCross.mingw-msvcrt-x86_64;
 
   victoryExe = mingw.rustPlatform.buildRustPackage {
     pname = "${pname}-exe";
-    inherit version src;
+    inherit version;
+    inherit (sources.victory) src;
 
-    cargoLock = {
-      lockFile = "${src}/Cargo.lock";
-    };
+    cargoLock = sources.victory.cargoLock."Cargo.lock";
 
     cargoBuildFlags = [
       "-p"
