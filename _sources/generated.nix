@@ -6,6 +6,24 @@
   dockerTools,
 }:
 {
+  VIctory-Belobug-AMD = {
+    pname = "VIctory-Belobug-AMD";
+    version = "cd8dfc06ace7ccb91a19431e74bc2d0de2a10145";
+    src = fetchFromGitHub {
+      owner = "Belobug";
+      repo = "VIctory-Belobug-AMD";
+      rev = "cd8dfc06ace7ccb91a19431e74bc2d0de2a10145";
+      fetchSubmodules = false;
+      sha256 = "sha256-fdoSziay1qKvD/iGcbSGx09zBZd72nmhQiKCWhkgQCo=";
+    };
+    cargoLock."Cargo.lock" = {
+      lockFile = ./. + "/sha256-fdoSziay1qKvD_iGcbSGx09zBZd72nmhQiKCWhkgQCo=/Cargo.lock";
+      outputHashes = {
+        
+      };
+    };
+    date = "2026-11-26";
+  };
   aiostreams-desktop = {
     pname = "aiostreams-desktop";
     version = "0.25.0";
@@ -650,24 +668,6 @@
       fetchSubmodules = false;
       sha256 = "sha256-ylgCDWmcZzz6mMBpEAj16jK1loTxQJmk9G/3Hnp9WuI=";
     };
-  };
-  victory = {
-    pname = "victory";
-    version = "cd8dfc06ace7ccb91a19431e74bc2d0de2a10145";
-    src = fetchFromGitHub {
-      owner = "Belobug";
-      repo = "VIctory-Belobug-AMD";
-      rev = "cd8dfc06ace7ccb91a19431e74bc2d0de2a10145";
-      fetchSubmodules = false;
-      sha256 = "sha256-fdoSziay1qKvD/iGcbSGx09zBZd72nmhQiKCWhkgQCo=";
-    };
-    cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-fdoSziay1qKvD_iGcbSGx09zBZd72nmhQiKCWhkgQCo=/Cargo.lock";
-      outputHashes = {
-        
-      };
-    };
-    date = "2026-11-26";
   };
   vleapp = {
     pname = "vleapp";

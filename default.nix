@@ -3,6 +3,7 @@
   nixosModules = import ./nixos-modules;
   overlays = import ./overlays;
 
+  VIctory-Belobug-AMD = pkgs.callPackage ./pkgs/VIctory-Belobug-AMD {};
   aiostreams-desktop = pkgs.callPackage ./pkgs/aiostreams-desktop {};
   aleapp = pkgs.callPackage ./pkgs/aleapp {
     bencoding = pkgs.callPackage ./pkgs/bencoding {};
@@ -162,7 +163,6 @@
   trakt-scrobbler = pkgs.callPackage ./pkgs/trakt-scrobbler {};
   unifiedlog-iterator = pkgs.callPackage ./pkgs/unifiedlog-iterator {};
   utmp = pkgs.callPackage ./pkgs/utmp {};
-  victory = pkgs.callPackage ./pkgs/victory {};
   vleapp = pkgs.callPackage ./pkgs/vleapp {
     pyliblzfse = pkgs.callPackage ./pkgs/pyliblzfse {};
   };

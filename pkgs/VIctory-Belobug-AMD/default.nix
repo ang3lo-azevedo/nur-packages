@@ -7,17 +7,17 @@
   proton-ge-bin,
 }: let
   sources = callPackage ../../_sources/generated.nix {};
-  pname = "victory";
-  version = "0.1.0-unstable-${sources.victory.date}";
+  pname = "VIctory-Belobug-AMD";
+  version = "0.1.0-unstable-${sources.VIctory-Belobug-AMD.date}";
 
   mingw = pkgsCross.mingw-msvcrt-x86_64;
 
   victoryExe = mingw.rustPlatform.buildRustPackage {
     pname = "${pname}-exe";
     inherit version;
-    inherit (sources.victory) src;
+    inherit (sources.VIctory-Belobug-AMD) src;
 
-    cargoLock = sources.victory.cargoLock."Cargo.lock";
+    cargoLock = sources.VIctory-Belobug-AMD.cargoLock."Cargo.lock";
 
     cargoBuildFlags = [
       "-p"
@@ -70,6 +70,7 @@ in
       exec "${umu-launcher}/bin/umu-run" "$out/opt/victory/victory.exe" "\$@"
       EOF
       chmod 755 "$out/bin/victory"
+      ln -s "$out/bin/victory" "$out/bin/VIctory-Belobug-AMD"
 
       runHook postInstall
     '';

@@ -345,7 +345,7 @@ src.regex = "releases/tag/desktop-v([0-9.]+)"
 fetch.url = "https://github.com/Viren070/AIOStreams/releases/download/desktop-v$ver/aiostreams-desktop-linux-x64.flatpak"
 
 # VIctory (Belobug AMD fork): tracks main until tagged releases exist
-[victory]
+[VIctory-Belobug-AMD]
 src.git = "https://github.com/Belobug/VIctory-Belobug-AMD.git"
 fetch.github = "Belobug/VIctory-Belobug-AMD"
 cargo_lock = ["Cargo.lock"]

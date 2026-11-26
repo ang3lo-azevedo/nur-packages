@@ -1,4 +1,30 @@
 {
+    "VIctory-Belobug-AMD": {
+        "cargoLock": {
+            "Cargo.lock": [
+                "sha256-fdoSziay1qKvD_iGcbSGx09zBZd72nmhQiKCWhkgQCo=/Cargo.lock",
+                {}
+            ]
+        },
+        "date": "2026-11-26",
+        "extract": null,
+        "name": "VIctory-Belobug-AMD",
+        "passthru": null,
+        "pinned": false,
+        "src": {
+            "deepClone": false,
+            "fetchSubmodules": false,
+            "leaveDotGit": false,
+            "name": null,
+            "owner": "Belobug",
+            "repo": "VIctory-Belobug-AMD",
+            "rev": "cd8dfc06ace7ccb91a19431e74bc2d0de2a10145",
+            "sha256": "sha256-fdoSziay1qKvD/iGcbSGx09zBZd72nmhQiKCWhkgQCo=",
+            "sparseCheckout": [],
+            "type": "github"
+        },
+        "version": "cd8dfc06ace7ccb91a19431e74bc2d0de2a10145"
+    },
     "aiostreams-desktop": {
         "cargoLock": null,
         "date": null,
@@ -1162,32 +1188,6 @@
             "type": "github"
         },
         "version": "v1.9.0b1"
-    },
-    "victory": {
-        "cargoLock": {
-            "Cargo.lock": [
-                "sha256-fdoSziay1qKvD_iGcbSGx09zBZd72nmhQiKCWhkgQCo=/Cargo.lock",
-                {}
-            ]
-        },
-        "date": "2026-11-26",
-        "extract": null,
-        "name": "victory",
-        "passthru": null,
-        "pinned": false,
-        "src": {
-            "deepClone": false,
-            "fetchSubmodules": false,
-            "leaveDotGit": false,
-            "name": null,
-            "owner": "Belobug",
-            "repo": "VIctory-Belobug-AMD",
-            "rev": "cd8dfc06ace7ccb91a19431e74bc2d0de2a10145",
-            "sha256": "sha256-fdoSziay1qKvD/iGcbSGx09zBZd72nmhQiKCWhkgQCo=",
-            "sparseCheckout": [],
-            "type": "github"
-        },
-        "version": "cd8dfc06ace7ccb91a19431e74bc2d0de2a10145"
     },
     "vleapp": {
         "cargoLock": null,
