@@ -8,16 +8,16 @@
 {
   VIctory-Belobug-AMD = {
     pname = "VIctory-Belobug-AMD";
-    version = "cd8dfc06ace7ccb91a19431e74bc2d0de2a10145";
+    version = "4eb6cfdf9e61cb112f1f811344ec0dd309eddd6c";
     src = fetchFromGitHub {
       owner = "Belobug";
       repo = "VIctory-Belobug-AMD";
-      rev = "cd8dfc06ace7ccb91a19431e74bc2d0de2a10145";
+      rev = "4eb6cfdf9e61cb112f1f811344ec0dd309eddd6c";
       fetchSubmodules = false;
-      sha256 = "sha256-fdoSziay1qKvD/iGcbSGx09zBZd72nmhQiKCWhkgQCo=";
+      sha256 = "sha256-sypm6ML6YUOXKTSsJR9qnOxSFekm08kYV5MkJFo7hzg=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-fdoSziay1qKvD_iGcbSGx09zBZd72nmhQiKCWhkgQCo=/Cargo.lock";
+      lockFile = ./. + "/sha256-sypm6ML6YUOXKTSsJR9qnOxSFekm08kYV5MkJFo7hzg=/Cargo.lock";
       outputHashes = {
         
       };

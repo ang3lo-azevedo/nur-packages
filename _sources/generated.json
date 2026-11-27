@@ -2,7 +2,7 @@
     "VIctory-Belobug-AMD": {
         "cargoLock": {
             "Cargo.lock": [
-                "sha256-fdoSziay1qKvD_iGcbSGx09zBZd72nmhQiKCWhkgQCo=/Cargo.lock",
+                "sha256-sypm6ML6YUOXKTSsJR9qnOxSFekm08kYV5MkJFo7hzg=/Cargo.lock",
                 {}
             ]
         },
@@ -18,12 +18,12 @@
             "name": null,
             "owner": "Belobug",
             "repo": "VIctory-Belobug-AMD",
-            "rev": "cd8dfc06ace7ccb91a19431e74bc2d0de2a10145",
-            "sha256": "sha256-fdoSziay1qKvD/iGcbSGx09zBZd72nmhQiKCWhkgQCo=",
+            "rev": "4eb6cfdf9e61cb112f1f811344ec0dd309eddd6c",
+            "sha256": "sha256-sypm6ML6YUOXKTSsJR9qnOxSFekm08kYV5MkJFo7hzg=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "cd8dfc06ace7ccb91a19431e74bc2d0de2a10145"
+        "version": "4eb6cfdf9e61cb112f1f811344ec0dd309eddd6c"
     },
     "aiostreams-desktop": {
         "cargoLock": null,
