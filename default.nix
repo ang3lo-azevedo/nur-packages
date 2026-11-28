@@ -3,7 +3,7 @@
   nixosModules = import ./nixos-modules;
   overlays = import ./overlays;
 
-  VIctory-Belobug-AMD = pkgs.callPackage ./pkgs/VIctory-Belobug-AMD {};
+  VIctory-fxceless = pkgs.callPackage ./pkgs/VIctory-fxceless {};
   aiostreams-desktop = pkgs.callPackage ./pkgs/aiostreams-desktop {};
   aleapp = pkgs.callPackage ./pkgs/aleapp {
     bencoding = pkgs.callPackage ./pkgs/bencoding {};

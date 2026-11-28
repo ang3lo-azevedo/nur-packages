@@ -1,14 +1,14 @@
 {
-    "VIctory-Belobug-AMD": {
+    "VIctory-fxceless": {
         "cargoLock": {
             "Cargo.lock": [
-                "sha256-sypm6ML6YUOXKTSsJR9qnOxSFekm08kYV5MkJFo7hzg=/Cargo.lock",
+                "sha256-4SN9RgmO4pOq7+FpTV0OFg9ygXhATASqj10FcVu5CHI=/Cargo.lock",
                 {}
             ]
         },
-        "date": "2026-11-26",
+        "date": "2026-11-27",
         "extract": null,
-        "name": "VIctory-Belobug-AMD",
+        "name": "VIctory-fxceless",
         "passthru": null,
         "pinned": false,
         "src": {
@@ -16,14 +16,14 @@
             "fetchSubmodules": false,
             "leaveDotGit": false,
             "name": null,
-            "owner": "Belobug",
-            "repo": "VIctory-Belobug-AMD",
-            "rev": "4eb6cfdf9e61cb112f1f811344ec0dd309eddd6c",
-            "sha256": "sha256-sypm6ML6YUOXKTSsJR9qnOxSFekm08kYV5MkJFo7hzg=",
+            "owner": "fxceless",
+            "repo": "victory-fork",
+            "rev": "6b3ce6ce54288df514585caa6880f91468c8bc54",
+            "sha256": "sha256-4SN9RgmO4pOq7+FpTV0OFg9ygXhATASqj10FcVu5CHI=",
             "sparseCheckout": [],
             "type": "github"
         },
-        "version": "4eb6cfdf9e61cb112f1f811344ec0dd309eddd6c"
+        "version": "6b3ce6ce54288df514585caa6880f91468c8bc54"
     },
     "aiostreams-desktop": {
         "cargoLock": null,

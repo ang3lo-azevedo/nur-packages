@@ -6,23 +6,23 @@
   dockerTools,
 }:
 {
-  VIctory-Belobug-AMD = {
-    pname = "VIctory-Belobug-AMD";
-    version = "4eb6cfdf9e61cb112f1f811344ec0dd309eddd6c";
+  VIctory-fxceless = {
+    pname = "VIctory-fxceless";
+    version = "6b3ce6ce54288df514585caa6880f91468c8bc54";
     src = fetchFromGitHub {
-      owner = "Belobug";
-      repo = "VIctory-Belobug-AMD";
-      rev = "4eb6cfdf9e61cb112f1f811344ec0dd309eddd6c";
+      owner = "fxceless";
+      repo = "victory-fork";
+      rev = "6b3ce6ce54288df514585caa6880f91468c8bc54";
       fetchSubmodules = false;
-      sha256 = "sha256-sypm6ML6YUOXKTSsJR9qnOxSFekm08kYV5MkJFo7hzg=";
+      sha256 = "sha256-4SN9RgmO4pOq7+FpTV0OFg9ygXhATASqj10FcVu5CHI=";
     };
     cargoLock."Cargo.lock" = {
-      lockFile = ./. + "/sha256-sypm6ML6YUOXKTSsJR9qnOxSFekm08kYV5MkJFo7hzg=/Cargo.lock";
+      lockFile = ./. + "/sha256-4SN9RgmO4pOq7+FpTV0OFg9ygXhATASqj10FcVu5CHI=/Cargo.lock";
       outputHashes = {
         
       };
     };
-    date = "2026-11-26";
+    date = "2026-11-27";
   };
   aiostreams-desktop = {
     pname = "aiostreams-desktop";

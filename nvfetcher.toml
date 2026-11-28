@@ -344,10 +344,10 @@ src.webpage = "https://github.com/Viren070/AIOStreams/releases"
 src.regex = "releases/tag/desktop-v([0-9.]+)"
 fetch.url = "https://github.com/Viren070/AIOStreams/releases/download/desktop-v$ver/aiostreams-desktop-linux-x64.flatpak"
 
-# VIctory (Belobug AMD fork): tracks main until tagged releases exist
-[VIctory-Belobug-AMD]
-src.git = "https://github.com/Belobug/VIctory-Belobug-AMD.git"
-fetch.github = "Belobug/VIctory-Belobug-AMD"
+# VIctory (fxceless fork): mainline Xbox Series->PC layer; tracks main until tagged releases exist
+[VIctory-fxceless]
+src.git = "https://github.com/fxceless/victory-fork.git"
+fetch.github = "fxceless/victory-fork"
 cargo_lock = ["Cargo.lock"]
 
 # KytyPS5: PlayStation 5 translation layer & emulator

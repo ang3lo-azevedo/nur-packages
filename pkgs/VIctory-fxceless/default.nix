@@ -7,17 +7,17 @@
   proton-ge-bin,
 }: let
   sources = callPackage ../../_sources/generated.nix {};
-  pname = "VIctory-Belobug-AMD";
-  version = "0.1.0-unstable-${sources.VIctory-Belobug-AMD.date}";
+  pname = "VIctory-fxceless";
+  version = "0.1.0-unstable-${sources.VIctory-fxceless.date}";
 
   mingw = pkgsCross.mingw-msvcrt-x86_64;
 
   victoryExe = mingw.rustPlatform.buildRustPackage {
     pname = "${pname}-exe";
     inherit version;
-    inherit (sources.VIctory-Belobug-AMD) src;
+    inherit (sources.VIctory-fxceless) src;
 
-    cargoLock = sources.VIctory-Belobug-AMD.cargoLock."Cargo.lock";
+    cargoLock = sources.VIctory-fxceless.cargoLock."Cargo.lock";
 
     cargoBuildFlags = [
       "-p"
@@ -70,14 +70,14 @@ in
       exec "${umu-launcher}/bin/umu-run" "$out/opt/victory/victory.exe" "\$@"
       EOF
       chmod 755 "$out/bin/victory"
-      ln -s "$out/bin/victory" "$out/bin/VIctory-Belobug-AMD"
+      ln -s "$out/bin/victory" "$out/bin/VIctory-fxceless"
 
       runHook postInstall
     '';
 
     meta = {
-      description = "Windows compatibility layer for Xbox Series titles (Belobug AMD fork, Proton-wrapped)";
-      homepage = "https://github.com/Belobug/VIctory-Belobug-AMD";
+      description = "Windows compatibility layer for Xbox Series titles (fxceless fork, Proton-wrapped)";
+      homepage = "https://github.com/fxceless/victory-fork";
       license = lib.licenses.gpl3Plus;
       mainProgram = "victory";
       platforms = ["x86_64-linux"];
